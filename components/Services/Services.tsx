@@ -1,26 +1,26 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { Fragment } from "react";
+import { easing } from "../../consts/animationConfig";
+import Divider from "../Divider/Divider";
+import Elevator from "../Elevator/Elevator";
+import { Mini } from "../Typography/Mini";
+import { Small } from "../Typography/Small";
 import {
-  BottomDividerWrapper,
-  HeaderWrapper,
-  ServiceBlock,
+  Inner,
+  Numbering,
   ServiceContent,
-  ServiceContentHideable,
+  ServiceContentContent,
   ServiceCover,
-  ServicesCards,
+  ServiceCoverWrapper,
+  ServiceHeader,
+  ServicesList,
+  ServicesSectionHeaderWrapper,
   ServicesViewport,
   StyledServices,
-  TopDividerWrapper,
 } from "./StyledServices";
-import Elevator from "../Elevator/Elevator";
-import { Medium } from "../Typography/Medium";
-import { easing } from "../../consts/animationConfig";
-import { Small } from "../Typography/Small";
-import { useTheme } from "styled-components";
-import Divider from "../Divider/Divider";
-import { Mini } from "../Typography/Mini";
-import { AnimatePresence } from "framer-motion";
+import Button from "../Button/Button";
 
 interface ServicesProps {}
 
@@ -35,85 +35,78 @@ const services = [
   {
     header: "PROJEKTOVÁ DOKUMENTACE",
     perex:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum ipsum. Duis condimentum augue id magna semper rutrum. Nulla est. In dapibus augue non sapien.",
+      "Naše pečlivě zpracovaná dokumentace v BIM je Vaším plánem k úspěšné realizaci stavby.\nVypracujeme projektovou dokumentaci, zajistíme souhlasná stanoviska dotčených orgánů státní správy a získáme stavební povolení.",
   },
   {
     header: "PASPORTIZACE BUDOV",
     perex:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum ipsum. Duis condimentum augue id magna semper rutrum. Nulla est. In dapibus augue non sapien.",
+      "S hrdostí se staráme o 3D pasporty budov pro široké spektrum typologií a fází, ať už se jedná o památkově chráněné nemovitosti určené k obnově nebo novostavby, které potřebují dokumentaci skutečného stavu.\nDíky přesnému zaměření objektů včetně detailů a lokalizace problematických míst budete připraveni na cokoliv. V rámci následných konzultací vám pomůžeme navrhnout to nejlepší řešení a vhodné stavební úpravy.",
   },
   {
     header: "ENERGETICKÁ ÚSPORNOST",
     perex:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum ipsum. Duis condimentum augue id magna semper rutrum. Nulla est. In dapibus augue non sapien.",
+      "Zajišťujeme komplexní služby v oblasti energetiky s cílem pro udržitelnou výstavbu s co nejmenším negativním dopadem na životní přostředí.\nVytvoříme analýzu a navrhneme řešení, která sníží energetickou náročnost a zvýší komfort uživatelů budovy",
   },
   {
     header: "DESIGN DUE DILIGENCE",
     perex:
-      "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum ipsum. Duis condimentum augue id magna semper rutrum. Nulla est. In dapibus augue non sapien.",
+      "Podporujeme vize architektů prostřednictvím inovativního přístupu k projektování a životnímu cyklu budovy. Umožníme vašemu týmu vytvářet průlomové návrhy, které zanechají trvalý pozitivní dopad na kvalitu života ve městech. Společně nestavíme jen stavby, ale vytváříme odkaz pro další generace.",
   },
 ];
 
 const Services = ({}: ServicesProps) => {
-  const { gapSize, columnCount } = useTheme();
-  const [servicesContainerHeight, setServicesContainerHeight] =
-    useState<number>(null);
-  const cardContainer = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setServicesContainerHeight(cardContainer.current.clientHeight);
-    };
-
-    handleResize();
-    addEventListener("resize", handleResize);
-    return () => {
-      removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <StyledServices>
       <Elevator scrollHeight='200vh'>
         {({ progress }) => (
           <ServicesViewport>
-            <Mini className='uppercase'>Naše služby</Mini>
-            <TopDividerWrapper>
-              <Divider />
-            </TopDividerWrapper>
-            <ServicesCards ref={cardContainer}>
+            <ServicesSectionHeaderWrapper>
+              <Mini className='uppercase'>Naše služby</Mini>
+            </ServicesSectionHeaderWrapper>
+            <Divider />
+            <ServicesList>
               {services.map(({ header, perex }, i) => {
                 const interval = intervals[i];
                 const isActive =
                   interval[0] < progress && interval[1] >= progress;
 
                 return (
-                  <ServiceBlock key={i}>
-                    <HeaderWrapper>
-                      <Small className='wide'>{`0${
-                        i + 1
-                      }\u2001\u2001${header}`}</Small>
-                    </HeaderWrapper>
-                    {/* <AnimatePresence>
-                      {isActive && ( */}
-                    {i === 0 && (
-                      <ServiceContent
-                        initial={{ height: "0%" }}
-                        animate={{
-                          height: "max-content",
-                        }}
-                        exit={{ height: "0%" }}
-                      />
-                    )}
-                    {/* )} */}
-                    {/* </AnimatePresence> */}
-                  </ServiceBlock>
+                  <Fragment key={i}>
+                    {0 !== i && <Divider hidePlus />}
+                    <ServiceHeader>
+                      <Numbering>
+                        <Small>{`0${i + 1}`}</Small>
+                      </Numbering>
+                      <Small>{header}</Small>
+                    </ServiceHeader>
+                    <AnimatePresence>
+                      {isActive && (
+                        <ServiceContent
+                          key={i}
+                          initial={{ height: "0%" }}
+                          animate={{ height: "100%" }}
+                          exit={{ height: "0%" }}
+                          transition={{ ease: easing, duration: 0.7 }}>
+                          <ServiceContentContent>
+                            <Mini>{perex}</Mini>
+                            <Button>fdkl</Button>
+                          </ServiceContentContent>
+                          <ServiceCoverWrapper>
+                            <Inner>
+                              <ServiceCover
+                                src={"/imgs/projektova-dokumentace.jpg"}
+                                alt={"header"}
+                              />
+                            </Inner>
+                          </ServiceCoverWrapper>
+                        </ServiceContent>
+                      )}
+                    </AnimatePresence>
+                  </Fragment>
                 );
               })}
-            </ServicesCards>
-            <BottomDividerWrapper>
-              <Divider />
-            </BottomDividerWrapper>
+            </ServicesList>
+            <Divider />
           </ServicesViewport>
         )}
       </Elevator>
