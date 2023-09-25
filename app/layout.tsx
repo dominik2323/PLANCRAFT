@@ -3,9 +3,12 @@ import { Global } from "./(client)/Global";
 import StyledComponentsRegistry from "../lib/registry";
 import { Metadata } from "next";
 import { colors } from "../consts/colors";
+import { BackgroundGridProvider } from "../components/BackgroundGrid/BackgroundGridProvider";
+import BackgroundGrid from "../components/BackgroundGrid/BackgroundGrid";
+import Navbar from "../components/Navbar/Navbar";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://plancraft.cz"),
+  metadataBase: new URL("https://plancraft.eu"),
   title: {
     default: "Plancraft",
     template: "Plancraft\u2002|\u2002%s",
@@ -35,8 +38,14 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='cs'>
       <StyledComponentsRegistry>
-        <Global />
-        <body>{children}</body>
+        <BackgroundGridProvider>
+          <Global />
+          <body>
+            <Navbar />
+            {children}
+            <BackgroundGrid />
+          </body>
+        </BackgroundGridProvider>
       </StyledComponentsRegistry>
     </html>
   );

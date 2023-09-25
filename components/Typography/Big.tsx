@@ -6,10 +6,10 @@ import { addColorClasses } from "../../helpers/addColorClasses";
 import { breakpoint } from "../../consts/breakpoints";
 
 export const Big = styled.span`
-  font-size: 40px;
+  font-size: 115px;
   letter-spacing: -0.01em;
   line-height: 1.3em;
-  color: ${colors.white};
+  color: ${colors.primary400};
   max-width: 700px;
   &.indent {
     text-indent: 4em;
@@ -17,25 +17,19 @@ export const Big = styled.span`
   &.tight-lineheight {
     line-height: 1em;
   }
-  &.no-max-width {
+  &.wide {
     max-width: unset;
   }
   &.uppercase {
     text-transform: uppercase;
   }
   ${breakpoint.monitor} {
-    font-size: 60px;
-    max-width: 1000px;
   }
   ${breakpoint.smallNotebook} {
-    font-size: 40px;
   }
   ${breakpoint.tabletLandscape} {
-    font-size: 30px;
-    max-width: 500px;
   }
   ${breakpoint.smallPhone} {
-    font-size: 21px;
   }
   ${addColorClasses()}
 `;

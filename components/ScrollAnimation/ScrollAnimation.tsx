@@ -20,7 +20,7 @@ interface ScrollAnimationProps {
   className?: string;
 }
 
-type ScrollYProgress = {
+export type ScrollYProgress = {
   progress: number;
   totalDistance: number;
   currentPos: number;

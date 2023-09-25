@@ -4,41 +4,44 @@ import { ReactNode, useContext } from "react";
 import styled from "styled-components";
 import ScrollAnimation, {
   ScrollAnimationContext,
+  ScrollYProgress,
 } from "../ScrollAnimation/ScrollAnimation";
 
 interface ProductElevatorHoleProps {
-  children: ReactNode;
+  children: (args: ScrollYProgress) => ReactNode;
+  scrollHeight: string;
 }
 
-const StyledElevator = styled.section`
-  height: 350vh;
+const StyledElevator = styled.div<{ scrollHeight: string }>`
+  height: ${({ scrollHeight }) => scrollHeight};
   position: relative;
 `;
 
 const ElevatorCabin = styled.div`
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: sticky;
   top: 0;
 `;
 
-const ElevatorBody = ({ children }: ProductElevatorHoleProps) => {
-  const {
-    animationElRef,
-    scrollYProgress: { currentPos, totalDistance, progress },
-  } = useContext(ScrollAnimationContext);
+const ElevatorBody = ({ children, scrollHeight }: ProductElevatorHoleProps) => {
+  const { animationElRef, scrollYProgress } = useContext(
+    ScrollAnimationContext
+  );
 
   return (
-    <StyledElevator data-hideable-navbar>
-      <ElevatorCabin ref={animationElRef}>{children}</ElevatorCabin>
+    <StyledElevator scrollHeight={scrollHeight}>
+      <ElevatorCabin ref={animationElRef}>
+        {children(scrollYProgress)}
+      </ElevatorCabin>
     </StyledElevator>
   );
 };
 
-const Elevator = ({ children }) => {
+const Elevator = ({ children, scrollHeight }: ProductElevatorHoleProps) => {
   return (
     <ScrollAnimation offset={[1, 1]} disableIntersectionObserver>
-      <ElevatorBody>{children}</ElevatorBody>
+      <ElevatorBody scrollHeight={scrollHeight}>{children}</ElevatorBody>
     </ScrollAnimation>
   );
 };
