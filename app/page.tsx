@@ -20,6 +20,9 @@ import Services from "../components/Services/Services";
 import Cabinet from "../components/Cabinet/Cabinet";
 import { colors } from "../consts/colors";
 import { Small } from "../components/Typography/Small";
+import Zoom from "../components/Zoom/Zoom";
+import Project from "../components/Project/Project";
+import HpProjects from "./(client)/HpProjects";
 
 export const metadata: Metadata = {};
 
@@ -70,6 +73,7 @@ const page = ({}: PageProps) => {
         {/* TODO add link */}
         <Button className='skinny'>O nás</Button>
       </HpQuoteServices>
+      <HpProjects />
     </StyledHomepage>
   );
 };

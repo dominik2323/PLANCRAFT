@@ -7,10 +7,9 @@ export function useWindowSize() {
 
   const handleResize = () => {
     const newdim = { w: window.innerWidth, h: window.innerHeight };
-    if (prevDim.current.w !== newdim.w) {
-      prevDim.current = newdim;
-      setDim(newdim);
-    }
+
+    prevDim.current = newdim;
+    setDim(newdim);
   };
 
   useEffect(() => {
