@@ -13,6 +13,9 @@ export const StyledButton = styled.button`
   height: ${({ theme }) => 1 * theme.gapSize + theme.plusSize}px;
   width: ${({ theme }) => 5 * theme.gapSize}px;
   text-transform: uppercase;
+  &.skinny {
+    width: ${({ theme }) => 3 * theme.gapSize}px;
+  }
 `;
 
 export const Cap = styled.div`

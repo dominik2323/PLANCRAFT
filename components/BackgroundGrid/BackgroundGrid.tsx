@@ -4,13 +4,9 @@ import { useEffect, useRef } from "react";
 import { useTheme } from "styled-components";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { Dot, StyledBackgroundGrid } from "./StyledBackgroundGrid";
+import { createArray } from "../../helpers/createArray";
 
 interface BackgroundGridProps {}
-
-const createArray = (length) => {
-  if (length < 0 || !length) return [];
-  return [...new Array(length)].map((_, i) => i);
-};
 
 const BackgroundGrid = ({}: BackgroundGridProps) => {
   const ref = useRef<SVGSVGElement>(null);

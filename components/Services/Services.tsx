@@ -1,26 +1,23 @@
 "use client";
 
-import { AnimatePresence } from "framer-motion";
-import { Fragment } from "react";
-import { easing } from "../../consts/animationConfig";
+import Cabinet from "../Cabinet/Cabinet";
 import Divider from "../Divider/Divider";
-import Elevator from "../Elevator/Elevator";
+import Link from "../Link/Link";
 import { Mini } from "../Typography/Mini";
 import { Small } from "../Typography/Small";
 import {
-  Inner,
+  ServiceCoverWrapperInner,
   Numbering,
   ServiceContent,
-  ServiceContentContent,
   ServiceCover,
-  ServiceCoverWrapper,
+  ServiceContentRight,
   ServiceHeader,
-  ServicesList,
-  ServicesSectionHeaderWrapper,
-  ServicesViewport,
+  ServiceHeaderContent,
   StyledServices,
+  ServiceContentLeft,
+  ServicesCabinetHeaderWrapper,
+  ServicesCabinetFooterWrapper,
 } from "./StyledServices";
-import Button from "../Button/Button";
 
 interface ServicesProps {}
 
@@ -57,61 +54,113 @@ const services = [
 const Services = ({}: ServicesProps) => {
   return (
     <StyledServices>
-      <Elevator scrollHeight='200vh'>
-        {({ progress }) => (
-          <ServicesViewport>
-            <ServicesSectionHeaderWrapper>
-              <Mini className='uppercase'>Naše služby</Mini>
-            </ServicesSectionHeaderWrapper>
+      <Cabinet
+        header={
+          <ServicesCabinetHeaderWrapper>
+            <Mini className='uppercase'>Naše služby</Mini>
+          </ServicesCabinetHeaderWrapper>
+        }
+        cards={services.map(({ header, perex }, i) => [
+          <ServiceHeader>
+            <Divider hidePlus={0 !== i} />
+            <ServiceHeaderContent>
+              <Numbering>
+                <Small>{`0${i + 1}`}</Small>
+              </Numbering>
+              <Small>{header}</Small>
+            </ServiceHeaderContent>
+          </ServiceHeader>,
+          <ServiceContent>
+            <ServiceContentLeft>
+              <Mini>{perex}</Mini>
+              {/* TODO add link */}
+              <Link href={""}>
+                <Mini>{"Zjistit více"}</Mini>
+              </Link>
+            </ServiceContentLeft>
+            <ServiceContentRight>
+              <ServiceCoverWrapperInner>
+                {/* TODO add images */}
+                <ServiceCover
+                  src={"/imgs/projektova-dokumentace.jpg"}
+                  alt={"header"}
+                />
+              </ServiceCoverWrapperInner>
+            </ServiceContentRight>
+          </ServiceContent>,
+        ])}
+        footer={
+          <ServicesCabinetFooterWrapper>
             <Divider />
-            <ServicesList>
-              {services.map(({ header, perex }, i) => {
-                const interval = intervals[i];
-                const isActive =
-                  interval[0] < progress && interval[1] >= progress;
-
-                return (
-                  <Fragment key={i}>
-                    {0 !== i && <Divider hidePlus />}
-                    <ServiceHeader>
-                      <Numbering>
-                        <Small>{`0${i + 1}`}</Small>
-                      </Numbering>
-                      <Small>{header}</Small>
-                    </ServiceHeader>
-                    <AnimatePresence>
-                      {isActive && (
-                        <ServiceContent
-                          key={i}
-                          initial={{ height: "0%" }}
-                          animate={{ height: "100%" }}
-                          exit={{ height: "0%" }}
-                          transition={{ ease: easing, duration: 0.7 }}>
-                          <ServiceContentContent>
-                            <Mini>{perex}</Mini>
-                            <Button>fdkl</Button>
-                          </ServiceContentContent>
-                          <ServiceCoverWrapper>
-                            <Inner>
-                              <ServiceCover
-                                src={"/imgs/projektova-dokumentace.jpg"}
-                                alt={"header"}
-                              />
-                            </Inner>
-                          </ServiceCoverWrapper>
-                        </ServiceContent>
-                      )}
-                    </AnimatePresence>
-                  </Fragment>
-                );
-              })}
-            </ServicesList>
-            <Divider />
-          </ServicesViewport>
-        )}
-      </Elevator>
+          </ServicesCabinetFooterWrapper>
+        }
+      />
     </StyledServices>
   );
 };
 
 export default Services;
+
+{
+  /* <StyledServices>
+<Elevator scrollHeight='200vh'>
+  {({ progress }) => (
+    <ServicesViewport>
+      <ServicesSectionHeaderWrapper>
+        <Mini className='uppercase'>Naše služby</Mini>
+      </ServicesSectionHeaderWrapper>
+      <Divider />
+      <ServicesList>
+        {services.map(({ header, perex }, i) => {
+          const interval = intervals[i];
+          const isActive =
+            interval[0] <= progress && interval[1] >= progress;
+
+          return (
+            <Fragment key={i}>
+              {0 !== i && <Divider hidePlus />}
+              <ServiceHeader>
+                <Numbering>
+                  <Small>{`0${i + 1}`}</Small>
+                </Numbering>
+                <Small>{header}</Small>
+              </ServiceHeader>
+              <AnimatePresence>
+                {isActive && (
+                  <ServiceContent
+                    key={i}
+                    initial={{ height: "0%" }}
+                    animate={{ height: "100%" }}
+                    exit={{ height: "0%" }}
+                    transition={{ ease: easing, duration: 0.7 }}>
+                    <ServiceContentContent>
+                      <Mini>{perex}</Mini>
+                      {/* TODO add links */
+}
+{
+  /*
+                      <Link href={""}>
+                        <Mini>fdkl</Mini>
+                      </Link>
+                    </ServiceContentContent>
+                    <ServiceCoverWrapper>
+                      <Inner>
+                        <ServiceCover
+                          src={"/imgs/projektova-dokumentace.jpg"}
+                          alt={"header"}
+                        />
+                      </Inner>
+                    </ServiceCoverWrapper>
+                  </ServiceContent>
+                )}
+              </AnimatePresence>
+            </Fragment>
+          );
+        })}
+      </ServicesList>
+      <Divider />
+    </ServicesViewport>
+  )}
+</Elevator>
+</StyledServices> */
+}

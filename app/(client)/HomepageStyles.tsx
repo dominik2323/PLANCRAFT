@@ -34,6 +34,13 @@ export const HpAbout = styled.section`
   margin-top: ${({ theme }) => 2 * theme.gapSize}px;
 `;
 
-export const HpAboutQuote = styled.div`
+export const HpQuoteAbout = styled.div`
   margin: ${({ theme }) => 4 * theme.gapSize}px 0;
+`;
+
+export const HpQuoteServices = styled.div`
+  margin: ${({ theme }) => 4 * theme.gapSize}px 0;
+  margin-left: ${({ theme }) => 0.4 * theme.gapSize * theme.columnCount}px;
+  display: grid;
+  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
 `;

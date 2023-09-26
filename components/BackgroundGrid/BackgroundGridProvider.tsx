@@ -2,15 +2,9 @@
 
 import { Dispatch, SetStateAction, createContext, useState } from "react";
 import { ThemeProvider } from "styled-components";
+import { Theme } from "../../types/styled";
 
-export const BackgroundGridContext = createContext<{
-  setGapSize: Dispatch<SetStateAction<number>>;
-  gapSize: number;
-  setColumnCount: Dispatch<SetStateAction<number>>;
-  columnCount: number;
-  plusSize: number;
-  setPlusSize: Dispatch<SetStateAction<number>>;
-}>(null);
+export const BackgroundGridContext = createContext<Theme>(null);
 
 export const BackgroundGridProvider = ({ children }) => {
   const [gapSize, setGapSize] = useState<number>(0);

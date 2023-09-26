@@ -4,11 +4,12 @@ import FigureBanner from "../components/FigureBanner/FigureBanner";
 import { Mini } from "../components/Typography/Mini";
 import {
   HpAbout,
-  HpAboutQuote,
+  HpQuoteAbout,
   HpHeader,
   HpHero,
   HpHeroInner,
   StyledHomepage,
+  HpQuoteServices,
 } from "./(client)/HomepageStyles";
 import { Big } from "../components/Typography/Big";
 import { Large } from "../components/Typography/Large";
@@ -16,6 +17,9 @@ import { Medium } from "../components/Typography/Medium";
 import Elevator from "../components/Elevator/Elevator";
 import { progress } from "framer-motion";
 import Services from "../components/Services/Services";
+import Cabinet from "../components/Cabinet/Cabinet";
+import { colors } from "../consts/colors";
+import { Small } from "../components/Typography/Small";
 
 export const metadata: Metadata = {};
 
@@ -50,14 +54,22 @@ const page = ({}: PageProps) => {
             výstavby.
           </Mini>
         </FigureBanner>
-        <HpAboutQuote>
+        <HpQuoteAbout>
           <Medium>
             Naše komplexní sada služeb je přizpůsobena tak, aby pomohla
             architektům v každé fázi projektů.
           </Medium>
-        </HpAboutQuote>
+        </HpQuoteAbout>
       </HpAbout>
       <Services />
+      <HpQuoteServices>
+        <Medium className='wide'>
+          Na každém detailu záleží. Postaráme se o to, aby naše společná cesta
+          byla zcela bez komplikací a vedla k dechberoucím výsledkům.
+        </Medium>
+        {/* TODO add link */}
+        <Button className='skinny'>O nás</Button>
+      </HpQuoteServices>
     </StyledHomepage>
   );
 };
