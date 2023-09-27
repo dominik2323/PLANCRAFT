@@ -1,6 +1,6 @@
 "use client";
 
-import { Dispatch, SetStateAction, createContext, useState } from "react";
+import { createContext, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { Theme } from "../../types/styled";
 

@@ -16,7 +16,7 @@ export const useScrollDirection = () => {
     }
 
     // if URL has changed and page landed on the top then show navbar
-    if (window.pageYOffset === 0) {
+    if (window.scrollY === 0) {
       setDirection(initialState);
       prevScrollPos = window.scrollY;
       return;

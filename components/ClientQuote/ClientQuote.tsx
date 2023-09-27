@@ -1,7 +1,7 @@
 "use client";
 
 import styled from "styled-components";
-import { Big } from "../Typography/Big";
+import { Large } from "../Typography/Large";
 import { Mini } from "../Typography/Mini";
 
 interface ClientQuoteProps {
@@ -19,7 +19,7 @@ const StyledClientQuote = styled.div`
 const ClientQuote = ({ quote, client }: ClientQuoteProps) => {
   return (
     <StyledClientQuote>
-      <Big className='wide'>{quote}</Big>
+      <Large className='wide'>{quote}</Large>
       <Mini>{client}</Mini>
     </StyledClientQuote>
   );
