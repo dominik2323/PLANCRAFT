@@ -10,15 +10,9 @@ export const CabinetViewport = styled.div`
   flex-direction: column;
 `;
 
-export const CabinetHeader = styled.div`
-  flex-grow: 0;
-  flex-shrink: 0;
-`;
+export const CabinetHeader = styled.div``;
 
-export const CabinetFooter = styled.div`
-  flex-grow: 0;
-  flex-shrink: 0;
-`;
+export const CabinetFooter = styled.div``;
 
 export const CabinetItems = styled.div`
   display: flex;

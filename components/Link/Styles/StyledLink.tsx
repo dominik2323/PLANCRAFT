@@ -1,7 +1,6 @@
 "use client";
 
 import styled from "styled-components";
-import { colors } from "../../../consts/colors";
 import { spaces } from "../../../consts/spaces";
 
 export const StyledLink = styled.a`
@@ -18,7 +17,13 @@ export const StyledLink = styled.a`
     cursor: pointer;
     display: flex;
     gap: ${spaces.xs}px;
-    text-transform: uppercase;
+    text-transform: inherit;
+    &.inline {
+      display: inline-flex;
+    }
+    &.underline {
+      text-decoration: underline;
+    }
     &:visited {
       color: inherit;
     }

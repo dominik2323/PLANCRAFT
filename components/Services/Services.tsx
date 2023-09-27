@@ -2,31 +2,24 @@
 
 import Cabinet from "../Cabinet/Cabinet";
 import Divider from "../Divider/Divider";
+import DividerHeader from "../Divider/DividerHeader";
 import Link from "../Link/Link";
 import { Mini } from "../Typography/Mini";
 import { Small } from "../Typography/Small";
 import {
-  ServiceCoverWrapperInner,
   Numbering,
   ServiceContent,
-  ServiceCover,
+  ServiceContentLeft,
   ServiceContentRight,
+  ServiceCover,
+  ServiceCoverWrapperInner,
   ServiceHeader,
   ServiceHeaderContent,
-  StyledServices,
-  ServiceContentLeft,
-  ServicesCabinetHeaderWrapper,
   ServicesCabinetFooterWrapper,
+  StyledServices,
 } from "./StyledServices";
 
 interface ServicesProps {}
-
-const intervals = [
-  [0, 0.25],
-  [0.25, 0.5],
-  [0.5, 0.75],
-  [0.75, 1],
-];
 
 const services = [
   {
@@ -56,9 +49,9 @@ const Services = ({}: ServicesProps) => {
     <StyledServices>
       <Cabinet
         header={
-          <ServicesCabinetHeaderWrapper>
+          <DividerHeader>
             <Mini className='uppercase'>Naše služby</Mini>
-          </ServicesCabinetHeaderWrapper>
+          </DividerHeader>
         }
         cards={services.map(({ header, perex }, i) => [
           <ServiceHeader>

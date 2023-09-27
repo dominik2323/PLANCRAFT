@@ -1,55 +1,54 @@
 "use client";
 
-import React from "react";
 import styled from "styled-components";
+import Divider from "../../components/Divider/Divider";
 import Project from "../../components/Project/Project";
+import { Mini } from "../../components/Typography/Mini";
 import Zoom from "../../components/Zoom/Zoom";
+import { Projects } from "../../gql/types";
+import DividerHeader from "../../components/Divider/DividerHeader";
 
-interface HpProjectsProps {}
+interface HpProjectsProps {
+  projects: Projects;
+}
 
 const StyledHpProjects = styled.div``;
 
-const data = [
-  {
-    projectName: "ICE TOWER",
-    projectType: "Projektová dokumentace",
-    realization: "KOGAA, 2021",
-    slug: "ice-tower",
-    src: "/imgs/dummy-ice-tower.jpg",
-  },
-  {
-    projectName: "Kumst",
-    projectType: "Zaměřování objektů",
-    realization: "KOGAA, 2021",
-    slug: "ice-tower",
-    src: "/imgs/dummy-ice-tower.jpg",
-  },
-  {
-    projectName: "JIC",
-    projectType: "Energetická úspornost",
-    realization: "KOGAA, 2021",
-    slug: "ice-tower",
-    src: "/imgs/dummy-ice-tower.jpg",
-  },
-];
-
-const HpProjects = ({}: HpProjectsProps) => {
+const HpProjects = ({ projects }: HpProjectsProps) => {
   return (
     <StyledHpProjects>
       <Zoom
-        items={data.map(
-          ({ projectName, projectType, realization, slug, src }, i) =>
+        header={
+          <DividerHeader>
+            <Mini className='uppercase'>Projekty</Mini>
+          </DividerHeader>
+        }
+        footer={<Divider />}
+        items={projects.items.map(
+          (
+              {
+                project_name,
+                _slug,
+                project_category,
+                project_realization,
+                project_cover,
+              },
+              i
+            ) =>
             (p) => {
               return (
-                <Project
-                  projectName={projectName}
-                  projectType={projectType}
-                  realization={realization}
-                  slug={slug}
-                  src={src}
-                  key={i}
-                  progress={p}
-                />
+                <>
+                  <Project
+                    projectName={project_name}
+                    services={project_category}
+                    realization={project_realization}
+                    slug={_slug}
+                    src={project_cover.url}
+                    key={i}
+                    progress={Number(p.toFixed(2))}
+                  />
+                  {projects.items.length - 1 !== i && <Divider hidePlus />}
+                </>
               );
             }
         )}

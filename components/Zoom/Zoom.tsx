@@ -2,14 +2,21 @@
 
 import { ReactNode } from "react";
 import Elevator from "../Elevator/Elevator";
-import { StyledZoom, ZoomItem, ZoomViewport } from "./StyledZoom";
+import {
+  ElevatorViewport,
+  StyledZoom,
+  ZoomItem,
+  ZoomViewport,
+} from "./StyledZoom";
 
 interface ZoomProps {
   items: ((progress: number) => ReactNode)[];
+  header?: ReactNode;
+  footer?: ReactNode;
 }
 
-const Zoom = ({ items }: ZoomProps) => {
-  const maxHeight = 0.7;
+const Zoom = ({ items, header, footer }: ZoomProps) => {
+  const maxHeight = 0.55;
   const minHeight = (1 - maxHeight) / 2;
 
   const calcHeight = (progress) =>
@@ -25,29 +32,33 @@ const Zoom = ({ items }: ZoomProps) => {
     <StyledZoom>
       <Elevator scrollHeight='300vh'>
         {({ progress }) => (
-          <ZoomViewport>
-            <ZoomItem
-              style={{
-                height: `${calcHeight(engines[0](progress))}%`,
-                maxHeight: `${maxHeight * 100}vh`,
-              }}>
-              {items[0](engines[0](progress))}
-            </ZoomItem>
-            <ZoomItem
-              style={{
-                height: `${calcHeight(engines[1](progress))}%`,
-                maxHeight: `${maxHeight * 100}vh`,
-              }}>
-              {items[1](engines[1](progress))}
-            </ZoomItem>
-            <ZoomItem
-              style={{
-                height: `${calcHeight(engines[2](progress))}%`,
-                maxHeight: `${maxHeight * 100}vh`,
-              }}>
-              {items[2](engines[2](progress))}
-            </ZoomItem>
-          </ZoomViewport>
+          <ElevatorViewport>
+            {header}
+            <ZoomViewport>
+              <ZoomItem
+                style={{
+                  height: `${calcHeight(engines[0](progress))}%`,
+                  maxHeight: `${maxHeight * 100}%`,
+                }}>
+                {items[0](engines[0](progress))}
+              </ZoomItem>
+              <ZoomItem
+                style={{
+                  height: `${calcHeight(engines[1](progress))}%`,
+                  maxHeight: `${maxHeight * 100}%`,
+                }}>
+                {items[1](engines[1](progress))}
+              </ZoomItem>
+              <ZoomItem
+                style={{
+                  height: `${calcHeight(engines[2](progress))}%`,
+                  maxHeight: `${maxHeight * 100}%`,
+                }}>
+                {items[2](engines[2](progress))}
+              </ZoomItem>
+            </ZoomViewport>
+            {footer}
+          </ElevatorViewport>
         )}
       </Elevator>
     </StyledZoom>

@@ -14,13 +14,13 @@ const Divider = ({ fill = "primary400", hidePlus = false }: DividerProps) => {
     <StyledDivider>
       {!hidePlus && (
         <PlusWrapper className='left'>
-          <Plus />
+          <Plus stroke={fill} />
         </PlusWrapper>
       )}
       <DividerLine color={fill} />
       {!hidePlus && (
         <PlusWrapper className='right'>
-          <Plus />
+          <Plus stroke={fill} />
         </PlusWrapper>
       )}
     </StyledDivider>

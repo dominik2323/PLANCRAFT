@@ -12,8 +12,8 @@ interface ProductElevatorHoleProps {
   scrollHeight: string;
 }
 
-const StyledElevator = styled.div<{ scrollHeight: string }>`
-  height: ${({ scrollHeight }) => scrollHeight};
+const StyledElevator = styled.div<{ $scrollHeight: string }>`
+  height: ${({ $scrollHeight }) => $scrollHeight};
   position: relative;
 `;
 
@@ -30,7 +30,7 @@ const ElevatorBody = ({ children, scrollHeight }: ProductElevatorHoleProps) => {
   );
 
   return (
-    <StyledElevator scrollHeight={scrollHeight}>
+    <StyledElevator $scrollHeight={scrollHeight}>
       <ElevatorCabin ref={animationElRef}>
         {children(scrollYProgress)}
       </ElevatorCabin>

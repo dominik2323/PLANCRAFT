@@ -1,0 +1,66 @@
+import { gql } from "@apollo/client";
+
+export const GetProjects = gql`
+  query Query(
+    $where: ProjectWhereInput
+    $limit: Int
+    $skip: Int
+    $coverImageWidth: Int
+    $coverImageHeight: Int
+    $coverImageFormat: String
+    $detailImageWidth: Int
+    $detailImageHeight: Int
+    $detailImageFormat: String
+  ) {
+    Projects(where: $where, limit: $limit, skip: $skip, locale: "cs-CZ") {
+      total
+      items {
+        project_name
+        project_table {
+          table_body
+          table_header
+          _id
+        }
+        project_description
+        project_cover {
+          url(
+            width: $coverImageWidth
+            height: $coverImageHeight
+            format: $coverImageFormat
+          )
+          description
+          width
+          height
+        }
+        project_body {
+          ... on TableRow {
+            table_body
+            table_header
+            _id
+          }
+          ... on ImagesRow {
+            _id
+            image {
+              width
+              height
+              url(
+                width: $detailImageWidth
+                height: $detailImageHeight
+                format: $detailImageFormat
+              )
+              description
+            }
+          }
+        }
+        is_featured
+        _id
+        _slug
+        project_category {
+          service_name
+          _slug
+        }
+        project_realization
+      }
+    }
+  }
+`;

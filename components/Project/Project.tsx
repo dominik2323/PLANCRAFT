@@ -1,6 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { Service } from "../../gql/types";
+import Link from "../Link/Link";
+import { Mini } from "../Typography/Mini";
+import { Small } from "../Typography/Small";
 import {
   ProjectCardContent,
   ProjectCardContentFooter,
@@ -9,14 +12,10 @@ import {
   ProjectImageWrapper,
   StyledProject,
 } from "./StyledProject";
-import { Small } from "../Typography/Small";
-import { Mini } from "../Typography/Mini";
-import Link from "../Link/Link";
-import { AnimatePresence, progress } from "framer-motion";
 
 interface ProjectProps {
   projectName: string;
-  projectType: string;
+  services: Service[];
   realization: string;
   slug: string;
   src: string;
@@ -25,61 +24,39 @@ interface ProjectProps {
 
 const Project = ({
   projectName,
-  projectType,
+  services,
   realization,
   slug,
   src,
   progress,
 }: ProjectProps) => {
-  // const [imageAspect, setImageAspect] = useState<number>(1);
-  const imageWrapperRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      // const imageEl = imageWrapperRef.current.querySelector("img");
-      // imageEl.style.cssText = "display: none;";
-      // const aspect =
-      // console.log(aspect);
-      // imageEl.style.cssText = `display: block; aspect-ratio: ${aspect}`;
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const revealAnimation = Math.max((5 / 3) * progress - 1 / 3, 0);
 
   return (
-    <StyledProject>
+    <StyledProject href={`/project/${slug}`}>
       <ProjectImageWrapper>
         <ProjectCardImage
           src={src}
-          height={2000}
-          width={2000}
+          height={100}
+          width={100}
           alt={projectName}
         />
       </ProjectImageWrapper>
 
       <ProjectCardContent>
         <ProjectCardContentHeader>
-          <Small className='uppercase'>{progress}</Small>
-          <Mini>{projectType}</Mini>
+          <Small className='uppercase'>{projectName}</Small>
+          {services.map(({ service_name }, i) => (
+            <Mini key={i}>{service_name}</Mini>
+          ))}
         </ProjectCardContentHeader>
-        <AnimatePresence>
-          {progress > 0.8 && (
-            <ProjectCardContentFooter
-              initial={"hidden"}
-              animate={"show"}
-              exit={"hidden"}
-              variants={{
-                hidden: { opacity: 0 },
-                show: { opacity: 1 },
-              }}>
-              <Mini>Realizace {realization}</Mini>
-              <Link href={`project/${slug}`}>{projectType}</Link>
-            </ProjectCardContentFooter>
-          )}
-        </AnimatePresence>
+
+        <ProjectCardContentFooter animate={{ opacity: revealAnimation }}>
+          <Mini>Realizace {realization}</Mini>
+          <Link as={"span"} href={""}>
+            <Mini>Zobrazit projekt</Mini>
+          </Link>
+        </ProjectCardContentFooter>
       </ProjectCardContent>
     </StyledProject>
   );

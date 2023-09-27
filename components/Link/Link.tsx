@@ -9,14 +9,31 @@ interface LinkProps extends NextLinkProps {
   children: ReactNode;
   className?: string;
   target?: React.HTMLAttributeAnchorTarget;
+  as?: keyof JSX.IntrinsicElements;
+  noArrow?: boolean;
 }
 
-const Link = ({ children, target, className, ...rest }: LinkProps) => {
+const Link = ({
+  children,
+  target,
+  className,
+  as,
+  noArrow,
+  ...rest
+}: LinkProps) => {
+  if (as) {
+    return (
+      <StyledLink as={as} className={className} target={target}>
+        {children}
+        {!noArrow && <Arrow />}
+      </StyledLink>
+    );
+  }
   return (
     <NextLink {...rest} passHref legacyBehavior>
       <StyledLink className={className} target={target}>
         {children}
-        <Arrow />
+        {!noArrow && <Arrow />}
       </StyledLink>
     </NextLink>
   );

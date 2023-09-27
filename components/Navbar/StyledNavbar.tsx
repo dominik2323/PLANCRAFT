@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import { colors } from "../../consts/colors";
 
 export const StyledNavbar = styled.nav`
   margin-top: ${({ theme }) => 1 * theme.gapSize}px;
@@ -21,6 +22,17 @@ export const BurgerWrapper = styled.div`
   justify-content: center;
 `;
 
+export const LogoWrapper = styled.div`
+  height: 100%;
+`;
+
 export const DividerWrapper = styled.div`
   padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+`;
+
+export const NavLinks = styled.div`
+  height: 100dvh;
+  height: 100vw;
+  background-color: ${colors.primary400};
+  z-index: 9;
 `;

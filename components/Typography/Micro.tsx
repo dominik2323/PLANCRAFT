@@ -5,8 +5,8 @@ import { colors } from "../../consts/colors";
 import { addColorClasses } from "../../helpers/addColorClasses";
 import { breakpoint } from "../../consts/breakpoints";
 
-export const Mini = styled.p`
-  font-size: 18px;
+export const Micro = styled.p`
+  font-size: 14px;
   letter-spacing: 0em;
   line-height: 1.3em;
   color: ${colors.primary400};

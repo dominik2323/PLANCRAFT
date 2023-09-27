@@ -1,36 +1,47 @@
 import { Metadata } from "next";
+import getClient from "../apollo/client";
 import Button from "../components/Button/Button";
+import ClientQuote from "../components/ClientQuote/ClientQuote";
 import FigureBanner from "../components/FigureBanner/FigureBanner";
+import Services from "../components/Services/Services";
+import { Medium } from "../components/Typography/Medium";
 import { Mini } from "../components/Typography/Mini";
+import { GetProjects } from "../gql/GetProjects";
+import { Query, QueryProjectsArgs } from "../gql/types";
 import {
   HpAbout,
-  HpQuoteAbout,
   HpHeader,
   HpHero,
   HpHeroInner,
-  StyledHomepage,
+  HpQuoteAbout,
   HpQuoteServices,
+  StyledHomepage,
 } from "./(client)/HomepageStyles";
-import { Big } from "../components/Typography/Big";
-import { Large } from "../components/Typography/Large";
-import { Medium } from "../components/Typography/Medium";
-import Elevator from "../components/Elevator/Elevator";
-import { progress } from "framer-motion";
-import Services from "../components/Services/Services";
-import Cabinet from "../components/Cabinet/Cabinet";
-import { colors } from "../consts/colors";
-import { Small } from "../components/Typography/Small";
-import Zoom from "../components/Zoom/Zoom";
-import Project from "../components/Project/Project";
 import HpProjects from "./(client)/HpProjects";
+import Partners from "../components/Partners/Partners";
 
 export const metadata: Metadata = {};
 
 interface PageProps {}
 
-const page = ({}: PageProps) => {
+const page = async ({}: PageProps) => {
+  const client = getClient();
+
+  const {
+    data: { Projects },
+  } = await client.query<Query>({
+    query: GetProjects,
+    variables: {
+      limit: 3,
+      where: { is_featured: true },
+      coverImageWidth: 1000,
+      coverImageHeight: 1000,
+      coverImageFormat: "webp",
+    } as QueryProjectsArgs,
+  });
+
   return (
-    <StyledHomepage style={{ height: "300vh" }}>
+    <StyledHomepage>
       <HpHero>
         <HpHeader>
           {`Budujeme udržitelnější\na spokojenější budoucnost.`}
@@ -73,7 +84,14 @@ const page = ({}: PageProps) => {
         {/* TODO add link */}
         <Button className='skinny'>O nás</Button>
       </HpQuoteServices>
-      <HpProjects />
+      <HpProjects projects={Projects} />
+      <ClientQuote
+        quote={
+          "“Spolupráce s Plancraft byla jednoduše bezkonkurenční. Jejich profesionální přístup a schopnost dodat vynikající výsledky překonala veškerá očekávání.”"
+        }
+        client={"— Radek Vašulík, Archidrip s.r.o."}
+      />
+      <Partners />
     </StyledHomepage>
   );
 };

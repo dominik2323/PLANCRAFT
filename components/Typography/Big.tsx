@@ -8,9 +8,9 @@ import { breakpoint } from "../../consts/breakpoints";
 export const Big = styled.span`
   font-size: 115px;
   letter-spacing: -0.01em;
-  line-height: 1.3em;
+  line-height: 1.1em;
   color: ${colors.primary400};
-  max-width: 700px;
+  max-width: 1200px;
   &.indent {
     text-indent: 4em;
   }

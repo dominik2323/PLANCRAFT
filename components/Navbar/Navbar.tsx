@@ -7,6 +7,8 @@ import Divider from "../Divider/Divider";
 import {
   BurgerWrapper,
   DividerWrapper,
+  LogoWrapper,
+  NavLinks,
   StyledNavbar,
   Topbar,
 } from "./StyledNavbar";
@@ -23,7 +25,9 @@ const Navbar = ({}: NavbarProps) => {
         <Divider />
       </DividerWrapper>
       <Topbar>
-        <Logo />
+        <LogoWrapper>
+          <Logo fill={isOpen ? "white" : "primary400"} />
+        </LogoWrapper>
         <BurgerWrapper>
           <Burger
             isOpen={isOpen}
@@ -33,10 +37,11 @@ const Navbar = ({}: NavbarProps) => {
             width={gapSize}
             height={gapSize / 3}
             strokeWidth={3}
-            stroke='primary400'
+            stroke={isOpen ? "white" : "primary400"}
           />
         </BurgerWrapper>
       </Topbar>
+      <NavLinks></NavLinks>
     </StyledNavbar>
   );
 };

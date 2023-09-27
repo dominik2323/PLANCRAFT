@@ -15,9 +15,9 @@ export const ServicesCabinetFooterWrapper = styled.div`
 
 export const ServiceHeader = styled.div`
   height: ${({ theme }) => 2 * theme.gapSize}px;
-  justify-self: start;
-  flex-grow: 0;
-  flex-shrink: 0;
+  /* justify-self: start; */
+  /* flex-grow: 0;
+  flex-shrink: 0; */
 `;
 
 export const ServiceHeaderContent = styled.div`

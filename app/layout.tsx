@@ -6,6 +6,7 @@ import { colors } from "../consts/colors";
 import { BackgroundGridProvider } from "../components/BackgroundGrid/BackgroundGridProvider";
 import BackgroundGrid from "../components/BackgroundGrid/BackgroundGrid";
 import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://plancraft.eu"),
@@ -44,6 +45,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
             <Navbar />
             {children}
             <BackgroundGrid />
+            <Footer />
           </body>
         </BackgroundGridProvider>
       </StyledComponentsRegistry>
