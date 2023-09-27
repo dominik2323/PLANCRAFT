@@ -8,6 +8,7 @@ export interface Theme {
   columnCount: number;
   plusSize: number;
   setPlusSize: Dispatch<SetStateAction<number>>;
+  isLayoutReady: boolean;
 }
 
 declare module "styled-components" {

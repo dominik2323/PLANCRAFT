@@ -7,9 +7,11 @@ import { Theme } from "../../types/styled";
 export const BackgroundGridContext = createContext<Theme>(null);
 
 export const BackgroundGridProvider = ({ children }) => {
-  const [gapSize, setGapSize] = useState<number>(0);
+  const [gapSize, setGapSize] = useState<number>(1);
   const [columnCount, setColumnCount] = useState<number>(0);
   const [plusSize, setPlusSize] = useState<number>(0);
+
+  const isLayoutReady = gapSize > 1 && columnCount > 0 && plusSize > 0;
 
   return (
     <ThemeProvider
@@ -20,6 +22,7 @@ export const BackgroundGridProvider = ({ children }) => {
         setColumnCount,
         plusSize,
         setPlusSize,
+        isLayoutReady,
       }}>
       {children}
     </ThemeProvider>

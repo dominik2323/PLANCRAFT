@@ -41,7 +41,7 @@ const Navbar = ({}: NavbarProps) => {
           />
         </BurgerWrapper>
       </Topbar>
-      <NavLinks></NavLinks>
+      {/* <NavLinks></NavLinks> */}
     </StyledNavbar>
   );
 };

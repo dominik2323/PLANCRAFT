@@ -7,6 +7,7 @@ import { BackgroundGridProvider } from "../components/BackgroundGrid/BackgroundG
 import BackgroundGrid from "../components/BackgroundGrid/BackgroundGrid";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import Loader from "../components/Loader/Loader";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://plancraft.eu"),
@@ -43,6 +44,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
           <Global />
           <body>
             <Navbar />
+            <Loader />
             {children}
             <BackgroundGrid />
             <Footer />
