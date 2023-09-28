@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
-export const StyledProject = styled(Link)`
+export const StyledProjectCard = styled(Link)`
   all: unset;
   cursor: pointer;
   display: grid;
@@ -20,7 +20,7 @@ export const ProjectCardImage = styled(Image)`
   object-fit: cover;
 `;
 
-export const ProjectImageWrapper = styled.div`
+export const ProjectCardImageWrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;

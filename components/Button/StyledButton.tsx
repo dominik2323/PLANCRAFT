@@ -11,6 +11,7 @@ export const ButtonLink = styled(Link)`
 
 export const StyledButton = styled.button`
   all: unset;
+  cursor: pointer;
   display: flex;
   align-items: center;
   font-size: 20px;

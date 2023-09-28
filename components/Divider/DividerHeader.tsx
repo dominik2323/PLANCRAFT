@@ -1,12 +1,11 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
+import Divider from "./Divider";
 import {
   StyledDividerHeader,
   StyledDividerHeaderInner,
 } from "./StyledDividerHeader";
-import Divider from "./Divider";
-import { Mini } from "../Typography/Mini";
 
 interface DividerHeaderProps {
   children: ReactNode;

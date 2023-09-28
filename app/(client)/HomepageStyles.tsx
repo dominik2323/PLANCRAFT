@@ -2,7 +2,6 @@
 
 import styled from "styled-components";
 import { colors } from "../../consts/colors";
-import Image from "next/image";
 
 export const StyledHomepage = styled.main`
   padding: ${({ theme }) => 1 * theme.gapSize}px;

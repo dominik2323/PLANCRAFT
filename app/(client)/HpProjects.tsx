@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import Divider from "../../components/Divider/Divider";
-import Project from "../../components/Project/Project";
+import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import { Mini } from "../../components/Typography/Mini";
 import Zoom from "../../components/Zoom/Zoom";
 import { Projects } from "../../gql/types";
@@ -38,7 +38,7 @@ const HpProjects = ({ projects }: HpProjectsProps) => {
             (p) => {
               return (
                 <>
-                  <Project
+                  <ProjectCard
                     projectName={project_name}
                     services={project_category}
                     realization={project_realization}

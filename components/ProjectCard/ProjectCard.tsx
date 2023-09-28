@@ -9,11 +9,11 @@ import {
   ProjectCardContentFooter,
   ProjectCardContentHeader,
   ProjectCardImage,
-  ProjectImageWrapper,
-  StyledProject,
-} from "./StyledProject";
+  ProjectCardImageWrapper,
+  StyledProjectCard,
+} from "./StyledCardProject";
 
-interface ProjectProps {
+interface ProjectCardProps {
   projectName: string;
   services: Service[];
   realization: string;
@@ -22,26 +22,26 @@ interface ProjectProps {
   progress?: number;
 }
 
-const Project = ({
+const ProjectCard = ({
   projectName,
   services,
   realization,
   slug,
   src,
   progress,
-}: ProjectProps) => {
+}: ProjectCardProps) => {
   const revealAnimation = Math.max((5 / 3) * progress - 1 / 3, 0);
 
   return (
-    <StyledProject href={`/project/${slug}`}>
-      <ProjectImageWrapper>
+    <StyledProjectCard href={`/projekt/${slug}`}>
+      <ProjectCardImageWrapper>
         <ProjectCardImage
           src={src}
           height={100}
           width={100}
           alt={projectName}
         />
-      </ProjectImageWrapper>
+      </ProjectCardImageWrapper>
 
       <ProjectCardContent>
         <ProjectCardContentHeader>
@@ -58,8 +58,8 @@ const Project = ({
           </Link>
         </ProjectCardContentFooter>
       </ProjectCardContent>
-    </StyledProject>
+    </StyledProjectCard>
   );
 };
 
-export default Project;
+export default ProjectCard;

@@ -23,8 +23,8 @@ const nextConfig = {
         destination: "/services/design",
       },
       {
-        source: "/projekty",
-        destination: "/projects",
+        source: "/projekty/:path*",
+        destination: "/projects/:path*",
       },
       {
         source: "/o-nas",
