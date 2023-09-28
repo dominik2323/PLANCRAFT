@@ -30,43 +30,43 @@ interface NavbarProps {}
 const navConfig = [
   {
     name: "Projektová dokumentace",
-    slug: "projektova-dokumentace",
+    slug: "/sluzba/projektova-dokumentace",
     perex:
       "0Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
   },
   {
-    name: "Zaměřování objektů",
-    slug: "zamerovani-objektu",
+    name: "Pasportizace",
+    slug: "/sluzba/pasportizace",
     perex:
       "1Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
   },
   {
     name: "Energetická úspornost",
-    slug: "energeticka-uspornost",
+    slug: "/sluzba/energeticka-uspornost",
     perex:
       "2Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
   },
   {
     name: "Design due diligence",
-    slug: "design-due-diligence",
+    slug: "/sluzba/design-due-diligence",
     perex:
       "3Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
   },
   {
     name: "Projekty",
-    slug: "projekty",
+    slug: "/projekty",
     perex:
       "4Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
   },
   {
     name: "O nás",
-    slug: "o-nas",
+    slug: "/o-nas",
     perex:
       "5Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
   },
   {
     name: "Kontakt",
-    slug: "kontakt",
+    slug: "/kontakt",
     perex:
       "6Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
   },

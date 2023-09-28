@@ -1,16 +1,14 @@
 import { Metadata } from "next";
-import ProjectDetailText from "../../(client)/ProjectDetailText";
 import getClient from "../../../apollo/client";
 import ClientQuote from "../../../components/ClientQuote/ClientQuote";
+import DividerHeader from "../../../components/Divider/DividerHeader";
+import Link from "../../../components/Link/Link";
 import Table from "../../../components/Table/Table";
 import { Mini } from "../../../components/Typography/Mini";
 import { Small } from "../../../components/Typography/Small";
 import { GetProjects } from "../../../gql/GetProjects";
 import { Query, QueryProjectsArgs } from "../../../gql/types";
 import {
-  ProjectBodyImage,
-  ProjectBodyImageRow,
-  ProjectContent,
   ProjectDescriptionWrapper,
   ProjectDetail,
   ProjectElevator,
@@ -18,8 +16,7 @@ import {
   ProjectNavigationInner,
   StyledProject,
 } from "./(client)/StyledProject";
-import Link from "../../../components/Link/Link";
-import DividerHeader from "../../../components/Divider/DividerHeader";
+import ProjectContent from "./(client)/ProjectContent";
 
 export const metadata: Metadata = {};
 
@@ -45,28 +42,7 @@ const page = async ({ params: { slug } }: PageProps) => {
   return (
     <StyledProject>
       <ProjectDetail>
-        <ProjectContent>
-          {project.project_body.map((item) => {
-            if (item.__typename === "Text") {
-              return <ProjectDetailText html={item.html} />;
-            }
-            if (item.__typename === "ImagesRow") {
-              return (
-                <ProjectBodyImageRow>
-                  {item.image.map(({ url, width, height, description }, i) => (
-                    <ProjectBodyImage
-                      key={i}
-                      src={url}
-                      width={width}
-                      height={height}
-                      alt={description || project.project_name}
-                    />
-                  ))}
-                </ProjectBodyImageRow>
-              );
-            }
-          })}
-        </ProjectContent>
+        <ProjectContent project={project} />
         <ProjectElevator>
           <Small className='uppercase'>{project.project_name}</Small>
           <ProjectDescriptionWrapper>

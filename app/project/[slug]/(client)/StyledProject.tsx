@@ -14,8 +14,6 @@ export const ProjectDetail = styled.div`
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
 `;
 
-export const ProjectContent = styled.div``;
-
 export const ProjectElevator = styled.div`
   height: 100dvh;
   position: sticky;
@@ -31,21 +29,6 @@ export const ProjectCover = styled(Image)`
   width: 100%;
   height: auto;
   object-fit: cover;
-`;
-
-export const ProjectBodyImage = styled(Image)`
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-`;
-
-export const ProjectBodyImageRow = styled.div`
-  display: flex;
-  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
-  margin: ${({ theme }) => 1 * theme.gapSize}px 0;
-  &:first-child {
-    margin-top: 0;
-  }
 `;
 
 export const ProjectNavigation = styled.div``;

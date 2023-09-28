@@ -7,11 +7,6 @@ export const StyledAbout = styled.main`
   padding-bottom: 0;
 `;
 
-export const AboutHero = styled.section`
-  display: grid;
-  row-gap: ${({ theme }) => 3 * theme.gapSize}px;
-`;
-
 export const AboutValues = styled.div`
   display: grid;
   row-gap: ${({ theme }) => 2 * theme.gapSize}px;

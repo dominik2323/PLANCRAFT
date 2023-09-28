@@ -1,7 +1,13 @@
 import { Metadata } from "next";
-import { Large } from "../../components/Typography/Large";
+import Button from "../../components/Button/Button";
+import ClientQuote from "../../components/ClientQuote/ClientQuote";
+import DividerHeader from "../../components/Divider/DividerHeader";
+import FigureBanner from "../../components/FigureBanner/FigureBanner";
+import NumberedList from "../../components/NumberedList/NumberedList";
+import Partners from "../../components/Partners/Partners";
+import { Medium } from "../../components/Typography/Medium";
+import { Mini } from "../../components/Typography/Mini";
 import {
-  AboutHero,
   AboutTeam,
   AboutTeamClaim,
   AboutTeamClaimHeader,
@@ -11,15 +17,7 @@ import {
   AboutValues,
   StyledAbout,
 } from "./(client)/StyledAbout";
-import FigureBanner from "../../components/FigureBanner/FigureBanner";
-import { Mini } from "../../components/Typography/Mini";
-import { Medium } from "../../components/Typography/Medium";
-import Partners from "../../components/Partners/Partners";
-import ScrollFigureBanner from "../../components/ScrollFigureBanner/ScrollFigureBanner";
-import DividerHeader from "../../components/Divider/DividerHeader";
-import NumberedList from "../../components/NumberedList/NumberedList";
-import Button from "../../components/Button/Button";
-import ClientQuote from "../../components/ClientQuote/ClientQuote";
+import PageIntro from "../../components/PageIntro/PageIntro";
 
 export const metadata: Metadata = {};
 
@@ -28,44 +26,36 @@ interface PageProps {}
 const page = ({}: PageProps) => {
   return (
     <StyledAbout>
-      <AboutHero>
-        <Large>
-          Projekční studio, které vám pomůže vybudovat i vaše nejsložitější
-          vize.
-        </Large>
-        <FigureBanner
-          className='flip align-top'
-          src={"/imgs/about-hero.jpg"}
-          width={760}
-          height={1080}
-          alt={
-            "Projekční studio, které vám pomůže vybudovat i vaše nejsložitější vize."
-          }>
-          <Mini>
-            Jsme stabilním inženýrským partnerem pro architektonická studia a
-            developery, poskytující technickou podporu a expertizu, odborné
-            know-how a zajišťující včasné a kvalitní provedení projektu při
-            dodržení kvalitního designu a optimaliazce nákladů.
-          </Mini>
-        </FigureBanner>
-        <Medium>
-          Místo, kde se technická odbornost snoubí s architektonickými
-          inovacemi.
-        </Medium>
-      </AboutHero>
-      <ScrollFigureBanner
-        className='align-center'
-        src={"/imgs/about-mission.jpg"}
-        width={760}
-        height={1080}
-        alt={
+      <PageIntro
+        heroHeader={
           "Projekční studio, které vám pomůže vybudovat i vaše nejsložitější vize."
         }
-        items={[
-          "Cílíme na kvalitní zpracování komplexní projektové dokumentace ve smluveném termínu odevzdání - zakládáme si na průběžných kontrolách, koordinaci činností všech specialistů a konzultacích, abychom předešli případným změnám a kolizím v pozdních fázích projektu a zároveň dodrželi architektonický ráz navržený architektonickým studiem ",
-          "Dokončení projektu včas, splnění požadavků smlouvy a dodržení rozpočtu jsou základní aspekty řízení kvality.",
-          "Stavíme kvalitní stavby s funkčním horizontem 200 a více let. Našim cílem je postavit stavbu, která bude variabilní, může sloužit více využití a požadavkům a potřebám třetí, páté, desáté generace. Vše v souladu s maximální udržitelností, abychom zlepšili kvalitu života a co nejméně zatížili naši planetu.",
-        ]}
+        figureBanner={{
+          perex:
+            "Jsme stabilním inženýrským partnerem pro architektonická studia a developery, poskytující technickou podporu a expertizu, odborné know-how a zajišťující včasné a kvalitní provedení projektu při dodržení kvalitního designu a optimaliazce nákladů.",
+          image: {
+            src: "/imgs/about-hero.jpg",
+            width: 760,
+            height: 1080,
+            alt: "Projekční studio, které vám pomůže vybudovat i vaše nejsložitější vize.",
+          },
+        }}
+        introPerex={
+          "Místo, kde se technická odbornost snoubí s architektonickými inovacemi."
+        }
+        scrollFigureBanner={{
+          image: {
+            src: "/imgs/about-mission.jpg",
+            width: 760,
+            height: 1080,
+            alt: "Projekční studio, které vám pomůže vybudovat i vaše nejsložitější vize.",
+          },
+          items: [
+            "Cílíme na kvalitní zpracování komplexní projektové dokumentace ve smluveném termínu odevzdání - zakládáme si na průběžných kontrolách, koordinaci činností všech specialistů a konzultacích, abychom předešli případným změnám a kolizím v pozdních fázích projektu a zároveň dodrželi architektonický ráz navržený architektonickým studiem ",
+            "Dokončení projektu včas, splnění požadavků smlouvy a dodržení rozpočtu jsou základní aspekty řízení kvality.",
+            "Stavíme kvalitní stavby s funkčním horizontem 200 a více let. Našim cílem je postavit stavbu, která bude variabilní, může sloužit více využití a požadavkům a potřebám třetí, páté, desáté generace. Vše v souladu s maximální udržitelností, abychom zlepšili kvalitu života a co nejméně zatížili naši planetu.",
+          ],
+        }}
       />
       <AboutValues>
         <DividerHeader>

@@ -11,16 +11,8 @@ const nextConfig = {
         destination: "/contact",
       },
       {
-        source: "/projektova-dokumentace",
-        destination: "/services/documentations",
-      },
-      {
-        source: "/projektova-dokumentace",
-        destination: "/services/measuring",
-      },
-      {
-        source: "/design-due-diligence",
-        destination: "/services/design",
+        source: "/sluzba/:path*",
+        destination: "/service/:path*",
       },
       {
         source: "/projekty/:path*",
