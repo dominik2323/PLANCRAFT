@@ -13,6 +13,7 @@ interface FigureBannerProps {
   alt: string;
   width: number;
   height: number;
+  className?: string;
 }
 
 const FigureBanner = ({
@@ -21,9 +22,10 @@ const FigureBanner = ({
   alt,
   width,
   height,
+  className,
 }: FigureBannerProps) => {
   return (
-    <StyledFigureBanner>
+    <StyledFigureBanner className={className}>
       <FigureBannerCover src={src} alt={alt} width={width} height={height} />
       <FigureBannerContent>{children}</FigureBannerContent>
     </StyledFigureBanner>

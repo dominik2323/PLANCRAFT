@@ -2,6 +2,12 @@
 import styled from "styled-components";
 import { spaces } from "../../consts/spaces";
 import { colors } from "../../consts/colors";
+import Link from "next/link";
+
+export const ButtonLink = styled(Link)`
+  all: unset;
+  cursor: pointer;
+`;
 
 export const StyledButton = styled.button`
   all: unset;

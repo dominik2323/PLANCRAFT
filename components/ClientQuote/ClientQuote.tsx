@@ -3,6 +3,8 @@
 import styled from "styled-components";
 import { Large } from "../Typography/Large";
 import { Mini } from "../Typography/Mini";
+import { Medium } from "../Typography/Medium";
+import { Big } from "../Typography/Big";
 
 interface ClientQuoteProps {
   quote: string;

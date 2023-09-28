@@ -1,9 +1,8 @@
 "use client";
 
 import React, { ButtonHTMLAttributes, ReactNode } from "react";
-import Link from "next/link";
 import Plus from "../Svgs/Plus";
-import { StyledButton, Cap, ButtonInner } from "./StyledButton";
+import { ButtonInner, ButtonLink, Cap, StyledButton } from "./StyledButton";
 
 interface ButtonProps {
   children: ReactNode;
@@ -24,7 +23,7 @@ const Button = ({
 }: ButtonProps) => {
   if (href) {
     return (
-      <Link href={href} className={className}>
+      <ButtonLink href={href} className={className}>
         <StyledButton as={"span"} className={className} onClick={onClick}>
           <Cap className='left'>
             <Plus />
@@ -36,7 +35,7 @@ const Button = ({
             <Plus />
           </Cap>
         </StyledButton>
-      </Link>
+      </ButtonLink>
     );
   }
   return (

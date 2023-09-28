@@ -39,7 +39,9 @@ export const BurgerWrapper = styled.div`
   justify-content: center;
 `;
 
-export const LogoWrapper = styled.div`
+export const LogoWrapper = styled(Link)`
+  all: unset;
+  cursor: pointer;
   height: 100%;
 `;
 

@@ -1,11 +1,14 @@
 "use client";
 
+import { AnimatePresence } from "framer-motion";
 import { Fragment, useEffect, useState } from "react";
 import { useTheme } from "styled-components";
+import { easing } from "../../consts/animationConfig";
 import { useScrollDirection } from "../../hooks/useScrollDirection";
 import Burger from "../Burger/Burger";
 import Divider from "../Divider/Divider";
 import Logo from "../Svgs/Logo";
+import { Small } from "../Typography/Small";
 import {
   BurgerWrapper,
   DividerWrapper,
@@ -20,10 +23,7 @@ import {
   Topbar,
   TopbarContent,
 } from "./StyledNavbar";
-import { AnimatePresence } from "framer-motion";
-import { easing } from "../../consts/animationConfig";
-import { Small } from "../Typography/Small";
-import Link from "../Link/Link";
+import { usePathname } from "next/navigation";
 
 interface NavbarProps {}
 
@@ -77,12 +77,17 @@ const Navbar = ({}: NavbarProps) => {
   const { directionDown } = useScrollDirection();
   const { gapSize } = useTheme();
   const [hoverIndex, setHoverIndex] = useState<number>(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (directionDown) {
       setIsOpen(false);
     }
   }, [directionDown]);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -93,7 +98,7 @@ const Navbar = ({}: NavbarProps) => {
             <Divider fill={isOpen ? "white" : "primary400"} />
           </DividerWrapper>
           <TopbarContent>
-            <LogoWrapper>
+            <LogoWrapper href={"/"}>
               <Logo fill={isOpen ? "white" : "primary400"} />
             </LogoWrapper>
             <BurgerWrapper>

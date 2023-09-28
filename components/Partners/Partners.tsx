@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
-import { PartnersList, PartnersLogo, StyledPartners } from "./StyledPartners";
 import DividerHeader from "../Divider/DividerHeader";
-import { Small } from "../Typography/Small";
+import { Mini } from "../Typography/Mini";
+import { PartnersList, PartnersLogo, StyledPartners } from "./StyledPartners";
 
 interface PartnersProps {}
 
@@ -30,7 +29,7 @@ const Partners = ({}: PartnersProps) => {
   return (
     <StyledPartners>
       <DividerHeader>
-        <Small className='uppercase'>Partneři</Small>
+        <Mini className='uppercase'>Partneři</Mini>
       </DividerHeader>
       <PartnersList>
         {list.map(({ name, filename }, i) => (
