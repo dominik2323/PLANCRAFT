@@ -9,11 +9,12 @@ import {
 
 interface DividerHeaderProps {
   children: ReactNode;
+  className?: string;
 }
 
-const DividerHeader = ({ children }: DividerHeaderProps) => {
+const DividerHeader = ({ children, className }: DividerHeaderProps) => {
   return (
-    <StyledDividerHeader>
+    <StyledDividerHeader className={className}>
       <StyledDividerHeaderInner>{children}</StyledDividerHeaderInner>
       <Divider />
     </StyledDividerHeader>

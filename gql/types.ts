@@ -257,8 +257,11 @@ export type Project = Model & {
   /** Count of vote events. */
   _votes?: Maybe<Scalars['Int']['output']>;
   is_featured?: Maybe<Scalars['Boolean']['output']>;
+  next_project: Array<Project>;
   project_body?: Maybe<Array<Maybe<_Prepr_Types>>>;
   project_category: Array<Service>;
+  project_client_quote?: Maybe<Scalars['String']['output']>;
+  project_client_quote_name?: Maybe<Scalars['String']['output']>;
   project_cover?: Maybe<Asset>;
   project_description?: Maybe<Scalars['String']['output']>;
   project_name?: Maybe<Scalars['String']['output']>;
@@ -281,6 +284,10 @@ export enum ProjectSortInput {
   CreatedOn = 'created_on',
   CreatedOnAsc = 'created_on_ASC',
   CreatedOnDesc = 'created_on_DESC',
+  ProjectClientQuoteAsc = 'project_client_quote_ASC',
+  ProjectClientQuoteDesc = 'project_client_quote_DESC',
+  ProjectClientQuoteNameAsc = 'project_client_quote_name_ASC',
+  ProjectClientQuoteNameDesc = 'project_client_quote_name_DESC',
   ProjectDescriptionAsc = 'project_description_ASC',
   ProjectDescriptionDesc = 'project_description_DESC',
   ProjectNameAsc = 'project_name_ASC',
@@ -320,7 +327,28 @@ export type ProjectWhereInput = {
   _tags_nany?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   /** Matches if the field is equal to the given value. */
   is_featured?: InputMaybe<Scalars['Boolean']['input']>;
+  next_project?: InputMaybe<ProjectWhereInput>;
   project_category?: InputMaybe<ServiceWhereInput>;
+  /** Matches if the field is equal to the given value. */
+  project_client_quote?: InputMaybe<Scalars['String']['input']>;
+  /** Full fuzzy text search, not case sensitive. */
+  project_client_quote_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field ends with the given value. */
+  project_client_quote_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field is equal to the given value. */
+  project_client_quote_name?: InputMaybe<Scalars['String']['input']>;
+  /** Full fuzzy text search, not case sensitive. */
+  project_client_quote_name_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field ends with the given value. */
+  project_client_quote_name_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** Excludes with full fuzzy text search, not case sensitive. */
+  project_client_quote_name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field starts with the given value. */
+  project_client_quote_name_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** Excludes with full fuzzy text search, not case sensitive. */
+  project_client_quote_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** Matches if the field starts with the given value. */
+  project_client_quote_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** Matches if the field is equal to the given value. */
   project_description?: InputMaybe<Scalars['String']['input']>;
   /** Full fuzzy text search, not case sensitive. */

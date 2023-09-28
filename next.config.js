@@ -27,6 +27,10 @@ const nextConfig = {
         destination: "/projects/:path*",
       },
       {
+        source: "/projekt/:path*",
+        destination: "/project/:path*",
+      },
+      {
         source: "/o-nas",
         destination: "/about",
       },

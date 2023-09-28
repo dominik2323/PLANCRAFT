@@ -33,12 +33,15 @@ export const GetProjects = gql`
           height
         }
         project_body {
-          ... on TableRow {
-            table_body
-            table_header
+          ... on Text {
+            body
+            html
+            text
             _id
+            format
           }
           ... on ImagesRow {
+            __typename
             _id
             image {
               width
@@ -60,6 +63,12 @@ export const GetProjects = gql`
           _slug
         }
         project_realization
+        project_client_quote
+        project_client_quote_name
+        next_project {
+          _slug
+          project_name
+        }
       }
     }
   }

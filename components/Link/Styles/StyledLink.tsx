@@ -18,6 +18,12 @@ export const StyledLink = styled.a`
     display: flex;
     gap: ${spaces.xs}px;
     text-transform: inherit;
+    &.flip {
+      flex-direction: row-reverse;
+      svg {
+        transform: rotate(180deg);
+      }
+    }
     &.inline {
       display: inline-flex;
     }

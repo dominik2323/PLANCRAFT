@@ -23,6 +23,6 @@ export const PlusWrapper = styled.div`
 
 export const DividerLine = styled.div<{ color: ColorKeys }>`
   width: 100%;
-  height: 1.5px;
+  height: 1px;
   background-color: ${({ color }) => colors[color]};
 `;

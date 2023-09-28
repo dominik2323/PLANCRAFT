@@ -2,7 +2,6 @@
 
 import styled from "styled-components";
 import { colors } from "../../consts/colors";
-import percentToRgbHex from "../../helpers/percentToRgbHex";
 
 export const StyledBackgroundGrid = styled.svg`
   position: fixed;
@@ -14,5 +13,5 @@ export const StyledBackgroundGrid = styled.svg`
 `;
 
 export const Dot = styled.rect`
-  fill: ${colors.primary400 + percentToRgbHex(50)};
+  fill: ${colors.primary400};
 `;

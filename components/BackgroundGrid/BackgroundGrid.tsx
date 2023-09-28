@@ -15,7 +15,7 @@ const BackgroundGrid = ({}: BackgroundGridProps) => {
 
   const columnsCount = 40;
   const rowsCount = Math.ceil(h / gapSize);
-  const dotSize = 1.5;
+  const dotSize = 1;
 
   useEffect(() => {
     const gapSize = w / columnsCount || 1;
