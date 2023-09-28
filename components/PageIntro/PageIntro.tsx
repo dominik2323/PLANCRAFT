@@ -7,23 +7,17 @@ import { Large } from "../Typography/Large";
 import { Medium } from "../Typography/Medium";
 import { Mini } from "../Typography/Mini";
 import { StyledPageIntro, AboutHero } from "./StyledPageIntro";
-
-export type PageIntroImageProps = {
-  src: string;
-  width: number;
-  height: number;
-  alt: string;
-};
+import { ImageProps } from "../../app/service/[slug]/servicesData";
 
 export interface PageIntroProps {
   heroHeader: string;
   introPerex: string;
   figureBanner: {
-    image: PageIntroImageProps;
+    image: ImageProps;
     perex: string;
   };
   scrollFigureBanner: {
-    image: PageIntroImageProps;
+    image: ImageProps;
     items: string[];
   };
 }

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import styled from "styled-components";
 
 export const StyledServices = styled.div``;
@@ -56,7 +57,7 @@ export const ServiceCoverWrapperInner = styled.div`
   top: 0;
 `;
 
-export const ServiceCover = styled.img`
+export const ServiceCover = styled(Image)`
   object-fit: cover;
   width: 100%;
 `;

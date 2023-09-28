@@ -1,5 +1,6 @@
 "use client";
 
+import { Cabinet as CabinetType } from "../../app/service/[slug]/servicesData";
 import Cabinet from "../Cabinet/Cabinet";
 import Divider from "../Divider/Divider";
 import DividerHeader from "../Divider/DividerHeader";
@@ -19,53 +20,51 @@ import {
   StyledServices,
 } from "./StyledServices";
 
-interface ServicesProps {}
+interface ServicesProps extends CabinetType {}
 
-const services = [
-  {
-    header: "PROJEKTOVÁ DOKUMENTACE",
-    perex:
-      "Naše pečlivě zpracovaná dokumentace v BIM je Vaším plánem k úspěšné realizaci stavby.\nVypracujeme projektovou dokumentaci, zajistíme souhlasná stanoviska dotčených orgánů státní správy a získáme stavební povolení.",
-  },
-  {
-    header: "PASPORTIZACE BUDOV",
-    perex:
-      "S hrdostí se staráme o 3D pasporty budov pro široké spektrum typologií a fází, ať už se jedná o památkově chráněné nemovitosti určené k obnově nebo novostavby, které potřebují dokumentaci skutečného stavu.\nDíky přesnému zaměření objektů včetně detailů a lokalizace problematických míst budete připraveni na cokoliv. V rámci následných konzultací vám pomůžeme navrhnout to nejlepší řešení a vhodné stavební úpravy.",
-  },
-  {
-    header: "ENERGETICKÁ ÚSPORNOST",
-    perex:
-      "Zajišťujeme komplexní služby v oblasti energetiky s cílem pro udržitelnou výstavbu s co nejmenším negativním dopadem na životní přostředí.\nVytvoříme analýzu a navrhneme řešení, která sníží energetickou náročnost a zvýší komfort uživatelů budovy",
-  },
-  {
-    header: "DESIGN DUE DILIGENCE",
-    perex:
-      "Podporujeme vize architektů prostřednictvím inovativního přístupu k projektování a životnímu cyklu budovy. Umožníme vašemu týmu vytvářet průlomové návrhy, které zanechají trvalý pozitivní dopad na kvalitu života ve městech. Společně nestavíme jen stavby, ale vytváříme odkaz pro další generace.",
-  },
-];
-
-const Services = ({}: ServicesProps) => {
+const Services = ({ list, mainHeader }: ServicesProps) => {
   return (
     <StyledServices>
       <Cabinet
         header={
           <DividerHeader>
-            <Mini className='uppercase'>Naše služby</Mini>
+            <Mini className='uppercase'>{mainHeader}</Mini>
           </DividerHeader>
         }
-        cards={services.map(({ header, perex }, i) => [
+        cards={list.map(({ header, content, image }, i) => [
           <ServiceHeader>
-            <Divider hidePlus={0 !== i} />
+            {0 !== i && <Divider hidePlus />}
             <ServiceHeaderContent>
               <Numbering>
                 <Small>{`0${i + 1}`}</Small>
               </Numbering>
-              <Small>{header}</Small>
+              <Small className='uppercase'>{header}</Small>
             </ServiceHeaderContent>
           </ServiceHeader>,
           <ServiceContent>
             <ServiceContentLeft>
-              <Mini>{perex}</Mini>
+              {content.map((item, i) => {
+                if (item.type === "text") {
+                  return <Mini key={i}>{item.text}</Mini>;
+                }
+                if (item.type === "header") {
+                  return <Mini key={i}>{item.header}</Mini>;
+                }
+                if (item.type === "bullets") {
+                  return (
+                    <div key={i}>
+                      {item.bullets.map(({ header, list }, i) => (
+                        <div key={i}>
+                          <Mini>{header}</Mini>
+                          {list.map((item, i) => (
+                            <Mini key={i}>{item}</Mini>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
+                  );
+                }
+              })}
               {/* TODO add link */}
               <Link href={""}>
                 <Mini>{"Zjistit více"}</Mini>
@@ -73,10 +72,11 @@ const Services = ({}: ServicesProps) => {
             </ServiceContentLeft>
             <ServiceContentRight>
               <ServiceCoverWrapperInner>
-                {/* TODO add images */}
                 <ServiceCover
-                  src={"/imgs/projektova-dokumentace.jpg"}
-                  alt={"header"}
+                  src={image.src}
+                  width={image.width}
+                  height={image.height}
+                  alt={image.alt}
                 />
               </ServiceCoverWrapperInner>
             </ServiceContentRight>

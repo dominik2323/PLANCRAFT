@@ -11,6 +11,9 @@ export const Medium = styled.p`
   line-height: 1.2em;
   color: ${colors.primary400};
   max-width: 1000px;
+  &.break-lines {
+    white-space: pre-line;
+  }
   &.wide {
     max-width: unset;
   }
