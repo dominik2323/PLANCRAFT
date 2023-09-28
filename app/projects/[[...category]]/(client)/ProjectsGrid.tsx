@@ -13,7 +13,6 @@ import {
   Query,
   QueryProjectsArgs,
 } from "../../../../gql/types";
-import { projectsPerPage } from "../page";
 import { ProjectCardWrapper, StyledProjectsGrid } from "./StyledProjectsGrid";
 import Button from "../../../../components/Button/Button";
 
@@ -21,6 +20,8 @@ interface ProjectsGridProps {
   projects: Projects;
   totalCount: number;
 }
+
+export const projectsPerPage = 6;
 
 const ProjectsGrid = ({
   projects: initialProjects,

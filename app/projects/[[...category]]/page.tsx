@@ -18,7 +18,7 @@ import {
   ProjectsHero,
   StyledProjects,
 } from "./(client)/StyledProjects";
-import ProjectsGrid from "./(client)/ProjectsGrid";
+import ProjectsGrid, { projectsPerPage } from "./(client)/ProjectsGrid";
 
 const metadata: Metadata = {};
 
@@ -26,7 +26,6 @@ interface PageProps {
   params: { category: string };
 }
 
-export const projectsPerPage = 6;
 export const revalidate = 10;
 
 const page = async ({ params: { category } }: PageProps) => {
