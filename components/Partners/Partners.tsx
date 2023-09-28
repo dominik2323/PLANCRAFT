@@ -33,7 +33,7 @@ const Partners = ({}: PartnersProps) => {
       </DividerHeader>
       <PartnersList>
         {list.map(({ name, filename }, i) => (
-          <PartnersLogo src={`imgs/${filename}`} alt={name} key={i} />
+          <PartnersLogo src={`/imgs/${filename}`} alt={name} key={i} />
         ))}
       </PartnersList>
     </StyledPartners>

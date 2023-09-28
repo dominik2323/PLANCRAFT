@@ -1,15 +1,18 @@
 "use client";
 
 import { Cabinet as CabinetType } from "../../app/service/[slug]/servicesData";
+import Bullet, { Bullets } from "../Bullets/Bullet";
 import Cabinet from "../Cabinet/Cabinet";
 import Divider from "../Divider/Divider";
 import DividerHeader from "../Divider/DividerHeader";
 import Link from "../Link/Link";
+import { Micro } from "../Typography/Micro";
 import { Mini } from "../Typography/Mini";
 import { Small } from "../Typography/Small";
 import {
   Numbering,
   ServiceContent,
+  ServiceContentLeftInner,
   ServiceContentLeft,
   ServiceContentRight,
   ServiceCover,
@@ -43,28 +46,32 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
           </ServiceHeader>,
           <ServiceContent>
             <ServiceContentLeft>
-              {content.map((item, i) => {
-                if (item.type === "text") {
-                  return <Mini key={i}>{item.text}</Mini>;
-                }
-                if (item.type === "header") {
-                  return <Mini key={i}>{item.header}</Mini>;
-                }
-                if (item.type === "bullets") {
-                  return (
-                    <div key={i}>
-                      {item.bullets.map(({ header, list }, i) => (
-                        <div key={i}>
-                          <Mini>{header}</Mini>
-                          {list.map((item, i) => (
-                            <Mini key={i}>{item}</Mini>
-                          ))}
-                        </div>
-                      ))}
-                    </div>
-                  );
-                }
-              })}
+              <ServiceContentLeftInner>
+                {content.map((item, i) => {
+                  if (item.type === "text") {
+                    return <Mini key={i}>{item.text}</Mini>;
+                  }
+                  if (item.type === "header") {
+                    return <Mini key={i}>{item.header}</Mini>;
+                  }
+                  if (item.type === "bullets") {
+                    return (
+                      <Bullets key={i}>
+                        {item.bullets.map(({ header, list }, i) => (
+                          <Bullet level={1} key={i} index={i}>
+                            <Micro>{header}</Micro>
+                            {list.map((item, i) => (
+                              <Bullet level={2} key={i} index={i}>
+                                <Micro>{item}</Micro>
+                              </Bullet>
+                            ))}
+                          </Bullet>
+                        ))}
+                      </Bullets>
+                    );
+                  }
+                })}
+              </ServiceContentLeftInner>
               {/* TODO add link */}
               <Link href={""}>
                 <Mini>{"Zjistit více"}</Mini>

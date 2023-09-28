@@ -8,6 +8,7 @@ import BackgroundGrid from "../components/BackgroundGrid/BackgroundGrid";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import Loader from "../components/Loader/Loader";
+import { useRouter } from "next/navigation";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://plancraft.eu"),

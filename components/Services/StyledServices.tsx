@@ -45,6 +45,11 @@ export const ServiceContentLeft = styled.div`
   justify-content: space-between;
 `;
 
+export const ServiceContentLeftInner = styled.div`
+  display: grid;
+  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+`;
+
 export const ServiceContentRight = styled.div`
   width: 100%;
   position: relative;

@@ -1,22 +1,23 @@
 import { Metadata } from "next";
-import { Fragment } from "react";
 import getClient from "../../../apollo/client";
 import ClientQuote from "../../../components/ClientQuote/ClientQuote";
 import DividerHeader from "../../../components/Divider/DividerHeader";
 import NumberedList from "../../../components/NumberedList/NumberedList";
 import PageIntro from "../../../components/PageIntro/PageIntro";
+import ProjectCardSmall from "../../../components/ProjectCardSmall/ProjectCardSmall";
 import Services from "../../../components/Services/Services";
 import { Medium } from "../../../components/Typography/Medium";
 import { Mini } from "../../../components/Typography/Mini";
 import { GetProjects } from "../../../gql/GetProjects";
 import { Query, QueryProjectsArgs } from "../../../gql/types";
 import {
+  ServiceAdvantages,
+  ServicePerex,
   SimilarProjects,
   SimilarProjectsInner,
   StyledService,
 } from "./(client)/StyledService";
 import { servicesData } from "./servicesData";
-import ProjectCardSmall from "../../../components/ProjectCardSmall/ProjectCardSmall";
 
 export const metadata: Metadata = {};
 
@@ -43,6 +44,7 @@ const page = async ({ params: { slug } }: PageProps) => {
   return (
     <StyledService>
       <PageIntro
+        withCta
         heroHeader={data.heroHeader}
         figureBanner={{
           perex: data.figureBanner.perex,
@@ -73,14 +75,16 @@ const page = async ({ params: { slug } }: PageProps) => {
       {data.serviceContent.type === "list" && (
         <NumberedList items={data.serviceContent.list} />
       )}
-      <Medium className='break-lines'>{data.servicePerex}</Medium>
+      <ServicePerex>
+        <Medium className='break-lines'>{data.servicePerex}</Medium>
+      </ServicePerex>
       {data.advantages && (
-        <Fragment>
+        <ServiceAdvantages>
           <DividerHeader>
             <Mini>Výhody</Mini>
           </DividerHeader>
           <NumberedList items={data.advantages} />
-        </Fragment>
+        </ServiceAdvantages>
       )}
       {Projects.items.length !== 0 && (
         <SimilarProjects>

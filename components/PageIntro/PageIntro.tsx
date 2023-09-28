@@ -6,11 +6,17 @@ import ScrollFigureBanner from "../ScrollFigureBanner/ScrollFigureBanner";
 import { Large } from "../Typography/Large";
 import { Medium } from "../Typography/Medium";
 import { Mini } from "../Typography/Mini";
-import { StyledPageIntro, AboutHero } from "./StyledPageIntro";
+import {
+  StyledPageIntro,
+  PageIntroHero,
+  PageIntroCta,
+} from "./StyledPageIntro";
 import { ImageProps } from "../../app/service/[slug]/servicesData";
+import Button from "../Button/Button";
 
 export interface PageIntroProps {
   heroHeader: string;
+  withCta?: boolean;
   introPerex: string;
   figureBanner: {
     image: ImageProps;
@@ -27,10 +33,11 @@ const PageIntro = ({
   heroHeader,
   introPerex,
   scrollFigureBanner,
+  withCta = false,
 }: PageIntroProps) => {
   return (
     <StyledPageIntro>
-      <AboutHero>
+      <PageIntroHero>
         <Large>{heroHeader}</Large>
         <FigureBanner
           className='flip align-top'
@@ -39,9 +46,14 @@ const PageIntro = ({
           height={figureBanner.image.height}
           alt={figureBanner.image.alt}>
           <Mini>{figureBanner.perex}</Mini>
+          {withCta && (
+            <PageIntroCta>
+              <Button href={"/kontakt"}>Poptat službu</Button>
+            </PageIntroCta>
+          )}
         </FigureBanner>
         <Medium>{introPerex}</Medium>
-      </AboutHero>
+      </PageIntroHero>
       <ScrollFigureBanner
         className='align-center'
         src={scrollFigureBanner.image.src}

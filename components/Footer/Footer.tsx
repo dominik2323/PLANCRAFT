@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import Divider from "../Divider/Divider";
 import Link from "../Link/Link";
 import Logo from "../Svgs/Logo";
@@ -19,6 +20,10 @@ import {
 interface FooterProps {}
 
 const Footer = ({}: FooterProps) => {
+  const pahtname = usePathname();
+  const pageWithSimpleFooter = ["/kontakt", "/contact"];
+  if (pageWithSimpleFooter.includes(pahtname)) return null;
+
   return (
     <StyledFooter>
       <Divider fill='white' />

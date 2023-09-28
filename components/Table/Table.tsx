@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { ReactNode } from "react";
 import { StyledTable } from "./StyledTable";
 import TableRow from "./TableRow";
 import TableCol from "./TableCol";
 
 interface TableProps {
-  items: { header: string; body: string }[];
+  items: { header: string; body: ReactNode }[];
 }
 
 const Table = ({ items }: TableProps) => {

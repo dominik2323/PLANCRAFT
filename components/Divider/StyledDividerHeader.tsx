@@ -8,6 +8,9 @@ export const StyledDividerHeader = styled.div`
   &.flip {
     flex-direction: column-reverse;
   }
+  &.big {
+    height: ${({ theme }) => 2 * theme.gapSize}px;
+  }
 `;
 
 export const StyledDividerHeaderInner = styled.div`
