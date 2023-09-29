@@ -49,13 +49,13 @@ const Cabinet = ({ cards, header, footer }: CabinetProps) => {
                     return (
                       <Fragment key={i}>
                         <CabinetItemHeader>{c[0]}</CabinetItemHeader>
-                        <AnimatePresence presenceAffectsLayout>
+                        <AnimatePresence mode='wait'>
                           {isActive && (
                             <CabinetItemContent
                               key={i}
-                              initial={{ height: "0" }}
+                              initial={{ height: "0%" }}
                               animate={{ height: "100%" }}
-                              exit={{ height: "0" }}
+                              exit={{ height: "0%" }}
                               transition={{ ease: easing, duration: 1 }}>
                               {c[1]}
                             </CabinetItemContent>

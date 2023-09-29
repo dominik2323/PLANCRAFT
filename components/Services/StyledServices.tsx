@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 
 export const StyledServices = styled.div``;
@@ -31,7 +32,9 @@ export const Numbering = styled.div`
   width: ${({ theme }) => 2 * theme.gapSize}px;
 `;
 
-export const ServiceContent = styled.div`
+export const ServiceContent = styled(Link)`
+  all: unset;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   height: 100%;
@@ -42,6 +45,7 @@ export const ServiceContent = styled.div`
 export const ServiceContentLeft = styled.div`
   height: 90%;
   display: flex;
+  gap: ${({ theme }) => 1 * theme.gapSize}px;
   flex-direction: column;
   justify-content: space-between;
 `;

@@ -20,6 +20,7 @@ export type ServiceContentItem = Bullets | Text | Header;
 export type Cabinet = {
   mainHeader: string;
   list: {
+    slug?: string;
     header: string;
     image: ImageProps;
     content: ServiceContentItem[];
@@ -37,6 +38,7 @@ export interface ServiceContentList {
 
 export type PageData = PageIntroProps & {
   name: string;
+  homepageServiceCabinetItem: ServiceContentItem;
   serviceContent: ServiceContentList | ServiceContentCabinet;
   servicePerex: string;
   advantages: { header: string; perex: string }[];
@@ -50,6 +52,10 @@ export type ServicesData = {
 export const servicesData: ServicesData = {
   "projektova-dokumentace": {
     name: "Projektová dokumentace",
+    homepageServiceCabinetItem: {
+      type: "text",
+      text: "Naše pečlivě zpracovaná dokumentace v BIM je Vaším plánem k úspěšné realizaci stavby.\nVypracujeme projektovou dokumentaci, zajistíme souhlasná stanoviska dotčených orgánů státní správy a získáme stavební povolení.",
+    },
     heroHeader:
       "Naše pečlivě zpracovaná dokumentace v BIM je Vaším plánem k úspěšné realizaci stavby",
     figureBanner: {
@@ -185,6 +191,10 @@ export const servicesData: ServicesData = {
   },
   pasportizace: {
     name: "Pasportizace",
+    homepageServiceCabinetItem: {
+      type: "text",
+      text: "S hrdostí se staráme o 3D pasporty budov pro široké spektrum typologií a fází, ať už se jedná o památkově chráněné nemovitosti určené k obnově nebo novostavby, které potřebují dokumentaci skutečného stavu.\nDíky přesnému zaměření objektů včetně detailů a lokalizace problematických míst budete připraveni na cokoliv. V rámci následných konzultací vám pomůžeme navrhnout to nejlepší řešení a vhodné stavební úpravy.",
+    },
     heroHeader:
       "Nejlepší přítel architekta v přesném zaměření, pasportizaci a digitalizaci staveb",
     figureBanner: {
@@ -319,6 +329,10 @@ export const servicesData: ServicesData = {
   },
   "energeticka-uspornost": {
     name: "Energetická úspornost",
+    homepageServiceCabinetItem: {
+      type: "text",
+      text: "Zajišťujeme komplexní služby v oblasti energetiky s cílem pro udržitelnou výstavbu s co nejmenším negativním dopadem na životní přostředí.\nVytvoříme analýzu a navrhneme řešení, která sníží energetickou náročnost a zvýší komfort uživatelů budovy",
+    },
     heroHeader: "Úsporné energetické řešení staveb od konceptu až po provoz",
     figureBanner: {
       perex:
@@ -391,6 +405,10 @@ export const servicesData: ServicesData = {
   },
   "design-due-diligence": {
     name: "Design due diligence",
+    homepageServiceCabinetItem: {
+      type: "text",
+      text: "Podporujeme vize architektů prostřednictvím inovativního přístupu k projektování a životnímu cyklu budovy. Umožníme vašemu týmu vytvářet průlomové návrhy, které zanechají trvalý pozitivní dopad na kvalitu života ve městech. Společně nestavíme jen stavby, ale vytváříme odkaz pro další generace.",
+    },
     heroHeader:
       "Podpora vize architektů inovativním přístupem k projektování a životnímu cyklu budovy.",
     figureBanner: {

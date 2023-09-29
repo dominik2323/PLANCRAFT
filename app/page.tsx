@@ -64,7 +64,10 @@ const page = async ({}: PageProps) => {
           <Medium>{homepageData.about.perex}</Medium>
         </HpQuoteAbout>
       </HpAbout>
-      <Services mainHeader='Naše služby' list={homepageData.services} />
+      <Services
+        mainHeader={homepageData.services.mainHeader}
+        list={homepageData.services.list}
+      />
       <HpQuoteServices>
         <Medium className='wide'>{homepageData.servicesQuote}</Medium>
         <Button className='skinny' href={"/o-nas"}>

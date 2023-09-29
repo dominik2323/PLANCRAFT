@@ -12,8 +12,8 @@ import { Small } from "../Typography/Small";
 import {
   Numbering,
   ServiceContent,
-  ServiceContentLeftInner,
   ServiceContentLeft,
+  ServiceContentLeftInner,
   ServiceContentRight,
   ServiceCover,
   ServiceCoverWrapperInner,
@@ -34,7 +34,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
             <Mini className='uppercase'>{mainHeader}</Mini>
           </DividerHeader>
         }
-        cards={list.map(({ header, content, image }, i) => [
+        cards={list.map(({ header, content, image, slug }, i) => [
           <ServiceHeader>
             {0 !== i && <Divider hidePlus />}
             <ServiceHeaderContent>
@@ -44,7 +44,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
               <Small className='uppercase'>{header}</Small>
             </ServiceHeaderContent>
           </ServiceHeader>,
-          <ServiceContent>
+          <ServiceContent as={slug ? undefined : "span"} href={slug}>
             <ServiceContentLeft>
               <ServiceContentLeftInner>
                 {content.map((item, i) => {
@@ -73,11 +73,11 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
                   }
                 })}
               </ServiceContentLeftInner>
-              {/* TODO add link */}
-              {/* TODO remove link on service pages */}
-              <Link href={""}>
-                <Mini className='uppercase'>{"Zjistit více"}</Mini>
-              </Link>
+              {slug && (
+                <Link href={slug} as={"span"}>
+                  <Mini className='uppercase'>{"Zjistit více"}</Mini>
+                </Link>
+              )}
             </ServiceContentLeft>
             <ServiceContentRight>
               <ServiceCoverWrapperInner>
@@ -102,67 +102,3 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
 };
 
 export default Services;
-
-{
-  /* <StyledServices>
-<Elevator scrollHeight='200vh'>
-  {({ progress }) => (
-    <ServicesViewport>
-      <ServicesSectionHeaderWrapper>
-        <Mini className='uppercase'>Naše služby</Mini>
-      </ServicesSectionHeaderWrapper>
-      <Divider />
-      <ServicesList>
-        {services.map(({ header, perex }, i) => {
-          const interval = intervals[i];
-          const isActive =
-            interval[0] <= progress && interval[1] >= progress;
-
-          return (
-            <Fragment key={i}>
-              {0 !== i && <Divider hidePlus />}
-              <ServiceHeader>
-                <Numbering>
-                  <Small>{`0${i + 1}`}</Small>
-                </Numbering>
-                <Small>{header}</Small>
-              </ServiceHeader>
-              <AnimatePresence>
-                {isActive && (
-                  <ServiceContent
-                    key={i}
-                    initial={{ height: "0%" }}
-                    animate={{ height: "100%" }}
-                    exit={{ height: "0%" }}
-                    transition={{ ease: easing, duration: 0.7 }}>
-                    <ServiceContentContent>
-                      <Mini>{perex}</Mini>
-                      {/* TODO add links */
-}
-{
-  /*
-                      <Link href={""}>
-                        <Mini>fdkl</Mini>
-                      </Link>
-                    </ServiceContentContent>
-                    <ServiceCoverWrapper>
-                      <Inner>
-                        <ServiceCover
-                          src={"/imgs/projektova-dokumentace.jpg"}
-                          alt={"header"}
-                        />
-                      </Inner>
-                    </ServiceCoverWrapper>
-                  </ServiceContent>
-                )}
-              </AnimatePresence>
-            </Fragment>
-          );
-        })}
-      </ServicesList>
-      <Divider />
-    </ServicesViewport>
-  )}
-</Elevator>
-</StyledServices> */
-}
