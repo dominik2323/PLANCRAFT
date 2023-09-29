@@ -36,6 +36,7 @@ export interface ServiceContentList {
 }
 
 export type PageData = PageIntroProps & {
+  name: string;
   serviceContent: ServiceContentList | ServiceContentCabinet;
   servicePerex: string;
   advantages: { header: string; perex: string }[];
@@ -48,6 +49,7 @@ export type ServicesData = {
 
 export const servicesData: ServicesData = {
   "projektova-dokumentace": {
+    name: "Projektová dokumentace",
     heroHeader:
       "Naše pečlivě zpracovaná dokumentace v BIM je Vaším plánem k úspěšné realizaci stavby",
     figureBanner: {
@@ -182,6 +184,7 @@ export const servicesData: ServicesData = {
     },
   },
   pasportizace: {
+    name: "Pasportizace",
     heroHeader:
       "Nejlepší přítel architekta v přesném zaměření, pasportizaci a digitalizaci staveb",
     figureBanner: {
@@ -315,6 +318,7 @@ export const servicesData: ServicesData = {
     },
   },
   "energeticka-uspornost": {
+    name: "Energetická úspornost",
     heroHeader: "Úsporné energetické řešení staveb od konceptu až po provoz",
     figureBanner: {
       perex:
@@ -386,6 +390,7 @@ export const servicesData: ServicesData = {
     },
   },
   "design-due-diligence": {
+    name: "Design due diligence",
     heroHeader:
       "Podpora vize architektů inovativním přístupem k projektování a životnímu cyklu budovy.",
     figureBanner: {

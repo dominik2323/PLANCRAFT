@@ -23,6 +23,8 @@ const HpProjects = ({ projects }: HpProjectsProps) => {
             <Mini className='uppercase'>Projekty</Mini>
           </DividerHeader>
         }
+        // TODO top padding
+        // TODO pading glitches in chrome
         footer={<Divider />}
         items={projects.items.map(
           (

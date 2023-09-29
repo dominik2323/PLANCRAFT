@@ -24,51 +24,33 @@ import {
   TopbarContent,
 } from "./StyledNavbar";
 import { usePathname } from "next/navigation";
+import { servicesData } from "../../app/service/[slug]/servicesData";
+import { projectsData } from "../../app/projects/[[...category]]/(client)/projectsData";
+import { aboutData } from "../../app/about/(client)/aboutData";
+import { contactData } from "../../app/contact/(client)/contactData";
 
 interface NavbarProps {}
 
 const navConfig = [
-  {
-    name: "Projektová dokumentace",
-    slug: "/sluzba/projektova-dokumentace",
-    perex:
-      "0Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
-  },
-  {
-    name: "Pasportizace",
-    slug: "/sluzba/pasportizace",
-    perex:
-      "1Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
-  },
-  {
-    name: "Energetická úspornost",
-    slug: "/sluzba/energeticka-uspornost",
-    perex:
-      "2Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
-  },
-  {
-    name: "Design due diligence",
-    slug: "/sluzba/design-due-diligence",
-    perex:
-      "3Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
-  },
+  ...Object.keys(servicesData).map((slug) => ({
+    slug: `/sluzba/${slug}`,
+    perex: servicesData[slug].servicePerex,
+    name: servicesData[slug].name,
+  })),
   {
     name: "Projekty",
     slug: "/projekty",
-    perex:
-      "4Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
+    perex: projectsData.heroPerex,
   },
   {
     name: "O nás",
     slug: "/o-nas",
-    perex:
-      "5Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
+    perex: aboutData.introPerex,
   },
   {
     name: "Kontakt",
     slug: "/kontakt",
-    perex:
-      "6Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In rutrum. Mauris tincidunt sem sed arcu. Fusce aliquam vestibulum.",
+    perex: contactData.header,
   },
 ];
 

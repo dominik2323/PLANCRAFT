@@ -2,13 +2,13 @@ import { Metadata } from "next";
 import SimpleFooter from "../../components/SimpleFooter/SimpleFooter";
 import Table from "../../components/Table/Table";
 import { Medium } from "../../components/Typography/Medium";
+import { contactData } from "./(client)/contactData";
 import {
   ContactContent,
   ContactCover,
   ContactHero,
   StyledContact,
 } from "./(clinet)/StyledContact";
-import Link from "../../components/Link/Link";
 
 export const metadata: Metadata = {};
 export const revalidate = 10;
@@ -20,45 +20,14 @@ const page = ({}: PageProps) => {
     <StyledContact>
       <ContactHero>
         <ContactContent>
-          <Medium>Společně změníme vaše vize ve skutečnost</Medium>
-          <Table
-            items={[
-              {
-                header: "Telefon",
-                body: (
-                  <Link
-                    href={"tel:+420774987654"}
-                    className='underline'
-                    noArrow>
-                    +420 774 987 654
-                  </Link>
-                ),
-              },
-              {
-                header: "Email",
-                body: (
-                  <Link
-                    href={"mailto:info@plancraft.cz"}
-                    className='underline'
-                    noArrow>
-                    info@plancraft.cz
-                  </Link>
-                ),
-              },
-              { header: "Firma", body: "Plancraft s.r.o." },
-              { header: "IČO", body: "10856587" },
-              {
-                header: "Adresa",
-                body: "Bratislavská 206/21,\nZábrdovice, 602 00 Brno ",
-              },
-            ]}
-          />
+          <Medium>{contactData.header}</Medium>
+          <Table items={contactData.items} />
         </ContactContent>
         <ContactCover
-          src={`/imgs/contact-cover.jpg`}
-          width={840}
-          height={600}
-          alt={"Let's create exceptional designs together!"}
+          src={contactData.contactCover.src}
+          width={contactData.contactCover.width}
+          height={contactData.contactCover.height}
+          alt={contactData.contactCover.alt}
         />
       </ContactHero>
       <SimpleFooter />

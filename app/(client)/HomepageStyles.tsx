@@ -39,7 +39,7 @@ export const HpQuoteAbout = styled.div`
 
 export const HpQuoteServices = styled.div`
   margin: ${({ theme }) => 4 * theme.gapSize}px 0;
-  margin-left: ${({ theme }) => 0.4 * theme.gapSize * theme.columnCount}px;
+  margin-left: ${({ theme }) => 0.2 * theme.gapSize * theme.columnCount}px;
   display: grid;
   row-gap: ${({ theme }) => 1 * theme.gapSize}px;
 `;

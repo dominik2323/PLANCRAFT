@@ -19,6 +19,7 @@ import {
   StyledProjects,
 } from "./(client)/StyledProjects";
 import ProjectsGrid, { projectsPerPage } from "./(client)/ProjectsGrid";
+import { projectsData } from "./(client)/projectsData";
 
 const metadata: Metadata = {};
 export const revalidate = 10;
@@ -56,12 +57,8 @@ const page = async ({ params: { category } }: PageProps) => {
   return (
     <StyledProjects>
       <ProjectsHero>
-        <Large>Projekty</Large>
-        <Mini>
-          Dělá nám radost se podílet na rozmanitých a inovativních projektech,
-          které nerezonují jen v lokálním prostředí, ale jsou uznávanou
-          inspirací na celém světě.
-        </Mini>
+        <Large>{projectsData.heroHeader}</Large>
+        <Mini>{projectsData.heroPerex}</Mini>
       </ProjectsHero>
       <DividerHeader>
         <ProjectDividerHeaderInner>
@@ -85,10 +82,8 @@ const page = async ({ params: { category } }: PageProps) => {
       </DividerHeader>
       <ProjectsGrid projects={Projects} totalCount={Projects.total} />
       <ClientQuote
-        quote={
-          "“Spolupráce s Plancraft byla jednoduše bezkonkurenční. Jejich profesionální přístup a schopnost dodat vynikající výsledky překonala veškerá očekávání.”"
-        }
-        client={"— Radek Vašulík, Archidrip s.r.o."}
+        quote={projectsData.quote.quote}
+        client={projectsData.quote.client}
       />
     </StyledProjects>
   );
