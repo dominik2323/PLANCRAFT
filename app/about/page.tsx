@@ -20,7 +20,16 @@ import {
 import PageIntro from "../../components/PageIntro/PageIntro";
 import { aboutData } from "./(client)/aboutData";
 
-export const metadata: Metadata = {};
+export const metadata: Metadata = {
+  title: aboutData.name,
+  description: aboutData.introPerex,
+  openGraph: {
+    images: aboutData.figureBanner.image.src,
+    title: aboutData.heroHeader,
+    description: aboutData.introPerex,
+  },
+};
+
 export const revalidate = 10;
 
 interface PageProps {}

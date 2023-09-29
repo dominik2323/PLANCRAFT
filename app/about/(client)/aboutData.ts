@@ -1,4 +1,5 @@
 export const aboutData = {
+  name: "O nás",
   heroHeader:
     "Projekční studio, které vám pomůže vybudovat i vaše nejsložitější vize.",
   figureBanner: {

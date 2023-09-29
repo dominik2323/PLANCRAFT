@@ -1,14 +1,14 @@
-import React from "react";
-import { Global } from "./(client)/Global";
-import StyledComponentsRegistry from "../lib/registry";
 import { Metadata } from "next";
-import { colors } from "../consts/colors";
-import { BackgroundGridProvider } from "../components/BackgroundGrid/BackgroundGridProvider";
+import React from "react";
 import BackgroundGrid from "../components/BackgroundGrid/BackgroundGrid";
-import Navbar from "../components/Navbar/Navbar";
+import { BackgroundGridProvider } from "../components/BackgroundGrid/BackgroundGridProvider";
 import Footer from "../components/Footer/Footer";
 import Loader from "../components/Loader/Loader";
-import { useRouter } from "next/navigation";
+import Navbar from "../components/Navbar/Navbar";
+import { colors } from "../consts/colors";
+import StyledComponentsRegistry from "../lib/registry";
+import { Global } from "./(client)/Global";
+import { homepageData } from "./(client)/homepageData";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://plancraft.eu"),
@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     default: "Plancraft",
     template: "Plancraft\u2002|\u2002%s",
   },
-  description: "",
+  description: homepageData.heroPerex,
   themeColor: colors.white,
   colorScheme: "light",
   manifest: "/manifest.json",
   openGraph: {
-    images: "",
-    title: "",
-    description: "",
+    images: homepageData.about.figureBanner.image.src,
+    title: homepageData.heroHeader,
+    description: homepageData.heroPerex,
   },
   other: {
     "msapplication-TileColor": colors.white,

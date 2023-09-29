@@ -10,7 +10,16 @@ import {
   StyledContact,
 } from "./(clinet)/StyledContact";
 
-export const metadata: Metadata = {};
+export const metadata: Metadata = {
+  title: contactData.name,
+  description: contactData.header,
+  openGraph: {
+    images: contactData.contactCover.src,
+    title: contactData.name,
+    description: contactData.header,
+  },
+};
+
 export const revalidate = 10;
 
 interface PageProps {}

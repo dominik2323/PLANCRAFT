@@ -20,8 +20,18 @@ import {
 } from "./(client)/StyledProjects";
 import ProjectsGrid, { projectsPerPage } from "./(client)/ProjectsGrid";
 import { projectsData } from "./(client)/projectsData";
+import { homepageData } from "../../(client)/homepageData";
 
-const metadata: Metadata = {};
+export const metadata: Metadata = {
+  title: projectsData.name,
+  description: projectsData.heroHeader,
+  openGraph: {
+    images: homepageData.about.figureBanner.image.src,
+    title: projectsData.name,
+    description: projectsData.heroPerex,
+  },
+};
+
 export const revalidate = 10;
 
 interface PageProps {

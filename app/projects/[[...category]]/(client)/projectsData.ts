@@ -1,4 +1,5 @@
 export const projectsData = {
+  name: "Projekty",
   heroHeader: "Projekty",
   heroPerex:
     "Dělá nám radost se podílet na rozmanitých a inovativních projektech, které nerezonují jen v lokálním prostředí, ale jsou uznávanou inspirací na celém světě.",

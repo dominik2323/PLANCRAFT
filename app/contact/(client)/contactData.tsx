@@ -1,6 +1,7 @@
 import Link from "../../../components/Link/Link";
 
 export const contactData = {
+  name: "Kontakt",
   header: "Společně změníme vaše vize ve skutečnost",
   contactCover: {
     src: "/imgs/contact-cover.jpg",

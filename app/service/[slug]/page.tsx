@@ -19,7 +19,18 @@ import {
 } from "./(client)/StyledService";
 import { servicesData } from "./servicesData";
 
-export const metadata: Metadata = {};
+export function generateMetadata({ params }: PageProps): Metadata {
+  const slug = params.slug;
+  return {
+    title: `Služba\u2002|\u2002${servicesData[slug].name}`,
+    description: servicesData[slug].introPerex,
+    openGraph: {
+      images: servicesData[slug].figureBanner.image.src,
+      title: servicesData[slug].heroHeader,
+      description: servicesData[slug].introPerex,
+    },
+  };
+}
 export const revalidate = 10;
 
 interface PageProps {

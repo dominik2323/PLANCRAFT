@@ -8,6 +8,7 @@ import { Mini } from "../../../components/Typography/Mini";
 import { Small } from "../../../components/Typography/Small";
 import { GetProjects } from "../../../gql/GetProjects";
 import { Query, QueryProjectsArgs } from "../../../gql/types";
+import ProjectContent from "./(client)/ProjectContent";
 import {
   ProjectDescriptionWrapper,
   ProjectDetail,
@@ -16,28 +17,50 @@ import {
   ProjectNavigationInner,
   StyledProject,
 } from "./(client)/StyledProject";
-import ProjectContent from "./(client)/ProjectContent";
 
-export const metadata: Metadata = {};
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const {
+    data: { Projects },
+  } = await getProjectData(params.slug);
+  const { project_name, project_description, project_cover } =
+    Projects.items[0];
+
+  return {
+    title: `Projekt\u2002|\u2002${project_name}`,
+    description: project_description,
+    openGraph: {
+      images: project_cover.url,
+      title: project_name,
+      description: project_description,
+    },
+  };
+}
+
 export const revalidate = 10;
 
 interface PageProps {
   params: { slug: string };
 }
 
-const page = async ({ params: { slug } }: PageProps) => {
+async function getProjectData(slug: string) {
   const client = getClient();
-  const {
-    data: {
-      Projects: { items: projects },
-    },
-  } = await client.query<Query>({
+  return await client.query<Query>({
     query: GetProjects,
     variables: {
       locale: "cs-CZ",
       where: { _slug_any: [slug] },
     } as QueryProjectsArgs,
   });
+}
+
+const page = async ({ params: { slug } }: PageProps) => {
+  const {
+    data: {
+      Projects: { items: projects },
+    },
+  } = await getProjectData(slug);
   const project = projects[0];
 
   return (
