@@ -32,11 +32,12 @@ export const ProjectCardImageWrapper = styled.div`
 `;
 
 export const ProjectCardContent = styled.div`
-  padding: ${({ theme }) => 1 * theme.gapSize}px;
+  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  padding: ${({ theme }) => 0.5 * theme.gapSize}px 0;
 `;
 
 export const ProjectCardContentHeader = styled.div`

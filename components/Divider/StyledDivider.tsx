@@ -9,6 +9,10 @@ export const StyledDivider = styled.div`
   width: calc(100% + ${({ theme }) => theme.plusSize}px);
   transform: translateX(${({ theme }) => -0.5 * theme.plusSize}px);
   position: relative;
+  &.hide-plus {
+    width: 100%;
+    transform: translateX(0);
+  }
 `;
 
 export const PlusWrapper = styled.div`

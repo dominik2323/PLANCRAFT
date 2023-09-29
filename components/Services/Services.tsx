@@ -51,8 +51,9 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
                   if (item.type === "text") {
                     return <Mini key={i}>{item.text}</Mini>;
                   }
+                  // TODO fix spaces with header and bullets
                   if (item.type === "header") {
-                    return <Mini key={i}>{item.header}</Mini>;
+                    return <Micro key={i}>{item.header}</Micro>;
                   }
                   if (item.type === "bullets") {
                     return (
@@ -73,8 +74,9 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
                 })}
               </ServiceContentLeftInner>
               {/* TODO add link */}
+              {/* TODO remove link on service pages */}
               <Link href={""}>
-                <Mini>{"Zjistit více"}</Mini>
+                <Mini className='uppercase'>{"Zjistit více"}</Mini>
               </Link>
             </ServiceContentLeft>
             <ServiceContentRight>

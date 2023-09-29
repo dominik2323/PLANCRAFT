@@ -82,7 +82,7 @@ const page = async ({ params: { slug } }: PageProps) => {
       {data.advantages && (
         <ServiceAdvantages>
           <DividerHeader>
-            <Mini>Výhody</Mini>
+            <Mini className='uppercase'>Výhody</Mini>
           </DividerHeader>
           <NumberedList items={data.advantages} />
         </ServiceAdvantages>

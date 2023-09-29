@@ -15,7 +15,9 @@ interface DividerHeaderProps {
 const DividerHeader = ({ children, className }: DividerHeaderProps) => {
   return (
     <StyledDividerHeader className={className}>
-      <StyledDividerHeaderInner>{children}</StyledDividerHeaderInner>
+      <StyledDividerHeaderInner className={className}>
+        {children}
+      </StyledDividerHeaderInner>
       <Divider />
     </StyledDividerHeader>
   );

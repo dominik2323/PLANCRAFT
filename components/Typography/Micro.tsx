@@ -6,9 +6,9 @@ import { addColorClasses } from "../../helpers/addColorClasses";
 import { breakpoint } from "../../consts/breakpoints";
 
 export const Micro = styled.p`
-  font-size: 14px;
-  letter-spacing: 0em;
-  line-height: 1.3em;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  line-height: 1.4em;
   color: ${colors.primary400};
   max-width: 600px;
   &.break-lines {

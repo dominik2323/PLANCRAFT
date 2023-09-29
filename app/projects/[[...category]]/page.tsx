@@ -70,14 +70,14 @@ const page = async ({ params: { category } }: PageProps) => {
             <ProjectFilter
               href={"/projekty"}
               className={category ? "inactive" : ""}>
-              <Mini className='uppercase'>Vše</Mini>
+              <Mini>Vše</Mini>
             </ProjectFilter>
             {Services.items.map(({ service_name, _slug }) => (
               <ProjectFilter
                 key={_slug}
                 href={`/projekty/${_slug}`}
                 className={category?.includes(_slug) ? "" : "inactive"}>
-                <Mini className='uppercase'>{service_name}</Mini>
+                <Mini>{service_name}</Mini>
               </ProjectFilter>
             ))}
           </ProjectFilters>

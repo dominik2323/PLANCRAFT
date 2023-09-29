@@ -11,7 +11,7 @@ interface DividerProps {
 
 const Divider = ({ fill = "primary400", hidePlus = false }: DividerProps) => {
   return (
-    <StyledDivider>
+    <StyledDivider className={hidePlus ? "hide-plus" : ""}>
       {!hidePlus && (
         <PlusWrapper className='left'>
           <Plus stroke={fill} />

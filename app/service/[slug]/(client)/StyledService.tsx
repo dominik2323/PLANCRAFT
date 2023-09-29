@@ -13,10 +13,7 @@ export const SimilarProjects = styled.div`
   margin-top: ${({ theme }) => 3 * theme.gapSize}px;
 `;
 
-export const ServiceAdvantages = styled.div`
-  display: grid;
-  row-gap: ${({ theme }) => 2 * theme.gapSize}px;
-`;
+export const ServiceAdvantages = styled.div``;
 
 export const SimilarProjectsInner = styled.div`
   display: grid;

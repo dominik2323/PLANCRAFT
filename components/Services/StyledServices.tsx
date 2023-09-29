@@ -36,6 +36,7 @@ export const ServiceContent = styled.div`
   justify-content: space-between;
   height: 100%;
   padding: 0 ${({ theme }) => 2 * theme.gapSize}px;
+  padding-top: ${({ theme }) => 1 * theme.gapSize}px;
 `;
 
 export const ServiceContentLeft = styled.div`

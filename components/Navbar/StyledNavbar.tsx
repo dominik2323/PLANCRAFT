@@ -78,7 +78,8 @@ export const Navigation = styled.div`
 export const NavLink = styled(Link)`
   all: unset;
   cursor: pointer;
-  padding: ${spaces.s}px;
+  /* TODO make navlinks higher */
+  padding: ${spaces.l}px;
 `;
 
 export const LinkDescription = styled.div``;

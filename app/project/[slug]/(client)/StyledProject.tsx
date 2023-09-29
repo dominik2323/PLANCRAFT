@@ -4,6 +4,7 @@ import Image from "next/image";
 import styled from "styled-components";
 
 export const StyledProject = styled.main`
+  margin-top: ${({ theme }) => 2 * theme.gapSize}px;
   padding: 0 ${({ theme }) => 2 * theme.gapSize}px;
 `;
 
@@ -17,7 +18,7 @@ export const ProjectDetail = styled.div`
 export const ProjectElevator = styled.div`
   height: 100dvh;
   position: sticky;
-  top: 0;
+  top: ${({ theme }) => 2 * theme.gapSize}px;
 `;
 
 export const ProjectDescriptionWrapper = styled.div`

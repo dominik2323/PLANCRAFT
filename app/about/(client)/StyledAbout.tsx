@@ -9,7 +9,7 @@ export const StyledAbout = styled.main`
 
 export const AboutValues = styled.div`
   display: grid;
-  row-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
   margin-bottom: ${({ theme }) => 2 * theme.gapSize}px;
 `;
 
@@ -17,7 +17,6 @@ export const AboutTeam = styled.section``;
 
 export const AboutTeamIntro = styled.div`
   display: grid;
-  row-gap: ${({ theme }) => 2 * theme.gapSize}px;
 `;
 
 export const AboutTeamClaim = styled.div`

@@ -12,7 +12,7 @@ export const ProjectBodyImage = styled(Image)`
 export const ProjectBodyImageRow = styled.div`
   display: flex;
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
-  margin: ${({ theme }) => 1 * theme.gapSize}px 0;
+  margin: ${({ theme }) => 2 * theme.gapSize}px 0;
   &:first-child {
     margin-top: 0;
   }

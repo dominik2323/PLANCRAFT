@@ -7,6 +7,7 @@ export const StyledNumberedItem = styled.div`
   grid-template-areas: "index header" ". perex";
   row-gap: ${({ theme }) => 0.5 * theme.gapSize}px;
   column-gap: ${({ theme }) => 0.5 * theme.gapSize}px;
+  align-content: start;
 `;
 
 export const NumItemHeader = styled.div`

@@ -20,7 +20,7 @@ const page = ({}: PageProps) => {
     <StyledContact>
       <ContactHero>
         <ContactContent>
-          <Medium>Let's create exceptional designs together!</Medium>
+          <Medium>Společně změníme vaše vize ve skutečnost</Medium>
           <Table
             items={[
               {

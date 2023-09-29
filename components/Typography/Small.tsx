@@ -19,6 +19,7 @@ export const Small = styled.p`
   }
   &.uppercase {
     text-transform: uppercase;
+    line-height: 1.1em;
   }
   ${breakpoint.monitor} {
   }

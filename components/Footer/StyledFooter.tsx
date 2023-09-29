@@ -6,7 +6,7 @@ import { colors } from "../../consts/colors";
 export const StyledFooter = styled.footer`
   background-color: ${colors.primary400};
   padding: ${({ theme }) => 2 * theme.gapSize}px
-    ${({ theme }) => 1 * theme.gapSize}px;
+    ${({ theme }) => 1 * theme.gapSize}px ${({ theme }) => 1 * theme.gapSize}px;
 `;
 
 export const FooterContact = styled.div`
@@ -40,7 +40,9 @@ export const FooterPublicity = styled.div`
 export const PublicityLogos = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => 1 * theme.gapSize}px;
+  gap: ${({ theme }) => 2 * theme.gapSize}px;
 `;
 
-export const PublicityLogo = styled.img``;
+export const PublicityLogo = styled.img`
+  height: 50px;
+`;

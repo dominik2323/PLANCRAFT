@@ -65,7 +65,7 @@ const Footer = ({}: FooterProps) => {
       </FooterCopywrite>
       <Divider fill='white' />
       <FooterPublicity>
-        <Micro className='white'>
+        <Micro className='primary300'>
           V roce 2023 dochází k čerpání dotace z Výzvy č. 0383 - Kreativní
           vouchery v rámci Národního plánu obnovy - iniciativa Kreativní
           vouchery komponenty 4.5 Rozvoj kulturního a kreativního sektoru s

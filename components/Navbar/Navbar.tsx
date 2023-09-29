@@ -74,8 +74,8 @@ const navConfig = [
 
 const Navbar = ({}: NavbarProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { directionDown } = useScrollDirection();
-  const { gapSize } = useTheme();
+  const { directionDown, scrollPos } = useScrollDirection();
+  const { gapSize, plusSize } = useTheme();
   const [hoverIndex, setHoverIndex] = useState<number>(0);
   const pathname = usePathname();
 
@@ -92,7 +92,15 @@ const Navbar = ({}: NavbarProps) => {
   return (
     <>
       <NavbarPlaceholder />
-      <StyledNavbar animate={{ y: directionDown ? `-100%` : `0%` }}>
+      <StyledNavbar
+        animate={{
+          y:
+            scrollPos <= 100
+              ? 0
+              : directionDown
+              ? `-100%`
+              : `${-1 * gapSize - plusSize}px`,
+        }}>
         <Topbar>
           <DividerWrapper>
             <Divider fill={isOpen ? "white" : "primary400"} />

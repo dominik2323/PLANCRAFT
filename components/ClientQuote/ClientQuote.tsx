@@ -1,8 +1,8 @@
 "use client";
 
-import { Large } from "../Typography/Large";
+import { Medium } from "../Typography/Medium";
 import { Mini } from "../Typography/Mini";
-import { StyledClientQuote } from "./StyledClientQuote";
+import { Quote, StyledClientQuote } from "./StyledClientQuote";
 
 interface ClientQuoteProps {
   quote: string;
@@ -12,7 +12,7 @@ interface ClientQuoteProps {
 const ClientQuote = ({ quote, client }: ClientQuoteProps) => {
   return (
     <StyledClientQuote>
-      <Large className='wide'>{quote}</Large>
+      <Quote>{quote}</Quote>
       <Mini>{client}</Mini>
     </StyledClientQuote>
   );

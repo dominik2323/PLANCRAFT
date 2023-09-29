@@ -30,6 +30,7 @@ const ScrollFigureBanner = ({
     <Elevator scrollHeight='200vh'>
       {({ progress }) => (
         <StyledScrollFigureBanner>
+          {/* TODO Add animation to the photos */}
           <ScrollFigureBannerCover
             src={src}
             alt={alt}

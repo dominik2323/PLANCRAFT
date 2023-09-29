@@ -2,14 +2,15 @@
 import styled from "styled-components";
 
 export const StyledDividerHeader = styled.div`
-  height: ${({ theme }) => 1 * theme.gapSize}px;
   display: flex;
   flex-direction: column;
+  padding: ${({ theme }) => 1 * theme.gapSize}px 0;
   &.flip {
     flex-direction: column-reverse;
   }
   &.big {
-    height: ${({ theme }) => 2 * theme.gapSize}px;
+    /* padding-top: ${({ theme }) => 1 * theme.gapSize}px;
+    padding-bottom: 0; */
   }
 `;
 
@@ -19,4 +20,10 @@ export const StyledDividerHeaderInner = styled.div`
   padding-left: ${({ theme }) => 1 * theme.gapSize}px;
   padding-right: ${({ theme }) => 1 * theme.gapSize}px;
   height: 100%;
+  padding-bottom: ${({ theme }) => 1 * theme.gapSize}px;
+  padding-top: 0;
+  &.flip {
+    padding-top: ${({ theme }) => 1 * theme.gapSize}px;
+    padding-bottom: 0;
+  }
 `;

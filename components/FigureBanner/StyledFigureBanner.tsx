@@ -5,14 +5,14 @@ import styled from "styled-components";
 export const StyledFigureBanner = styled.div`
   display: grid;
   grid-template-columns: ${({ theme }) =>
-      0.6 * theme.gapSize * theme.columnCount}px auto;
+      0.55 * theme.gapSize * theme.columnCount}px auto;
   grid-template-areas: "cover content";
-  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  column-gap: ${({ theme }) => 3 * theme.gapSize}px;
   align-items: end;
   &.flip {
     grid-template-areas: "content cover";
     grid-template-columns: auto ${({ theme }) =>
-        0.6 * theme.gapSize * theme.columnCount}px;
+        0.55 * theme.gapSize * theme.columnCount}px;
   }
   &.align-top {
     align-items: start;
