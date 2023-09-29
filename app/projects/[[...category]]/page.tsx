@@ -21,12 +21,11 @@ import {
 import ProjectsGrid, { projectsPerPage } from "./(client)/ProjectsGrid";
 
 const metadata: Metadata = {};
+export const revalidate = 10;
 
 interface PageProps {
   params: { category: string };
 }
-
-export const revalidate = 10;
 
 const page = async ({ params: { category } }: PageProps) => {
   const client = getClient();

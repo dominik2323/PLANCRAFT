@@ -22,6 +22,8 @@ import Partners from "../components/Partners/Partners";
 
 export const metadata: Metadata = {};
 
+export const revalidate = 10;
+
 interface PageProps {}
 
 const page = async ({}: PageProps) => {

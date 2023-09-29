@@ -20,6 +20,7 @@ import {
 import PageIntro from "../../components/PageIntro/PageIntro";
 
 export const metadata: Metadata = {};
+export const revalidate = 10;
 
 interface PageProps {}
 

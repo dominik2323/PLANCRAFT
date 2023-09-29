@@ -11,6 +11,7 @@ import {
 import Link from "../../components/Link/Link";
 
 export const metadata: Metadata = {};
+export const revalidate = 10;
 
 interface PageProps {}
 

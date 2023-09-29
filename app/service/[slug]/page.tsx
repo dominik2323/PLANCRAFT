@@ -20,6 +20,7 @@ import {
 import { servicesData } from "./servicesData";
 
 export const metadata: Metadata = {};
+export const revalidate = 10;
 
 interface PageProps {
   params: { slug: string };

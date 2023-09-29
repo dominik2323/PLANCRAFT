@@ -19,6 +19,7 @@ import {
 import ProjectContent from "./(client)/ProjectContent";
 
 export const metadata: Metadata = {};
+export const revalidate = 10;
 
 interface PageProps {
   params: { slug: string };
