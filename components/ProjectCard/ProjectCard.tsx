@@ -2,6 +2,7 @@
 
 import { Service } from "../../gql/types";
 import Link from "../Link/Link";
+import { Micro } from "../Typography/Micro";
 import { Mini } from "../Typography/Mini";
 import { Small } from "../Typography/Small";
 import {
@@ -10,6 +11,7 @@ import {
   ProjectCardContentHeader,
   ProjectCardImage,
   ProjectCardImageWrapper,
+  ProjectCardServices,
   StyledProjectCard,
 } from "./StyledCardProject";
 
@@ -46,9 +48,11 @@ const ProjectCard = ({
       <ProjectCardContent>
         <ProjectCardContentHeader>
           <Small>{projectName}</Small>
-          {services.map(({ service_name }, i) => (
-            <Mini key={i}>{service_name}</Mini>
-          ))}
+          <ProjectCardServices>
+            {services.map(({ service_name }, i) => (
+              <Micro key={i}>{service_name}</Micro>
+            ))}
+          </ProjectCardServices>
         </ProjectCardContentHeader>
 
         <ProjectCardContentFooter animate={{ opacity: revealAnimation }}>

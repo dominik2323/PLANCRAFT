@@ -19,7 +19,7 @@ const HpProjects = ({ projects }: HpProjectsProps) => {
     <StyledHpProjects>
       <Zoom
         header={
-          <DividerHeader>
+          <DividerHeader className='no-padding'>
             <Mini className='uppercase'>Projekty</Mini>
           </DividerHeader>
         }

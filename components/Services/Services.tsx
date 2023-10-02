@@ -30,7 +30,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
     <StyledServices>
       <Cabinet
         header={
-          <DividerHeader>
+          <DividerHeader className='no-padding'>
             <Mini className='uppercase'>{mainHeader}</Mini>
           </DividerHeader>
         }

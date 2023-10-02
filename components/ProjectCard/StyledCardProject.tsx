@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import { spaces } from "../../consts/spaces";
 
 export const StyledProjectCard = styled(Link)`
   all: unset;
@@ -43,6 +44,13 @@ export const ProjectCardContent = styled.div`
 export const ProjectCardContentHeader = styled.div`
   display: flex;
   justify-content: space-between;
+`;
+
+export const ProjectCardServices = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: ${spaces.xxs}px;
 `;
 
 export const ProjectCardContentFooter = styled(motion.div)`
