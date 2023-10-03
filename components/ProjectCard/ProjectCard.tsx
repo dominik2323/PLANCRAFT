@@ -1,5 +1,6 @@
 "use client";
 
+import { ImageProps } from "../../app/service/[slug]/servicesData";
 import { Service } from "../../gql/types";
 import Link from "../Link/Link";
 import { Micro } from "../Typography/Micro";
@@ -10,7 +11,8 @@ import {
   ProjectCardContentFooter,
   ProjectCardContentHeader,
   ProjectCardImage,
-  ProjectCardImageWrapper,
+  ProjectCardImageInner,
+  ProjectCardImageMask,
   ProjectCardServices,
   StyledProjectCard,
 } from "./StyledCardProject";
@@ -20,7 +22,7 @@ interface ProjectCardProps {
   services: Service[];
   realization: string;
   slug: string;
-  src: string;
+  image: ImageProps;
   progress?: number;
 }
 
@@ -29,21 +31,23 @@ const ProjectCard = ({
   services,
   realization,
   slug,
-  src,
+  image,
   progress,
 }: ProjectCardProps) => {
   const revealAnimation = Math.max((5 / 3) * progress - 1 / 3, 0);
 
   return (
     <StyledProjectCard href={`/projekt/${slug}`}>
-      <ProjectCardImageWrapper>
-        <ProjectCardImage
-          src={src}
-          height={100}
-          width={100}
-          alt={projectName}
-        />
-      </ProjectCardImageWrapper>
+      <ProjectCardImageMask>
+        <ProjectCardImageInner>
+          <ProjectCardImage
+            src={image.src}
+            height={image.height}
+            width={image.width}
+            alt={projectName}
+          />
+        </ProjectCardImageInner>
+      </ProjectCardImageMask>
 
       <ProjectCardContent>
         <ProjectCardContentHeader>
