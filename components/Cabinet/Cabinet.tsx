@@ -2,18 +2,19 @@
 
 import { AnimatePresence } from "framer-motion";
 import { Fragment, ReactNode } from "react";
+import { easing } from "../../consts/animationConfig";
 import { createArray } from "../../helpers/createArray";
 import Elevator from "../Elevator/Elevator";
 import {
   CabinetFooter,
   CabinetHeader,
   CabinetItemContent,
+  CabinetItemContentInner,
   CabinetItemHeader,
   CabinetItems,
   CabinetViewport,
   StyledCabinet,
 } from "./StyledCabinet";
-import { easing } from "../../consts/animationConfig";
 
 interface CabinetProps {
   cards: ReactNode[][];
@@ -53,11 +54,13 @@ const Cabinet = ({ cards, header, footer }: CabinetProps) => {
                           {isActive && (
                             <CabinetItemContent
                               key={i}
-                              initial={{ height: "0%" }}
-                              animate={{ height: "100%" }}
-                              exit={{ height: "0%" }}
+                              initial={{ opacity: 0, height: "0%" }}
+                              animate={{ opacity: 1, height: "100%" }}
+                              exit={{ opacity: 0, height: "0%" }}
                               transition={{ ease: easing, duration: 1 }}>
-                              {c[1]}
+                              <CabinetItemContentInner>
+                                {c[1]}
+                              </CabinetItemContentInner>
                             </CabinetItemContent>
                           )}
                         </AnimatePresence>

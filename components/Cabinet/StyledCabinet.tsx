@@ -22,6 +22,12 @@ export const CabinetItems = styled.div`
 
 export const CabinetItemContent = styled(motion.div)`
   overflow: hidden;
+  position: relative;
+`;
+
+export const CabinetItemContentInner = styled.div`
+  position: absolute;
+  inset: 0;
 `;
 
 export const CabinetItemHeader = styled(motion.div)``;

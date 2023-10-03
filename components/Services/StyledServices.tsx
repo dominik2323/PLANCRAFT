@@ -17,9 +17,6 @@ export const ServicesCabinetFooterWrapper = styled.div`
 
 export const ServiceHeader = styled.div`
   height: ${({ theme }) => 2 * theme.gapSize}px;
-  /* justify-self: start; */
-  /* flex-grow: 0;
-  flex-shrink: 0; */
 `;
 
 export const ServiceHeaderContent = styled.div`
@@ -35,36 +32,29 @@ export const Numbering = styled.div`
 export const ServiceContent = styled(Link)`
   all: unset;
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   height: 100%;
   padding: 0 ${({ theme }) => 2 * theme.gapSize}px;
-  padding-top: ${({ theme }) => 1 * theme.gapSize}px;
 `;
 
 export const ServiceContentLeft = styled.div`
-  height: 90%;
-  display: flex;
-  gap: ${({ theme }) => 1 * theme.gapSize}px;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 100%;
+  padding: ${({ theme }) => 1 * theme.gapSize}px 0;
+  display: grid;
 `;
 
-export const ServiceContentLeftInner = styled.div`
-  display: grid;
-  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+export const ServiceContentLeftInner = styled.div``;
+
+export const ServiceContentLeftCta = styled.div`
+  align-self: end;
 `;
 
 export const ServiceContentRight = styled.div`
   width: 100%;
   position: relative;
+  padding: ${({ theme }) => 1 * theme.gapSize}px 0;
   overflow: hidden;
-`;
-
-export const ServiceCoverWrapperInner = styled.div`
-  position: absolute;
-  right: 0;
-  top: 0;
 `;
 
 export const ServiceCover = styled(Image)`

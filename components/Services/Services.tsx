@@ -13,10 +13,10 @@ import {
   Numbering,
   ServiceContent,
   ServiceContentLeft,
+  ServiceContentLeftCta,
   ServiceContentLeftInner,
   ServiceContentRight,
   ServiceCover,
-  ServiceCoverWrapperInner,
   ServiceHeader,
   ServiceHeaderContent,
   ServicesCabinetFooterWrapper,
@@ -74,20 +74,20 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
                 })}
               </ServiceContentLeftInner>
               {slug && (
-                <Link href={slug} as={"span"}>
-                  <Mini className='uppercase'>{"Zjistit více"}</Mini>
-                </Link>
+                <ServiceContentLeftCta>
+                  <Link href={slug} as={"span"}>
+                    <Mini className='uppercase'>{"Zjistit více"}</Mini>
+                  </Link>
+                </ServiceContentLeftCta>
               )}
             </ServiceContentLeft>
             <ServiceContentRight>
-              <ServiceCoverWrapperInner>
-                <ServiceCover
-                  src={image.src}
-                  width={image.width}
-                  height={image.height}
-                  alt={image.alt}
-                />
-              </ServiceCoverWrapperInner>
+              <ServiceCover
+                src={image.src}
+                width={image.width}
+                height={image.height}
+                alt={image.alt}
+              />
             </ServiceContentRight>
           </ServiceContent>,
         ])}
