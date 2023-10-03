@@ -14,6 +14,7 @@ import {
   ServiceContent,
   ServiceContentLeft,
   ServiceContentLeftCta,
+  ServiceContentLeftHeaderContainer,
   ServiceContentLeftInner,
   ServiceContentRight,
   ServiceCover,
@@ -27,7 +28,7 @@ interface ServicesProps extends CabinetType {}
 
 const Services = ({ list, mainHeader }: ServicesProps) => {
   return (
-    <StyledServices>
+    <StyledServices data-hide-navbar>
       <Cabinet
         header={
           <DividerHeader className='no-padding'>
@@ -51,9 +52,12 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
                   if (item.type === "text") {
                     return <Mini key={i}>{item.text}</Mini>;
                   }
-                  // TODO fix spaces with header and bullets
                   if (item.type === "header") {
-                    return <Micro key={i}>{item.header}</Micro>;
+                    return (
+                      <ServiceContentLeftHeaderContainer>
+                        <Micro key={i}>{item.header}</Micro>
+                      </ServiceContentLeftHeaderContainer>
+                    );
                   }
                   if (item.type === "bullets") {
                     return (

@@ -1,11 +1,12 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useRef, useState } from "react";
 import Divider from "./Divider";
 import {
   StyledDividerHeader,
   StyledDividerHeaderInner,
 } from "./StyledDividerHeader";
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 
 interface DividerHeaderProps {
   children: ReactNode;
@@ -13,12 +14,27 @@ interface DividerHeaderProps {
 }
 
 const DividerHeader = ({ children, className }: DividerHeaderProps) => {
+  const [isVisible, setisVisible] = useState<boolean>(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useIntersectionObserver(
+    containerRef,
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setisVisible(entry.isIntersecting);
+        }
+      });
+    },
+    { rootMargin: "-30% 0% -30% 0%" }
+  );
+
   return (
-    <StyledDividerHeader className={className}>
+    <StyledDividerHeader className={className} ref={containerRef}>
       <StyledDividerHeaderInner className={className}>
         {children}
       </StyledDividerHeaderInner>
-      <Divider />
+      <Divider animate={isVisible} />
     </StyledDividerHeader>
   );
 };

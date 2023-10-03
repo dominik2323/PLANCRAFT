@@ -16,7 +16,7 @@ const StyledHpProjects = styled.div``;
 
 const HpProjects = ({ projects }: HpProjectsProps) => {
   return (
-    <StyledHpProjects>
+    <StyledHpProjects data-hide-navbar>
       <Zoom
         header={
           <DividerHeader className='no-padding'>

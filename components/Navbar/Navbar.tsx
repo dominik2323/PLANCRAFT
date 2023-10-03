@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence } from "framer-motion";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useLayoutEffect, useState } from "react";
 import { useTheme } from "styled-components";
 import { easing } from "../../consts/animationConfig";
 import { useScrollDirection } from "../../hooks/useScrollDirection";
@@ -11,7 +11,7 @@ import Logo from "../Svgs/Logo";
 import { Small } from "../Typography/Small";
 import {
   BurgerWrapper,
-  DividerWrapper,
+  NavbarDividerWrapper,
   LinkDescription,
   LogoWrapper,
   NavLink,
@@ -22,6 +22,7 @@ import {
   StyledNavbar,
   Topbar,
   TopbarContent,
+  NavlinkWrapper,
 } from "./StyledNavbar";
 import { usePathname } from "next/navigation";
 import { servicesData } from "../../app/service/[slug]/servicesData";
@@ -59,7 +60,28 @@ const Navbar = ({}: NavbarProps) => {
   const { directionDown, scrollPos } = useScrollDirection();
   const { gapSize, plusSize } = useTheme();
   const [hoverIndex, setHoverIndex] = useState<number>(0);
+  const [hideableNavbar, setHideableNavbar] = useState(false);
   const pathname = usePathname();
+
+  useLayoutEffect(() => {
+    const hideNavbarElements = document.querySelectorAll("[data-hide-navbar]");
+    if (hideNavbarElements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          setHideableNavbar(entry.isIntersecting);
+        }),
+      { rootMargin: "-10% 0% -90% 0%" }
+    );
+
+    hideNavbarElements.forEach((el) => {
+      observer.observe(el);
+    });
+    return () => {
+      observer.disconnect();
+    };
+  }, [pathname]);
 
   useEffect(() => {
     if (directionDown) {
@@ -76,17 +98,12 @@ const Navbar = ({}: NavbarProps) => {
       <NavbarPlaceholder />
       <StyledNavbar
         animate={{
-          y:
-            scrollPos <= 100
-              ? 0
-              : directionDown
-              ? `-100%`
-              : `${-1 * gapSize - plusSize}px`,
+          y: hideableNavbar || directionDown ? `-100%` : `0%`,
         }}>
         <Topbar>
-          <DividerWrapper>
+          <NavbarDividerWrapper className={scrollPos < 100 ? "show" : "hide"}>
             <Divider fill={isOpen ? "white" : "primary400"} />
-          </DividerWrapper>
+          </NavbarDividerWrapper>
           <TopbarContent>
             <LogoWrapper href={"/"}>
               <Logo fill={isOpen ? "white" : "primary400"} />
@@ -108,31 +125,53 @@ const Navbar = ({}: NavbarProps) => {
         <AnimatePresence>
           {isOpen && (
             <NavLinks
+              key={"navlinks"}
               initial={"hidden"}
               animate={"visible"}
               exit={"hidden"}
-              transition={{ ease: easing }}
               variants={{
-                hidden: { y: `-100%` },
-                visible: { y: `0%` },
+                hidden: {
+                  y: `-100%`,
+                  transition: {
+                    when: "afterChildren",
+                    staggerChildren: 0.1,
+                    ease: easing,
+                    duration: 0.7,
+                  },
+                },
+                visible: {
+                  y: `0%`,
+                  transition: {
+                    when: "beforeChildren",
+                    staggerChildren: 0.1,
+                    ease: easing,
+                    duration: 0.7,
+                  },
+                },
               }}>
               <NavigationDashboard>
                 <Navigation>
                   {navConfig.map(({ name, slug }, i) => (
-                    <Fragment key={i}>
-                      {i === 0 && <Divider hidePlus fill='white' />}
+                    <NavlinkWrapper
+                      key={i}
+                      variants={{
+                        hidden: { opacity: 0 },
+                        visible: { opacity: 1 },
+                      }}>
                       <NavLink
                         href={slug}
                         onMouseEnter={() => setHoverIndex(i)}>
                         <Small className='white'>{name}</Small>
                       </NavLink>
-                      {navConfig.length - 1 !== i && (
-                        <Divider hidePlus fill='white' />
-                      )}
-                    </Fragment>
+                    </NavlinkWrapper>
                   ))}
                 </Navigation>
-                <LinkDescription>
+                <LinkDescription
+                  transition={{ delay: 0 }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: { opacity: 1 },
+                  }}>
                   <Small className='white'>{navConfig[hoverIndex].perex}</Small>
                 </LinkDescription>
               </NavigationDashboard>

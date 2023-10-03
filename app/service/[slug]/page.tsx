@@ -18,6 +18,7 @@ import {
   StyledService,
 } from "./(client)/StyledService";
 import { servicesData } from "./servicesData";
+import { ProjectsCardsSmallWrapper } from "../../../components/ProjectCardSmall/StyledProjectCardSmall";
 
 export function generateMetadata({ params }: PageProps): Metadata {
   const slug = params.slug;
@@ -103,7 +104,7 @@ const page = async ({ params: { slug } }: PageProps) => {
           <DividerHeader>
             <Mini>Související projekty</Mini>
           </DividerHeader>
-          <SimilarProjectsInner>
+          <ProjectsCardsSmallWrapper>
             {Projects.items.map(({ project_name, _slug, project_cover }) => (
               <ProjectCardSmall
                 projectName={project_name}
@@ -116,7 +117,7 @@ const page = async ({ params: { slug } }: PageProps) => {
                 }}
               />
             ))}
-          </SimilarProjectsInner>
+          </ProjectsCardsSmallWrapper>
         </SimilarProjects>
       )}
       <ClientQuote client={data.quote.client} quote={data.quote.quote} />

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { ButtonHTMLAttributes, ReactNode } from "react";
-import Plus from "../Svgs/Plus";
+import React, { ButtonHTMLAttributes, ReactNode, useState } from "react";
+import Divider from "../Divider/Divider";
 import { ButtonInner, ButtonLink, Cap, StyledButton } from "./StyledButton";
 
 interface ButtonProps {
@@ -21,33 +21,49 @@ const Button = ({
   type,
   as,
 }: ButtonProps) => {
+  const [hover, sethover] = useState<boolean>(false);
+
   if (href) {
     return (
-      <ButtonLink href={href} className={className}>
+      <ButtonLink
+        href={href}
+        className={className}
+        onMouseEnter={() => {
+          sethover(true);
+        }}
+        onMouseLeave={() => {
+          sethover(false);
+        }}>
         <StyledButton as={"span"} className={className} onClick={onClick}>
-          <Cap className='left'>
-            <Plus />
-            <Plus />
+          <Cap>
+            <Divider animate={hover} />
           </Cap>
           <ButtonInner>{children}</ButtonInner>
-          <Cap className='right'>
-            <Plus />
-            <Plus />
+          <Cap>
+            <Divider animate={hover} />
           </Cap>
         </StyledButton>
       </ButtonLink>
     );
   }
   return (
-    <StyledButton className={className} onClick={onClick} type={type} as={as}>
-      <Cap className='left'>
-        <Plus />
-        <Plus />
+    <StyledButton
+      className={className}
+      onClick={onClick}
+      type={type}
+      as={as}
+      onMouseEnter={() => {
+        sethover(true);
+      }}
+      onMouseLeave={() => {
+        sethover(false);
+      }}>
+      <Cap>
+        <Divider animate={hover} />
       </Cap>
       <ButtonInner>{children}</ButtonInner>
-      <Cap className='right'>
-        <Plus />
-        <Plus />
+      <Cap>
+        <Divider animate={hover} />
       </Cap>
     </StyledButton>
   );

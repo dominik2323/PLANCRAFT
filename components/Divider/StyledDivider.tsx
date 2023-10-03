@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import { ColorKeys, colors } from "../../consts/colors";
+import { motion } from "framer-motion";
 
 export const StyledDivider = styled.div`
   display: flex;
@@ -25,8 +26,9 @@ export const PlusWrapper = styled.div`
   }
 `;
 
-export const DividerLine = styled.div<{ color: ColorKeys }>`
+export const DividerLine = styled(motion.div)<{ color: ColorKeys }>`
   width: 100%;
   height: 1px;
   background-color: ${({ color }) => colors[color]};
+  transform-origin: 0 0;
 `;

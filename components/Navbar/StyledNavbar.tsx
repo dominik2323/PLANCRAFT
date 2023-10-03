@@ -25,7 +25,7 @@ export const TopbarContent = styled.div`
     ${({ theme }) => 2 * theme.gapSize}px;
 `;
 
-export const Topbar = styled.div`
+export const Topbar = styled(motion.div)`
   position: relative;
   width: 100%;
   z-index: 2;
@@ -45,10 +45,17 @@ export const LogoWrapper = styled(Link)`
   height: 100%;
 `;
 
-export const DividerWrapper = styled.div`
+export const NavbarDividerWrapper = styled.div`
   width: 100%;
   padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
-  padding-top: ${({ theme }) => 1 * theme.gapSize}px;
+  &.show {
+    display: block;
+    padding-top: ${({ theme }) => 1 * theme.gapSize}px;
+  }
+  &.hide {
+    display: none;
+    padding-top: ${({ theme }) => 0 * theme.gapSize}px;
+  }
 `;
 
 export const NavLinks = styled(motion.div)`
@@ -65,21 +72,25 @@ export const NavigationDashboard = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: ${({ theme }) => 2 * theme.gapSize}px;
-  align-content: end;
   height: 100%;
 `;
 
 export const Navigation = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+`;
+
+export const NavlinkWrapper = styled(motion.div)`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid ${colors.white};
 `;
 
 export const NavLink = styled(Link)`
   all: unset;
   cursor: pointer;
-  /* TODO make navlinks higher */
-  padding: ${spaces.l}px;
+  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
 `;
 
-export const LinkDescription = styled.div``;
+export const LinkDescription = styled(motion.div)``;

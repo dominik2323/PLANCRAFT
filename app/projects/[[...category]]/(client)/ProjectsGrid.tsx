@@ -61,7 +61,12 @@ const ProjectsGrid = ({
                 slug={_slug}
                 realization={project_realization}
                 services={project_category}
-                src={project_cover.url}
+                image={{
+                  src: project_cover.url,
+                  width: project_cover.width,
+                  height: project_cover.height,
+                  alt: project_cover.description || project_name,
+                }}
               />
             </ProjectCardWrapper>
             {!(i === projects.length) && <Divider hidePlus />}

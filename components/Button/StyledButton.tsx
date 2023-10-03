@@ -13,7 +13,9 @@ export const StyledButton = styled.button`
   all: unset;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  row-gap: ${({ theme }) => 0.25 * theme.gapSize}px;
   font-size: 20px;
   color: ${colors.primary400};
   column-gap: ${spaces.s}px;
@@ -26,16 +28,7 @@ export const StyledButton = styled.button`
 `;
 
 export const Cap = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  &.left {
-    margin-left: ${({ theme }) => -1 * theme.plusSize * 0.5}px;
-  }
-  &.right {
-    margin-right: ${({ theme }) => -1 * theme.plusSize * 0.5}px;
-  }
+  width: 100%;
 `;
 
 export const ButtonInner = styled.div`

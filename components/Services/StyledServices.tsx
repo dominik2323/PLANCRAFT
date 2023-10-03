@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import { spaces } from "../../consts/spaces";
 
 export const StyledServices = styled.div``;
 
@@ -44,7 +45,15 @@ export const ServiceContentLeft = styled.div`
   display: grid;
 `;
 
-export const ServiceContentLeftInner = styled.div``;
+export const ServiceContentLeftInner = styled.div`
+  display: grid;
+  row-gap: ${spaces.m}px;
+  align-content: start;
+`;
+
+export const ServiceContentLeftHeaderContainer = styled.div`
+  margin-top: ${spaces.m}px;
+`;
 
 export const ServiceContentLeftCta = styled.div`
   align-self: end;
