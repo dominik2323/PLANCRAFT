@@ -1,8 +1,9 @@
 "use client";
 
 import React, { ButtonHTMLAttributes, ReactNode, useState } from "react";
-import Divider from "../Divider/Divider";
+import Plus from "../Svgs/Plus";
 import { ButtonInner, ButtonLink, Cap, StyledButton } from "./StyledButton";
+import Divider from "../Divider/Divider";
 
 interface ButtonProps {
   children: ReactNode;
@@ -36,11 +37,11 @@ const Button = ({
         }}>
         <StyledButton as={"span"} className={className} onClick={onClick}>
           <Cap>
-            <Divider animate={hover} />
+            <Divider animate={hover} duration={0.5} />
           </Cap>
           <ButtonInner>{children}</ButtonInner>
           <Cap>
-            <Divider animate={hover} />
+            <Divider animate={hover} duration={0.5} />
           </Cap>
         </StyledButton>
       </ButtonLink>
@@ -59,11 +60,11 @@ const Button = ({
         sethover(false);
       }}>
       <Cap>
-        <Divider animate={hover} />
+        <Divider animate={hover} duration={0.5} />
       </Cap>
       <ButtonInner>{children}</ButtonInner>
       <Cap>
-        <Divider animate={hover} />
+        <Divider animate={hover} duration={0.5} />
       </Cap>
     </StyledButton>
   );

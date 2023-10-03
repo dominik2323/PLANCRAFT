@@ -8,13 +8,17 @@ import { DividerLine, PlusWrapper, StyledDivider } from "./StyledDivider";
 interface DividerProps {
   fill?: ColorKeys;
   hidePlus?: boolean;
-  animate?: boolean | "inView";
+  animate?: boolean | "inView" | "animatePresence";
+  duration?: number;
+  once?: boolean;
 }
 
 const Divider = ({
   fill = "primary400",
   hidePlus = false,
   animate = "inView",
+  duration = 3,
+  once = true,
 }: DividerProps) => {
   return (
     <StyledDivider className={hidePlus ? "hide-plus" : ""}>
@@ -27,10 +31,10 @@ const Divider = ({
         color={fill}
         initial={"hidden"}
         whileInView={animate === "inView" ? "visible" : undefined}
-        viewport={{ once: true }}
+        viewport={{ once }}
         animate={animate !== "inView" && animate ? "visible" : "hidden"}
         variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }}
-        transition={{ ease: easing, duration: 3 }}
+        transition={{ ease: easing, duration: duration }}
       />
       {!hidePlus && (
         <PlusWrapper className='right'>

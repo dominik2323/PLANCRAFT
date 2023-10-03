@@ -84,7 +84,16 @@ export const NavlinkWrapper = styled(motion.div)`
   height: 100%;
   display: flex;
   align-items: center;
-  border-top: 1px solid ${colors.white};
+  position: relative;
+  /* border-top: 1px solid ${colors.white}; */
+`;
+
+export const NavlinkDividerWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
 `;
 
 export const NavLink = styled(Link)`

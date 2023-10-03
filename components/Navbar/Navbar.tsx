@@ -23,6 +23,7 @@ import {
   Topbar,
   TopbarContent,
   NavlinkWrapper,
+  NavlinkDividerWrapper,
 } from "./StyledNavbar";
 import { usePathname } from "next/navigation";
 import { servicesData } from "../../app/service/[slug]/servicesData";
@@ -161,6 +162,9 @@ const Navbar = ({}: NavbarProps) => {
                       <NavLink
                         href={slug}
                         onMouseEnter={() => setHoverIndex(i)}>
+                        <NavlinkDividerWrapper>
+                          <Divider hidePlus fill='white' animate={isOpen} />
+                        </NavlinkDividerWrapper>
                         <Small className='white'>{name}</Small>
                       </NavLink>
                     </NavlinkWrapper>
