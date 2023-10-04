@@ -12,16 +12,12 @@ const list = [
     filename: "kogaa.svg",
   },
   {
-    name: "AIA",
-    filename: "aia.svg",
+    name: "JUNG",
+    filename: "jung.svg",
   },
   {
-    name: "Schmidt Hammer Lassen",
-    filename: "shl.svg",
-  },
-  {
-    name: "Urbania",
-    filename: "urbania.svg",
+    name: "STEEZY",
+    filename: "steezy.svg",
   },
 ];
 
@@ -33,7 +29,7 @@ const Partners = ({}: PartnersProps) => {
       </DividerHeader>
       <PartnersList>
         {list.map(({ name, filename }, i) => (
-          <PartnersLogo src={`/imgs/${filename}`} alt={name} key={i} />
+          <PartnersLogo src={`/img/${filename}`} alt={name} key={i} />
         ))}
       </PartnersList>
     </StyledPartners>

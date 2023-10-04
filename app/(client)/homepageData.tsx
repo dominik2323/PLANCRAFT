@@ -9,9 +9,9 @@ export const homepageData = {
       perex:
         "Zajištujeme kompletní support pro architektonická studia a investory s cílem zefektivnit a zkvalitnit proces předrealizační části výstavby.",
       image: {
-        src: "/imgs/hp-hero.jpg",
-        width: 1321,
-        height: 846,
+        src: "/img/homepage-1.jpg",
+        width: 4000,
+        height: 2667,
         alt: "Budujeme udržitelnější a spokojenější budoucnost.",
       },
     },

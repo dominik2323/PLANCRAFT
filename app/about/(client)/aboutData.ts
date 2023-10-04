@@ -6,7 +6,7 @@ export const aboutData = {
     perex:
       "Jsme stabilním inženýrským partnerem pro architektonická studia a developery, poskytující technickou podporu a expertizu, odborné know-how a zajišťující včasné a kvalitní provedení projektu při dodržení kvalitního designu a optimaliazce nákladů.",
     image: {
-      src: "/imgs/about-hero.jpg",
+      src: "/img/aboutpage-6.jpg",
       alt: "Projekční studio, které vám pomůže vybudovat i vaše nejsložitější vize.",
       width: 760,
       height: 1080,
@@ -16,7 +16,7 @@ export const aboutData = {
     "Místo, kde se technická odbornost snoubí s architektonickými inovacemi.",
   scrollFigureBanner: {
     image: {
-      src: "/imgs/about-mission.jpg",
+      src: "/img/aboutpage-4.jpg",
       width: 760,
       height: 1080,
       alt: "Projekční studio, které vám pomůže vybudovat i vaše nejsložitější vize.",
@@ -57,9 +57,9 @@ export const aboutData = {
   ourTeam: {
     figureBanner: {
       image: {
-        src: "/imgs/about-team.jpg",
-        width: 760,
-        height: 1080,
+        src: "/img/aboutpage-5.jpg",
+        width: 1000,
+        height: 600,
         alt: "Náš tým",
       },
       perex:
@@ -68,7 +68,7 @@ export const aboutData = {
     teamClaim:
       "V Plancraftu věříme, že kvalitní a důslednou prací protkanou inovacemi dokážeme zlepšit kvalitu života ve městech po celé generace.",
     teamClaimImage: {
-      src: "/imgs/about-team-1.jpg",
+      src: "/img/aboutpage-3.jpg",
       width: 760,
       height: 480,
       alt: "Plancraft tým",

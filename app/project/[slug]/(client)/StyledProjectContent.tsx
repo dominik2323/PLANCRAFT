@@ -5,12 +5,14 @@ import Image from "next/image";
 export const StyledProjectContent = styled.div``;
 export const ProjectBodyImage = styled(Image)`
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 `;
 
 export const ProjectBodyImageRow = styled.div`
-  display: flex;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   margin: ${({ theme }) => 2 * theme.gapSize}px 0;
   &:first-child {

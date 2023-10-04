@@ -4,7 +4,7 @@ export const contactData = {
   name: "Kontakt",
   header: "Společně změníme vaše vize ve skutečnost",
   contactCover: {
-    src: "/imgs/contact-cover.jpg",
+    src: "/img/contactpage-2.jpg",
     alt: "Společně změníme vaše vize ve skutečnost",
     width: 840,
     height: 600,

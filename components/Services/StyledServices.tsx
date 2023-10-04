@@ -69,4 +69,5 @@ export const ServiceContentRight = styled.div`
 export const ServiceCover = styled(Image)`
   object-fit: cover;
   width: 100%;
+  height: 100%;
 `;

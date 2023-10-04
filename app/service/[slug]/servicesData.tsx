@@ -62,7 +62,7 @@ export const servicesData: ServicesData = {
       perex:
         'Víme, že ďábel se skrývá v detailech. A proto zajistíme, že bude vyřešen každý milimetr stavby. Už žádné "red flags", jen kvalita a preciznost.',
       image: {
-        src: "/imgs/service-projektova-dokumentace.jpg",
+        src: "/img/service-projektova-dokumentace-0.gif",
         width: 1070,
         height: 615,
         alt: "Projektová dokumentace",
@@ -72,9 +72,9 @@ export const servicesData: ServicesData = {
       "S naší odborností v zaměřování a 3D modelování vytváříme detailní a komplexní digitální podklady pro tvorbu vašich architektonických studií a zhmotnění vašich vizí.",
     scrollFigureBanner: {
       image: {
-        src: "/imgs/service-projektova-dokumentace-scroll-figure-banner.jpg",
-        width: 960,
-        height: 560,
+        src: "/img/service-projektova-dokumentace-3.jpg",
+        width: 1000,
+        height: 500,
         alt: "Projektová dokumentace",
       },
       items: [
@@ -90,7 +90,7 @@ export const servicesData: ServicesData = {
         {
           header: "Projektová dokumentace",
           image: {
-            src: "/imgs/service-content-projektova-dokumentace.jpg",
+            src: "/img/service-projektova-dokumentace-0.gif",
             alt: "Projektová dokumentace",
             width: 830,
             height: 480,
@@ -135,8 +135,8 @@ export const servicesData: ServicesData = {
         {
           header: "Inženýring a zisk povolení",
           image: {
-            src: "/imgs/service-content-projektova-dokumentace.jpg",
-            alt: "Projektová dokumentace",
+            src: "/img/service-projektova-dokumentace-4.jpg",
+            alt: "Inženýring a zisk povolení",
             width: 830,
             height: 480,
           },
@@ -201,7 +201,7 @@ export const servicesData: ServicesData = {
       perex:
         "S hrdostí se staráme o 3D pasporty budov pro široké spektrum typologií a fází, ať už se jedná o památkově chráněné nemovitosti určené k obnově nebo novostavby, které potřebují dokumentaci skutečného stavu.",
       image: {
-        src: "/imgs/service-pasportizace.jpg",
+        src: "/img/service-pasportizace-0.gif",
         width: 1070,
         height: 615,
         alt: "Pasportizace",
@@ -211,7 +211,7 @@ export const servicesData: ServicesData = {
       "S naší odborností v zaměřování a 3D modelování vytváříme detailní a komplexní digitální podklady pro tvorbu vašich architektonických studií a zhmotnění vašich vizí.",
     scrollFigureBanner: {
       image: {
-        src: "/imgs/service-pasportizace-scroll-figure-banner.jpg",
+        src: "/img/service-pasportizace-3.jpg",
         width: 960,
         height: 560,
         alt: "Pasportizace",
@@ -229,8 +229,8 @@ export const servicesData: ServicesData = {
         {
           header: "Detailní pasportizace",
           image: {
-            src: "/imgs/service-content-projektova-dokumentace.jpg",
-            alt: "Pasportizace",
+            src: "/img/service-pasportizace-0.gif",
+            alt: "Detailní pasportizace",
             width: 830,
             height: 480,
           },
@@ -267,8 +267,8 @@ export const servicesData: ServicesData = {
         {
           header: "Zjednodušená dokumentace",
           image: {
-            src: "/imgs/service-content-projektova-dokumentace.jpg",
-            alt: "Pasportizace",
+            src: "/img/service-pasportizace-4.jpg",
+            alt: "Zjednodušená dokumentace",
             width: 830,
             height: 480,
           },
@@ -338,17 +338,17 @@ export const servicesData: ServicesData = {
       perex:
         "Zajišťujeme komplexní služby v oblasti energetiky s cílem pro udržitelnou výstavbu s co nejmenším negativním dopadem na životní přostředí a s co nejefektivnějším využitím zdrojů.",
       image: {
-        src: "/imgs/service-energeticka-uspornost.jpg",
-        width: 1070,
-        height: 615,
-        alt: "Pasportizace",
+        src: "/img/service-energetika-0.gif",
+        width: 1000,
+        height: 500,
+        alt: "Energetická úspornost",
       },
     },
     introPerex:
       "Nabijeme váš projekt pozitivní energií od konceptu až po detaily.",
     scrollFigureBanner: {
       image: {
-        src: "/imgs/service-energeticka-uspornost-scroll-figure-banner.jpg",
+        src: "/img/service-energetika-3.jpg",
         width: 960,
         height: 560,
         alt: "Energetická úspornost",
@@ -415,7 +415,7 @@ export const servicesData: ServicesData = {
       perex:
         "Kromě toho, že jsme Vaším partnerem v procesu, pomáháme navigovat při přípravě, schvalování a povolování složitých projektů. Zapojujeme se do všech fází projektu a nabízíme podporu při získávání autorizací a povolovacích dokumentů i při správě stavby.",
       image: {
-        src: "/imgs/service-design.jpg",
+        src: "/img/service-design-0.jpg",
         width: 1070,
         height: 615,
         alt: "Design due diligence",
@@ -425,10 +425,10 @@ export const servicesData: ServicesData = {
       "Umožníme vašemu týmu vytvářet průlomové návrhy, které zanechají trvalý pozitivní dopad na kvalitu života ve městech.",
     scrollFigureBanner: {
       image: {
-        src: "/imgs/service-energeticka-uspornost-scroll-figure-banner.jpg",
+        src: "/img/service-design-2.jpg",
         width: 960,
         height: 560,
-        alt: "Energetická úspornost",
+        alt: "Design due diligence",
       },
       items: [
         "Hledáme a navrhujeme ty nejzajímavější a nejoptimálnější řešení pro jakýkoliv typ projektu. Přinášíme nejmodernější energetické řešení pro zlepšení kvality života ve městech.",
@@ -443,8 +443,8 @@ export const servicesData: ServicesData = {
         {
           header: "Technické prověření proveditelnosti",
           image: {
-            src: "/imgs/service-content-projektova-dokumentace.jpg",
-            alt: "Design due deligence",
+            src: "/img/service-design-0.jpg",
+            alt: "Technické prověření proveditelnosti",
             width: 830,
             height: 480,
           },
@@ -458,8 +458,8 @@ export const servicesData: ServicesData = {
         {
           header: "Detailní pasportizace",
           image: {
-            src: "/imgs/service-content-projektova-dokumentace.jpg",
-            alt: "Design due deligence",
+            src: "/img/service-pasportizace-0.gif",
+            alt: "Detailní pasportizace",
             width: 830,
             height: 480,
           },
@@ -473,8 +473,8 @@ export const servicesData: ServicesData = {
         {
           header: "Dokumentace v BIM, inženýring",
           image: {
-            src: "/imgs/service-content-projektova-dokumentace.jpg",
-            alt: "Design due deligence",
+            src: "/img/service-design-5.gif",
+            alt: "Dokumentace v BIM, inženýring",
             width: 830,
             height: 480,
           },

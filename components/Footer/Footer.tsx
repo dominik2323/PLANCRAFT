@@ -74,9 +74,9 @@ const Footer = ({}: FooterProps) => {
           Ministerstva kultury České republiky.
         </Micro>
         <PublicityLogos>
-          <PublicityLogo src={"/imgs/financovano-eu.svg"} />
-          <PublicityLogo src={"/imgs/narodni-plan-obnovy.svg"} />
-          <PublicityLogo src={"/imgs/ministrstvo-kultury.svg"} />
+          <PublicityLogo src={"/img/financovano-eu.svg"} />
+          <PublicityLogo src={"/img/narodni-plan-obnovy.svg"} />
+          <PublicityLogo src={"/img/ministrstvo-kultury.svg"} />
         </PublicityLogos>
       </FooterPublicity>
     </StyledFooter>

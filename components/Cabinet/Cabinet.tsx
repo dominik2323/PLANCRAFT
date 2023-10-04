@@ -35,7 +35,7 @@ const Cabinet = ({ cards, header, footer }: CabinetProps) => {
 
   return (
     <StyledCabinet>
-      <Elevator scrollHeight={"200vh"}>
+      <Elevator scrollHeight={`${cards.length * 100}vh`}>
         {({ progress }) => {
           return (
             <>
@@ -57,7 +57,7 @@ const Cabinet = ({ cards, header, footer }: CabinetProps) => {
                               initial={{ opacity: 0, height: "0%" }}
                               animate={{ opacity: 1, height: "100%" }}
                               exit={{ opacity: 0, height: "0%" }}
-                              transition={{ ease: easing, duration: 1 }}>
+                              transition={{ ease: easing, duration: 1.3 }}>
                               <CabinetItemContentInner>
                                 {c[1]}
                               </CabinetItemContentInner>

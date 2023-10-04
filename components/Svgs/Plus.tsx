@@ -10,7 +10,7 @@ interface PlusProps {
   width?: number;
 }
 
-const Plus = ({ stroke = "primary400", width = 20 }: PlusProps) => {
+const Plus = ({ stroke = "primary400", width = 21 }: PlusProps) => {
   const { plusSize, setPlusSize } = useTheme();
 
   useEffect(() => {
