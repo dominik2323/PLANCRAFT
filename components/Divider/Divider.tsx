@@ -1,5 +1,6 @@
 "use client";
 
+import { ResolvedValues } from "framer-motion";
 import { easing } from "../../consts/animationConfig";
 import { ColorKeys } from "../../consts/colors";
 import Plus from "../Svgs/Plus";
@@ -11,6 +12,8 @@ interface DividerProps {
   animate?: boolean | "inView" | "animatePresence";
   duration?: number;
   once?: boolean;
+  onAnimationEnded?: (arg: ResolvedValues) => void;
+  reverse?: boolean;
 }
 
 const Divider = ({
@@ -19,6 +22,8 @@ const Divider = ({
   animate = "inView",
   duration = 3,
   once = true,
+  reverse,
+  onAnimationEnded = () => {},
 }: DividerProps) => {
   return (
     <StyledDivider className={hidePlus ? "hide-plus" : ""}>
@@ -28,6 +33,7 @@ const Divider = ({
         </PlusWrapper>
       )}
       <DividerLine
+        className={reverse ? "reverse" : ""}
         color={fill}
         initial={"hidden"}
         whileInView={animate === "inView" ? "visible" : undefined}
@@ -35,6 +41,9 @@ const Divider = ({
         animate={animate !== "inView" && animate ? "visible" : "hidden"}
         variants={{ hidden: { scaleX: 0 }, visible: { scaleX: 1 } }}
         transition={{ ease: easing, duration: duration }}
+        onUpdate={(arg) => {
+          onAnimationEnded(arg);
+        }}
       />
       {!hidePlus && (
         <PlusWrapper className='right'>

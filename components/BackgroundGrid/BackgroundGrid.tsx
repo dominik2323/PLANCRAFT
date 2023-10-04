@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useTheme } from "styled-components";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { Dot, StyledBackgroundGrid } from "./StyledBackgroundGrid";
@@ -17,7 +17,7 @@ const BackgroundGrid = ({}: BackgroundGridProps) => {
   const rowsCount = Math.ceil(h / gapSize);
   const dotSize = 1;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const gapSize = w / columnsCount || 1;
     setColumnCount(columnsCount);
     setGapSize(gapSize);

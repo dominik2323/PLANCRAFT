@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { useTheme } from "styled-components";
 import { ColorKeys, colors } from "../../consts/colors";
 import { StyledPlus } from "./Styles/StyledPlus";
@@ -13,7 +13,7 @@ interface PlusProps {
 const Plus = ({ stroke = "primary400", width = 21 }: PlusProps) => {
   const { plusSize, setPlusSize } = useTheme();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setPlusSize(width);
   }, [width]);
 

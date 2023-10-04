@@ -31,4 +31,7 @@ export const DividerLine = styled(motion.div)<{ color: ColorKeys }>`
   height: 1px;
   background-color: ${({ color }) => colors[color]};
   transform-origin: 0 0;
+  &.reverse {
+    transform-origin: 100% 0;
+  }
 `;

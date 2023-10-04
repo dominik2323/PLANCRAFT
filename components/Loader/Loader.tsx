@@ -1,14 +1,15 @@
 "use client";
 
-import React from "react";
-import { StyledLoader } from "./StyledLoader";
-import { useTheme } from "styled-components";
 import { AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import Divider from "../Divider/Divider";
+import Logo from "../Svgs/Logo";
+import { LoaderInner, StyledLoader } from "./StyledLoader";
 
 interface LoaderProps {}
 
 const Loader = ({}: LoaderProps) => {
-  const { isLayoutReady } = useTheme();
+  const [isLayoutReady, setisLayoutReady] = useState<boolean>(false);
 
   return (
     <AnimatePresence>
@@ -20,7 +21,21 @@ const Loader = ({}: LoaderProps) => {
           variants={{
             loading: { opacity: 1 },
             finished: { opacity: 0 },
-          }}></StyledLoader>
+          }}>
+          <LoaderInner>
+            <Divider animate={"inView"} fill='white' />
+            <Logo fill='white' />
+            <Divider
+              animate={"inView"}
+              fill='white'
+              onAnimationEnded={(val) => {
+                if (val.scaleX === 1) {
+                  setisLayoutReady(true);
+                }
+              }}
+            />
+          </LoaderInner>
+        </StyledLoader>
       )}
     </AnimatePresence>
   );
