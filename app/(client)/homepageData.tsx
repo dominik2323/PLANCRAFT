@@ -38,7 +38,7 @@ export const homepageData = {
     "Na každém detailu záleží. Postaráme se o to, aby naše společná cesta byla zcela bez komplikací a vedla k dechberoucím výsledkům.",
   quote: {
     quote:
-      "“Spolupráce s Plancraft byla jednoduše bezkonkurenční. Jejich profesionální přístup a schopnost dodat vynikající výsledky překonala veškerá očekávání.”",
-    client: "Radek Vašulík, Archidrip s.r.o.",
+      "Plancraft, náš specializovaný partner pro pasporty a tvorbu v BIM, úspěšně podporuje naše nejnáročnější projekty. Podporují architekty při vytváření kvalitních a jedinečných řešení.",
+    client: "KOGAA studio s.r.o.",
   },
 };

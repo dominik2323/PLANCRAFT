@@ -544,9 +544,9 @@ export const servicesData: ServicesData = {
     servicePerex:
       "Nejsme jen konzultanti, jsme vaše tajná zbraň, která podpoří vaše návrhy a rozšíří váš tvůrčí arzenál.",
     quote: {
-      client: "Radek Vašulík, Archidrip s.r.o.",
+      client: "KOGAA studio s.r.o.",
       quote:
-        "“Spolupráce s Plancraft byla jednoduše bezkonkurenční. Jejich profesionální přístup a schopnost dodat vynikající výsledky překonala veškerá očekávání.”",
+        "Plancraft, náš specializovaný partner pro pasporty a tvorbu v BIM, úspěšně podporuje naše nejnáročnější projekty. Podporují architekty při vytváření kvalitních a jedinečných řešení.",
     },
   },
 };
