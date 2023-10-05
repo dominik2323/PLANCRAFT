@@ -26,6 +26,12 @@ export const StyledButton = styled.button`
   &.skinny {
     width: ${({ theme }) => 3 * theme.gapSize}px;
   }
+  ${breakpoint.smallNotebook} {
+    width: ${({ theme }) => 6 * theme.gapSize}px;
+    &.skinny {
+      width: ${({ theme }) => 4 * theme.gapSize}px;
+    }
+  }
 `;
 
 export const Cap = styled.div`

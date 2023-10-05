@@ -17,6 +17,9 @@ export const HpHeader = styled.h1`
   color: ${colors.primary400};
   margin-left: -0.06em;
   white-space: pre-line;
+  ${breakpoint.smallNotebook} {
+    font-size: 90px;
+  }
 `;
 
 export const HpHeroInner = styled.div`

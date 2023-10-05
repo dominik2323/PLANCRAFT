@@ -12,16 +12,18 @@ export const StyledProjectCardSmall = styled(Link)`
 `;
 
 export const ProjectCardSmallCover = styled(Image)`
-  width: auto;
+  width: 100%;
   height: 100%;
+  aspect-ratio: 1;
   object-fit: cover;
 `;
 
 export const ProjectsCardsSmallWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  justify-items: start;
   ${breakpoint.monitor} {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 `;
