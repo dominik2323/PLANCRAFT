@@ -26,7 +26,7 @@ const DividerHeader = ({ children, className }: DividerHeaderProps) => {
         }
       });
     },
-    { rootMargin: "-30% 0% -30% 0%" }
+    { rootMargin: "-30% 0% 0% 0%" }
   );
 
   return (

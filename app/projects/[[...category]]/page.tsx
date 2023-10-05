@@ -70,7 +70,7 @@ const page = async ({ params: { category } }: PageProps) => {
         <Large>{projectsData.heroHeader}</Large>
         <Mini>{projectsData.heroPerex}</Mini>
       </ProjectsHero>
-      <DividerHeader>
+      <DividerHeader className='no-padding'>
         <ProjectDividerHeaderInner>
           <Mini className='uppercase'>Filtry</Mini>
           <ProjectFilters>

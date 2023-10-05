@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import { spaces } from "../../consts/spaces";
+import { breakpoint } from "../../consts/breakpoints";
 
 export const StyledProjectCard = styled(Link)`
   all: unset;
@@ -13,12 +14,15 @@ export const StyledProjectCard = styled(Link)`
   grid-template-columns: 1fr 1fr;
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   height: 100%;
+  ${breakpoint.smallNotebook} {
+    grid-template-columns: 1fr 3fr;
+    column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  }
 `;
 
 export const ProjectCardImage = styled(Image)`
   height: 100%;
   width: 100%;
-  aspect-ratio: 1;
   object-fit: contain;
   object-position: 0 0;
 `;

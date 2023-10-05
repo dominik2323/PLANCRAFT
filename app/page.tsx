@@ -14,6 +14,7 @@ import {
   HpHeader,
   HpHero,
   HpHeroInner,
+  HpProjectsCta,
   HpQuoteAbout,
   HpQuoteServices,
   StyledHomepage,
@@ -73,6 +74,14 @@ const page = async ({}: PageProps) => {
         </Button>
       </HpQuoteServices>
       <HpProjects projects={Projects} />
+      <HpProjectsCta>
+        <Medium>
+          Dělá nám radost se podílet na rozmanitých a inovativních projektech,
+          které nerezonují jen v lokálním prostředí, ale jsou uznávanou
+          inspirací na celém světě.
+        </Medium>
+        <Button href={"/projekty"}>Všechny projekty</Button>
+      </HpProjectsCta>
       <ClientQuote
         quote={homepageData.quote.quote}
         client={homepageData.quote.client}

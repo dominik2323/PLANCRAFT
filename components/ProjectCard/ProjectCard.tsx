@@ -15,7 +15,7 @@ import {
   ProjectCardImageMask,
   ProjectCardServices,
   StyledProjectCard,
-} from "./StyledCardProject";
+} from "./StyledProjectCard";
 
 interface ProjectCardProps {
   projectName: string;

@@ -13,6 +13,7 @@ import {
   ProjectDescriptionWrapper,
   ProjectDetail,
   ProjectElevator,
+  ProjectElevatorInner,
   ProjectNavigation,
   ProjectNavigationInner,
   StyledProject,
@@ -68,25 +69,29 @@ const page = async ({ params: { slug } }: PageProps) => {
       <ProjectDetail>
         <ProjectContent project={project} />
         <ProjectElevator>
-          <Small className='uppercase'>{project.project_name}</Small>
-          <ProjectDescriptionWrapper>
-            <Mini>{project.project_description}</Mini>
-          </ProjectDescriptionWrapper>
-          <Table
-            items={[
-              {
-                header: "Role v projektu",
-                body: project.project_category
-                  .map((x) => x.service_name)
-                  .join(`, `),
-              },
-              { header: "Realizace", body: project.project_realization },
-              ...project.project_table.map(({ table_body, table_header }) => ({
-                header: table_header,
-                body: table_body,
-              })),
-            ]}
-          />
+          <ProjectElevatorInner>
+            <Small className='uppercase'>{project.project_name}</Small>
+            <ProjectDescriptionWrapper>
+              <Mini>{project.project_description}</Mini>
+            </ProjectDescriptionWrapper>
+            <Table
+              items={[
+                {
+                  header: "Role v projektu",
+                  body: project.project_category
+                    .map((x) => x.service_name)
+                    .join(`, `),
+                },
+                { header: "Realizace", body: project.project_realization },
+                ...project.project_table.map(
+                  ({ table_body, table_header }) => ({
+                    header: table_header,
+                    body: table_body,
+                  })
+                ),
+              ]}
+            />
+          </ProjectElevatorInner>
         </ProjectElevator>
       </ProjectDetail>
       <ProjectNavigation>

@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import { colors } from "../../consts/colors";
+import { breakpoint } from "../../consts/breakpoints";
 
 export const StyledFooter = styled.footer`
   background-color: ${colors.primary400};
@@ -15,6 +16,20 @@ export const FooterContact = styled.div`
   justify-content: space-between;
   padding: ${({ theme }) => 2 * theme.gapSize}px
     ${({ theme }) => 1 * theme.gapSize}px;
+`;
+
+export const FooterContactText = styled.div``;
+
+export const FooterContactLinks = styled.div`
+  ${breakpoint.smallNotebook} {
+    min-width: 400px;
+  }
+`;
+
+export const FooterContactAddress = styled.div`
+  ${breakpoint.smallNotebook} {
+    min-width: 250px;
+  }
 `;
 
 export const FooterLogo = styled.div`
@@ -41,8 +56,14 @@ export const PublicityLogos = styled.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => 2 * theme.gapSize}px;
+  ${breakpoint.smallNotebook} {
+    gap: ${({ theme }) => 3 * theme.gapSize}px;
+  }
 `;
 
 export const PublicityLogo = styled.img`
   height: 50px;
+  ${breakpoint.smallNotebook} {
+    height: 40px;
+  }
 `;

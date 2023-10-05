@@ -7,7 +7,7 @@ import { breakpoint } from "../../consts/breakpoints";
 
 export const Mini = styled.p`
   font-size: 18px;
-  letter-spacing: 0em;
+  letter-spacing: 0.02em;
   line-height: 1.3em;
   color: ${colors.primary400};
   max-width: 600px;
@@ -21,6 +21,11 @@ export const Mini = styled.p`
     max-width: unset;
   }
   ${breakpoint.monitor} {
+    font-size: 21px;
+    max-width: 700px;
+  }
+  ${breakpoint.smallNotebook} {
+    font-size: 16px;
   }
   ${breakpoint.tabletLandscape} {
   }

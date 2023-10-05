@@ -9,6 +9,8 @@ export interface Theme {
   plusSize: number;
   setPlusSize: Dispatch<SetStateAction<number>>;
   isLayoutReady: boolean;
+  setDotSize: Dispatch<SetStateAction<number>>;
+  dotSize: number;
 }
 
 declare module "styled-components" {

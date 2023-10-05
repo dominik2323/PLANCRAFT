@@ -16,9 +16,9 @@ interface ProjectContentProps {
 const ProjectContent = ({ project }: ProjectContentProps) => {
   return (
     <StyledProjectContent>
-      {project.project_body.map((item) => {
+      {project.project_body.map((item, i) => {
         if (item.__typename === "Text") {
-          return <ProjectDetailText html={item.html} />;
+          return <ProjectDetailText key={i} html={item.html} />;
         }
         if (item.__typename === "ImagesRow") {
           return (

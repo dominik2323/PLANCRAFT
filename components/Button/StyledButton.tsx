@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { spaces } from "../../consts/spaces";
 import { colors } from "../../consts/colors";
 import Link from "next/link";
+import { breakpoint } from "../../consts/breakpoints";
 
 export const ButtonLink = styled(Link)`
   all: unset;
@@ -34,4 +35,7 @@ export const Cap = styled.div`
 export const ButtonInner = styled.div`
   width: 100%;
   text-align: center;
+  ${breakpoint.smallNotebook} {
+    font-size: 14px;
+  }
 `;

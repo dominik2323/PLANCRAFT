@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 import { spaces } from "../../consts/spaces";
+import { breakpoint } from "../../consts/breakpoints";
 
 export const StyledServices = styled.div``;
 
@@ -37,6 +38,9 @@ export const ServiceContent = styled(Link)`
   grid-template-columns: 1fr 1fr;
   height: 100%;
   padding: 0 ${({ theme }) => 2 * theme.gapSize}px;
+  ${breakpoint.smallNotebook} {
+    grid-template-columns: 2fr 1fr;
+  }
 `;
 
 export const ServiceContentLeft = styled.div`

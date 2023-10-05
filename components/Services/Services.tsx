@@ -42,7 +42,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
               <Numbering>
                 <Small>{`0${i + 1}`}</Small>
               </Numbering>
-              <Small className='uppercase'>{header}</Small>
+              <Small className='uppercase wide'>{header}</Small>
             </ServiceHeaderContent>
           </ServiceHeader>,
           <ServiceContent as={slug ? undefined : "span"} href={slug}>

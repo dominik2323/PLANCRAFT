@@ -1,6 +1,5 @@
 "use client";
 
-import { Medium } from "../Typography/Medium";
 import { Mini } from "../Typography/Mini";
 import { Quote, StyledClientQuote } from "./StyledClientQuote";
 
@@ -13,7 +12,7 @@ const ClientQuote = ({ quote, client }: ClientQuoteProps) => {
   return (
     <StyledClientQuote>
       <Quote>{quote}</Quote>
-      <Mini>{client}</Mini>
+      <Mini>— {client}</Mini>
     </StyledClientQuote>
   );
 };

@@ -21,8 +21,11 @@ export const Micro = styled.p`
     max-width: unset;
   }
   ${breakpoint.monitor} {
+    font-size: 16px;
+    max-width: 650px;
   }
   ${breakpoint.tabletLandscape} {
+    font-size: 12px;
   }
   ${breakpoint.smallPhone} {
   }

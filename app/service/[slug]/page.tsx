@@ -5,6 +5,7 @@ import DividerHeader from "../../../components/Divider/DividerHeader";
 import NumberedList from "../../../components/NumberedList/NumberedList";
 import PageIntro from "../../../components/PageIntro/PageIntro";
 import ProjectCardSmall from "../../../components/ProjectCardSmall/ProjectCardSmall";
+import { ProjectsCardsSmallWrapper } from "../../../components/ProjectCardSmall/StyledProjectCardSmall";
 import Services from "../../../components/Services/Services";
 import { Medium } from "../../../components/Typography/Medium";
 import { Mini } from "../../../components/Typography/Mini";
@@ -14,11 +15,9 @@ import {
   ServiceAdvantages,
   ServicePerex,
   SimilarProjects,
-  SimilarProjectsInner,
   StyledService,
 } from "./(client)/StyledService";
 import { servicesData } from "./servicesData";
-import { ProjectsCardsSmallWrapper } from "../../../components/ProjectCardSmall/StyledProjectCardSmall";
 
 export function generateMetadata({ params }: PageProps): Metadata {
   const slug = params.slug;
@@ -47,7 +46,7 @@ const page = async ({ params: { slug } }: PageProps) => {
   } = await client.query<Query>({
     query: GetProjects,
     variables: {
-      limit: 3,
+      limit: 4,
       where: {
         project_category: { _slug_any: [slug] },
       },
@@ -107,6 +106,7 @@ const page = async ({ params: { slug } }: PageProps) => {
           <ProjectsCardsSmallWrapper>
             {Projects.items.map(({ project_name, _slug, project_cover }) => (
               <ProjectCardSmall
+                key={_slug}
                 projectName={project_name}
                 slug={_slug}
                 image={{

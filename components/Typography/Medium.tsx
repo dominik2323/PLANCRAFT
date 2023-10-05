@@ -24,8 +24,11 @@ export const Medium = styled.p`
     text-transform: uppercase;
   }
   ${breakpoint.monitor} {
+    font-size: 70px;
+    max-width: 1500px;
   }
   ${breakpoint.smallNotebook} {
+    font-size: 45px;
   }
   ${breakpoint.tabletLandscape} {
   }

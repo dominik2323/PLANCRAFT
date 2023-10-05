@@ -1,21 +1,20 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { useTheme } from "styled-components";
+import { createArray } from "../../helpers/createArray";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import { Dot, StyledBackgroundGrid } from "./StyledBackgroundGrid";
-import { createArray } from "../../helpers/createArray";
 
 interface BackgroundGridProps {}
 
 const BackgroundGrid = ({}: BackgroundGridProps) => {
   const ref = useRef<SVGSVGElement>(null);
   const { h, w } = useWindowSize();
-  const { gapSize, setGapSize, setColumnCount } = useTheme();
+  const { gapSize, setGapSize, setColumnCount, dotSize } = useTheme();
 
   const columnsCount = 40;
   const rowsCount = Math.ceil(h / gapSize);
-  const dotSize = 1;
 
   useLayoutEffect(() => {
     const gapSize = w / columnsCount || 1;

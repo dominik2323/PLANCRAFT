@@ -9,6 +9,9 @@ import { Micro } from "../Typography/Micro";
 import { Mini } from "../Typography/Mini";
 import {
   FooterContact,
+  FooterContactAddress,
+  FooterContactLinks,
+  FooterContactText,
   FooterCopywrite,
   FooterLogo,
   FooterPublicity,
@@ -28,22 +31,26 @@ const Footer = ({}: FooterProps) => {
     <StyledFooter>
       <Divider fill='white' />
       <FooterContact>
-        <Mini className='white'>
-          Hledáte pomoc s vaším projektem? Nabízíme konzultace, rady a návrhy
-          pro optimální řešení. Kontaktujte nás a společně postavíme váš projekt
-          na pevné základy.
-        </Mini>
-        <div>
+        <FooterContactText>
+          <Mini className='white'>
+            Hledáte pomoc s vaším projektem? Nabízíme konzultace, rady a návrhy
+            pro optimální řešení. Kontaktujte nás a společně postavíme váš
+            projekt na pevné základy.
+          </Mini>
+        </FooterContactText>
+        <FooterContactLinks>
           <Link href={"tel: +420732870325"}>
             <Medium className='white'>+420 732 870 325</Medium>
           </Link>
           <Link href={"mailto:info@plancraft.eu"}>
             <Medium className='white'>info@plancraft.eu</Medium>
           </Link>
-        </div>
-        <Mini className='break-lines white'>
-          {`Plancraft s.r.o.\nIČO: 10856587\nBratislavská 206/21,\nZábrdovice, 602 00 Brno`}
-        </Mini>
+        </FooterContactLinks>
+        <FooterContactAddress>
+          <Mini className='break-lines white'>
+            {`Plancraft s.r.o.\nIČO: 10856587\nBratislavská 206/21,\nZábrdovice, 602 00 Brno`}
+          </Mini>
+        </FooterContactAddress>
       </FooterContact>
       <Divider fill='white' hidePlus />
       <FooterLogo>

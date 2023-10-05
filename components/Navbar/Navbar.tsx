@@ -1,35 +1,37 @@
 "use client";
 
-import { AnimatePresence } from "framer-motion";
-import { Fragment, useEffect, useLayoutEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useTheme } from "styled-components";
+import { aboutData } from "../../app/about/(client)/aboutData";
+import { contactData } from "../../app/contact/(client)/contactData";
+import { projectsData } from "../../app/projects/[[...category]]/(client)/projectsData";
+import { servicesData } from "../../app/service/[slug]/servicesData";
 import { easing } from "../../consts/animationConfig";
 import { useScrollDirection } from "../../hooks/useScrollDirection";
 import Burger from "../Burger/Burger";
 import Divider from "../Divider/Divider";
+import Arrow from "../Svgs/Arrow";
 import Logo from "../Svgs/Logo";
 import { Small } from "../Typography/Small";
 import {
   BurgerWrapper,
-  NavbarDividerWrapper,
   LinkDescription,
   LogoWrapper,
   NavLink,
   NavLinks,
+  NavbarDividerWrapper,
   NavbarPlaceholder,
   Navigation,
   NavigationDashboard,
+  NavlinkDividerWrapper,
+  NavlinkInner,
+  NavlinkWrapper,
   StyledNavbar,
   Topbar,
   TopbarContent,
-  NavlinkWrapper,
-  NavlinkDividerWrapper,
 } from "./StyledNavbar";
-import { usePathname } from "next/navigation";
-import { servicesData } from "../../app/service/[slug]/servicesData";
-import { projectsData } from "../../app/projects/[[...category]]/(client)/projectsData";
-import { aboutData } from "../../app/about/(client)/aboutData";
-import { contactData } from "../../app/contact/(client)/contactData";
 
 interface NavbarProps {}
 
@@ -137,7 +139,7 @@ const Navbar = ({}: NavbarProps) => {
                     when: "afterChildren",
                     staggerChildren: 0.1,
                     ease: easing,
-                    duration: 0.7,
+                    duration: 1,
                   },
                 },
                 visible: {
@@ -146,37 +148,61 @@ const Navbar = ({}: NavbarProps) => {
                     when: "beforeChildren",
                     staggerChildren: 0.1,
                     ease: easing,
-                    duration: 0.7,
+                    duration: 1,
                   },
                 },
               }}>
               <NavigationDashboard>
                 <Navigation>
-                  {navConfig.map(({ name, slug }, i) => (
-                    <NavlinkWrapper
-                      key={i}
-                      variants={{
-                        hidden: { opacity: 0 },
-                        visible: { opacity: 1 },
-                      }}>
-                      <NavLink
-                        href={slug}
-                        onMouseEnter={() => setHoverIndex(i)}>
-                        <NavlinkDividerWrapper>
-                          <Divider hidePlus fill='white' animate={isOpen} />
-                        </NavlinkDividerWrapper>
-                        <Small className='white'>{name}</Small>
-                      </NavLink>
-                    </NavlinkWrapper>
-                  ))}
+                  {navConfig.map(({ name, slug }, i) => {
+                    const isActive = slug === pathname;
+                    const isHover = hoverIndex === i;
+                    return (
+                      <NavlinkWrapper
+                        key={i}
+                        variants={{
+                          hidden: { opacity: 0 },
+                          visible: { opacity: 1 },
+                        }}>
+                        <NavLink
+                          onMouseEnter={() => setHoverIndex(i)}
+                          href={slug}>
+                          <NavlinkDividerWrapper>
+                            <Divider hidePlus fill='white' animate={isOpen} />
+                          </NavlinkDividerWrapper>
+                          <NavlinkInner
+                            animate={{ x: isHover ? 50 : 0 }}
+                            transition={{ ease: easing }}>
+                            <motion.span
+                              animate={{
+                                x: isHover ? 0 : -50,
+                                opacity: isHover ? 1 : 0,
+                              }}
+                              transition={{ ease: easing }}>
+                              <Arrow
+                                stroke={!isActive ? "primary300" : "white"}
+                                strokeWidth={2}
+                              />
+                            </motion.span>
+                            <Small
+                              className={`${
+                                !isActive ? "primary300" : "white"
+                              }`}>
+                              {name}
+                            </Small>
+                          </NavlinkInner>
+                        </NavLink>
+                      </NavlinkWrapper>
+                    );
+                  })}
                 </Navigation>
                 <LinkDescription
-                  transition={{ delay: 0 }}
+                  key={hoverIndex}
                   variants={{
                     hidden: { opacity: 0 },
                     visible: { opacity: 1 },
                   }}>
-                  <Small className='white'>{navConfig[hoverIndex].perex}</Small>
+                  {navConfig[hoverIndex].perex}
                 </LinkDescription>
               </NavigationDashboard>
               <Divider fill='white' />

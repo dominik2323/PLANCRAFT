@@ -28,7 +28,7 @@ export const PlusWrapper = styled.div`
 
 export const DividerLine = styled(motion.div)<{ color: ColorKeys }>`
   width: 100%;
-  height: 1px;
+  height: ${({ theme }) => theme.dotSize}px;
   background-color: ${({ color }) => colors[color]};
   transform-origin: 0 0;
   &.reverse {

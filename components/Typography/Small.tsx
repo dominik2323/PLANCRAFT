@@ -22,8 +22,12 @@ export const Small = styled.p`
     line-height: 1.1em;
   }
   ${breakpoint.monitor} {
+    font-size: 35px;
+    max-width: 700px;
   }
   ${breakpoint.smallNotebook} {
+    font-size: 21px;
+    max-width: 500px;
   }
   ${breakpoint.tabletLandscape} {
   }

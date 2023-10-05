@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import { breakpoint } from "../../consts/breakpoints";
 
 export const StyledProjectCardSmall = styled(Link)`
   all: unset;
@@ -20,4 +21,7 @@ export const ProjectsCardsSmallWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.monitor} {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
