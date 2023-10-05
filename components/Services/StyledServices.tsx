@@ -38,6 +38,7 @@ export const ServiceContent = styled(Link)`
   grid-template-columns: 1fr 1fr;
   height: 100%;
   padding: 0 ${({ theme }) => 2 * theme.gapSize}px;
+  column-gap: ${({ theme }) => 2 * theme.gapSize}px;
   ${breakpoint.smallNotebook} {
     grid-template-columns: 2fr 1fr;
   }

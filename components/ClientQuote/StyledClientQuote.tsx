@@ -26,4 +26,7 @@ export const Quote = styled.blockquote`
   ${breakpoint.smallNotebook} {
     font-size: 60px;
   }
+  ${breakpoint.tabletLandscape} {
+    font-size: 50px;
+  }
 `;

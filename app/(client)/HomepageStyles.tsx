@@ -20,6 +20,9 @@ export const HpHeader = styled.h1`
   ${breakpoint.smallNotebook} {
     font-size: 90px;
   }
+  ${breakpoint.tabletLandscape} {
+    font-size: 70px;
+  }
 `;
 
 export const HpHeroInner = styled.div`

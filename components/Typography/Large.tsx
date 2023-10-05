@@ -34,6 +34,8 @@ export const Large = styled.p`
     max-width: 1000px;
   }
   ${breakpoint.tabletLandscape} {
+    font-size: 60px;
+    max-width: 900px;
   }
   ${breakpoint.phone} {
   }

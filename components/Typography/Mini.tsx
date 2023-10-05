@@ -28,6 +28,8 @@ export const Mini = styled.p`
     font-size: 16px;
   }
   ${breakpoint.tabletLandscape} {
+    max-width: 500px;
+    font-size: 14px;
   }
   ${breakpoint.smallPhone} {
   }

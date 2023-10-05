@@ -24,11 +24,17 @@ export const FooterContactLinks = styled.div`
   ${breakpoint.smallNotebook} {
     min-width: 400px;
   }
+  ${breakpoint.tabletLandscape} {
+    min-width: 350px;
+  }
 `;
 
 export const FooterContactAddress = styled.div`
   ${breakpoint.smallNotebook} {
     min-width: 250px;
+  }
+  ${breakpoint.tabletLandscape} {
+    min-width: 200px;
   }
 `;
 

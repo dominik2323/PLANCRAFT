@@ -18,4 +18,8 @@ export const PartnersList = styled.div`
   }
 `;
 
-export const PartnersLogo = styled.img``;
+export const PartnersLogo = styled.img`
+  ${breakpoint.tabletLandscape} {
+    height: 50px;
+  }
+`;

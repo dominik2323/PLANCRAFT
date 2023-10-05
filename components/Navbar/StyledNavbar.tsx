@@ -20,6 +20,9 @@ export const NavbarPlaceholder = styled.div`
   ${breakpoint.smallNotebook} {
     height: ${({ theme }) => 5 * theme.gapSize}px;
   }
+  ${breakpoint.tabletLandscape} {
+    height: ${({ theme }) => 7 * theme.gapSize}px;
+  }
 `;
 
 export const TopbarContent = styled.div`

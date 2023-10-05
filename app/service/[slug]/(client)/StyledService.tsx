@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import { breakpoint } from "../../../../consts/breakpoints";
 
 export const StyledService = styled.main`
   padding: 0 ${({ theme }) => 2 * theme.gapSize}px;
@@ -7,6 +8,9 @@ export const StyledService = styled.main`
 
 export const ServicePerex = styled.div`
   margin: ${({ theme }) => 3 * theme.gapSize}px 0;
+  ${breakpoint.tabletLandscape} {
+    margin: ${({ theme }) => 5 * theme.gapSize}px 0;
+  }
 `;
 
 export const SimilarProjects = styled.div`

@@ -31,6 +31,8 @@ export const Medium = styled.p`
     font-size: 45px;
   }
   ${breakpoint.tabletLandscape} {
+    max-width: 800px;
+    font-size: 40px;
   }
   ${breakpoint.phone} {
   }

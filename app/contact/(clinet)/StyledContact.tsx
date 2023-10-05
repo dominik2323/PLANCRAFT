@@ -1,22 +1,16 @@
 "use client";
 import Image from "next/image";
 import styled from "styled-components";
-import { breakpoint } from "../../../consts/breakpoints";
 
 export const StyledContact = styled.main`
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - ${({ theme }) => 5 * theme.gapSize}px);
-  inset: 0;
-  top: ${({ theme }) => 5 * theme.gapSize}px;
-  width: 100vw;
   justify-content: space-between;
   position: absolute;
-  ${breakpoint.smallNotebook} {
-    height: calc(100vh - ${({ theme }) => 6 * theme.gapSize}px);
-    inset: 0;
-    top: ${({ theme }) => 6 * theme.gapSize}px;
-  }
+  top: 0;
+  padding-top: ${({ theme }) => 6 * theme.gapSize}px;
+  row-gap: ${({ theme }) => 2 * theme.gapSize}px;
 `;
 
 export const ContactHero = styled.div`
@@ -31,6 +25,7 @@ export const ContactContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  row-gap: ${({ theme }) => 2 * theme.gapSize}px;
 `;
 
 export const ContactCover = styled(Image)`

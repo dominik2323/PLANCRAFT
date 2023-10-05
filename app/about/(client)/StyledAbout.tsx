@@ -24,6 +24,9 @@ export const AboutTeamClaim = styled.div`
   display: grid;
   row-gap: ${({ theme }) => 3 * theme.gapSize}px;
   margin: ${({ theme }) => 5 * theme.gapSize}px 0;
+  ${breakpoint.tabletLandscape} {
+    row-gap: ${({ theme }) => 5 * theme.gapSize}px;
+  }
 `;
 
 export const AboutTeamClaimHeader = styled.div`
