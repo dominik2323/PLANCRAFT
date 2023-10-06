@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import styled from "styled-components";
+import { breakpoint } from "../../consts/breakpoints";
 
 export const StyledFigureBanner = styled.div`
   display: grid;
@@ -20,6 +21,15 @@ export const StyledFigureBanner = styled.div`
   }
   &.align-center {
     align-items: center;
+  }
+  ${breakpoint.tabletPortrait} {
+    grid-template-columns: unset;
+    grid-template-areas: "cover" "content";
+    row-gap: ${({ theme }) => 3 * theme.gapSize}px;
+    &.flip {
+      grid-template-columns: unset;
+      grid-template-areas: "cover" "content";
+    }
   }
 `;
 

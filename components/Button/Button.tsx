@@ -1,9 +1,8 @@
 "use client";
 
 import React, { ButtonHTMLAttributes, ReactNode, useState } from "react";
-import Plus from "../Svgs/Plus";
-import { ButtonInner, ButtonLink, Cap, StyledButton } from "./StyledButton";
 import Divider from "../Divider/Divider";
+import { ButtonInner, ButtonLink, Cap, StyledButton } from "./StyledButton";
 
 interface ButtonProps {
   children: ReactNode;

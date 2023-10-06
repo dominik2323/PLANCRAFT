@@ -11,36 +11,48 @@ export const StyledFooter = styled.footer`
 `;
 
 export const FooterContact = styled.div`
-  display: flex;
+  display: grid;
   gap: ${({ theme }) => 2 * theme.gapSize}px;
-  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "text links address";
   padding: ${({ theme }) => 2 * theme.gapSize}px
     ${({ theme }) => 1 * theme.gapSize}px;
-`;
-
-export const FooterContactText = styled.div``;
-
-export const FooterContactLinks = styled.div`
   ${breakpoint.smallNotebook} {
-    min-width: 400px;
+    grid-template-columns: 1fr minmax(400px, 1fr) minmax(250px, 1fr);
   }
   ${breakpoint.tabletLandscape} {
-    min-width: 350px;
+    grid-template-columns: 1fr minmax(350px, 1fr) minmax(200px, 1fr);
   }
+  ${breakpoint.tabletPortrait} {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "text links";
+    padding: ${({ theme }) => 3 * theme.gapSize}px
+      ${({ theme }) => 1 * theme.gapSize}px;
+  }
+`;
+
+export const FooterContactText = styled.div`
+  grid-area: text;
+`;
+
+export const FooterContactLinks = styled.div`
+  grid-area: links;
 `;
 
 export const FooterContactAddress = styled.div`
-  ${breakpoint.smallNotebook} {
-    min-width: 250px;
-  }
-  ${breakpoint.tabletLandscape} {
-    min-width: 200px;
+  grid-area: address;
+  ${breakpoint.tabletPortrait} {
+    display: none;
   }
 `;
 
 export const FooterLogo = styled.div`
   padding: ${({ theme }) => 2 * theme.gapSize}px
     ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.tabletPortrait} {
+    padding: ${({ theme }) => 4 * theme.gapSize}px
+      ${({ theme }) => 1 * theme.gapSize}px;
+  }
 `;
 
 export const FooterCopywrite = styled.div`
@@ -53,9 +65,16 @@ export const FooterCopywrite = styled.div`
 export const FooterPublicity = styled.div`
   display: flex;
   justify-content: space-between;
+  /* align-items: center; */
   gap: ${({ theme }) => 3 * theme.gapSize}px;
   margin-top: ${({ theme }) => 1 * theme.gapSize}px;
   padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.tabletPortrait} {
+    margin-top: ${({ theme }) => 2 * theme.gapSize}px;
+    gap: ${({ theme }) => 2 * theme.gapSize}px;
+    flex-direction: column;
+    padding: ${({ theme }) => 1 * theme.gapSize}px;
+  }
 `;
 
 export const PublicityLogos = styled.div`
@@ -64,6 +83,8 @@ export const PublicityLogos = styled.div`
   gap: ${({ theme }) => 2 * theme.gapSize}px;
   ${breakpoint.smallNotebook} {
     gap: ${({ theme }) => 3 * theme.gapSize}px;
+  }
+  ${breakpoint.tabletPortrait} {
   }
 `;
 

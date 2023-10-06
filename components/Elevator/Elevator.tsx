@@ -8,8 +8,9 @@ import ScrollAnimation, {
 } from "../ScrollAnimation/ScrollAnimation";
 
 interface ProductElevatorHoleProps {
-  children: (args: ScrollYProgress) => ReactNode;
+  children: (args?: ScrollYProgress) => ReactNode;
   scrollHeight: string;
+  disable?: boolean;
 }
 
 const StyledElevator = styled.div<{ $scrollHeight: string }>`
@@ -38,8 +39,14 @@ const ElevatorBody = ({ children, scrollHeight }: ProductElevatorHoleProps) => {
   );
 };
 
-const Elevator = ({ children, scrollHeight }: ProductElevatorHoleProps) => {
-  return (
+const Elevator = ({
+  children,
+  scrollHeight,
+  disable,
+}: ProductElevatorHoleProps) => {
+  return disable ? (
+    <>{children()}</>
+  ) : (
     <ScrollAnimation offset={[1, 1]} disableIntersectionObserver>
       <ElevatorBody scrollHeight={scrollHeight}>{children}</ElevatorBody>
     </ScrollAnimation>

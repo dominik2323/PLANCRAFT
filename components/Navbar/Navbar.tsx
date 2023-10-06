@@ -27,11 +27,14 @@ import {
   NavigationDashboard,
   NavlinkDividerWrapper,
   NavlinkInner,
+  NavlinkInnerArrowW,
   NavlinkWrapper,
   StyledNavbar,
   Topbar,
   TopbarContent,
 } from "./StyledNavbar";
+import { device } from "../../consts/breakpoints";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 interface NavbarProps {}
 
@@ -62,6 +65,7 @@ const Navbar = ({}: NavbarProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { directionDown, scrollPos } = useScrollDirection();
   const { gapSize, plusSize } = useTheme();
+  const { w } = useWindowSize();
   const [hoverIndex, setHoverIndex] = useState<number>(0);
   const [hideableNavbar, setHideableNavbar] = useState(false);
   const pathname = usePathname();
@@ -171,9 +175,16 @@ const Navbar = ({}: NavbarProps) => {
                             <Divider hidePlus fill='white' animate={isOpen} />
                           </NavlinkDividerWrapper>
                           <NavlinkInner
-                            animate={{ x: isHover ? 50 : 0 }}
+                            animate={{
+                              x:
+                                w <= device.tabletPortrait
+                                  ? 0
+                                  : isHover
+                                  ? 50
+                                  : 0,
+                            }}
                             transition={{ ease: easing }}>
-                            <motion.span
+                            <NavlinkInnerArrowW
                               animate={{
                                 x: isHover ? 0 : -50,
                                 opacity: isHover ? 1 : 0,
@@ -183,9 +194,9 @@ const Navbar = ({}: NavbarProps) => {
                                 stroke={!isActive ? "primary300" : "white"}
                                 strokeWidth={2}
                               />
-                            </motion.span>
+                            </NavlinkInnerArrowW>
                             <Small
-                              className={`${
+                              className={`navlink ${
                                 !isActive ? "primary300" : "white"
                               }`}>
                               {name}

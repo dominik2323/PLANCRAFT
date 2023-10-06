@@ -16,6 +16,10 @@ export const StyledClientQuote = styled.div`
     margin: ${({ theme }) => 5 * theme.gapSize}px 0;
     margin-left: ${({ theme }) => 0.2 * theme.columnCount * theme.gapSize}px;
   }
+  ${breakpoint.tabletPortrait} {
+    margin-left: 0;
+    margin: ${({ theme }) => 7 * theme.gapSize}px 0;
+  }
 `;
 
 export const Quote = styled.blockquote`

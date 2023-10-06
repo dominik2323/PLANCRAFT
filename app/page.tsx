@@ -17,6 +17,7 @@ import {
   HpProjectsCta,
   HpQuoteAbout,
   HpQuoteServices,
+  HpQuoteW,
   StyledHomepage,
 } from "./(client)/HomepageStyles";
 import HpProjects from "./(client)/HpProjects";
@@ -82,10 +83,12 @@ const page = async ({}: PageProps) => {
         </Medium>
         <Button href={"/projekty"}>Všechny projekty</Button>
       </HpProjectsCta>
-      <ClientQuote
-        quote={homepageData.quote.quote}
-        client={homepageData.quote.client}
-      />
+      <HpQuoteW>
+        <ClientQuote
+          quote={homepageData.quote.quote}
+          client={homepageData.quote.client}
+        />
+      </HpQuoteW>
       <Partners />
     </StyledHomepage>
   );

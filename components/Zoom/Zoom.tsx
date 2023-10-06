@@ -13,9 +13,10 @@ interface ZoomProps {
   items: ((progress: number) => ReactNode)[];
   header?: ReactNode;
   footer?: ReactNode;
+  disable?: boolean;
 }
 
-const Zoom = ({ items, header, footer }: ZoomProps) => {
+const Zoom = ({ items, header, footer, disable }: ZoomProps) => {
   const maxHeight = 0.55;
   const minHeight = (1 - maxHeight) / 2;
 
@@ -28,7 +29,12 @@ const Zoom = ({ items, header, footer }: ZoomProps) => {
     (progress) => Math.max(2 * progress - 1, 0),
   ];
 
-  return (
+  return disable ? (
+    <>
+      {header}
+      {items.map((i) => i(1))}
+    </>
+  ) : (
     <StyledZoom>
       <Elevator scrollHeight='300vh'>
         {({ progress }) => (

@@ -19,6 +19,10 @@ export const ProjectsHero = styled.div`
   ${breakpoint.smallNotebook} {
     grid-template-columns: 1fr 3fr;
   }
+  ${breakpoint.tabletPortrait} {
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: ${({ theme }) => 5 * theme.gapSize}px;
+  }
 `;
 
 export const ProjectDividerHeaderInner = styled.div`
@@ -29,6 +33,9 @@ export const ProjectDividerHeaderInner = styled.div`
   ${breakpoint.smallNotebook} {
     grid-template-columns: 1fr 3fr;
   }
+  ${breakpoint.tabletPortrait} {
+    grid-template-columns: 1fr 2fr;
+  }
 `;
 
 export const ProjectFilters = styled.div`
@@ -37,6 +44,11 @@ export const ProjectFilters = styled.div`
   gap: ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.smallNotebook} {
     gap: ${({ theme }) => 0.5 * theme.gapSize}px;
+  }
+  ${breakpoint.tabletPortrait} {
+    margin-bottom: ${({ theme }) => 1 * theme.gapSize}px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
 `;
 

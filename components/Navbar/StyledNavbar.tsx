@@ -1,10 +1,9 @@
 "use client";
-import styled from "styled-components";
-import { colors } from "../../consts/colors";
 import { motion } from "framer-motion";
-import { spaces } from "../../consts/spaces";
 import Link from "next/link";
+import styled from "styled-components";
 import { breakpoint } from "../../consts/breakpoints";
+import { colors } from "../../consts/colors";
 
 export const StyledNavbar = styled(motion.nav)`
   position: fixed;
@@ -50,6 +49,9 @@ export const LogoWrapper = styled(Link)`
   all: unset;
   cursor: pointer;
   height: 100%;
+  ${breakpoint.tabletPortrait} {
+    height: ${({ theme }) => 1.75 * theme.gapSize}px;
+  }
 `;
 
 export const NavbarDividerWrapper = styled.div`
@@ -76,6 +78,9 @@ export const NavLinks = styled(motion.div)`
   ${breakpoint.smallNotebook} {
     padding-top: ${({ theme }) => 6 * theme.gapSize}px;
   }
+  ${breakpoint.tabletPortrait} {
+    padding-top: ${({ theme }) => 10 * theme.gapSize}px;
+  }
 `;
 
 export const NavigationDashboard = styled.div`
@@ -83,6 +88,9 @@ export const NavigationDashboard = styled.div`
   grid-template-columns: 1fr 1fr;
   column-gap: ${({ theme }) => 2 * theme.gapSize}px;
   height: 100%;
+  ${breakpoint.tabletPortrait} {
+    grid-template-columns: unset;
+  }
 `;
 
 export const Navigation = styled.div`
@@ -123,10 +131,19 @@ export const LinkDescription = styled(motion.span)`
   ${breakpoint.smallNotebook} {
     font-size: 30px;
   }
+  ${breakpoint.tabletPortrait} {
+    display: none;
+  }
 `;
 
 export const NavlinkInner = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => 1 * theme.gapSize}px;
+`;
+
+export const NavlinkInnerArrowW = styled(motion.span)`
+  ${breakpoint.tabletPortrait} {
+    display: none;
+  }
 `;

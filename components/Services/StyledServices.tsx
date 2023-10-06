@@ -38,14 +38,20 @@ export const ServiceContent = styled(Link)`
   grid-template-columns: 1fr 1fr;
   height: 100%;
   padding: 0 ${({ theme }) => 2 * theme.gapSize}px;
+  grid-template-areas: "left right";
   column-gap: ${({ theme }) => 2 * theme.gapSize}px;
   ${breakpoint.smallNotebook} {
     grid-template-columns: 2fr 1fr;
+  }
+  ${breakpoint.tabletPortrait} {
+    grid-template-columns: unset;
+    grid-template-areas: "right" "left";
   }
 `;
 
 export const ServiceContentLeft = styled.div`
   height: 100%;
+  grid-area: left;
   padding: ${({ theme }) => 1 * theme.gapSize}px 0;
   display: grid;
 `;
@@ -66,6 +72,7 @@ export const ServiceContentLeftCta = styled.div`
 
 export const ServiceContentRight = styled.div`
   width: 100%;
+  grid-area: right;
   position: relative;
   padding: ${({ theme }) => 1 * theme.gapSize}px 0;
   overflow: hidden;

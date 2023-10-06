@@ -30,6 +30,10 @@ export const HpHeroInner = styled.div`
   margin-top: ${({ theme }) => 2 * theme.gapSize}px;
   display: grid;
   row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.tabletPortrait} {
+    margin-left: ${({ theme }) => (theme.columnCount / 3) * theme.gapSize}px;
+    row-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  }
 `;
 
 export const HpHero = styled.section`
@@ -38,10 +42,16 @@ export const HpHero = styled.section`
 
 export const HpAbout = styled.section`
   margin-top: ${({ theme }) => 2 * theme.gapSize}px;
+  ${breakpoint.tabletPortrait} {
+    margin-top: ${({ theme }) => 4 * theme.gapSize}px;
+  }
 `;
 
 export const HpQuoteAbout = styled.div`
   margin: ${({ theme }) => 4 * theme.gapSize}px 0;
+  ${breakpoint.tabletPortrait} {
+    margin: ${({ theme }) => 6 * theme.gapSize}px 0;
+  }
 `;
 
 export const HpQuoteServices = styled.div`
@@ -52,6 +62,11 @@ export const HpQuoteServices = styled.div`
   ${breakpoint.monitor} {
     margin-left: ${({ theme }) => 0.3 * theme.gapSize * theme.columnCount}px;
   }
+  ${breakpoint.tabletPortrait} {
+    margin-left: 0;
+    row-gap: ${({ theme }) => 3 * theme.gapSize}px;
+    margin: ${({ theme }) => 5 * theme.gapSize}px 0;
+  }
 `;
 
 export const HpProjectsCta = styled.div`
@@ -59,4 +74,14 @@ export const HpProjectsCta = styled.div`
   justify-items: start;
   row-gap: ${({ theme }) => 2 * theme.gapSize}px;
   margin-top: ${({ theme }) => 2 * theme.gapSize}px;
+  ${breakpoint.tabletPortrait} {
+    margin: ${({ theme }) => 7 * theme.gapSize}px 0
+      ${({ theme }) => 5 * theme.gapSize}px;
+  }
+`;
+
+export const HpQuoteW = styled.div`
+  ${breakpoint.tabletPortrait} {
+    display: none;
+  }
 `;

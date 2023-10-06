@@ -18,6 +18,15 @@ export const StyledProjectCard = styled(Link)`
     grid-template-columns: 1fr 3fr;
     column-gap: ${({ theme }) => 2 * theme.gapSize}px;
   }
+  ${breakpoint.tabletPortrait} {
+    grid-template-columns: 1fr 2fr;
+  }
+`;
+
+export const ProjectCardZoomW = styled.div`
+  ${breakpoint.tabletPortrait} {
+    height: 30vh;
+  }
 `;
 
 export const ProjectCardImage = styled(Image)`
@@ -25,6 +34,9 @@ export const ProjectCardImage = styled(Image)`
   width: 100%;
   object-fit: contain;
   object-position: 0 0;
+  ${breakpoint.tabletPortrait} {
+    object-fit: cover;
+  }
 `;
 
 export const ProjectCardImageMask = styled.div`
@@ -56,6 +68,10 @@ export const ProjectCardContent = styled.div`
 export const ProjectCardContentHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.tabletPortrait} {
+    column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  }
 `;
 
 export const ProjectCardServices = styled.div`
@@ -63,9 +79,15 @@ export const ProjectCardServices = styled.div`
   flex-direction: column;
   align-items: flex-end;
   gap: ${spaces.xxs}px;
+  ${breakpoint.tabletPortrait} {
+    column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  }
 `;
 
 export const ProjectCardContentFooter = styled(motion.div)`
   display: flex;
   justify-content: space-between;
+  ${breakpoint.tabletPortrait} {
+    column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  }
 `;

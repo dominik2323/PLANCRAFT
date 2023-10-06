@@ -1,5 +1,6 @@
 "use client";
 import styled from "styled-components";
+import { breakpoint } from "../../consts/breakpoints";
 
 export const StyledDividerHeader = styled.div`
   display: flex;
@@ -21,4 +22,8 @@ export const StyledDividerHeaderInner = styled.div`
   padding-right: ${({ theme }) => 1 * theme.gapSize}px;
   height: ${({ theme }) => 2 * theme.gapSize}px;
   padding-top: 0;
+  ${breakpoint.tabletPortrait} {
+    min-height: ${({ theme }) => 2 * theme.gapSize}px;
+    height: auto;
+  }
 `;

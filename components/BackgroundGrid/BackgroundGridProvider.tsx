@@ -19,6 +19,7 @@ export const BackgroundGridProvider = ({ children }) => {
 
   useEffect(() => {
     setDotSize(w > device.monitor ? 2 : 1);
+    setPlusSize(w <= device.tabletLandscape ? 13 : 21);
   }, [w]);
 
   return (

@@ -32,6 +32,12 @@ export const StyledButton = styled.button`
       width: ${({ theme }) => 4 * theme.gapSize}px;
     }
   }
+  ${breakpoint.tabletPortrait} {
+    width: ${({ theme }) => 10 * theme.gapSize}px;
+    &.skinny {
+      width: ${({ theme }) => 6 * theme.gapSize}px;
+    }
+  }
 `;
 
 export const Cap = styled.div`

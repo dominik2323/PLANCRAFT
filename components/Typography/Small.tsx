@@ -21,6 +21,11 @@ export const Small = styled.p`
     text-transform: uppercase;
     line-height: 1.1em;
   }
+  &.navlink {
+    ${breakpoint.tabletPortrait} {
+      font-size: 30px;
+    }
+  }
   ${breakpoint.monitor} {
     font-size: 35px;
     max-width: 700px;

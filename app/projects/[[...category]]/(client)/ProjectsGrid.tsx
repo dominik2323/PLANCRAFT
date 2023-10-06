@@ -13,7 +13,7 @@ import {
   Query,
   QueryProjectsArgs,
 } from "../../../../gql/types";
-import { ProjectCardWrapper, StyledProjectsGrid } from "./StyledProjectsGrid";
+import { ProjectCardW, StyledProjectsGrid } from "./StyledProjectsGrid";
 import Button from "../../../../components/Button/Button";
 
 interface ProjectsGridProps {
@@ -55,7 +55,7 @@ const ProjectsGrid = ({
           i
         ) => (
           <Fragment key={_slug}>
-            <ProjectCardWrapper>
+            <ProjectCardW>
               <ProjectCard
                 projectName={project_name}
                 slug={_slug}
@@ -68,7 +68,7 @@ const ProjectsGrid = ({
                   alt: project_cover.description || project_name,
                 }}
               />
-            </ProjectCardWrapper>
+            </ProjectCardW>
             {!(i === projects.length) && <Divider hidePlus />}
           </Fragment>
         )

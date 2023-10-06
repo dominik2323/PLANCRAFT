@@ -7,6 +7,9 @@ import { Mini } from "../../components/Typography/Mini";
 import Zoom from "../../components/Zoom/Zoom";
 import { Projects } from "../../gql/types";
 import DividerHeader from "../../components/Divider/DividerHeader";
+import { device } from "../../consts/breakpoints";
+import { useWindowSize } from "../../hooks/useWindowSize";
+import { ProjectCardZoomW } from "../../components/ProjectCard/StyledProjectCard";
 
 interface HpProjectsProps {
   projects: Projects;
@@ -15,9 +18,11 @@ interface HpProjectsProps {
 const StyledHpProjects = styled.div``;
 
 const HpProjects = ({ projects }: HpProjectsProps) => {
+  const { w } = useWindowSize();
   return (
     <StyledHpProjects data-hide-navbar>
       <Zoom
+        disable={w <= device.tabletPortrait}
         header={
           <DividerHeader className='no-padding'>
             <Mini className='uppercase'>Projekty</Mini>
@@ -37,7 +42,7 @@ const HpProjects = ({ projects }: HpProjectsProps) => {
             ) =>
             (p) => {
               return (
-                <>
+                <ProjectCardZoomW>
                   <ProjectCard
                     projectName={project_name}
                     services={project_category}
@@ -53,7 +58,7 @@ const HpProjects = ({ projects }: HpProjectsProps) => {
                     progress={Number(p.toFixed(2))}
                   />
                   {projects.items.length - 1 !== i && <Divider hidePlus />}
-                </>
+                </ProjectCardZoomW>
               );
             }
         )}

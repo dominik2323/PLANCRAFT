@@ -18,6 +18,7 @@ export const StyledLink = styled.a`
     display: flex;
     gap: ${spaces.xs}px;
     text-transform: inherit;
+    flex-shrink: 0;
     &.flip {
       flex-direction: row-reverse;
       svg {
