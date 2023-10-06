@@ -26,4 +26,8 @@ export const StyledDividerHeaderInner = styled.div`
     min-height: ${({ theme }) => 2 * theme.gapSize}px;
     height: auto;
   }
+  ${breakpoint.phone} {
+    min-height: ${({ theme }) => 4 * theme.gapSize}px;
+    height: auto;
+  }
 `;

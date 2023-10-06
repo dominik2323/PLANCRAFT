@@ -20,6 +20,7 @@ export const BackgroundGridProvider = ({ children }) => {
   useEffect(() => {
     setDotSize(w > device.monitor ? 2 : 1);
     setPlusSize(w <= device.tabletLandscape ? 13 : 21);
+    setColumnCount(w <= device.phone ? 30 : 40);
   }, [w]);
 
   return (

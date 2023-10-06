@@ -11,14 +11,13 @@ interface BackgroundGridProps {}
 const BackgroundGrid = ({}: BackgroundGridProps) => {
   const ref = useRef<SVGSVGElement>(null);
   const { h, w } = useWindowSize();
-  const { gapSize, setGapSize, setColumnCount, dotSize } = useTheme();
+  const { gapSize, setGapSize, setColumnCount, dotSize, columnCount } =
+    useTheme();
 
-  const columnsCount = 40;
   const rowsCount = Math.ceil(h / gapSize);
 
   useLayoutEffect(() => {
-    const gapSize = w / columnsCount || 1;
-    setColumnCount(columnsCount);
+    const gapSize = w / columnCount || 1;
     setGapSize(gapSize);
   }, [w, h]);
 
@@ -36,7 +35,7 @@ const BackgroundGrid = ({}: BackgroundGridProps) => {
       </defs>
       {createArray(rowsCount - 1).map((l) => (
         <g key={l}>
-          {createArray(columnsCount - 1).map((i) => (
+          {createArray(columnCount - 1).map((i) => (
             <Dot
               key={i}
               width={dotSize}

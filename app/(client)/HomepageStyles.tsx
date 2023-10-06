@@ -23,6 +23,12 @@ export const HpHeader = styled.h1`
   ${breakpoint.tabletLandscape} {
     font-size: 70px;
   }
+  ${breakpoint.phone} {
+    font-size: 40px;
+  }
+  ${breakpoint.smallPhone} {
+    font-size: 30px;
+  }
 `;
 
 export const HpHeroInner = styled.div`
@@ -33,6 +39,12 @@ export const HpHeroInner = styled.div`
   ${breakpoint.tabletPortrait} {
     margin-left: ${({ theme }) => (theme.columnCount / 3) * theme.gapSize}px;
     row-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  }
+  ${breakpoint.phone} {
+    margin-left: ${({ theme }) => (theme.columnCount / 4) * theme.gapSize}px;
+  }
+  ${breakpoint.smallPhone} {
+    margin-left: ${({ theme }) => (theme.columnCount / 9) * theme.gapSize}px;
   }
 `;
 

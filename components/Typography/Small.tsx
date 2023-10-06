@@ -25,6 +25,12 @@ export const Small = styled.p`
     ${breakpoint.tabletPortrait} {
       font-size: 30px;
     }
+    ${breakpoint.phone} {
+      font-size: 21px;
+    }
+    ${breakpoint.smallPhone} {
+      font-size: 16px;
+    }
   }
   ${breakpoint.monitor} {
     font-size: 35px;

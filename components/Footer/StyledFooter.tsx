@@ -29,6 +29,10 @@ export const FooterContact = styled.div`
     padding: ${({ theme }) => 3 * theme.gapSize}px
       ${({ theme }) => 1 * theme.gapSize}px;
   }
+  ${breakpoint.phone} {
+    grid-template-columns: unset;
+    grid-template-areas: "links" "text";
+  }
 `;
 
 export const FooterContactText = styled.div`
@@ -65,7 +69,6 @@ export const FooterCopywrite = styled.div`
 export const FooterPublicity = styled.div`
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   gap: ${({ theme }) => 3 * theme.gapSize}px;
   margin-top: ${({ theme }) => 1 * theme.gapSize}px;
   padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
@@ -84,7 +87,9 @@ export const PublicityLogos = styled.div`
   ${breakpoint.smallNotebook} {
     gap: ${({ theme }) => 3 * theme.gapSize}px;
   }
-  ${breakpoint.tabletPortrait} {
+  ${breakpoint.phone} {
+    flex-direction: column;
+    align-items: start;
   }
 `;
 

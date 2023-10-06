@@ -35,7 +35,7 @@ const Cabinet = ({ cards, header, footer }: CabinetProps) => {
 
   return (
     <StyledCabinet>
-      <Elevator scrollHeight={`${cards.length * 100}vh`}>
+      <Elevator scrollHeight={`${cards.length * 100}dvh`}>
         {({ progress }) => {
           return (
             <>

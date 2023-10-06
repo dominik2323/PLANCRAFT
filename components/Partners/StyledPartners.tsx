@@ -22,4 +22,7 @@ export const PartnersLogo = styled.img`
   ${breakpoint.tabletLandscape} {
     height: 50px;
   }
+  ${breakpoint.phone} {
+    height: 20px;
+  }
 `;

@@ -9,4 +9,5 @@ export const SimpleFooterDividerHeaderInner = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: ${({ theme }) => 2 * theme.gapSize}px;
 `;

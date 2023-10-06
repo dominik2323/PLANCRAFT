@@ -121,8 +121,8 @@ const Navbar = ({}: NavbarProps) => {
                 onClick={() => {
                   setIsOpen((p) => !p);
                 }}
-                width={gapSize}
-                height={gapSize / 3}
+                width={w <= device.phone ? gapSize * 2 : gapSize}
+                height={w <= device.phone ? (gapSize / 3) * 2 : gapSize / 3}
                 strokeWidth={3}
                 stroke={isOpen ? "white" : "primary400"}
               />
