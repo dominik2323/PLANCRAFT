@@ -59,7 +59,7 @@ const Footer = ({}: FooterProps) => {
       <Divider fill='white' hidePlus />
       <FooterCopywrite>
         <Mini className='white'>2023 PLANCRAFT</Mini>
-        <Mini className='white'>
+        <Mini className='white tar'>
           Made with Style & Ease by{" "}
           <Link
             noArrow

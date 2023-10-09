@@ -50,4 +50,7 @@ export const ButtonInner = styled.div`
   ${breakpoint.smallNotebook} {
     font-size: 14px;
   }
+  ${breakpoint.smallPhone} {
+    font-size: 12px;
+  }
 `;

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useLayoutEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { Theme } from "../../types/styled";
 import { useWindowSize } from "../../hooks/useWindowSize";
@@ -17,10 +17,14 @@ export const BackgroundGridProvider = ({ children }) => {
 
   const isLayoutReady = gapSize > 1 && columnCount > 0 && plusSize > 0;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setDotSize(w > device.monitor ? 2 : 1);
-    setPlusSize(w <= device.tabletLandscape ? 13 : 21);
-    setColumnCount(w <= device.phone ? 30 : 40);
+    setPlusSize(
+      w <= device.miniPhone ? 9 : w <= device.tabletLandscape ? 13 : 21
+    );
+    setColumnCount(w <= device.phone ? 20 : 40);
+    const gapSize = w / columnCount || 1;
+    setGapSize(gapSize);
   }, [w]);
 
   return (

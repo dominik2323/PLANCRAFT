@@ -90,6 +90,7 @@ export const PublicityLogos = styled.div`
   ${breakpoint.phone} {
     flex-direction: column;
     align-items: start;
+    gap: ${({ theme }) => 2 * theme.gapSize}px;
   }
 `;
 

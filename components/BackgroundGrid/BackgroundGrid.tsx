@@ -16,11 +16,6 @@ const BackgroundGrid = ({}: BackgroundGridProps) => {
 
   const rowsCount = Math.ceil(h / gapSize);
 
-  useLayoutEffect(() => {
-    const gapSize = w / columnCount || 1;
-    setGapSize(gapSize);
-  }, [w, h, columnCount]);
-
   return (
     <StyledBackgroundGrid
       ref={ref}

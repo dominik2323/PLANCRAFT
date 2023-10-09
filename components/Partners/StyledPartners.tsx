@@ -16,6 +16,15 @@ export const PartnersList = styled.div`
       ${({ theme }) => 1 * theme.gapSize}px
       ${({ theme }) => 3 * theme.gapSize}px;
   }
+  ${breakpoint.phone} {
+    column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    justify-content: space-between;
+  }
+  ${breakpoint.smallPhone} {
+    margin: ${({ theme }) => 2 * theme.gapSize}px
+      ${({ theme }) => 1 * theme.gapSize}px
+      ${({ theme }) => 3 * theme.gapSize}px;
+  }
 `;
 
 export const PartnersLogo = styled.img`
@@ -23,6 +32,9 @@ export const PartnersLogo = styled.img`
     height: 50px;
   }
   ${breakpoint.phone} {
-    height: 20px;
+    height: 30px;
+  }
+  ${breakpoint.smallPhone} {
+    height: 25px;
   }
 `;

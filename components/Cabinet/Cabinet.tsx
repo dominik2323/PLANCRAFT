@@ -20,6 +20,7 @@ interface CabinetProps {
   cards: ReactNode[][];
   header?: ReactNode;
   footer?: ReactNode;
+  disable?: boolean;
 }
 
 const createIntervals = (count) => {
@@ -30,10 +31,17 @@ const createIntervals = (count) => {
   });
 };
 
-const Cabinet = ({ cards, header, footer }: CabinetProps) => {
+const Cabinet = ({ cards, header, footer, disable }: CabinetProps) => {
   const intervals = createIntervals(cards.length);
 
-  return (
+  return disable ? (
+    <Fragment>
+      {header}
+      {cards.map((c, i) => (
+        <Fragment key={i}>{c}</Fragment>
+      ))}
+    </Fragment>
+  ) : (
     <StyledCabinet>
       <Elevator scrollHeight={`${cards.length * 100}dvh`}>
         {({ progress }) => {

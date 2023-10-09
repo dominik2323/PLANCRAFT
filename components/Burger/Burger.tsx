@@ -1,11 +1,9 @@
 "use client";
 
-import React from "react";
-import styled from "styled-components";
-import { ColorKeys, colors } from "../../consts/colors";
 import { motion } from "framer-motion";
+import styled from "styled-components";
 import { easing } from "../../consts/animationConfig";
-import { breakpoint } from "../../consts/breakpoints";
+import { ColorKeys, colors } from "../../consts/colors";
 
 interface BurgerProps {
   stroke?: ColorKeys;
@@ -18,6 +16,8 @@ interface BurgerProps {
 
 const StyledBurger = styled.svg`
   cursor: pointer;
+  width: 100%;
+  height: 100%;
 `;
 
 const Burger = ({

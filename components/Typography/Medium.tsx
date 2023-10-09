@@ -35,9 +35,10 @@ export const Medium = styled.p`
     font-size: 40px;
   }
   ${breakpoint.phone} {
+    font-size: 30px;
   }
   ${breakpoint.smallPhone} {
-    font-size: 35px;
+    font-size: 28px;
   }
   ${addColorClasses()}
 `;

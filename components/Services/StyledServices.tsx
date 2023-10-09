@@ -19,6 +19,9 @@ export const ServicesCabinetFooterWrapper = styled.div`
 
 export const ServiceHeader = styled.div`
   height: ${({ theme }) => 2 * theme.gapSize}px;
+  ${breakpoint.smallPhone} {
+    margin: ${({ theme }) => 1 * theme.gapSize}px 0 0;
+  }
 `;
 
 export const ServiceHeaderContent = styled.div`
@@ -47,6 +50,9 @@ export const ServiceContent = styled(Link)`
     grid-template-columns: unset;
     grid-template-areas: "right" "left";
   }
+  ${breakpoint.phone} {
+    padding: 0;
+  }
 `;
 
 export const ServiceContentLeft = styled.div`
@@ -54,6 +60,9 @@ export const ServiceContentLeft = styled.div`
   grid-area: left;
   padding: ${({ theme }) => 1 * theme.gapSize}px 0;
   display: grid;
+  ${breakpoint.phone} {
+    row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  }
 `;
 
 export const ServiceContentLeftInner = styled.div`

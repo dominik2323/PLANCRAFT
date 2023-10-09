@@ -19,7 +19,7 @@ const StyledElevator = styled.div<{ $scrollHeight: string }>`
 `;
 
 const ElevatorCabin = styled.div`
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   position: sticky;
   top: 0;

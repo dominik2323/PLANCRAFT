@@ -20,6 +20,9 @@ export const Mini = styled.p`
   &.wide {
     max-width: unset;
   }
+  &.tar {
+    text-align: right;
+  }
   ${breakpoint.monitor} {
     font-size: 21px;
     max-width: 700px;

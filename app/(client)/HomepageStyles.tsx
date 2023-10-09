@@ -1,8 +1,8 @@
 "use client";
 
 import styled from "styled-components";
-import { colors } from "../../consts/colors";
 import { breakpoint } from "../../consts/breakpoints";
+import { colors } from "../../consts/colors";
 
 export const StyledHomepage = styled.main`
   padding: ${({ theme }) => 1 * theme.gapSize}px;
@@ -24,10 +24,10 @@ export const HpHeader = styled.h1`
     font-size: 70px;
   }
   ${breakpoint.phone} {
-    font-size: 40px;
+    font-size: 35px;
   }
   ${breakpoint.smallPhone} {
-    font-size: 30px;
+    font-size: 28px;
   }
 `;
 
@@ -41,10 +41,10 @@ export const HpHeroInner = styled.div`
     row-gap: ${({ theme }) => 2 * theme.gapSize}px;
   }
   ${breakpoint.phone} {
-    margin-left: ${({ theme }) => (theme.columnCount / 4) * theme.gapSize}px;
+    margin-left: ${({ theme }) => 3 * theme.gapSize}px;
   }
   ${breakpoint.smallPhone} {
-    margin-left: ${({ theme }) => (theme.columnCount / 9) * theme.gapSize}px;
+    margin-left: 0;
   }
 `;
 
@@ -89,6 +89,10 @@ export const HpProjectsCta = styled.div`
   ${breakpoint.tabletPortrait} {
     margin: ${({ theme }) => 7 * theme.gapSize}px 0
       ${({ theme }) => 5 * theme.gapSize}px;
+  }
+  ${breakpoint.phone} {
+    margin: ${({ theme }) => 5 * theme.gapSize}px 0
+      ${({ theme }) => 3 * theme.gapSize}px;
   }
 `;
 

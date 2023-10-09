@@ -43,14 +43,19 @@ export const BurgerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: ${({ theme }) => 1.25 * theme.gapSize}px;
 `;
 
 export const LogoWrapper = styled(Link)`
   all: unset;
   cursor: pointer;
   height: 100%;
+  aspect-ratio: 321/43;
   ${breakpoint.tabletPortrait} {
     height: ${({ theme }) => 1.75 * theme.gapSize}px;
+  }
+  ${breakpoint.phone} {
+    height: ${({ theme }) => 1 * theme.gapSize}px;
   }
 `;
 
