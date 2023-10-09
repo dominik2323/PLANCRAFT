@@ -19,7 +19,7 @@ const BackgroundGrid = ({}: BackgroundGridProps) => {
   useLayoutEffect(() => {
     const gapSize = w / columnCount || 1;
     setGapSize(gapSize);
-  }, [w, h]);
+  }, [w, h, columnCount]);
 
   return (
     <StyledBackgroundGrid

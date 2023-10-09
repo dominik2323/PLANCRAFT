@@ -42,7 +42,7 @@ const HpProjects = ({ projects }: HpProjectsProps) => {
             ) =>
             (p) => {
               return (
-                <ProjectCardZoomW>
+                <ProjectCardZoomW key={_slug}>
                   <ProjectCard
                     projectName={project_name}
                     services={project_category}
