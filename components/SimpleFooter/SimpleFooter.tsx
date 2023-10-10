@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
+import DividerHeader from "../Divider/DividerHeader";
+import Link from "../Link/Link";
+import { Mini } from "../Typography/Mini";
 import {
   SimpleFooterDividerHeaderInner,
   StyledSimpleFooter,
 } from "./StyledSimpleFooter";
-import DividerHeader from "../Divider/DividerHeader";
-import { Mini } from "../Typography/Mini";
-import Link from "../Link/Link";
 
 interface SimpleFooterProps {}
 
@@ -17,7 +16,7 @@ const SimpleFooter = ({}: SimpleFooterProps) => {
       <DividerHeader className='flip big'>
         <SimpleFooterDividerHeaderInner>
           <Mini>{`${new Date().getFullYear()} PLANCRAFT`}</Mini>
-          <Mini>
+          <Mini className='tar'>
             Made with Style & Ease by{" "}
             <Link
               noArrow

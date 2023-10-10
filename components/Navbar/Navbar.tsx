@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { useTheme } from "styled-components";
@@ -9,8 +9,11 @@ import { contactData } from "../../app/contact/(client)/contactData";
 import { projectsData } from "../../app/projects/[[...category]]/(client)/projectsData";
 import { servicesData } from "../../app/service/[slug]/servicesData";
 import { easing } from "../../consts/animationConfig";
+import { device } from "../../consts/breakpoints";
 import { useScrollDirection } from "../../hooks/useScrollDirection";
+import { useWindowSize } from "../../hooks/useWindowSize";
 import Burger from "../Burger/Burger";
+import { DisableScroll } from "../DisableScroll/DisableScroll";
 import Divider from "../Divider/Divider";
 import Arrow from "../Svgs/Arrow";
 import Logo from "../Svgs/Logo";
@@ -33,9 +36,6 @@ import {
   Topbar,
   TopbarContent,
 } from "./StyledNavbar";
-import { device } from "../../consts/breakpoints";
-import { useWindowSize } from "../../hooks/useWindowSize";
-import { DisableScroll } from "../DisableScroll/DisableScroll";
 
 interface NavbarProps {}
 

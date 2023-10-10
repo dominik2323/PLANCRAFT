@@ -7,6 +7,9 @@ import { breakpoint } from "../../../../consts/breakpoints";
 export const StyledProject = styled.main`
   margin-top: ${({ theme }) => 2 * theme.gapSize}px;
   padding: 0 ${({ theme }) => 2 * theme.gapSize}px;
+  ${breakpoint.phone} {
+    padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  }
 `;
 
 export const ProjectDetail = styled.div`

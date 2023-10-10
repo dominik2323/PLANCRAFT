@@ -29,6 +29,9 @@ export const TopbarContent = styled.div`
   justify-content: space-between;
   padding: ${({ theme }) => 1 * theme.gapSize}px
     ${({ theme }) => 2 * theme.gapSize}px;
+  ${breakpoint.phone} {
+    padding: ${({ theme }) => 1 * theme.gapSize}px;
+  }
 `;
 
 export const Topbar = styled(motion.div)`

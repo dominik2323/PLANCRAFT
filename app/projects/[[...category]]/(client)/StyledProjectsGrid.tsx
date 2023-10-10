@@ -12,4 +12,8 @@ export const ProjectCardW = styled.div`
   ${breakpoint.tabletPortrait} {
     height: ${({ theme }) => 15 * theme.gapSize}px;
   }
+  ${breakpoint.phone} {
+    height: auto;
+    padding: ${({ theme }) => 1 * theme.gapSize}px 0;
+  }
 `;

@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { spaces } from "../../consts/spaces";
 import { breakpoint } from "../../consts/breakpoints";
+import { spaces } from "../../consts/spaces";
 
 export const StyledServices = styled.div``;
 
@@ -19,6 +19,9 @@ export const ServicesCabinetFooterWrapper = styled.div`
 
 export const ServiceHeader = styled.div`
   height: ${({ theme }) => 2 * theme.gapSize}px;
+  ${breakpoint.phone} {
+    height: ${({ theme }) => 3 * theme.gapSize}px;
+  }
   ${breakpoint.smallPhone} {
     margin: ${({ theme }) => 1 * theme.gapSize}px 0 0;
   }
@@ -26,8 +29,13 @@ export const ServiceHeader = styled.div`
 
 export const ServiceHeaderContent = styled.div`
   display: flex;
-  align-items: center;
   height: 100%;
+  ${breakpoint.phone} {
+    padding: ${spaces.s}px 0;
+  }
+  ${breakpoint.smallPhone} {
+    padding: ${spaces.xs}px 0;
+  }
 `;
 
 export const Numbering = styled.div`

@@ -43,13 +43,16 @@ export const HpHeroInner = styled.div`
   ${breakpoint.phone} {
     margin-left: ${({ theme }) => 3 * theme.gapSize}px;
   }
-  ${breakpoint.smallPhone} {
+  ${breakpoint.phone} {
     margin-left: 0;
   }
 `;
 
 export const HpHero = styled.section`
   margin-left: ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.phone} {
+    margin-left: 0;
+  }
 `;
 
 export const HpAbout = styled.section`

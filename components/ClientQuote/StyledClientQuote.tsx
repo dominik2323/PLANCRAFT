@@ -1,7 +1,7 @@
 "use client";
 import styled from "styled-components";
-import { colors } from "../../consts/colors";
 import { breakpoint } from "../../consts/breakpoints";
+import { colors } from "../../consts/colors";
 
 export const StyledClientQuote = styled.div`
   display: grid;
@@ -20,6 +20,9 @@ export const StyledClientQuote = styled.div`
     margin-left: 0;
     margin: ${({ theme }) => 7 * theme.gapSize}px 0;
   }
+  ${breakpoint.phone} {
+    margin: ${({ theme }) => 4 * theme.gapSize}px 0;
+  }
 `;
 
 export const Quote = styled.blockquote`
@@ -32,5 +35,11 @@ export const Quote = styled.blockquote`
   }
   ${breakpoint.tabletLandscape} {
     font-size: 50px;
+  }
+  ${breakpoint.phone} {
+    font-size: 30px;
+  }
+  ${breakpoint.smallPhone} {
+    font-size: 21px;
   }
 `;

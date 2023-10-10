@@ -2,10 +2,10 @@
 
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { DisableScroll } from "../DisableScroll/DisableScroll";
 import Divider from "../Divider/Divider";
 import Logo from "../Svgs/Logo";
 import { LoaderInner, StyledLoader } from "./StyledLoader";
-import { DisableScroll } from "../DisableScroll/DisableScroll";
 
 interface LoaderProps {}
 

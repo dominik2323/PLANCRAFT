@@ -1,8 +1,8 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import styled from "styled-components";
 import { breakpoint } from "../../consts/breakpoints";
-import { motion } from "framer-motion";
 
 export const StyledScrollFigureBanner = styled.div`
   display: grid;
@@ -21,7 +21,8 @@ export const StyledScrollFigureBanner = styled.div`
     row-gap: ${({ theme }) => 3 * theme.gapSize}px;
   }
   ${breakpoint.phone} {
-    margin-left: ${({ theme }) => -1 * theme.gapSize}px;
+    margin: ${({ theme }) => 5 * theme.gapSize}px 0
+      ${({ theme }) => 2 * theme.gapSize}px;
   }
 `;
 
@@ -33,6 +34,9 @@ export const ScrollFigureBannerContent = styled.div`
 export const ScrollFigureBannerCoverW = styled.div`
   height: 100%;
   position: relative;
+  ${breakpoint.phone} {
+    height: auto;
+  }
 `;
 
 export const ScrollFigureBannerCoverWI = styled(motion.div)`
@@ -42,7 +46,14 @@ export const ScrollFigureBannerCoverWI = styled(motion.div)`
   transform: translateY(-50%);
   padding-left: ${({ theme }) => 2 * theme.gapSize}px;
   ${breakpoint.phone} {
-    padding-left: ${({ theme }) => 1 * theme.gapSize}px;
+    position: static;
+    height: auto;
+    display: none;
+    transform: none;
+    padding-left: 0;
+    &:first-child {
+      display: block;
+    }
   }
 `;
 
@@ -52,6 +63,9 @@ export const ScrollFigureBannerCover = styled(Image)`
   object-fit: cover;
   aspect-ratio: 1.7;
   ${breakpoint.tabletPortrait} {
+    height: auto;
+  }
+  ${breakpoint.phone} {
     height: auto;
   }
 `;

@@ -1,18 +1,17 @@
 "use client";
 
-import React from "react";
+import { ImageProps } from "../../app/service/[slug]/servicesData";
+import Button from "../Button/Button";
 import FigureBanner from "../FigureBanner/FigureBanner";
 import ScrollFigureBanner from "../ScrollFigureBanner/ScrollFigureBanner";
 import { Large } from "../Typography/Large";
 import { Medium } from "../Typography/Medium";
 import { Mini } from "../Typography/Mini";
 import {
-  StyledPageIntro,
-  PageIntroHero,
   PageIntroCta,
+  PageIntroHero,
+  StyledPageIntro,
 } from "./StyledPageIntro";
-import { ImageProps } from "../../app/service/[slug]/servicesData";
-import Button from "../Button/Button";
 
 export interface PageIntroProps {
   heroHeader: string;

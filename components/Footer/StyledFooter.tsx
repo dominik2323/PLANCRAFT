@@ -1,8 +1,8 @@
 "use client";
 
 import styled from "styled-components";
-import { colors } from "../../consts/colors";
 import { breakpoint } from "../../consts/breakpoints";
+import { colors } from "../../consts/colors";
 
 export const StyledFooter = styled.footer`
   background-color: ${colors.primary400};
@@ -32,6 +32,7 @@ export const FooterContact = styled.div`
   ${breakpoint.phone} {
     grid-template-columns: unset;
     grid-template-areas: "links" "text";
+    padding: ${({ theme }) => 3 * theme.gapSize}px 0px;
   }
 `;
 
@@ -57,6 +58,9 @@ export const FooterLogo = styled.div`
     padding: ${({ theme }) => 4 * theme.gapSize}px
       ${({ theme }) => 1 * theme.gapSize}px;
   }
+  ${breakpoint.phone} {
+    padding: ${({ theme }) => 4 * theme.gapSize}px 0px;
+  }
 `;
 
 export const FooterCopywrite = styled.div`
@@ -64,6 +68,9 @@ export const FooterCopywrite = styled.div`
   justify-content: space-between;
   padding: ${({ theme }) => 1 * theme.gapSize}px
     ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.phone} {
+    padding: ${({ theme }) => 1 * theme.gapSize}px 0px;
+  }
 `;
 
 export const FooterPublicity = styled.div`
@@ -77,6 +84,9 @@ export const FooterPublicity = styled.div`
     gap: ${({ theme }) => 2 * theme.gapSize}px;
     flex-direction: column;
     padding: ${({ theme }) => 1 * theme.gapSize}px;
+  }
+  ${breakpoint.phone} {
+    padding: ${({ theme }) => 1 * theme.gapSize}px 0;
   }
 `;
 

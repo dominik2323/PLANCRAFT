@@ -23,6 +23,12 @@ export const ProjectsHero = styled.div`
     grid-template-columns: 1fr 2fr;
     margin-bottom: ${({ theme }) => 5 * theme.gapSize}px;
   }
+  ${breakpoint.phone} {
+    grid-template-columns: unset;
+    padding: 0;
+    row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    margin-bottom: ${({ theme }) => 3 * theme.gapSize}px;
+  }
 `;
 
 export const ProjectDividerHeaderInner = styled.div`
@@ -35,6 +41,10 @@ export const ProjectDividerHeaderInner = styled.div`
   }
   ${breakpoint.tabletPortrait} {
     grid-template-columns: 1fr 2fr;
+  }
+  ${breakpoint.phone} {
+    grid-template-columns: unset;
+    row-gap: ${({ theme }) => 1 * theme.gapSize}px;
   }
 `;
 

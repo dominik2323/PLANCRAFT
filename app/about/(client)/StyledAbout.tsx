@@ -6,6 +6,9 @@ import { breakpoint } from "../../../consts/breakpoints";
 export const StyledAbout = styled.main`
   padding: ${({ theme }) => 2 * theme.gapSize}px;
   padding-bottom: 0;
+  ${breakpoint.phone} {
+    padding: ${({ theme }) => 1 * theme.gapSize}px;
+  }
 `;
 
 export const AboutValues = styled.div`
@@ -34,6 +37,9 @@ export const AboutTeamClaimHeader = styled.div`
   ${breakpoint.monitor} {
     margin-left: ${({ theme }) => 10 * theme.gapSize}px;
   }
+  ${breakpoint.phone} {
+    margin-left: 0px;
+  }
 `;
 
 export const AboutTeamClaimInner = styled.div`
@@ -42,6 +48,10 @@ export const AboutTeamClaimInner = styled.div`
   align-items: start;
   justify-items: start;
   column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  ${breakpoint.phone} {
+    grid-template-columns: unset;
+    row-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  }
 `;
 
 export const AboutTeamClaimImage = styled(Image)`

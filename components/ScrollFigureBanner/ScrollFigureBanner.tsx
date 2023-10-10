@@ -23,19 +23,21 @@ interface ScrollFigureBannerProps {
 
 const ScrollFigureBanner = ({ items }: ScrollFigureBannerProps) => {
   const { w } = useWindowSize();
+  const disableScrollAnimation = w <= device.tabletPortrait;
+
   const _progress = (i: number, progress: number, min: number) => {
-    if (i === 0) return 1;
+    if (i === 0 || disableScrollAnimation) return 1;
     return easingInOutCubicFn(Math.max(items.length * progress - i, min));
   };
+
   return (
-    <Elevator scrollHeight='200vh' disable={w <= device.tabletPortrait}>
+    <Elevator scrollHeight='200vh' disable={disableScrollAnimation}>
       {(args) => {
         const progress = args?.progress || 0;
         return (
           <StyledScrollFigureBanner>
             <ScrollFigureBannerCoverW>
               {items.map(({ image }, i) => {
-                const isActive = i / items.length <= progress;
                 return (
                   <ScrollFigureBannerCoverWI
                     key={i}
