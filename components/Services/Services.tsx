@@ -41,7 +41,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
           </DividerHeader>
         }
         cards={list.map(({ header, content, image, slug }, i) => [
-          <ServiceHeader>
+          <ServiceHeader key={i + "header"}>
             {0 !== i && <Divider hidePlus />}
             <ServiceHeaderContent>
               <Numbering>
@@ -50,7 +50,10 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
               <Small className='uppercase wide'>{header}</Small>
             </ServiceHeaderContent>
           </ServiceHeader>,
-          <ServiceContent as={slug ? undefined : "span"} href={slug}>
+          <ServiceContent
+            as={slug ? undefined : "span"}
+            href={slug}
+            key={i + "content"}>
             <ServiceContentLeft>
               <ServiceContentLeftInner>
                 {content.map((item, i) => {
