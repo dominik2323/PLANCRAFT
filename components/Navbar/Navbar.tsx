@@ -35,6 +35,7 @@ import {
 } from "./StyledNavbar";
 import { device } from "../../consts/breakpoints";
 import { useWindowSize } from "../../hooks/useWindowSize";
+import { DisableScroll } from "../DisableScroll/DisableScroll";
 
 interface NavbarProps {}
 
@@ -131,93 +132,96 @@ const Navbar = ({}: NavbarProps) => {
         </Topbar>
         <AnimatePresence>
           {isOpen && (
-            <NavLinks
-              key={"navlinks"}
-              initial={"hidden"}
-              animate={"visible"}
-              exit={"hidden"}
-              variants={{
-                hidden: {
-                  y: `-100%`,
-                  transition: {
-                    when: "afterChildren",
-                    staggerChildren: 0.1,
-                    ease: easing,
-                    duration: 1,
+            <>
+              <DisableScroll />
+              <NavLinks
+                key={"navlinks"}
+                initial={"hidden"}
+                animate={"visible"}
+                exit={"hidden"}
+                variants={{
+                  hidden: {
+                    y: `-100%`,
+                    transition: {
+                      when: "afterChildren",
+                      staggerChildren: 0.1,
+                      ease: easing,
+                      duration: 1,
+                    },
                   },
-                },
-                visible: {
-                  y: `0%`,
-                  transition: {
-                    when: "beforeChildren",
-                    staggerChildren: 0.1,
-                    ease: easing,
-                    duration: 1,
+                  visible: {
+                    y: `0%`,
+                    transition: {
+                      when: "beforeChildren",
+                      staggerChildren: 0.1,
+                      ease: easing,
+                      duration: 1,
+                    },
                   },
-                },
-              }}>
-              <NavigationDashboard>
-                <Navigation>
-                  {navConfig.map(({ name, slug }, i) => {
-                    const isActive = slug === pathname;
-                    const isHover = hoverIndex === i;
-                    return (
-                      <NavlinkWrapper
-                        key={i}
-                        variants={{
-                          hidden: { opacity: 0 },
-                          visible: { opacity: 1 },
-                        }}>
-                        <NavLink
-                          onMouseEnter={() => setHoverIndex(i)}
-                          href={slug}>
-                          <NavlinkDividerWrapper>
-                            <Divider hidePlus fill='white' animate={isOpen} />
-                          </NavlinkDividerWrapper>
-                          <NavlinkInner
-                            animate={{
-                              x:
-                                w <= device.tabletPortrait
-                                  ? 0
-                                  : isHover
-                                  ? 50
-                                  : 0,
-                            }}
-                            transition={{ ease: easing }}>
-                            <NavlinkInnerArrowW
+                }}>
+                <NavigationDashboard>
+                  <Navigation>
+                    {navConfig.map(({ name, slug }, i) => {
+                      const isActive = slug === pathname;
+                      const isHover = hoverIndex === i;
+                      return (
+                        <NavlinkWrapper
+                          key={i}
+                          variants={{
+                            hidden: { opacity: 0 },
+                            visible: { opacity: 1 },
+                          }}>
+                          <NavLink
+                            onMouseEnter={() => setHoverIndex(i)}
+                            href={slug}>
+                            <NavlinkDividerWrapper>
+                              <Divider hidePlus fill='white' animate={isOpen} />
+                            </NavlinkDividerWrapper>
+                            <NavlinkInner
                               animate={{
-                                x: isHover ? 0 : -50,
-                                opacity: isHover ? 1 : 0,
+                                x:
+                                  w <= device.tabletPortrait
+                                    ? 0
+                                    : isHover
+                                    ? 50
+                                    : 0,
                               }}
                               transition={{ ease: easing }}>
-                              <Arrow
-                                stroke={!isActive ? "primary300" : "white"}
-                                strokeWidth={2}
-                              />
-                            </NavlinkInnerArrowW>
-                            <Small
-                              className={`navlink ${
-                                !isActive ? "primary300" : "white"
-                              }`}>
-                              {name}
-                            </Small>
-                          </NavlinkInner>
-                        </NavLink>
-                      </NavlinkWrapper>
-                    );
-                  })}
-                </Navigation>
-                <LinkDescription
-                  key={hoverIndex}
-                  variants={{
-                    hidden: { opacity: 0 },
-                    visible: { opacity: 1 },
-                  }}>
-                  {navConfig[hoverIndex].perex}
-                </LinkDescription>
-              </NavigationDashboard>
-              <Divider fill='white' />
-            </NavLinks>
+                              <NavlinkInnerArrowW
+                                animate={{
+                                  x: isHover ? 0 : -50,
+                                  opacity: isHover ? 1 : 0,
+                                }}
+                                transition={{ ease: easing }}>
+                                <Arrow
+                                  stroke={!isActive ? "primary300" : "white"}
+                                  strokeWidth={2}
+                                />
+                              </NavlinkInnerArrowW>
+                              <Small
+                                className={`navlink ${
+                                  !isActive ? "primary300" : "white"
+                                }`}>
+                                {name}
+                              </Small>
+                            </NavlinkInner>
+                          </NavLink>
+                        </NavlinkWrapper>
+                      );
+                    })}
+                  </Navigation>
+                  <LinkDescription
+                    key={hoverIndex}
+                    variants={{
+                      hidden: { opacity: 0 },
+                      visible: { opacity: 1 },
+                    }}>
+                    {navConfig[hoverIndex].perex}
+                  </LinkDescription>
+                </NavigationDashboard>
+                <Divider fill='white' />
+              </NavLinks>
+            </>
           )}
         </AnimatePresence>
       </StyledNavbar>
