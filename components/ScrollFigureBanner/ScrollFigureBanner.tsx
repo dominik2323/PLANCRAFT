@@ -1,7 +1,10 @@
 "use client";
 
 import { ImageProps } from "../../app/service/[slug]/servicesData";
-import { easingInOut } from "../../consts/animationConfig";
+import {
+  easingInOutCubic,
+  easingInOutCubicFn,
+} from "../../consts/animationConfig";
 import { device } from "../../consts/breakpoints";
 import { useWindowSize } from "../../hooks/useWindowSize";
 import Elevator from "../Elevator/Elevator";
@@ -20,6 +23,10 @@ interface ScrollFigureBannerProps {
 
 const ScrollFigureBanner = ({ items }: ScrollFigureBannerProps) => {
   const { w } = useWindowSize();
+  const _progress = (i: number, progress: number, min: number) => {
+    if (i === 0) return 1;
+    return easingInOutCubicFn(Math.max(items.length * progress - i, min));
+  };
   return (
     <Elevator scrollHeight='200vh' disable={w <= device.tabletPortrait}>
       {(args) => {
@@ -32,14 +39,8 @@ const ScrollFigureBanner = ({ items }: ScrollFigureBannerProps) => {
                 return (
                   <ScrollFigureBannerCoverWI
                     key={i}
-                    animate={{
-                      y: isActive
-                        ? `${(i / items.length) * 10 + -50}%`
-                        : "-300%",
-                      x: isActive ? `${(i / items.length) * -5}%` : `-100%`,
-                      skewX: isActive ? "0deg" : "10deg",
-                    }}
-                    transition={{ ease: easingInOut, duration: 1 }}>
+                    style={{ opacity: _progress(i, progress, 0) }}
+                    transition={{ ease: easingInOutCubic, duration: 2 }}>
                     <ScrollFigureBannerCover
                       src={image.src}
                       alt={image.alt}
@@ -55,7 +56,7 @@ const ScrollFigureBanner = ({ items }: ScrollFigureBannerProps) => {
                 <Mini
                   key={i}
                   style={{
-                    opacity: Math.max(items.length * progress - i, 0.2),
+                    opacity: _progress(i, progress, 0.4),
                   }}>
                   {item.perex}
                 </Mini>

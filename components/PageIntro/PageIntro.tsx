@@ -53,10 +53,7 @@ const PageIntro = ({
         </FigureBanner>
         <Medium>{introPerex}</Medium>
       </PageIntroHero>
-      <ScrollFigureBanner
-        className='align-center'
-        items={scrollFigureBanner.items}
-      />
+      <ScrollFigureBanner items={scrollFigureBanner.items} />
     </StyledPageIntro>
   );
 };
