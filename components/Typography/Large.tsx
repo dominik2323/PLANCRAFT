@@ -38,6 +38,7 @@ export const Large = styled.p`
     max-width: 900px;
   }
   ${breakpoint.phone} {
+    font-size: 30px;
   }
   ${breakpoint.smallPhone} {
   }

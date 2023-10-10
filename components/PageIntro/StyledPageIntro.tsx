@@ -10,6 +10,9 @@ export const PageIntroHero = styled.section`
   ${breakpoint.tabletPortrait} {
     row-gap: ${({ theme }) => 6 * theme.gapSize}px;
   }
+  ${breakpoint.phone} {
+    row-gap: ${({ theme }) => 4 * theme.gapSize}px;
+  }
 `;
 
 export const PageIntroCta = styled.div`

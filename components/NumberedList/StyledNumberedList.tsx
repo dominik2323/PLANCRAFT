@@ -15,4 +15,8 @@ export const StyledNumberedList = styled.div`
     grid-template-columns: repeat(2, 1fr);
     column-gap: ${({ theme }) => 2 * theme.gapSize}px;
   }
+  ${breakpoint.phone} {
+    grid-template-columns: unset;
+    padding: 0;
+  }
 `;
