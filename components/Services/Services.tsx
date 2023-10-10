@@ -41,7 +41,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
           </DividerHeader>
         }
         cards={list.map(({ header, content, image, slug }, i) => [
-          <ServiceHeader key={i + "header"}>
+          <ServiceHeader key={`${"header" + i}`}>
             {0 !== i && <Divider hidePlus />}
             <ServiceHeaderContent>
               <Numbering>
@@ -53,7 +53,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
           <ServiceContent
             as={slug ? undefined : "span"}
             href={slug}
-            key={i + "content"}>
+            key={`${"content" + i}`}>
             <ServiceContentLeft>
               <ServiceContentLeftInner>
                 {content.map((item, i) => {
@@ -62,8 +62,8 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
                   }
                   if (item.type === "header") {
                     return (
-                      <ServiceContentLeftHeaderContainer>
-                        <Micro key={i}>{item.header}</Micro>
+                      <ServiceContentLeftHeaderContainer key={i}>
+                        <Micro>{item.header}</Micro>
                       </ServiceContentLeftHeaderContainer>
                     );
                   }
@@ -74,7 +74,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
                           <Bullet level={1} key={i} index={i}>
                             <Micro>{header}</Micro>
                             {list.map((item, i) => (
-                              <Bullet level={2} key={i} index={i}>
+                              <Bullet level={2} key={`2${i}`} index={i}>
                                 <Micro>{item}</Micro>
                               </Bullet>
                             ))}

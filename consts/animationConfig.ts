@@ -1,4 +1,5 @@
 export const easing = [0.0, 0.8, 0.515, 1.005];
+export const easingInOut = [0.65, 0, 0.35, 1];
 
 export const topbarReveal = {
   delay: 0.5,

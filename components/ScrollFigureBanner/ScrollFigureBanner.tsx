@@ -1,47 +1,55 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import { ImageProps } from "../../app/service/[slug]/servicesData";
+import { easingInOut } from "../../consts/animationConfig";
+import { device } from "../../consts/breakpoints";
+import { useWindowSize } from "../../hooks/useWindowSize";
+import Elevator from "../Elevator/Elevator";
+import { Mini } from "../Typography/Mini";
 import {
   ScrollFigureBannerContent,
   ScrollFigureBannerCover,
+  ScrollFigureBannerCoverW,
+  ScrollFigureBannerCoverWI,
   StyledScrollFigureBanner,
 } from "./StyledScrollFigureBanner";
-import Elevator from "../Elevator/Elevator";
-import { Mini } from "../Typography/Mini";
-import { useWindowSize } from "../../hooks/useWindowSize";
-import { device } from "../../consts/breakpoints";
 
 interface ScrollFigureBannerProps {
-  items: string[];
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  className?: string;
+  items: { perex: string; image: ImageProps }[];
 }
 
-const ScrollFigureBanner = ({
-  items,
-  src,
-  alt,
-  width,
-  height,
-  className,
-}: ScrollFigureBannerProps) => {
+const ScrollFigureBanner = ({ items }: ScrollFigureBannerProps) => {
   const { w } = useWindowSize();
   return (
     <Elevator scrollHeight='200vh' disable={w <= device.tabletPortrait}>
       {(args) => {
-        const progress = args?.progress || 1;
+        const progress = args?.progress || 0;
         return (
           <StyledScrollFigureBanner>
-            {/* TODO Add animation to the photos */}
-            <ScrollFigureBannerCover
-              src={src}
-              alt={alt}
-              width={width}
-              height={height}
-            />
+            <ScrollFigureBannerCoverW>
+              {items.map(({ image }, i) => {
+                const isActive = i / items.length <= progress;
+                return (
+                  <ScrollFigureBannerCoverWI
+                    key={i}
+                    animate={{
+                      y: isActive
+                        ? `${(i / items.length) * 10 + -50}%`
+                        : "-300%",
+                      x: isActive ? `${(i / items.length) * -5}%` : `-100%`,
+                      skewX: isActive ? "0deg" : "10deg",
+                    }}
+                    transition={{ ease: easingInOut, duration: 1 }}>
+                    <ScrollFigureBannerCover
+                      src={image.src}
+                      alt={image.alt}
+                      width={image.width}
+                      height={image.height}
+                    />
+                  </ScrollFigureBannerCoverWI>
+                );
+              })}
+            </ScrollFigureBannerCoverW>
             <ScrollFigureBannerContent>
               {items.map((item, i) => (
                 <Mini
@@ -49,7 +57,7 @@ const ScrollFigureBanner = ({
                   style={{
                     opacity: Math.max(items.length * progress - i, 0.2),
                   }}>
-                  {item}
+                  {item.perex}
                 </Mini>
               ))}
             </ScrollFigureBannerContent>

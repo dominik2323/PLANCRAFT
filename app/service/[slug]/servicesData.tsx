@@ -71,16 +71,37 @@ export const servicesData: ServicesData = {
     introPerex:
       "S naší odborností v zaměřování a 3D modelování vytváříme detailní a komplexní digitální podklady pro tvorbu vašich architektonických studií a zhmotnění vašich vizí.",
     scrollFigureBanner: {
-      image: {
-        src: "/img/service-projektova-dokumentace-3.jpg",
-        width: 1000,
-        height: 500,
-        alt: "Projektová dokumentace",
-      },
       items: [
-        "Naše služby zahrnují analýzu vašeho projektu, vypracování potřebné dokumentace a aktivní komunikaci s příslušnými úřady.",
-        "BIM řešení poskytuje komplexní přehled o vašem projektu, od počátečního návrhu po dlouhodobou správu. S BIMem dosahujeme maximální efektivity, minimalizujeme chyby a zajišťujeme lepší spolupráci mezi všemi účastníky projektu.",
-        "S dotčenými orgány státní správy aktivně komunikujeme již v průběhu projekčních prací, tím zrychlujeme celý proces a předcházíme změnám a námitkám v pozdní fázi projektu. Díky nám se tedy vyhnete zdlouhavým byrokratickým procesům a budete moci rychle přejít ke stavbě vašich snů.",
+        {
+          image: {
+            src: "/img/service-projektova-dokumentace-1.jpg",
+            width: 1000,
+            height: 500,
+            alt: "Projektová dokumentace",
+          },
+          perex:
+            "Naše služby zahrnují analýzu vašeho projektu, vypracování potřebné dokumentace a aktivní komunikaci s příslušnými úřady.",
+        },
+        {
+          image: {
+            src: "/img/service-projektova-dokumentace-2.jpg",
+            width: 1000,
+            height: 500,
+            alt: "Projektová dokumentace",
+          },
+          perex:
+            "BIM řešení poskytuje komplexní přehled o vašem projektu, od počátečního návrhu po dlouhodobou správu. S BIMem dosahujeme maximální efektivity, minimalizujeme chyby a zajišťujeme lepší spolupráci mezi všemi účastníky projektu.",
+        },
+        {
+          image: {
+            src: "/img/service-projektova-dokumentace-3.jpg",
+            width: 1000,
+            height: 500,
+            alt: "Projektová dokumentace",
+          },
+          perex:
+            "S dotčenými orgány státní správy aktivně komunikujeme již v průběhu projekčních prací, tím zrychlujeme celý proces a předcházíme změnám a námitkám v pozdní fázi projektu. Díky nám se tedy vyhnete zdlouhavým byrokratickým procesům a budete moci rychle přejít ke stavbě vašich snů.",
+        },
       ],
     },
     serviceContent: {
@@ -210,16 +231,37 @@ export const servicesData: ServicesData = {
     introPerex:
       "S naší odborností v zaměřování a 3D modelování vytváříme detailní a komplexní digitální podklady pro tvorbu vašich architektonických studií a zhmotnění vašich vizí.",
     scrollFigureBanner: {
-      image: {
-        src: "/img/service-pasportizace-3.jpg",
-        width: 960,
-        height: 560,
-        alt: "Pasportizace",
-      },
       items: [
-        "Jsme zde, abychom vám poskytli kvalitní pasporty budov a detailní 3D digitalizaci, které budou technicky vysoce přesné a budou kompetně odpovídat vašim požadavkům.",
-        "Díky přesnému zaměření objektů včetně detailů a lokalizace problematických míst budete připraveni na cokoliv. V rámci následných konzultací vám pomůžeme navrhnout to nejlepší řešení a vhodné stavební úpravy.",
-        "Nejenže zakreslíme stávající stav a identifikujeme problémy, ale zapojíme se do vaší vize a zajistíme kvalitní podklad pro Váš stavební záměr a architektonickou vizi.",
+        {
+          image: {
+            src: "/img/service-pasportizace-1.jpg",
+            width: 960,
+            height: 560,
+            alt: "Pasportizace",
+          },
+          perex:
+            "Jsme zde, abychom vám poskytli kvalitní pasporty budov a detailní 3D digitalizaci, které budou technicky vysoce přesné a budou kompetně odpovídat vašim požadavkům.",
+        },
+        {
+          image: {
+            src: "/img/service-pasportizace-2.jpg",
+            width: 960,
+            height: 560,
+            alt: "Pasportizace",
+          },
+          perex:
+            "Díky přesnému zaměření objektů včetně detailů a lokalizace problematických míst budete připraveni na cokoliv. V rámci následných konzultací vám pomůžeme navrhnout to nejlepší řešení a vhodné stavební úpravy.",
+        },
+        {
+          image: {
+            src: "/img/service-pasportizace-3.jpg",
+            width: 960,
+            height: 560,
+            alt: "Pasportizace",
+          },
+          perex:
+            "Nejenže zakreslíme stávající stav a identifikujeme problémy, ale zapojíme se do vaší vize a zajistíme kvalitní podklad pro Váš stavební záměr a architektonickou vizi.",
+        },
       ],
     },
     serviceContent: {
@@ -347,16 +389,37 @@ export const servicesData: ServicesData = {
     introPerex:
       "Nabijeme váš projekt pozitivní energií od konceptu až po detaily.",
     scrollFigureBanner: {
-      image: {
-        src: "/img/service-energetika-3.jpg",
-        width: 960,
-        height: 560,
-        alt: "Energetická úspornost",
-      },
       items: [
-        "Hledáme a navrhujeme ty nejzajímavější a nejoptimálnější řešení pro jakýkoliv typ projektu. Přinášíme nejmodernější energetické řešení pro zlepšení kvality života ve městech.",
-        "Řešení energetiky je sice nezbytná záležitost, ale také ideální příležitost pro to, vymyslet řešení, které bude nejen úsporné, ale i udržitelné  po celé generace.",
-        "Dokážeme se adaptovat na jakýkoliv řešený problém, v kterékoliv fázi projektu. Nabízíme komplexní odborné služby, od samotného konceptu po finální analýzy a posudky.",
+        {
+          image: {
+            src: "/img/service-energetika-1.jpg",
+            width: 960,
+            height: 560,
+            alt: "Energetická úspornost",
+          },
+          perex:
+            "Hledáme a navrhujeme ty nejzajímavější a nejoptimálnější řešení pro jakýkoliv typ projektu. Přinášíme nejmodernější energetické řešení pro zlepšení kvality života ve městech.",
+        },
+        {
+          image: {
+            src: "/img/service-energetika-2.jpg",
+            width: 960,
+            height: 560,
+            alt: "Energetická úspornost",
+          },
+          perex:
+            "Řešení energetiky je sice nezbytná záležitost, ale také ideální příležitost pro to, vymyslet řešení, které bude nejen úsporné, ale i udržitelné  po celé generace.",
+        },
+        {
+          image: {
+            src: "/img/service-energetika-3.jpg",
+            width: 960,
+            height: 560,
+            alt: "Energetická úspornost",
+          },
+          perex:
+            "Dokážeme se adaptovat na jakýkoliv řešený problém, v kterékoliv fázi projektu. Nabízíme komplexní odborné služby, od samotného konceptu po finální analýzy a posudky.",
+        },
       ],
     },
     serviceContent: {
@@ -424,16 +487,37 @@ export const servicesData: ServicesData = {
     introPerex:
       "Umožníme vašemu týmu vytvářet průlomové návrhy, které zanechají trvalý pozitivní dopad na kvalitu života ve městech.",
     scrollFigureBanner: {
-      image: {
-        src: "/img/service-design-2.jpg",
-        width: 960,
-        height: 560,
-        alt: "Design due diligence",
-      },
       items: [
-        "Hledáme a navrhujeme ty nejzajímavější a nejoptimálnější řešení pro jakýkoliv typ projektu. Přinášíme nejmodernější energetické řešení pro zlepšení kvality života ve městech.",
-        "Řešení energetiky je sice nezbytná záležitost, ale také ideální příležitost pro to, vymyslet řešení, které bude nejen úsporné, ale i udržitelné  po celé generace.",
-        "Dokážeme se adaptovat na jakýkoliv řešený problém, v kterékoliv fázi projektu. Nabízíme komplexní odborné služby, od samotného konceptu po finální analýzy a posudky.",
+        {
+          image: {
+            src: "/img/service-design-1.jpg",
+            width: 960,
+            height: 560,
+            alt: "Design due diligence",
+          },
+          perex:
+            "Hledáme a navrhujeme ty nejzajímavější a nejoptimálnější řešení pro jakýkoliv typ projektu. Přinášíme nejmodernější energetické řešení pro zlepšení kvality života ve městech.",
+        },
+        {
+          image: {
+            src: "/img/service-design-2.jpg",
+            width: 960,
+            height: 560,
+            alt: "Design due diligence",
+          },
+          perex:
+            "Řešení energetiky je sice nezbytná záležitost, ale také ideální příležitost pro to, vymyslet řešení, které bude nejen úsporné, ale i udržitelné  po celé generace.",
+        },
+        {
+          image: {
+            src: "/img/service-design-3.jpg",
+            width: 960,
+            height: 560,
+            alt: "Design due diligence",
+          },
+          perex:
+            "Dokážeme se adaptovat na jakýkoliv řešený problém, v kterékoliv fázi projektu. Nabízíme komplexní odborné služby, od samotného konceptu po finální analýzy a posudky.",
+        },
       ],
     },
     serviceContent: {

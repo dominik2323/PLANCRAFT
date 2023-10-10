@@ -56,12 +56,11 @@ const Cabinet = ({ cards, header, footer, disable }: CabinetProps) => {
                       interval[0] <= progress && interval[1] >= progress;
 
                     return (
-                      <Fragment key={i}>
+                      <Fragment key={`${i}-cabinet`}>
                         <CabinetItemHeader>{c[0]}</CabinetItemHeader>
                         <AnimatePresence mode='wait'>
                           {isActive && (
                             <CabinetItemContent
-                              key={i}
                               initial={{ opacity: 0, height: "0%" }}
                               animate={{ opacity: 1, height: "100%" }}
                               exit={{ opacity: 0, height: "0%" }}

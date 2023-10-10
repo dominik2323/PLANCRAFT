@@ -69,12 +69,6 @@ const page = async ({ params: { slug } }: PageProps) => {
         }}
         introPerex={data.introPerex}
         scrollFigureBanner={{
-          image: {
-            src: data.scrollFigureBanner.image.src,
-            width: data.scrollFigureBanner.image.width,
-            height: data.scrollFigureBanner.image.height,
-            alt: data.scrollFigureBanner.image.alt,
-          },
           items: data.scrollFigureBanner.items,
         }}
       />

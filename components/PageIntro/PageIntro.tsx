@@ -23,8 +23,7 @@ export interface PageIntroProps {
     perex: string;
   };
   scrollFigureBanner: {
-    image: ImageProps;
-    items: string[];
+    items: { perex: string; image: ImageProps }[];
   };
 }
 
@@ -56,10 +55,6 @@ const PageIntro = ({
       </PageIntroHero>
       <ScrollFigureBanner
         className='align-center'
-        src={scrollFigureBanner.image.src}
-        width={scrollFigureBanner.image.width}
-        height={scrollFigureBanner.image.height}
-        alt={scrollFigureBanner.image.alt}
         items={scrollFigureBanner.items}
       />
     </StyledPageIntro>
