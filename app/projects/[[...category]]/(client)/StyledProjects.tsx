@@ -16,6 +16,10 @@ export const ProjectsHero = styled.div`
   align-items: center;
   margin-bottom: ${({ theme }) => 3 * theme.gapSize}px;
   padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.monitor} {
+    grid-template-columns: 1fr 2fr;
+    column-gap: ${({ theme }) => 1.5 * theme.gapSize}px;
+  }
   ${breakpoint.smallNotebook} {
     grid-template-columns: 1fr 3fr;
   }
@@ -36,6 +40,10 @@ export const ProjectDividerHeaderInner = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  ${breakpoint.monitor} {
+    grid-template-columns: 1fr 2fr;
+    column-gap: ${({ theme }) => 1.5 * theme.gapSize}px;
+  }
   ${breakpoint.smallNotebook} {
     grid-template-columns: 1fr 3fr;
   }

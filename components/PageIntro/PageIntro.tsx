@@ -4,6 +4,7 @@ import { ImageProps } from "../../app/service/[slug]/servicesData";
 import Button from "../Button/Button";
 import FigureBanner from "../FigureBanner/FigureBanner";
 import ScrollFigureBanner from "../ScrollFigureBanner/ScrollFigureBanner";
+import RevealAnimation from "../TextAnimation/RevealAnimation";
 import { Large } from "../Typography/Large";
 import { Medium } from "../Typography/Medium";
 import { Mini } from "../Typography/Mini";
@@ -36,21 +37,29 @@ const PageIntro = ({
   return (
     <StyledPageIntro>
       <PageIntroHero>
-        <Large>{heroHeader}</Large>
+        <RevealAnimation delay={1} noCrop>
+          <Large>{heroHeader}</Large>
+        </RevealAnimation>
         <FigureBanner
           className='flip align-top'
           src={figureBanner.image.src}
           width={figureBanner.image.width}
           height={figureBanner.image.height}
           alt={figureBanner.image.alt}>
-          <Mini>{figureBanner.perex}</Mini>
+          <RevealAnimation delay={2} noCrop>
+            <Mini>{figureBanner.perex}</Mini>
+          </RevealAnimation>
           {withCta && (
-            <PageIntroCta>
-              <Button href={"/kontakt"}>Poptat službu</Button>
-            </PageIntroCta>
+            <RevealAnimation delay={3} noCrop>
+              <PageIntroCta>
+                <Button href={"/kontakt"}>Poptat službu</Button>
+              </PageIntroCta>
+            </RevealAnimation>
           )}
         </FigureBanner>
-        <Medium>{introPerex}</Medium>
+        <RevealAnimation noCrop>
+          <Medium>{introPerex}</Medium>
+        </RevealAnimation>
       </PageIntroHero>
       <ScrollFigureBanner items={scrollFigureBanner.items} />
     </StyledPageIntro>

@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import styled from "styled-components";
+import "styled-components";
 
 export interface Theme {
   setGapSize: Dispatch<SetStateAction<number>>;
@@ -11,6 +11,8 @@ export interface Theme {
   isLayoutReady: boolean;
   setDotSize: Dispatch<SetStateAction<number>>;
   dotSize: number;
+  isLayoutVisible: boolean;
+  setisLayoutVisible: Dispatch<SetStateAction<boolean>>;
 }
 
 declare module "styled-components" {

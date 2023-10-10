@@ -7,6 +7,7 @@ import Partners from "../components/Partners/Partners";
 import Services from "../components/Services/Services";
 import { Medium } from "../components/Typography/Medium";
 import { Mini } from "../components/Typography/Mini";
+import { Small } from "../components/Typography/Small";
 import { GetProjects } from "../gql/GetProjects";
 import { Query, QueryProjectsArgs } from "../gql/types";
 import {
@@ -76,12 +77,12 @@ const page = async ({}: PageProps) => {
       </HpQuoteServices>
       <HpProjects projects={Projects} />
       <HpProjectsCta>
-        <Medium>
+        <Small className='wide'>
           Dělá nám radost se podílet na rozmanitých a inovativních projektech,
           které nerezonují jen v lokálním prostředí, ale jsou uznávanou
           inspirací na celém světě.
-        </Medium>
-        <Button href={"/projekty"}>Všechny projekty</Button>
+        </Small>
+        <Button href={"/projekty"}>Více projektů</Button>
       </HpProjectsCta>
       <HpQuoteW>
         <ClientQuote

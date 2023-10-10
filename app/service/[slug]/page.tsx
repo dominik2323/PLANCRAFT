@@ -7,12 +7,14 @@ import PageIntro from "../../../components/PageIntro/PageIntro";
 import ProjectCardSmall from "../../../components/ProjectCardSmall/ProjectCardSmall";
 import { ProjectsCardsSmallWrapper } from "../../../components/ProjectCardSmall/StyledProjectCardSmall";
 import Services from "../../../components/Services/Services";
-import { Medium } from "../../../components/Typography/Medium";
+import RevealAnimation from "../../../components/TextAnimation/RevealAnimation";
 import { Mini } from "../../../components/Typography/Mini";
+import { Small } from "../../../components/Typography/Small";
 import { GetProjects } from "../../../gql/GetProjects";
 import { Query, QueryProjectsArgs } from "../../../gql/types";
 import {
   ServiceAdvantages,
+  ServiceNumberedList,
   ServicePerex,
   SimilarProjects,
   StyledService,
@@ -79,11 +81,18 @@ const page = async ({ params: { slug } }: PageProps) => {
         />
       )}
       {data.serviceContent.type === "list" && (
-        <NumberedList items={data.serviceContent.list} />
+        <ServiceNumberedList>
+          <DividerHeader className='no-padding'>
+            <Mini className='uppercase'>{"Obsah služby"}</Mini>
+          </DividerHeader>
+          <NumberedList items={data.serviceContent.list} />
+        </ServiceNumberedList>
       )}
-      <ServicePerex>
-        <Medium className='break-lines'>{data.servicePerex}</Medium>
-      </ServicePerex>
+      <RevealAnimation>
+        <ServicePerex>
+          <Small className='break-lines wide'>{data.servicePerex}</Small>
+        </ServicePerex>
+      </RevealAnimation>
       {data.advantages && (
         <ServiceAdvantages>
           <DividerHeader>
@@ -95,21 +104,22 @@ const page = async ({ params: { slug } }: PageProps) => {
       {Projects.items.length !== 0 && (
         <SimilarProjects>
           <DividerHeader>
-            <Mini>Související projekty</Mini>
+            <Mini className='uppercase'>Související projekty</Mini>
           </DividerHeader>
           <ProjectsCardsSmallWrapper>
-            {Projects.items.map(({ project_name, _slug, project_cover }) => (
-              <ProjectCardSmall
-                key={_slug}
-                projectName={project_name}
-                slug={_slug}
-                image={{
-                  src: project_cover.url,
-                  width: project_cover.width,
-                  height: project_cover.width,
-                  alt: project_cover.description || project_name,
-                }}
-              />
+            {Projects.items.map(({ project_name, _slug, project_cover }, i) => (
+              <RevealAnimation key={_slug} delay={i * 0.5}>
+                <ProjectCardSmall
+                  projectName={project_name}
+                  slug={_slug}
+                  image={{
+                    src: project_cover.url,
+                    width: project_cover.width,
+                    height: project_cover.width,
+                    alt: project_cover.description || project_name,
+                  }}
+                />
+              </RevealAnimation>
             ))}
           </ProjectsCardsSmallWrapper>
         </SimilarProjects>

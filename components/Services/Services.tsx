@@ -40,7 +40,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
             <Mini className='uppercase'>{mainHeader}</Mini>
           </DividerHeader>
         }
-        cards={list.map(({ header, content, image, slug }, i) => [
+        cards={list.map(({ header, content, image, slug, linkLabel }, i) => [
           <ServiceHeader key={`${"header" + i}`}>
             {0 !== i && <Divider hidePlus />}
             <ServiceHeaderContent>
@@ -88,7 +88,9 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
               {slug && (
                 <ServiceContentLeftCta>
                   <Link href={slug} as={"span"}>
-                    <Mini className='uppercase'>{"Zjistit více"}</Mini>
+                    <Mini className='uppercase'>
+                      {linkLabel ? linkLabel : "Zjistit více"}
+                    </Mini>
                   </Link>
                 </ServiceContentLeftCta>
               )}

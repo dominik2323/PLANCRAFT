@@ -3,7 +3,6 @@
 import { ImageProps } from "../../app/service/[slug]/servicesData";
 import { Service } from "../../gql/types";
 import Link from "../Link/Link";
-import { Micro } from "../Typography/Micro";
 import { Mini } from "../Typography/Mini";
 import { Small } from "../Typography/Small";
 import {
@@ -54,7 +53,7 @@ const ProjectCard = ({
           <Small>{projectName}</Small>
           <ProjectCardServices>
             {services.map(({ service_name }, i) => (
-              <Micro key={i}>{service_name}</Micro>
+              <Mini key={i}>{service_name}</Mini>
             ))}
           </ProjectCardServices>
         </ProjectCardContentHeader>

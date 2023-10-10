@@ -16,6 +16,9 @@ export const StyledNavbar = styled(motion.nav)`
 
 export const NavbarPlaceholder = styled.div`
   height: ${({ theme }) => 4 * theme.gapSize}px;
+  ${breakpoint.monitor} {
+    height: ${({ theme }) => 5 * theme.gapSize}px;
+  }
   ${breakpoint.smallNotebook} {
     height: ${({ theme }) => 5 * theme.gapSize}px;
   }
@@ -47,6 +50,9 @@ export const BurgerWrapper = styled.div`
   align-items: center;
   justify-content: center;
   max-width: ${({ theme }) => 1.25 * theme.gapSize}px;
+  ${breakpoint.monitor} {
+    max-width: ${({ theme }) => 1 * theme.gapSize}px;
+  }
 `;
 
 export const LogoWrapper = styled(Link)`

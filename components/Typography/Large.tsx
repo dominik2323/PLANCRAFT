@@ -1,14 +1,14 @@
 "use client";
 
 import styled from "styled-components";
+import { breakpoint } from "../../consts/breakpoints";
 import { colors } from "../../consts/colors";
 import { addColorClasses } from "../../helpers/addColorClasses";
-import { breakpoint } from "../../consts/breakpoints";
 
 export const Large = styled.p`
   font-size: 96px;
   letter-spacing: -0.02em;
-  line-height: 1.2em;
+  line-height: 1.1em;
   color: ${colors.primary400};
   max-width: 1300px;
   &.indent {

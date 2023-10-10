@@ -1,9 +1,9 @@
 "use client";
 
 import styled from "styled-components";
+import { breakpoint } from "../../consts/breakpoints";
 import { colors } from "../../consts/colors";
 import { addColorClasses } from "../../helpers/addColorClasses";
-import { breakpoint } from "../../consts/breakpoints";
 
 export const Mini = styled.p`
   font-size: 18px;
@@ -24,7 +24,7 @@ export const Mini = styled.p`
     text-align: right;
   }
   ${breakpoint.monitor} {
-    font-size: 21px;
+    font-size: 24px;
     max-width: 700px;
   }
   ${breakpoint.smallNotebook} {

@@ -36,6 +36,9 @@ export const HpHeroInner = styled.div`
   margin-top: ${({ theme }) => 2 * theme.gapSize}px;
   display: grid;
   row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.monitor} {
+    margin-left: ${({ theme }) => 21 * theme.gapSize}px;
+  }
   ${breakpoint.tabletPortrait} {
     margin-left: ${({ theme }) => (theme.columnCount / 3) * theme.gapSize}px;
     row-gap: ${({ theme }) => 2 * theme.gapSize}px;
@@ -87,8 +90,11 @@ export const HpQuoteServices = styled.div`
 export const HpProjectsCta = styled.div`
   display: grid;
   justify-items: start;
-  row-gap: ${({ theme }) => 2 * theme.gapSize}px;
-  margin-top: ${({ theme }) => 2 * theme.gapSize}px;
+  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  margin-top: ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.monitor} {
+    max-width: ${({ theme }) => theme.columnCount * 0.4 * theme.gapSize}px;
+  }
   ${breakpoint.tabletPortrait} {
     margin: ${({ theme }) => 7 * theme.gapSize}px 0
       ${({ theme }) => 5 * theme.gapSize}px;

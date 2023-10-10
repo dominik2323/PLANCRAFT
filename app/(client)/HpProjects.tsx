@@ -2,14 +2,14 @@
 
 import styled from "styled-components";
 import Divider from "../../components/Divider/Divider";
+import DividerHeader from "../../components/Divider/DividerHeader";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
+import { ProjectCardZoomW } from "../../components/ProjectCard/StyledProjectCard";
 import { Mini } from "../../components/Typography/Mini";
 import Zoom from "../../components/Zoom/Zoom";
-import { Projects } from "../../gql/types";
-import DividerHeader from "../../components/Divider/DividerHeader";
 import { device } from "../../consts/breakpoints";
+import { Projects } from "../../gql/types";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { ProjectCardZoomW } from "../../components/ProjectCard/StyledProjectCard";
 
 interface HpProjectsProps {
   projects: Projects;

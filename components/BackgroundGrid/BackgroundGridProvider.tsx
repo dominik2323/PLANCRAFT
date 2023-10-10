@@ -13,6 +13,7 @@ export const BackgroundGridProvider = ({ children }) => {
   const [columnCount, setColumnCount] = useState<number>(0);
   const [plusSize, setPlusSize] = useState<number>(0);
   const [dotSize, setDotSize] = useState<number>(1);
+  const [isLayoutVisible, setisLayoutVisible] = useState<boolean>(false);
   const { w } = useWindowSize();
 
   const isLayoutReady = gapSize > 1 && columnCount > 0 && plusSize > 0;
@@ -40,6 +41,8 @@ export const BackgroundGridProvider = ({ children }) => {
         isLayoutReady,
         dotSize,
         setDotSize,
+        isLayoutVisible,
+        setisLayoutVisible,
       }}>
       {children}
     </ThemeProvider>

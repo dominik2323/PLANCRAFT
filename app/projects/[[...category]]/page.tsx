@@ -1,7 +1,9 @@
 import { Metadata } from "next";
+import { homepageData } from "../../(client)/homepageData";
 import getClient from "../../../apollo/client";
 import ClientQuote from "../../../components/ClientQuote/ClientQuote";
 import DividerHeader from "../../../components/Divider/DividerHeader";
+import RevealAnimation from "../../../components/TextAnimation/RevealAnimation";
 import { Large } from "../../../components/Typography/Large";
 import { Mini } from "../../../components/Typography/Mini";
 import { GetProjects } from "../../../gql/GetProjects";
@@ -11,6 +13,7 @@ import {
   QueryProjectsArgs,
   QueryServicesArgs,
 } from "../../../gql/types";
+import ProjectsGrid, { projectsPerPage } from "./(client)/ProjectsGrid";
 import {
   ProjectDividerHeaderInner,
   ProjectFilter,
@@ -18,9 +21,7 @@ import {
   ProjectsHero,
   StyledProjects,
 } from "./(client)/StyledProjects";
-import ProjectsGrid, { projectsPerPage } from "./(client)/ProjectsGrid";
 import { projectsData } from "./(client)/projectsData";
-import { homepageData } from "../../(client)/homepageData";
 
 export const metadata: Metadata = {
   title: projectsData.name,
@@ -67,8 +68,12 @@ const page = async ({ params: { category } }: PageProps) => {
   return (
     <StyledProjects>
       <ProjectsHero>
-        <Large>{projectsData.heroHeader}</Large>
-        <Mini>{projectsData.heroPerex}</Mini>
+        <RevealAnimation>
+          <Large>{projectsData.heroHeader}</Large>
+        </RevealAnimation>
+        <RevealAnimation delay={1}>
+          <Mini>{projectsData.heroPerex}</Mini>
+        </RevealAnimation>
       </ProjectsHero>
       <DividerHeader className='no-padding'>
         <ProjectDividerHeaderInner>

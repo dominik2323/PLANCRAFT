@@ -1,9 +1,9 @@
 "use client";
-import styled from "styled-components";
-import { spaces } from "../../consts/spaces";
-import { colors } from "../../consts/colors";
 import Link from "next/link";
+import styled from "styled-components";
 import { breakpoint } from "../../consts/breakpoints";
+import { colors } from "../../consts/colors";
+import { spaces } from "../../consts/spaces";
 
 export const ButtonLink = styled(Link)`
   all: unset;
@@ -25,6 +25,9 @@ export const StyledButton = styled.button`
   text-transform: uppercase;
   &.skinny {
     width: ${({ theme }) => 3 * theme.gapSize}px;
+  }
+  ${breakpoint.monitor} {
+    width: ${({ theme }) => 4 * theme.gapSize}px;
   }
   ${breakpoint.smallNotebook} {
     width: ${({ theme }) => 6 * theme.gapSize}px;

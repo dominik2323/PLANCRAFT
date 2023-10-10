@@ -30,6 +30,8 @@ export const ServiceHeader = styled.div`
 export const ServiceHeaderContent = styled.div`
   display: flex;
   height: 100%;
+  align-items: center;
+  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.phone} {
     padding: ${spaces.s}px 0;
   }
@@ -48,7 +50,8 @@ export const ServiceContent = styled(Link)`
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100%;
-  padding: 0 ${({ theme }) => 2 * theme.gapSize}px;
+  padding: 0 ${({ theme }) => 1 * theme.gapSize}px 0
+    ${({ theme }) => 3 * theme.gapSize}px;
   grid-template-areas: "left right";
   column-gap: ${({ theme }) => 2 * theme.gapSize}px;
   ${breakpoint.smallNotebook} {
@@ -66,8 +69,8 @@ export const ServiceContent = styled(Link)`
 export const ServiceContentLeft = styled.div`
   height: 100%;
   grid-area: left;
-  padding: ${({ theme }) => 1 * theme.gapSize}px 0;
   display: grid;
+  padding-bottom: ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.phone} {
     row-gap: ${({ theme }) => 1 * theme.gapSize}px;
   }
@@ -91,7 +94,7 @@ export const ServiceContentRight = styled.div`
   width: 100%;
   grid-area: right;
   position: relative;
-  padding: ${({ theme }) => 1 * theme.gapSize}px 0;
+  padding-bottom: ${({ theme }) => 1 * theme.gapSize}px;
   overflow: hidden;
 `;
 

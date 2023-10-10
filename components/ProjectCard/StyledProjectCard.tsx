@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
-import { spaces } from "../../consts/spaces";
 import { breakpoint } from "../../consts/breakpoints";
+import { spaces } from "../../consts/spaces";
 
 export const StyledProjectCard = styled(Link)`
   all: unset;
   cursor: pointer;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   height: 100%;
   ${breakpoint.smallNotebook} {
@@ -27,6 +27,7 @@ export const StyledProjectCard = styled(Link)`
 `;
 
 export const ProjectCardZoomW = styled.div`
+  height: 100%;
   ${breakpoint.tabletPortrait} {
     height: 30vh;
   }
@@ -37,9 +38,9 @@ export const ProjectCardZoomW = styled.div`
 
 export const ProjectCardImage = styled(Image)`
   height: 100%;
-  width: 100%;
+  width: auto;
   object-fit: contain;
-  object-position: 0 0;
+  object-position: center;
   ${breakpoint.tabletPortrait} {
     object-fit: cover;
   }

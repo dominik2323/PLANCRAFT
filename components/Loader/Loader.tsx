@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useTheme } from "styled-components";
 import { DisableScroll } from "../DisableScroll/DisableScroll";
 import Divider from "../Divider/Divider";
 import Logo from "../Svgs/Logo";
@@ -10,11 +10,11 @@ import { LoaderInner, StyledLoader } from "./StyledLoader";
 interface LoaderProps {}
 
 const Loader = ({}: LoaderProps) => {
-  const [isLayoutReady, setisLayoutReady] = useState<boolean>(false);
+  const { isLayoutVisible, setisLayoutVisible } = useTheme();
 
   return (
     <AnimatePresence>
-      {!isLayoutReady && (
+      {!isLayoutVisible && (
         <>
           <DisableScroll />
           <StyledLoader
@@ -34,7 +34,7 @@ const Loader = ({}: LoaderProps) => {
                 duration={2}
                 onAnimationEnded={(val) => {
                   if (val.scaleX === 1) {
-                    setisLayoutReady(true);
+                    setisLayoutVisible(true);
                   }
                 }}
               />

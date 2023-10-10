@@ -1,5 +1,6 @@
 "use client";
 
+import RevealAnimation from "../TextAnimation/RevealAnimation";
 import { Mini } from "../Typography/Mini";
 import { Quote, StyledClientQuote } from "./StyledClientQuote";
 
@@ -11,8 +12,12 @@ interface ClientQuoteProps {
 const ClientQuote = ({ quote, client }: ClientQuoteProps) => {
   return (
     <StyledClientQuote>
-      <Quote>{quote}</Quote>
-      <Mini>— {client}</Mini>
+      <RevealAnimation>
+        <Quote>{quote}</Quote>
+      </RevealAnimation>
+      <RevealAnimation delay={1}>
+        <Mini>— {client}</Mini>
+      </RevealAnimation>
     </StyledClientQuote>
   );
 };

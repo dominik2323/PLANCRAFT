@@ -22,6 +22,12 @@ export const StyledFigureBanner = styled.div`
   &.align-center {
     align-items: center;
   }
+  ${breakpoint.monitor} {
+    grid-template-columns: ${({ theme }) => 32 * theme.columnCount}px auto;
+    &.flip {
+      grid-template-columns: auto ${({ theme }) => 32 * theme.columnCount}px;
+    }
+  }
   ${breakpoint.tabletPortrait} {
     grid-template-columns: unset;
     grid-template-areas: "cover" "content";

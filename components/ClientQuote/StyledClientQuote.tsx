@@ -30,6 +30,9 @@ export const Quote = styled.blockquote`
   line-height: 1.2em;
   letter-spacing: -0.02em;
   color: ${colors.primary400};
+  ${breakpoint.monitor} {
+    font-size: 100px;
+  }
   ${breakpoint.smallNotebook} {
     font-size: 60px;
   }

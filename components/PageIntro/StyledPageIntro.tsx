@@ -7,6 +7,9 @@ export const StyledPageIntro = styled.div``;
 export const PageIntroHero = styled.section`
   display: grid;
   row-gap: ${({ theme }) => 3 * theme.gapSize}px;
+  ${breakpoint.monitor} {
+    row-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  }
   ${breakpoint.tabletPortrait} {
     row-gap: ${({ theme }) => 6 * theme.gapSize}px;
   }

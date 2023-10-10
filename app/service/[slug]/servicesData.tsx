@@ -21,6 +21,7 @@ export type Cabinet = {
   mainHeader: string;
   list: {
     slug?: string;
+    linkLabel?: string;
     header: string;
     image: ImageProps;
     content: ServiceContentItem[];
@@ -109,6 +110,8 @@ export const servicesData: ServicesData = {
       type: "cabinet",
       list: [
         {
+          slug: "/kontakt",
+          linkLabel: "Poptat",
           header: "Projektová dokumentace",
           image: {
             src: "/img/service-projektova-dokumentace-0.gif",
@@ -154,6 +157,8 @@ export const servicesData: ServicesData = {
           ],
         },
         {
+          slug: "/kontakt",
+          linkLabel: "Poptat",
           header: "Inženýring a zisk povolení",
           image: {
             src: "/img/service-projektova-dokumentace-4.jpg",
@@ -269,6 +274,8 @@ export const servicesData: ServicesData = {
       mainHeader: "Obsah služby",
       list: [
         {
+          slug: "/kontakt",
+          linkLabel: "Poptat",
           header: "Detailní pasportizace",
           image: {
             src: "/img/service-pasportizace-0.gif",
@@ -307,6 +314,8 @@ export const servicesData: ServicesData = {
           ],
         },
         {
+          slug: "/kontakt",
+          linkLabel: "Poptat",
           header: "Zjednodušená dokumentace",
           image: {
             src: "/img/service-pasportizace-4.jpg",
@@ -525,6 +534,8 @@ export const servicesData: ServicesData = {
       mainHeader: "Obsah služby",
       list: [
         {
+          slug: "/kontakt",
+          linkLabel: "Poptat",
           header: "Technické prověření proveditelnosti",
           image: {
             src: "/img/service-design-0.jpg",
@@ -540,6 +551,8 @@ export const servicesData: ServicesData = {
           ],
         },
         {
+          slug: "/kontakt",
+          linkLabel: "Poptat",
           header: "Detailní pasportizace",
           image: {
             src: "/img/service-pasportizace-0.gif",
@@ -555,6 +568,8 @@ export const servicesData: ServicesData = {
           ],
         },
         {
+          slug: "/kontakt",
+          linkLabel: "Poptat",
           header: "Dokumentace v BIM, inženýring",
           image: {
             src: "/img/service-design-5.gif",

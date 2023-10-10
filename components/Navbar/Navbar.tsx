@@ -99,6 +99,7 @@ const Navbar = ({}: NavbarProps) => {
 
   useEffect(() => {
     setIsOpen(false);
+    setHideableNavbar(false);
   }, [pathname]);
 
   return (

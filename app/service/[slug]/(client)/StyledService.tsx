@@ -10,14 +10,27 @@ export const StyledService = styled.main`
 `;
 
 export const ServicePerex = styled.div`
-  margin: ${({ theme }) => 3 * theme.gapSize}px 0;
+  max-width: ${({ theme }) => 15 * theme.gapSize}px;
+  margin: ${({ theme }) => 2 * theme.gapSize}px 0
+    ${({ theme }) => 4 * theme.gapSize}px ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.monitor} {
+    margin: ${({ theme }) => 4 * theme.gapSize}px 0
+      ${({ theme }) => 4 * theme.gapSize}px
+      ${({ theme }) => 1 * theme.gapSize}px;
+    max-width: ${({ theme }) => 15 * theme.gapSize}px;
+  }
   ${breakpoint.tabletLandscape} {
     margin: ${({ theme }) => 5 * theme.gapSize}px 0;
   }
 `;
 
+export const ServiceNumberedList = styled.div`
+  display: grid;
+  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+`;
+
 export const SimilarProjects = styled.div`
-  margin-top: ${({ theme }) => 3 * theme.gapSize}px;
+  margin-top: ${({ theme }) => 2 * theme.gapSize}px;
 `;
 
 export const ServiceAdvantages = styled.div``;
