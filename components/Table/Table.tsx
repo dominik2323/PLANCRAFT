@@ -1,10 +1,8 @@
 "use client";
 
 import { ReactNode } from "react";
-import RevealAnimation from "../TextAnimation/RevealAnimation";
-import { StyledTable } from "./StyledTable";
+import { StyledTable, TableRow } from "./StyledTable";
 import TableCol from "./TableCol";
-import TableRow from "./TableRow";
 
 interface TableProps {
   items: { header: string; body: ReactNode }[];
@@ -17,15 +15,9 @@ const Table = ({ items, delayAnimation = 0 }: TableProps) => {
       <tbody>
         {items.map(({ body, header }, i) => (
           <TableRow key={i}>
-            <TableCol>
-              <RevealAnimation delay={delayAnimation * i}>
-                {header}
-              </RevealAnimation>
-            </TableCol>
-            <TableCol>
-              <RevealAnimation delay={delayAnimation * i + 0.5}>
-                {body}
-              </RevealAnimation>
+            <TableCol delayAnimation={i * delayAnimation}>{header}</TableCol>
+            <TableCol delayAnimation={i * delayAnimation + 0.5}>
+              {body}
             </TableCol>
           </TableRow>
         ))}
