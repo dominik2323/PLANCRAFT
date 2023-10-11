@@ -28,7 +28,7 @@ export const PartnersList = styled.div`
 `;
 
 export const PartnersLogo = styled.img`
-  ${breakpoint.tabletLandscape} {
+  ${breakpoint.smallNotebook} {
     height: 50px;
   }
   ${breakpoint.phone} {

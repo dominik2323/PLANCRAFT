@@ -161,7 +161,9 @@ const Navbar = ({}: NavbarProps) => {
                 <NavigationDashboard>
                   <Navigation>
                     {navConfig.map(({ name, slug }, i) => {
-                      const isActive = slug === pathname;
+                      const isActive =
+                        slug === pathname ||
+                        (pathname.includes("projekt/") && slug === "/projekty");
                       const isHover = hoverIndex === i;
                       return (
                         <NavlinkWrapper
