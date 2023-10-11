@@ -92,9 +92,7 @@ export const HpProjectsCta = styled.div`
   justify-items: start;
   row-gap: ${({ theme }) => 1 * theme.gapSize}px;
   margin-top: ${({ theme }) => 1 * theme.gapSize}px;
-  ${breakpoint.monitor} {
-    max-width: ${({ theme }) => theme.columnCount * 0.4 * theme.gapSize}px;
-  }
+  max-width: ${({ theme }) => theme.columnCount * 0.4 * theme.gapSize}px;
   ${breakpoint.tabletPortrait} {
     margin: ${({ theme }) => 7 * theme.gapSize}px 0
       ${({ theme }) => 5 * theme.gapSize}px;

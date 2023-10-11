@@ -13,7 +13,7 @@ export const StyledFooter = styled.footer`
 export const FooterContact = styled.div`
   display: grid;
   gap: ${({ theme }) => 2 * theme.gapSize}px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr minmax(600px, 1fr) 1fr;
   grid-template-areas: "text links address";
   padding: ${({ theme }) => 2 * theme.gapSize}px
     ${({ theme }) => 1 * theme.gapSize}px;

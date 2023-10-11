@@ -26,7 +26,7 @@ export const StyledClientQuote = styled.div`
 `;
 
 export const Quote = styled.blockquote`
-  font-size: 88px;
+  font-size: 80px;
   line-height: 1.2em;
   letter-spacing: -0.02em;
   color: ${colors.primary400};

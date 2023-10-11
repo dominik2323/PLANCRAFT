@@ -61,7 +61,9 @@ const page = ({}: PageProps) => {
             width={aboutData.ourTeam.figureBanner.image.width}
             height={aboutData.ourTeam.figureBanner.image.height}
             alt={aboutData.ourTeam.figureBanner.image.alt}>
-            <Mini>{aboutData.ourTeam.figureBanner.perex}</Mini>
+            <RevealAnimation delay={0.5}>
+              <Mini>{aboutData.ourTeam.figureBanner.perex}</Mini>
+            </RevealAnimation>
           </FigureBanner>
         </AboutTeamIntro>
         <AboutTeamClaim>

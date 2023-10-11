@@ -65,7 +65,7 @@ const navConfig = [
 const Navbar = ({}: NavbarProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { directionDown, scrollPos } = useScrollDirection();
-  const { gapSize, plusSize } = useTheme();
+  const { gapSize, plusSize, setisLayoutVisible } = useTheme();
   const { w } = useWindowSize();
   const [hoverIndex, setHoverIndex] = useState<number>(0);
   const [hideableNavbar, setHideableNavbar] = useState(false);
@@ -92,12 +92,6 @@ const Navbar = ({}: NavbarProps) => {
   }, [pathname]);
 
   useEffect(() => {
-    if (directionDown) {
-      setIsOpen(false);
-    }
-  }, [directionDown]);
-
-  useEffect(() => {
     setIsOpen(false);
     setHideableNavbar(false);
   }, [pathname]);
@@ -107,7 +101,7 @@ const Navbar = ({}: NavbarProps) => {
       <NavbarPlaceholder />
       <StyledNavbar
         animate={{
-          y: hideableNavbar || directionDown ? `-100%` : `0%`,
+          y: isOpen ? "0%" : hideableNavbar || directionDown ? `-100%` : `0%`,
         }}>
         <Topbar>
           <NavbarDividerWrapper className={scrollPos < 100 ? "show" : "hide"}>
@@ -122,6 +116,7 @@ const Navbar = ({}: NavbarProps) => {
                 isOpen={isOpen}
                 onClick={() => {
                   setIsOpen((p) => !p);
+                  setisLayoutVisible(false);
                 }}
                 width={w <= device.phone ? gapSize * 2 : gapSize}
                 height={w <= device.phone ? (gapSize / 3) * 2 : gapSize / 3}
@@ -131,7 +126,10 @@ const Navbar = ({}: NavbarProps) => {
             </BurgerWrapper>
           </TopbarContent>
         </Topbar>
-        <AnimatePresence>
+        <AnimatePresence
+          onExitComplete={() => {
+            setisLayoutVisible(true);
+          }}>
           {isOpen && (
             <>
               <DisableScroll />

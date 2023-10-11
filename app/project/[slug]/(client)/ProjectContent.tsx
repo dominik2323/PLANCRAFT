@@ -19,14 +19,14 @@ const ProjectContent = ({ project }: ProjectContentProps) => {
       {project.project_body.map((item, i) => {
         if (item.__typename === "Text") {
           return (
-            <RevealAnimation>
-              <ProjectDetailText key={i} html={item.html} />
+            <RevealAnimation key={i}>
+              <ProjectDetailText html={item.html} />
             </RevealAnimation>
           );
         }
         if (item.__typename === "ImagesRow") {
           return (
-            <ProjectBodyImageRow>
+            <ProjectBodyImageRow key={i}>
               {item.image.map(({ url, width, height, description }, i) => (
                 <RevealAnimation key={i} delay={i * 0.5}>
                   <ProjectBodyImage

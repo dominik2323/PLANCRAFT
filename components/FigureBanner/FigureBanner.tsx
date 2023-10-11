@@ -30,9 +30,7 @@ const FigureBanner = ({
       <RevealAnimation style={{ gridArea: "cover" }}>
         <FigureBannerCover src={src} alt={alt} width={width} height={height} />
       </RevealAnimation>
-      <RevealAnimation delay={0.5} style={{ gridArea: "content" }}>
-        <FigureBannerContent>{children}</FigureBannerContent>
-      </RevealAnimation>
+      <FigureBannerContent>{children}</FigureBannerContent>
     </StyledFigureBanner>
   );
 };

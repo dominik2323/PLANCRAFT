@@ -48,4 +48,5 @@ export const FigureBannerCover = styled(Image)`
 export const FigureBannerContent = styled.div`
   display: grid;
   justify-items: start;
+  grid-area: content;
 `;

@@ -32,7 +32,7 @@ const RevealAnimation = ({
   style,
 }: TextAnimationProps) => {
   const { isLayoutVisible } = useTheme();
-  if (!isLayoutVisible) return;
+
   return disable ? (
     <StyledRevealAnimation as={as} style={style}>
       {children}
@@ -42,8 +42,18 @@ const RevealAnimation = ({
       style={{ overflow: noCrop ? "unset" : "hidden", ...style }}
       as={as}>
       <RevealAnimationInner
-        initial={{ y: y ? y[0] : "70%", skew: noSkew ? 0 : 20, opacity: 0 }}
-        whileInView={{ y: y ? y[1] : "0%", skew: 0, opacity: 1 }}
+        initial={{
+          y: y ? y[0] : "70%",
+          skew: noSkew ? 0 : 20,
+          opacity: 0,
+        }}
+        whileInView={
+          isLayoutVisible && {
+            y: y ? y[1] : "0%",
+            skew: 0,
+            opacity: 1,
+          }
+        }
         transition={{ delay: 0.5 * delay, ease: easing, duration: duration }}
         viewport={{
           once: true,

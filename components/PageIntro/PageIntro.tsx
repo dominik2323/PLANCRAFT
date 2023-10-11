@@ -37,7 +37,7 @@ const PageIntro = ({
   return (
     <StyledPageIntro>
       <PageIntroHero>
-        <RevealAnimation delay={1} noCrop>
+        <RevealAnimation delay={1}>
           <Large>{heroHeader}</Large>
         </RevealAnimation>
         <FigureBanner
@@ -46,7 +46,7 @@ const PageIntro = ({
           width={figureBanner.image.width}
           height={figureBanner.image.height}
           alt={figureBanner.image.alt}>
-          <RevealAnimation delay={2} noCrop>
+          <RevealAnimation delay={2}>
             <Mini>{figureBanner.perex}</Mini>
           </RevealAnimation>
           {withCta && (
@@ -57,7 +57,7 @@ const PageIntro = ({
             </RevealAnimation>
           )}
         </FigureBanner>
-        <RevealAnimation noCrop>
+        <RevealAnimation>
           <Medium>{introPerex}</Medium>
         </RevealAnimation>
       </PageIntroHero>

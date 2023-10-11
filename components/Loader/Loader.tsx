@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { useTheme } from "styled-components";
 import { DisableScroll } from "../DisableScroll/DisableScroll";
 import Divider from "../Divider/Divider";
@@ -10,11 +11,17 @@ import { LoaderInner, StyledLoader } from "./StyledLoader";
 interface LoaderProps {}
 
 const Loader = ({}: LoaderProps) => {
-  const { isLayoutVisible, setisLayoutVisible } = useTheme();
+  const [isDividerAnimFinished, setisDividerAnimFinished] =
+    useState<boolean>(false);
+  const { setisLayoutVisible, isLayoutReady, gapSize, columnCount } =
+    useTheme();
 
   return (
-    <AnimatePresence>
-      {!isLayoutVisible && (
+    <AnimatePresence
+      onExitComplete={() => {
+        setisLayoutVisible(true);
+      }}>
+      {(!isDividerAnimFinished || !isLayoutReady) && (
         <>
           <DisableScroll />
           <StyledLoader
@@ -34,7 +41,7 @@ const Loader = ({}: LoaderProps) => {
                 duration={2}
                 onAnimationEnded={(val) => {
                   if (val.scaleX === 1) {
-                    setisLayoutVisible(true);
+                    setisDividerAnimFinished(true);
                   }
                 }}
               />
