@@ -5,6 +5,7 @@ import ClientQuote from "../components/ClientQuote/ClientQuote";
 import FigureBanner from "../components/FigureBanner/FigureBanner";
 import Partners from "../components/Partners/Partners";
 import Services from "../components/Services/Services";
+import RevealAnimation from "../components/TextAnimation/RevealAnimation";
 import { Medium } from "../components/Typography/Medium";
 import { Mini } from "../components/Typography/Mini";
 import { Small } from "../components/Typography/Small";
@@ -47,10 +48,16 @@ const page = async ({}: PageProps) => {
   return (
     <StyledHomepage>
       <HpHero>
-        <HpHeader>{homepageData.heroHeader}</HpHeader>
+        <RevealAnimation>
+          <HpHeader>{homepageData.heroHeader}</HpHeader>
+        </RevealAnimation>
         <HpHeroInner>
-          <Mini>{homepageData.heroPerex}</Mini>
-          <Button>Naše služby</Button>
+          <RevealAnimation delay={0.5}>
+            <Mini>{homepageData.heroPerex}</Mini>
+          </RevealAnimation>
+          <RevealAnimation delay={1} noCrop>
+            <Button>Naše služby</Button>
+          </RevealAnimation>
         </HpHeroInner>
       </HpHero>
       <HpAbout>
@@ -61,28 +68,38 @@ const page = async ({}: PageProps) => {
           height={homepageData.about.figureBanner.image.height}>
           <Mini>{homepageData.about.figureBanner.perex}</Mini>
         </FigureBanner>
-        <HpQuoteAbout>
-          <Medium>{homepageData.about.perex}</Medium>
-        </HpQuoteAbout>
+        <RevealAnimation>
+          <HpQuoteAbout>
+            <Medium>{homepageData.about.perex}</Medium>
+          </HpQuoteAbout>
+        </RevealAnimation>
       </HpAbout>
       <Services
         mainHeader={homepageData.services.mainHeader}
         list={homepageData.services.list}
       />
       <HpQuoteServices>
-        <Medium className='wide'>{homepageData.servicesQuote}</Medium>
-        <Button className='skinny' href={"/o-nas"}>
-          O nás
-        </Button>
+        <RevealAnimation>
+          <Medium className='wide'>{homepageData.servicesQuote}</Medium>
+        </RevealAnimation>
+        <RevealAnimation delay={0.5} noCrop>
+          <Button className='skinny' href={"/o-nas"}>
+            O nás
+          </Button>
+        </RevealAnimation>
       </HpQuoteServices>
       <HpProjects projects={Projects} />
       <HpProjectsCta>
-        <Small className='wide'>
-          Dělá nám radost se podílet na rozmanitých a inovativních projektech,
-          které nerezonují jen v lokálním prostředí, ale jsou uznávanou
-          inspirací na celém světě.
-        </Small>
-        <Button href={"/projekty"}>Více projektů</Button>
+        <RevealAnimation>
+          <Small className='wide'>
+            Dělá nám radost se podílet na rozmanitých a inovativních projektech,
+            které nerezonují jen v lokálním prostředí, ale jsou uznávanou
+            inspirací na celém světě.
+          </Small>
+        </RevealAnimation>
+        <RevealAnimation delay={0.5} noCrop>
+          <Button href={"/projekty"}>Více projektů</Button>
+        </RevealAnimation>
       </HpProjectsCta>
       <HpQuoteW>
         <ClientQuote

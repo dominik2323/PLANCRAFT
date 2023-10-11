@@ -1,7 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
-import { useTheme } from "styled-components";
+import { CSSProperties, useTheme } from "styled-components";
 import { easing } from "../../consts/animationConfig";
 import {
   RevealAnimationInner,
@@ -16,6 +16,8 @@ interface TextAnimationProps {
   duration?: number;
   disable?: boolean;
   y?: (number | string)[];
+  as?: keyof JSX.IntrinsicElements;
+  style?: CSSProperties;
 }
 
 const RevealAnimation = ({
@@ -26,13 +28,19 @@ const RevealAnimation = ({
   noCrop = false,
   disable,
   y,
+  as,
+  style,
 }: TextAnimationProps) => {
   const { isLayoutVisible } = useTheme();
   if (!isLayoutVisible) return;
   return disable ? (
-    <div>{children}</div>
+    <StyledRevealAnimation as={as} style={style}>
+      {children}
+    </StyledRevealAnimation>
   ) : (
-    <StyledRevealAnimation style={{ overflow: noCrop ? "unset" : "hidden" }}>
+    <StyledRevealAnimation
+      style={{ overflow: noCrop ? "unset" : "hidden", ...style }}
+      as={as}>
       <RevealAnimationInner
         initial={{ y: y ? y[0] : "70%", skew: noSkew ? 0 : 20, opacity: 0 }}
         whileInView={{ y: y ? y[1] : "0%", skew: 0, opacity: 1 }}

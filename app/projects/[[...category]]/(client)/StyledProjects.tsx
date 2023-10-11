@@ -11,14 +11,14 @@ export const StyledProjects = styled.main`
 
 export const ProjectsHero = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
+  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   align-items: center;
   margin-bottom: ${({ theme }) => 3 * theme.gapSize}px;
   padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.monitor} {
-    grid-template-columns: 1fr 2fr;
-    column-gap: ${({ theme }) => 1.5 * theme.gapSize}px;
+    grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
+    column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   }
   ${breakpoint.smallNotebook} {
     grid-template-columns: 1fr 3fr;
@@ -38,11 +38,11 @@ export const ProjectsHero = styled.div`
 export const ProjectDividerHeaderInner = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  grid-template-columns: ${({ theme }) => 12 * theme.gapSize}px 1fr;
+  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.monitor} {
-    grid-template-columns: 1fr 2fr;
-    column-gap: ${({ theme }) => 1.5 * theme.gapSize}px;
+    grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
+    column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   }
   ${breakpoint.smallNotebook} {
     grid-template-columns: 1fr 3fr;
@@ -60,6 +60,9 @@ export const ProjectFilters = styled.div`
   display: flex;
   justify-content: space-between;
   gap: ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.monitor} {
+    justify-content: flex-start;
+  }
   ${breakpoint.smallNotebook} {
     gap: ${({ theme }) => 0.5 * theme.gapSize}px;
   }

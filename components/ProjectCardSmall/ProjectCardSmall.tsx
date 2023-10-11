@@ -1,28 +1,34 @@
 "use client";
 
-import React from "react";
+import { ImageProps } from "../../app/service/[slug]/servicesData";
+import RevealAnimation from "../TextAnimation/RevealAnimation";
+import { Small } from "../Typography/Small";
 import {
   ProjectCardSmallCover,
   StyledProjectCardSmall,
 } from "./StyledProjectCardSmall";
-import { ImageProps } from "../../app/service/[slug]/servicesData";
-import { Small } from "../Typography/Small";
 
 interface ProjectCardSmallProps {
   slug: string;
   projectName: string;
   image: ImageProps;
+  delay?: number;
 }
 
 const ProjectCardSmall = ({
   image,
   projectName,
   slug,
+  delay = 0,
 }: ProjectCardSmallProps) => {
   return (
     <StyledProjectCardSmall href={`/projekt/${slug}`}>
-      <ProjectCardSmallCover {...image} />
-      <Small>{projectName}</Small>
+      <RevealAnimation delay={delay}>
+        <ProjectCardSmallCover {...image} />
+      </RevealAnimation>
+      <RevealAnimation delay={delay + 0.5}>
+        <Small>{projectName}</Small>
+      </RevealAnimation>
     </StyledProjectCardSmall>
   );
 };

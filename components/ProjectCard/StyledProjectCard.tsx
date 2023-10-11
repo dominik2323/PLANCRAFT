@@ -11,8 +11,8 @@ export const StyledProjectCard = styled(Link)`
   all: unset;
   cursor: pointer;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  grid-template-columns: ${({ theme }) => 9 * theme.gapSize}px 1fr;
+  column-gap: ${({ theme }) => 3 * theme.gapSize}px;
   height: 100%;
   ${breakpoint.smallNotebook} {
     grid-template-columns: 1fr 3fr;

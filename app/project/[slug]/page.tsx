@@ -4,6 +4,7 @@ import ClientQuote from "../../../components/ClientQuote/ClientQuote";
 import DividerHeader from "../../../components/Divider/DividerHeader";
 import Link from "../../../components/Link/Link";
 import Table from "../../../components/Table/Table";
+import RevealAnimation from "../../../components/TextAnimation/RevealAnimation";
 import { Mini } from "../../../components/Typography/Mini";
 import { Small } from "../../../components/Typography/Small";
 import { GetProjects } from "../../../gql/GetProjects";
@@ -70,11 +71,16 @@ const page = async ({ params: { slug } }: PageProps) => {
         <ProjectContent project={project} />
         <ProjectElevator>
           <ProjectElevatorInner>
-            <Small className='uppercase'>{project.project_name}</Small>
-            <ProjectDescriptionWrapper>
-              <Mini>{project.project_description}</Mini>
-            </ProjectDescriptionWrapper>
+            <RevealAnimation>
+              <Small className='uppercase'>{project.project_name}</Small>
+            </RevealAnimation>
+            <RevealAnimation delay={0.5}>
+              <ProjectDescriptionWrapper>
+                <Mini>{project.project_description}</Mini>
+              </ProjectDescriptionWrapper>
+            </RevealAnimation>
             <Table
+              delayAnimation={1}
               items={[
                 {
                   header: "Role v projektu",

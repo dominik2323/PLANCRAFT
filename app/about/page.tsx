@@ -4,7 +4,9 @@ import ClientQuote from "../../components/ClientQuote/ClientQuote";
 import DividerHeader from "../../components/Divider/DividerHeader";
 import FigureBanner from "../../components/FigureBanner/FigureBanner";
 import NumberedList from "../../components/NumberedList/NumberedList";
+import PageIntro from "../../components/PageIntro/PageIntro";
 import Partners from "../../components/Partners/Partners";
+import RevealAnimation from "../../components/TextAnimation/RevealAnimation";
 import { Medium } from "../../components/Typography/Medium";
 import { Mini } from "../../components/Typography/Mini";
 import {
@@ -17,7 +19,6 @@ import {
   AboutValues,
   StyledAbout,
 } from "./(client)/StyledAbout";
-import PageIntro from "../../components/PageIntro/PageIntro";
 import { aboutData } from "./(client)/aboutData";
 
 export const metadata: Metadata = {
@@ -64,17 +65,23 @@ const page = ({}: PageProps) => {
           </FigureBanner>
         </AboutTeamIntro>
         <AboutTeamClaim>
-          <AboutTeamClaimHeader>
-            <Medium className='wide'>{aboutData.ourTeam.teamClaim}</Medium>
-          </AboutTeamClaimHeader>
+          <RevealAnimation>
+            <AboutTeamClaimHeader>
+              <Medium className='wide'>{aboutData.ourTeam.teamClaim}</Medium>
+            </AboutTeamClaimHeader>
+          </RevealAnimation>
           <AboutTeamClaimInner>
-            <AboutTeamClaimImage
-              src={aboutData.ourTeam.teamClaimImage.src}
-              width={aboutData.ourTeam.teamClaimImage.width}
-              height={aboutData.ourTeam.teamClaimImage.height}
-              alt={aboutData.ourTeam.teamClaimImage.alt}
-            />
-            <Button href={"/kontakt"}>{"Napište nám"}</Button>
+            <RevealAnimation>
+              <AboutTeamClaimImage
+                src={aboutData.ourTeam.teamClaimImage.src}
+                width={aboutData.ourTeam.teamClaimImage.width}
+                height={aboutData.ourTeam.teamClaimImage.height}
+                alt={aboutData.ourTeam.teamClaimImage.alt}
+              />
+            </RevealAnimation>
+            <RevealAnimation noCrop>
+              <Button href={"/kontakt"}>{"Napište nám"}</Button>
+            </RevealAnimation>
           </AboutTeamClaimInner>
         </AboutTeamClaim>
         <ClientQuote

@@ -1,12 +1,12 @@
 "use client";
 
-import React from "react";
 import ProjectDetailText from "../../../(client)/ProjectDetailText";
+import RevealAnimation from "../../../../components/TextAnimation/RevealAnimation";
 import { Project } from "../../../../gql/types";
 import {
-  StyledProjectContent,
-  ProjectBodyImageRow,
   ProjectBodyImage,
+  ProjectBodyImageRow,
+  StyledProjectContent,
 } from "./StyledProjectContent";
 
 interface ProjectContentProps {
@@ -18,19 +18,24 @@ const ProjectContent = ({ project }: ProjectContentProps) => {
     <StyledProjectContent>
       {project.project_body.map((item, i) => {
         if (item.__typename === "Text") {
-          return <ProjectDetailText key={i} html={item.html} />;
+          return (
+            <RevealAnimation>
+              <ProjectDetailText key={i} html={item.html} />
+            </RevealAnimation>
+          );
         }
         if (item.__typename === "ImagesRow") {
           return (
             <ProjectBodyImageRow>
               {item.image.map(({ url, width, height, description }, i) => (
-                <ProjectBodyImage
-                  key={i}
-                  src={url}
-                  width={width}
-                  height={height}
-                  alt={description || project.project_name}
-                />
+                <RevealAnimation key={i} delay={i * 0.5}>
+                  <ProjectBodyImage
+                    src={url}
+                    width={width}
+                    height={height}
+                    alt={description || project.project_name}
+                  />
+                </RevealAnimation>
               ))}
             </ProjectBodyImageRow>
           );

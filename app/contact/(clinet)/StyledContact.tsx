@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { breakpoint } from "../../../consts/breakpoints";
 
 export const StyledContact = styled.main`
+  width: 100vw;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;

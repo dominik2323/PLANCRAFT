@@ -77,21 +77,23 @@ const ProjectsGrid = ({
         )
       )}
       {totalCount > projects.length && (
-        <Button
-          onClick={() => {
-            getProjects({
-              variables: {
-                locale: "cs-CZ",
-                skip: skip,
-                limit: projectsPerPage,
-                where: {
-                  project_category: { _slug_any: query.category || [] },
-                },
-              } as QueryProjectsArgs,
-            });
-          }}>
-          {loading ? "Načítám" : "Další projekty"}
-        </Button>
+        <RevealAnimation noCrop>
+          <Button
+            onClick={() => {
+              getProjects({
+                variables: {
+                  locale: "cs-CZ",
+                  skip: skip,
+                  limit: projectsPerPage,
+                  where: {
+                    project_category: { _slug_any: query.category || [] },
+                  },
+                } as QueryProjectsArgs,
+              });
+            }}>
+            {loading ? "Načítám" : "Další projekty"}
+          </Button>
+        </RevealAnimation>
       )}
     </StyledProjectsGrid>
   );

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import SimpleFooter from "../../components/SimpleFooter/SimpleFooter";
 import Table from "../../components/Table/Table";
+import RevealAnimation from "../../components/TextAnimation/RevealAnimation";
 import { Medium } from "../../components/Typography/Medium";
 import { contactData } from "./(client)/contactData";
 import {
@@ -29,15 +30,19 @@ const page = ({}: PageProps) => {
     <StyledContact>
       <ContactHero>
         <ContactContent>
-          <Medium>{contactData.header}</Medium>
-          <Table items={contactData.items} />
+          <RevealAnimation>
+            <Medium>{contactData.header}</Medium>
+          </RevealAnimation>
+          <Table items={contactData.items} delayAnimation={0.5} />
         </ContactContent>
-        <ContactCover
-          src={contactData.contactCover.src}
-          width={contactData.contactCover.width}
-          height={contactData.contactCover.height}
-          alt={contactData.contactCover.alt}
-        />
+        <RevealAnimation delay={1.5}>
+          <ContactCover
+            src={contactData.contactCover.src}
+            width={contactData.contactCover.width}
+            height={contactData.contactCover.height}
+            alt={contactData.contactCover.alt}
+          />
+        </RevealAnimation>
       </ContactHero>
       <SimpleFooter />
     </StyledContact>

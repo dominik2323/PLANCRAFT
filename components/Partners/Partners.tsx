@@ -1,6 +1,7 @@
 "use client";
 
 import DividerHeader from "../Divider/DividerHeader";
+import RevealAnimation from "../TextAnimation/RevealAnimation";
 import { Mini } from "../Typography/Mini";
 import { PartnersList, PartnersLogo, StyledPartners } from "./StyledPartners";
 
@@ -29,7 +30,9 @@ const Partners = ({}: PartnersProps) => {
       </DividerHeader>
       <PartnersList>
         {list.map(({ name, filename }, i) => (
-          <PartnersLogo src={`/img/${filename}`} alt={name} key={i} />
+          <RevealAnimation key={i} delay={i * 0.5} style={{ width: "auto" }}>
+            <PartnersLogo src={`/img/${filename}`} alt={name} />
+          </RevealAnimation>
         ))}
       </PartnersList>
     </StyledPartners>

@@ -108,18 +108,17 @@ const page = async ({ params: { slug } }: PageProps) => {
           </DividerHeader>
           <ProjectsCardsSmallWrapper>
             {Projects.items.map(({ project_name, _slug, project_cover }, i) => (
-              <RevealAnimation key={_slug} delay={i * 0.5}>
-                <ProjectCardSmall
-                  projectName={project_name}
-                  slug={_slug}
-                  image={{
-                    src: project_cover.url,
-                    width: project_cover.width,
-                    height: project_cover.width,
-                    alt: project_cover.description || project_name,
-                  }}
-                />
-              </RevealAnimation>
+              <ProjectCardSmall
+                delay={i * 0.5}
+                projectName={project_name}
+                slug={_slug}
+                image={{
+                  src: project_cover.url,
+                  width: project_cover.width,
+                  height: project_cover.width,
+                  alt: project_cover.description || project_name,
+                }}
+              />
             ))}
           </ProjectsCardsSmallWrapper>
         </SimilarProjects>

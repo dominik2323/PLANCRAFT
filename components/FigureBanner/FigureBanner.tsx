@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactNode } from "react";
+import RevealAnimation from "../TextAnimation/RevealAnimation";
 import {
   FigureBannerContent,
   FigureBannerCover,
@@ -26,8 +27,12 @@ const FigureBanner = ({
 }: FigureBannerProps) => {
   return (
     <StyledFigureBanner className={className}>
-      <FigureBannerCover src={src} alt={alt} width={width} height={height} />
-      <FigureBannerContent>{children}</FigureBannerContent>
+      <RevealAnimation style={{ gridArea: "cover" }}>
+        <FigureBannerCover src={src} alt={alt} width={width} height={height} />
+      </RevealAnimation>
+      <RevealAnimation delay={0.5} style={{ gridArea: "content" }}>
+        <FigureBannerContent>{children}</FigureBannerContent>
+      </RevealAnimation>
     </StyledFigureBanner>
   );
 };
