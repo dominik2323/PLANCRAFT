@@ -20,7 +20,7 @@ export const ServicePerex = styled.div`
     max-width: ${({ theme }) => 15 * theme.gapSize}px;
   }
   ${breakpoint.tabletLandscape} {
-    margin: ${({ theme }) => 5 * theme.gapSize}px 0;
+    margin: ${({ theme }) => 3 * theme.gapSize}px 0;
   }
 `;
 

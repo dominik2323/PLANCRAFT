@@ -49,10 +49,7 @@ export const BurgerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: ${({ theme }) => 1.25 * theme.gapSize}px;
-  ${breakpoint.monitor} {
-    max-width: ${({ theme }) => 1 * theme.gapSize}px;
-  }
+  max-width: ${({ theme }) => 1 * theme.gapSize}px;
 `;
 
 export const LogoWrapper = styled(Link)`
@@ -60,6 +57,9 @@ export const LogoWrapper = styled(Link)`
   cursor: pointer;
   height: 100%;
   aspect-ratio: 321/43;
+  ${breakpoint.tabletLandscape} {
+    height: ${({ theme }) => 1.5 * theme.gapSize}px;
+  }
   ${breakpoint.tabletPortrait} {
     height: ${({ theme }) => 1.75 * theme.gapSize}px;
   }

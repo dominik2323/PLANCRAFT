@@ -3,6 +3,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { breakpoint } from "../../../../consts/breakpoints";
+import { spaces } from "../../../../consts/spaces";
 
 export const StyledProjects = styled.main`
   padding: ${({ theme }) => 1 * theme.gapSize}px;
@@ -21,11 +22,13 @@ export const ProjectsHero = styled.div`
     column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   }
   ${breakpoint.smallNotebook} {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
+  }
+  ${breakpoint.tabletLandscape} {
+    margin-bottom: ${({ theme }) => 5 * theme.gapSize}px;
   }
   ${breakpoint.tabletPortrait} {
     grid-template-columns: 1fr 2fr;
-    margin-bottom: ${({ theme }) => 5 * theme.gapSize}px;
   }
   ${breakpoint.phone} {
     grid-template-columns: unset;
@@ -45,7 +48,7 @@ export const ProjectDividerHeaderInner = styled.div`
     column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   }
   ${breakpoint.smallNotebook} {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
   }
   ${breakpoint.tabletPortrait} {
     grid-template-columns: 1fr 2fr;
@@ -58,13 +61,15 @@ export const ProjectDividerHeaderInner = styled.div`
 
 export const ProjectFilters = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  gap: ${({ theme }) => 1 * theme.gapSize}px;
+  row-gap: ${spaces.xxs}px;
+  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.monitor} {
-    gap: ${({ theme }) => 1 * theme.gapSize}px;
+    column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   }
   ${breakpoint.smallNotebook} {
-    gap: ${({ theme }) => 0.5 * theme.gapSize}px;
+    column-gap: ${({ theme }) => 0.5 * theme.gapSize}px;
   }
   ${breakpoint.tabletPortrait} {
     margin-bottom: ${({ theme }) => 1 * theme.gapSize}px;

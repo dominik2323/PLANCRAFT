@@ -18,7 +18,7 @@ export const ProjectDetail = styled.div`
       0.5 * theme.columnCount * theme.gapSize}px auto;
   grid-template-areas: "content info";
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
-  ${breakpoint.tabletPortrait} {
+  ${breakpoint.tabletLandscape} {
     grid-template-columns: unset;
     grid-template-areas: "info" "content";
     row-gap: ${({ theme }) => 3 * theme.gapSize}px;
@@ -30,7 +30,7 @@ export const ProjectElevator = styled.div`
   position: sticky;
   top: ${({ theme }) => 2 * theme.gapSize}px;
   grid-area: info;
-  ${breakpoint.tabletPortrait} {
+  ${breakpoint.tabletLandscape} {
     height: auto;
     position: static;
   }

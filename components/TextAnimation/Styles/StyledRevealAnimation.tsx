@@ -6,4 +6,6 @@ export const StyledRevealAnimation = styled.div`
   width: 100%;
 `;
 
-export const RevealAnimationInner = styled(motion.div)``;
+export const RevealAnimationInner = styled(motion.div)`
+  height: 100%;
+`;

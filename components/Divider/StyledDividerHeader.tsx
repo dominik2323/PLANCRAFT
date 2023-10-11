@@ -1,6 +1,8 @@
 "use client";
 import styled from "styled-components";
+import { StyledProjects } from "../../app/projects/[[...category]]/(client)/StyledProjects";
 import { breakpoint } from "../../consts/breakpoints";
+import { spaces } from "../../consts/spaces";
 
 export const StyledDividerHeader = styled.div`
   display: flex;
@@ -22,13 +24,16 @@ export const StyledDividerHeaderInner = styled.div`
   padding-right: ${({ theme }) => 1 * theme.gapSize}px;
   height: ${({ theme }) => 2 * theme.gapSize}px;
   padding-top: 0;
+  ${breakpoint.tabletLandscape} {
+    ${StyledProjects} & {
+      height: auto;
+      padding-bottom: ${spaces.xs}px;
+    }
+  }
   ${breakpoint.tabletPortrait} {
     min-height: ${({ theme }) => 2 * theme.gapSize}px;
-    height: auto;
   }
   ${breakpoint.phone} {
     min-height: ${({ theme }) => 4 * theme.gapSize}px;
-    height: auto;
-    padding: 0;
   }
 `;

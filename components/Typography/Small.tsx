@@ -41,6 +41,9 @@ export const Small = styled.p`
     max-width: 500px;
   }
   ${breakpoint.tabletLandscape} {
+    font-size: 21px;
+  }
+  ${breakpoint.tabletPortrait} {
     font-size: 18px;
   }
   ${breakpoint.smallPhone} {

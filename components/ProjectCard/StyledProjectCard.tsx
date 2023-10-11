@@ -15,7 +15,7 @@ export const StyledProjectCard = styled(Link)`
   column-gap: ${({ theme }) => 3 * theme.gapSize}px;
   height: 100%;
   ${breakpoint.smallNotebook} {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
     column-gap: ${({ theme }) => 2 * theme.gapSize}px;
   }
   ${breakpoint.tabletPortrait} {
@@ -80,7 +80,7 @@ export const ProjectCardContentHeader = styled.div`
   display: flex;
   justify-content: space-between;
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
-  ${breakpoint.tabletPortrait} {
+  ${breakpoint.tabletLandscape} {
     column-gap: ${({ theme }) => 2 * theme.gapSize}px;
   }
   ${breakpoint.phone} {

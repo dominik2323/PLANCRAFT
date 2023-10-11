@@ -1,7 +1,7 @@
 export const device = {
   miniPhone: 400,
   phone: 600,
-  tabletPortrait: 1024,
+  tabletPortrait: 1023,
   tabletLandscape: 1200,
   smallNotebook: 1450,
   mediumNotebook: 1600,
