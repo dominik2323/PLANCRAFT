@@ -70,6 +70,7 @@ export const FooterCopywrite = styled.div`
     ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.phone} {
     padding: ${({ theme }) => 1 * theme.gapSize}px 0px;
+    gap: ${({ theme }) => 1 * theme.gapSize}px;
   }
 `;
 

@@ -28,7 +28,7 @@ const Footer = ({}: FooterProps) => {
   if (pageWithSimpleFooter.includes(pahtname)) return null;
 
   return (
-    <StyledFooter>
+    <StyledFooter data-hide-navbar>
       <Divider fill='white' />
       <FooterContact>
         <FooterContactText>
@@ -58,7 +58,7 @@ const Footer = ({}: FooterProps) => {
       </FooterLogo>
       <Divider fill='white' hidePlus />
       <FooterCopywrite>
-        <Mini className='white'>2023 PLANCRAFT</Mini>
+        <Mini className='white'>{new Date().getFullYear()} PLANCRAFT</Mini>
         <Mini className='white tar'>
           Made with Style & Ease by{" "}
           <Link

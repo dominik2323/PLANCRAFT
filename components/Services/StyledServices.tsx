@@ -20,7 +20,7 @@ export const ServicesCabinetFooterWrapper = styled.div`
 export const ServiceHeader = styled.div`
   height: ${({ theme }) => 2 * theme.gapSize}px;
   ${breakpoint.phone} {
-    height: ${({ theme }) => 3 * theme.gapSize}px;
+    height: auto;
   }
   ${breakpoint.smallPhone} {
     margin: ${({ theme }) => 1 * theme.gapSize}px 0 0;
@@ -34,6 +34,8 @@ export const ServiceHeaderContent = styled.div`
   padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.phone} {
     padding: ${spaces.s}px 0;
+    flex-direction: column;
+    align-items: start;
   }
   ${breakpoint.smallPhone} {
     padding: ${spaces.xs}px 0;

@@ -23,6 +23,10 @@ export const ProjectBodyImageRow = styled.div`
   &:first-child {
     margin-top: 0;
   }
+  ${breakpoint.phone} {
+    grid-auto-flow: unset;
+    row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  }
 `;
 
 export const StyledProjectDetailText = styled.div`
@@ -43,6 +47,9 @@ export const StyledProjectDetailText = styled.div`
     line-height: 1.3em;
     ${breakpoint.monitor} {
       font-size: 40px;
+    }
+    ${breakpoint.phone} {
+      font-size: 24px;
     }
   }
 `;

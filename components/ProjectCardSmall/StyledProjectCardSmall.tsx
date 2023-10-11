@@ -23,7 +23,7 @@ export const ProjectsCardsSmallWrapper = styled.div`
   grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   justify-items: start;
-  &:nth-child(n + 3) {
+  &:nth-child(n + 5) {
     display: none;
   }
   ${breakpoint.monitor} {
@@ -31,7 +31,7 @@ export const ProjectsCardsSmallWrapper = styled.div`
   }
   ${breakpoint.tabletPortrait} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    &:nth-child(n + 2) {
+    :nth-child(n + 3) {
       display: none;
     }
   }

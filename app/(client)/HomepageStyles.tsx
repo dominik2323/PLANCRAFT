@@ -85,6 +85,9 @@ export const HpQuoteServices = styled.div`
     row-gap: ${({ theme }) => 3 * theme.gapSize}px;
     margin: ${({ theme }) => 5 * theme.gapSize}px 0;
   }
+  ${breakpoint.phone} {
+    /* margin: ${({ theme }) => 2 * theme.gapSize}px 0; */
+  }
 `;
 
 export const HpProjectsCta = styled.div`
@@ -100,6 +103,7 @@ export const HpProjectsCta = styled.div`
       ${({ theme }) => 5 * theme.gapSize}px;
   }
   ${breakpoint.phone} {
+    max-width: 100%;
     margin: ${({ theme }) => 5 * theme.gapSize}px 0
       ${({ theme }) => 3 * theme.gapSize}px;
   }

@@ -77,20 +77,26 @@ const page = async ({ params: { category } }: PageProps) => {
       </ProjectsHero>
       <DividerHeader className='no-padding'>
         <ProjectDividerHeaderInner>
-          <Mini className='uppercase'>Filtry</Mini>
+          <RevealAnimation delay={0.5}>
+            <Mini className='uppercase'>Filtry</Mini>
+          </RevealAnimation>
           <ProjectFilters>
-            <ProjectFilter
-              href={"/projekty"}
-              className={category ? "inactive" : ""}>
-              <Mini>Vše</Mini>
-            </ProjectFilter>
-            {Services.items.map(({ service_name, _slug }) => (
+            <RevealAnimation delay={1}>
               <ProjectFilter
-                key={_slug}
-                href={`/projekty/${_slug}`}
-                className={category?.includes(_slug) ? "" : "inactive"}>
-                <Mini>{service_name}</Mini>
+                href={"/projekty"}
+                className={category ? "inactive" : ""}>
+                <Mini>Vše</Mini>
               </ProjectFilter>
+            </RevealAnimation>
+            {Services.items.map(({ service_name, _slug }, i) => (
+              <RevealAnimation delay={i * 0.5 + 1}>
+                <ProjectFilter
+                  key={_slug}
+                  href={`/projekty/${_slug}`}
+                  className={category?.includes(_slug) ? "" : "inactive"}>
+                  <Mini>{service_name}</Mini>
+                </ProjectFilter>
+              </RevealAnimation>
             ))}
           </ProjectFilters>
         </ProjectDividerHeaderInner>

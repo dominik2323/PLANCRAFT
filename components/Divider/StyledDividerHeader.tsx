@@ -35,5 +35,6 @@ export const StyledDividerHeaderInner = styled.div`
   }
   ${breakpoint.phone} {
     min-height: ${({ theme }) => 4 * theme.gapSize}px;
+    padding: 0;
   }
 `;

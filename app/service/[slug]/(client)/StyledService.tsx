@@ -27,6 +27,10 @@ export const ServicePerex = styled.div`
       ${({ theme }) => 5 * theme.gapSize}px;
     max-width: ${({ theme }) => 18 * theme.gapSize}px;
   }
+  ${breakpoint.phone} {
+    margin: ${({ theme }) => 4 * theme.gapSize}px 0
+      ${({ theme }) => 2 * theme.gapSize}px;
+  }
 `;
 
 export const ServiceNumberedList = styled.div`

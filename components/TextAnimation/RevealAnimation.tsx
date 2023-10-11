@@ -18,6 +18,7 @@ interface TextAnimationProps {
   y?: (number | string)[];
   as?: keyof JSX.IntrinsicElements;
   style?: CSSProperties;
+  margin?: string;
 }
 
 const RevealAnimation = ({
@@ -30,6 +31,7 @@ const RevealAnimation = ({
   y,
   as,
   style,
+  margin,
 }: TextAnimationProps) => {
   const { isLayoutVisible } = useTheme();
 
@@ -57,7 +59,7 @@ const RevealAnimation = ({
         transition={{ delay: 0.5 * delay, ease: easing, duration: duration }}
         viewport={{
           once: true,
-          margin: "0% 0%",
+          margin: margin ? margin : "0% 0%",
         }}>
         {children}
       </RevealAnimationInner>

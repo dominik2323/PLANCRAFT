@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { breakpoint } from "../../consts/breakpoints";
 import { colors } from "../../consts/colors";
 import { spaces } from "../../consts/spaces";
 
@@ -14,11 +15,16 @@ export const StyledLoader = styled(motion.div)`
   height: 100dvh;
   display: flex;
   align-items: center;
+  ${breakpoint.phone} {
+    padding: ${spaces.l}px;
+  }
 `;
 
 export const LoaderInner = styled.div`
-  column-gap: ${spaces.xl}px;
   width: 100%;
   display: grid;
   row-gap: ${spaces.xxxxl}px;
+  ${breakpoint.phone} {
+    row-gap: ${spaces.xxl}px;
+  }
 `;

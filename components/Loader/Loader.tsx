@@ -13,8 +13,7 @@ interface LoaderProps {}
 const Loader = ({}: LoaderProps) => {
   const [isDividerAnimFinished, setisDividerAnimFinished] =
     useState<boolean>(false);
-  const { setisLayoutVisible, isLayoutReady, gapSize, columnCount } =
-    useTheme();
+  const { setisLayoutVisible, isLayoutReady } = useTheme();
 
   return (
     <AnimatePresence

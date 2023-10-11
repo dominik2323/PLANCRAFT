@@ -41,8 +41,14 @@ export const ProjectCardImage = styled(Image)`
   width: auto;
   object-fit: contain;
   object-position: center;
+
   ${breakpoint.tabletPortrait} {
     object-fit: cover;
+  }
+  ${breakpoint.phone} {
+    max-height: 40vh;
+    width: 100%;
+    height: auto;
   }
 `;
 
