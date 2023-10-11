@@ -70,10 +70,8 @@ export const ServiceContentLeft = styled.div`
   height: 100%;
   grid-area: left;
   display: grid;
+  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
   padding-bottom: ${({ theme }) => 1 * theme.gapSize}px;
-  ${breakpoint.phone} {
-    row-gap: ${({ theme }) => 1 * theme.gapSize}px;
-  }
 `;
 
 export const ServiceContentLeftInner = styled.div`
@@ -96,6 +94,9 @@ export const ServiceContentRight = styled.div`
   position: relative;
   padding-bottom: ${({ theme }) => 1 * theme.gapSize}px;
   overflow: hidden;
+  ${breakpoint.tabletPortrait} {
+    margin-top: ${({ theme }) => 1 * theme.gapSize}px;
+  }
 `;
 
 export const ServiceCover = styled(Image)`

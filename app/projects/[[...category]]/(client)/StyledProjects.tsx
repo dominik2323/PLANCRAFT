@@ -28,13 +28,12 @@ export const ProjectsHero = styled.div`
     margin-bottom: ${({ theme }) => 5 * theme.gapSize}px;
   }
   ${breakpoint.tabletPortrait} {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: unset;
+    row-gap: ${({ theme }) => 2 * theme.gapSize}px;
+    margin-bottom: ${({ theme }) => 6 * theme.gapSize}px;
   }
   ${breakpoint.phone} {
-    grid-template-columns: unset;
     padding: 0;
-    row-gap: ${({ theme }) => 1 * theme.gapSize}px;
-    margin-bottom: ${({ theme }) => 3 * theme.gapSize}px;
   }
 `;
 
@@ -51,7 +50,7 @@ export const ProjectDividerHeaderInner = styled.div`
     grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
   }
   ${breakpoint.tabletPortrait} {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: ${({ theme }) => 12 * theme.gapSize}px 1fr;
   }
   ${breakpoint.phone} {
     grid-template-columns: unset;

@@ -12,11 +12,9 @@ export const StyledScrollFigureBanner = styled.div`
   align-items: center;
   height: 100%;
   overflow-y: hidden;
-  margin-left: ${({ theme }) => -2 * theme.gapSize}px;
   ${breakpoint.tabletPortrait} {
     height: auto;
     margin: ${({ theme }) => 6 * theme.gapSize}px 0;
-    margin-left: ${({ theme }) => -2 * theme.gapSize}px;
     grid-template-columns: unset;
     row-gap: ${({ theme }) => 3 * theme.gapSize}px;
   }
@@ -44,13 +42,11 @@ export const ScrollFigureBannerCoverWI = styled(motion.div)`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding-left: ${({ theme }) => 2 * theme.gapSize}px;
-  ${breakpoint.phone} {
+  ${breakpoint.tabletPortrait} {
     position: static;
     height: auto;
     display: none;
     transform: none;
-    padding-left: 0;
     &:first-child {
       display: block;
     }

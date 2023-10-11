@@ -22,6 +22,11 @@ export const ServicePerex = styled.div`
   ${breakpoint.tabletLandscape} {
     margin: ${({ theme }) => 3 * theme.gapSize}px 0;
   }
+  ${breakpoint.tabletPortrait} {
+    margin: ${({ theme }) => 7 * theme.gapSize}px 0
+      ${({ theme }) => 5 * theme.gapSize}px;
+    max-width: ${({ theme }) => 18 * theme.gapSize}px;
+  }
 `;
 
 export const ServiceNumberedList = styled.div`

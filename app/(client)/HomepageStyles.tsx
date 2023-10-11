@@ -94,6 +94,8 @@ export const HpProjectsCta = styled.div`
   margin-top: ${({ theme }) => 1 * theme.gapSize}px;
   max-width: ${({ theme }) => theme.columnCount * 0.4 * theme.gapSize}px;
   ${breakpoint.tabletPortrait} {
+    row-gap: ${({ theme }) => 2 * theme.gapSize}px;
+    max-width: ${({ theme }) => theme.columnCount * 0.6 * theme.gapSize}px;
     margin: ${({ theme }) => 7 * theme.gapSize}px 0
       ${({ theme }) => 5 * theme.gapSize}px;
   }

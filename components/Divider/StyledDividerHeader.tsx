@@ -24,8 +24,8 @@ export const StyledDividerHeaderInner = styled.div`
   padding-right: ${({ theme }) => 1 * theme.gapSize}px;
   height: ${({ theme }) => 2 * theme.gapSize}px;
   padding-top: 0;
-  ${breakpoint.tabletLandscape} {
-    ${StyledProjects} & {
+  ${StyledProjects} & {
+    ${breakpoint.tabletLandscape} {
       height: auto;
       padding-bottom: ${spaces.xs}px;
     }

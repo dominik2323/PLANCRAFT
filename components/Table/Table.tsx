@@ -16,7 +16,7 @@ const Table = ({ items, delayAnimation = 0 }: TableProps) => {
         {items.map(({ body, header }, i) => (
           <TableRow key={i}>
             <TableCol delayAnimation={i * delayAnimation}>{header}</TableCol>
-            <TableCol delayAnimation={i * delayAnimation + 0.5}>
+            <TableCol delayAnimation={i * delayAnimation + 0.25}>
               {body}
             </TableCol>
           </TableRow>

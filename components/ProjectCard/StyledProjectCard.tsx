@@ -81,7 +81,9 @@ export const ProjectCardContentHeader = styled.div`
   justify-content: space-between;
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.tabletLandscape} {
-    column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+    row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    flex-direction: column;
+    align-items: flex-start;
   }
   ${breakpoint.phone} {
     margin-bottom: ${({ theme }) => 1 * theme.gapSize}px;
