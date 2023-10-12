@@ -49,7 +49,9 @@ export const ProjectCover = styled(Image)`
   object-fit: cover;
 `;
 
-export const ProjectNavigation = styled.div``;
+export const ProjectNavigation = styled.div`
+  margin: 0 ${({ theme }) => -1 * theme.gapSize}px;
+`;
 
 export const ProjectNavigationInner = styled.div`
   width: 100%;

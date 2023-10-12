@@ -50,7 +50,7 @@ const ProjectCard = ({
 
       <ProjectCardContent>
         <ProjectCardContentHeader>
-          <Small>{projectName}</Small>
+          <Small className='uppercase'>{projectName}</Small>
           <ProjectCardServices>
             {services.map(({ service_name }, i) => (
               <Mini key={i}>{service_name}</Mini>

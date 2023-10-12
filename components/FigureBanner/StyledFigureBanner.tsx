@@ -5,16 +5,14 @@ import { breakpoint } from "../../consts/breakpoints";
 
 export const StyledFigureBanner = styled.div`
   display: grid;
-  grid-template-columns: ${({ theme }) =>
-      0.55 * theme.gapSize * theme.columnCount}px auto;
+  grid-template-columns: ${({ theme }) => 23 * theme.gapSize}px auto;
   grid-template-areas: "cover content";
-  column-gap: ${({ theme }) => 3 * theme.gapSize}px;
+  column-gap: ${({ theme }) => 2 * theme.gapSize}px;
   align-items: end;
   justify-items: start;
   &.flip {
     grid-template-areas: "content cover";
-    grid-template-columns: auto ${({ theme }) =>
-        0.55 * theme.gapSize * theme.columnCount}px;
+    grid-template-columns: auto ${({ theme }) => 23 * theme.gapSize}px;
   }
   &.align-top {
     align-items: start;
@@ -23,9 +21,9 @@ export const StyledFigureBanner = styled.div`
     align-items: center;
   }
   ${breakpoint.monitor} {
-    grid-template-columns: ${({ theme }) => 32 * theme.columnCount}px auto;
+    grid-template-columns: ${({ theme }) => 23 * theme.gapSize}px auto;
     &.flip {
-      grid-template-columns: auto ${({ theme }) => 32 * theme.columnCount}px;
+      grid-template-columns: auto ${({ theme }) => 23 * theme.gapSize}px;
     }
   }
   ${breakpoint.tabletPortrait} {

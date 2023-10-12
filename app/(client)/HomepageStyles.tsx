@@ -32,7 +32,7 @@ export const HpHeader = styled.h1`
 `;
 
 export const HpHeroInner = styled.div`
-  margin-left: ${({ theme }) => (theme.columnCount / 2) * theme.gapSize}px;
+  margin-left: ${({ theme }) => 19 * theme.gapSize}px;
   margin-top: ${({ theme }) => 2 * theme.gapSize}px;
   display: grid;
   row-gap: ${({ theme }) => 1 * theme.gapSize}px;
@@ -60,8 +60,12 @@ export const HpHero = styled.section`
 
 export const HpAbout = styled.section`
   margin-top: ${({ theme }) => 2 * theme.gapSize}px;
+  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.tabletPortrait} {
     margin-top: ${({ theme }) => 4 * theme.gapSize}px;
+  }
+  ${breakpoint.phone} {
+    padding: 0;
   }
 `;
 
@@ -93,7 +97,7 @@ export const HpQuoteServices = styled.div`
 export const HpProjectsCta = styled.div`
   display: grid;
   justify-items: start;
-  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  row-gap: ${({ theme }) => 1.5 * theme.gapSize}px;
   margin-top: ${({ theme }) => 1 * theme.gapSize}px;
   max-width: ${({ theme }) => theme.columnCount * 0.4 * theme.gapSize}px;
   ${breakpoint.tabletPortrait} {

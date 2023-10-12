@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { breakpoint } from "../../../consts/breakpoints";
 
 export const StyledAbout = styled.main`
-  padding: ${({ theme }) => 2 * theme.gapSize}px;
+  padding: ${({ theme }) => 1 * theme.gapSize}px;
   padding-bottom: 0;
   ${breakpoint.phone} {
     padding: ${({ theme }) => 1 * theme.gapSize}px;
@@ -23,10 +23,18 @@ export const AboutTeamIntro = styled.div`
   display: grid;
 `;
 
+export const AboutTeamFigureBanner = styled.div`
+  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+`;
+
 export const AboutTeamClaim = styled.div`
   display: grid;
   row-gap: ${({ theme }) => 3 * theme.gapSize}px;
   margin: ${({ theme }) => 5 * theme.gapSize}px 0;
+  ${breakpoint.monitor} {
+    margin: ${({ theme }) => 4 * theme.gapSize}px 0
+      ${({ theme }) => 5 * theme.gapSize}px;
+  }
   ${breakpoint.tabletLandscape} {
     row-gap: ${({ theme }) => 5 * theme.gapSize}px;
   }

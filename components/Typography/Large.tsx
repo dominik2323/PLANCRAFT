@@ -28,6 +28,7 @@ export const Large = styled.p`
   }
   ${breakpoint.monitor} {
     font-size: 115px;
+    max-width: 1600px;
   }
   ${breakpoint.smallNotebook} {
     font-size: 70px;

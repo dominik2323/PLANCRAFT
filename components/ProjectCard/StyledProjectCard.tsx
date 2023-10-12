@@ -40,7 +40,7 @@ export const ProjectCardImage = styled(Image)`
   height: 100%;
   width: auto;
   object-fit: contain;
-  object-position: center;
+  object-position: center center;
 
   ${breakpoint.tabletPortrait} {
     object-fit: cover;
@@ -61,6 +61,9 @@ export const ProjectCardImageMask = styled.div`
   align-items: flex-start;
   position: relative;
   overflow: hidden;
+  ${breakpoint.phone} {
+    padding: ${spaces.xs}px 0;
+  }
 `;
 
 export const ProjectCardImageInner = styled.div`
@@ -80,6 +83,9 @@ export const ProjectCardContent = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: ${({ theme }) => 0.5 * theme.gapSize}px 0;
+  ${breakpoint.phone} {
+    padding: ${spaces.s}px 0;
+  }
 `;
 
 export const ProjectCardContentHeader = styled.div`
@@ -117,6 +123,6 @@ export const ProjectCardContentFooter = styled(motion.div)`
   }
   ${breakpoint.phone} {
     flex-direction: column;
-    row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    row-gap: ${({ theme }) => 2 * theme.gapSize}px;
   }
 `;

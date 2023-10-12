@@ -15,7 +15,7 @@ interface HpProjectsProps {
   projects: Projects;
 }
 
-const StyledHpProjects = styled.div``;
+export const StyledHpProjects = styled.div``;
 
 const HpProjects = ({ projects }: HpProjectsProps) => {
   const { w } = useWindowSize();

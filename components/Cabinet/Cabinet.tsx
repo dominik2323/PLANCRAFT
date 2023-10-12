@@ -40,6 +40,7 @@ const Cabinet = ({ cards, header, footer, disable }: CabinetProps) => {
       {cards.map((c, i) => (
         <Fragment key={i}>{c}</Fragment>
       ))}
+      {footer}
     </Fragment>
   ) : (
     <StyledCabinet>

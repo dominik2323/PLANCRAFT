@@ -15,6 +15,7 @@ import {
   AboutTeamClaimHeader,
   AboutTeamClaimImage,
   AboutTeamClaimInner,
+  AboutTeamFigureBanner,
   AboutTeamIntro,
   AboutValues,
   StyledAbout,
@@ -55,16 +56,18 @@ const page = ({}: PageProps) => {
           <DividerHeader>
             <Mini className='uppercase'>Náš tým</Mini>
           </DividerHeader>
-          <FigureBanner
-            className='flip align-top'
-            src={aboutData.ourTeam.figureBanner.image.src}
-            width={aboutData.ourTeam.figureBanner.image.width}
-            height={aboutData.ourTeam.figureBanner.image.height}
-            alt={aboutData.ourTeam.figureBanner.image.alt}>
-            <RevealAnimation delay={0.5}>
-              <Mini>{aboutData.ourTeam.figureBanner.perex}</Mini>
-            </RevealAnimation>
-          </FigureBanner>
+          <AboutTeamFigureBanner>
+            <FigureBanner
+              className='flip align-top'
+              src={aboutData.ourTeam.figureBanner.image.src}
+              width={aboutData.ourTeam.figureBanner.image.width}
+              height={aboutData.ourTeam.figureBanner.image.height}
+              alt={aboutData.ourTeam.figureBanner.image.alt}>
+              <RevealAnimation delay={0.5}>
+                <Mini>{aboutData.ourTeam.figureBanner.perex}</Mini>
+              </RevealAnimation>
+            </FigureBanner>
+          </AboutTeamFigureBanner>
         </AboutTeamIntro>
         <AboutTeamClaim>
           <RevealAnimation>

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import { StyledHomepage } from "../../app/(client)/HomepageStyles";
 import { breakpoint } from "../../consts/breakpoints";
 import { spaces } from "../../consts/spaces";
 
@@ -36,6 +37,9 @@ export const ServiceHeaderContent = styled.div`
     padding: ${spaces.s}px 0;
     flex-direction: column;
     align-items: start;
+    ${StyledHomepage} & {
+      flex-direction: row;
+    }
   }
   ${breakpoint.smallPhone} {
     padding: ${spaces.xs}px 0;

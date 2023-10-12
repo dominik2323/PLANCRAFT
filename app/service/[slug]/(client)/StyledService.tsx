@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { breakpoint } from "../../../../consts/breakpoints";
 
 export const StyledService = styled.main`
-  padding: 0 ${({ theme }) => 2 * theme.gapSize}px;
+  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.phone} {
     padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
   }
@@ -14,8 +14,8 @@ export const ServicePerex = styled.div`
   margin: ${({ theme }) => 2 * theme.gapSize}px 0
     ${({ theme }) => 4 * theme.gapSize}px ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.monitor} {
-    margin: ${({ theme }) => 4 * theme.gapSize}px 0
-      ${({ theme }) => 4 * theme.gapSize}px
+    margin: ${({ theme }) => 1 * theme.gapSize}px 0
+      ${({ theme }) => 5 * theme.gapSize}px
       ${({ theme }) => 1 * theme.gapSize}px;
     max-width: ${({ theme }) => 15 * theme.gapSize}px;
   }
@@ -36,6 +36,10 @@ export const ServicePerex = styled.div`
 export const ServiceNumberedList = styled.div`
   display: grid;
   row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  margin-bottom: ${({ theme }) => 1 * theme.gapSize}px;
+  ${breakpoint.monitor} {
+    margin-bottom: ${({ theme }) => 2 * theme.gapSize}px;
+  }
 `;
 
 export const SimilarProjects = styled.div`

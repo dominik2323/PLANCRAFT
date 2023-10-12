@@ -31,7 +31,7 @@ export const FooterContact = styled.div`
   }
   ${breakpoint.phone} {
     grid-template-columns: unset;
-    grid-template-areas: "links" "text";
+    grid-template-areas: "text" "links";
     padding: ${({ theme }) => 3 * theme.gapSize}px 0px;
   }
 `;
@@ -99,9 +99,12 @@ export const PublicityLogos = styled.div`
     gap: ${({ theme }) => 3 * theme.gapSize}px;
   }
   ${breakpoint.phone} {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: start;
     gap: ${({ theme }) => 2 * theme.gapSize}px;
+  }
+  ${breakpoint.smallPhone} {
+    flex-direction: column;
   }
 `;
 
@@ -109,5 +112,8 @@ export const PublicityLogo = styled.img`
   height: 50px;
   ${breakpoint.smallNotebook} {
     height: 40px;
+  }
+  ${breakpoint.phone} {
+    height: 30px;
   }
 `;

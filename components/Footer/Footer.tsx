@@ -23,12 +23,12 @@ import {
 interface FooterProps {}
 
 const Footer = ({}: FooterProps) => {
-  const pahtname = usePathname();
+  const pathname = usePathname();
   const pageWithSimpleFooter = ["/kontakt", "/contact"];
-  if (pageWithSimpleFooter.includes(pahtname)) return null;
+  if (pageWithSimpleFooter.includes(pathname)) return null;
 
   return (
-    <StyledFooter data-hide-navbar>
+    <StyledFooter data-hide-navbar key={pathname}>
       <Divider fill='white' />
       <FooterContact>
         <FooterContactText>

@@ -33,6 +33,7 @@ const Zoom = ({ items, header, footer, disable }: ZoomProps) => {
     <>
       {header}
       {items.map((i) => i(1))}
+      {footer}
     </>
   ) : (
     <StyledZoom>

@@ -48,11 +48,11 @@ const page = async ({}: PageProps) => {
   return (
     <StyledHomepage>
       <HpHero>
-        <RevealAnimation>
+        <RevealAnimation noCrop>
           <HpHeader>{homepageData.heroHeader}</HpHeader>
         </RevealAnimation>
         <HpHeroInner>
-          <RevealAnimation delay={0.5}>
+          <RevealAnimation delay={0.5} noCrop>
             <Mini>{homepageData.heroPerex}</Mini>
           </RevealAnimation>
           <RevealAnimation delay={1} noCrop>

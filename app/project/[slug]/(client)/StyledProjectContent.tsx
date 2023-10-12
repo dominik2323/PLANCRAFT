@@ -39,7 +39,7 @@ export const StyledProjectDetailText = styled.div`
     letter-spacing: 0;
     ${breakpoint.monitor} {
       font-size: 24px;
-      max-width: 800px;
+      max-width: 900px;
     }
   }
   h2 {

@@ -60,8 +60,6 @@ export const ProjectDividerHeaderInner = styled.div`
 
 export const ProjectFilters = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   row-gap: ${spaces.xxs}px;
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.monitor} {
@@ -73,7 +71,6 @@ export const ProjectFilters = styled.div`
   ${breakpoint.tabletPortrait} {
     margin-bottom: ${({ theme }) => 1 * theme.gapSize}px;
     flex-wrap: wrap;
-    justify-content: flex-start;
   }
 `;
 

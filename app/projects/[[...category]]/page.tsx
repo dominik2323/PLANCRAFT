@@ -81,7 +81,7 @@ const page = async ({ params: { category } }: PageProps) => {
             <Mini className='uppercase'>Filtry</Mini>
           </RevealAnimation>
           <ProjectFilters>
-            <RevealAnimation delay={1}>
+            <RevealAnimation delay={1} style={{ width: "auto" }}>
               <ProjectFilter
                 href={"/projekty"}
                 className={category ? "inactive" : ""}>
@@ -89,7 +89,7 @@ const page = async ({ params: { category } }: PageProps) => {
               </ProjectFilter>
             </RevealAnimation>
             {Services.items.map(({ service_name, _slug }, i) => (
-              <RevealAnimation delay={i * 0.5 + 1}>
+              <RevealAnimation delay={i * 0.5 + 1} style={{ width: "auto" }}>
                 <ProjectFilter
                   key={_slug}
                   href={`/projekty/${_slug}`}
