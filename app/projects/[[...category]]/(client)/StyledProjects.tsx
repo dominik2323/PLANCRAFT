@@ -68,9 +68,12 @@ export const ProjectFilters = styled.div`
   ${breakpoint.smallNotebook} {
     column-gap: ${({ theme }) => 0.5 * theme.gapSize}px;
   }
+  ${breakpoint.tabletLandscape} {
+    flex-wrap: wrap;
+    padding-bottom: ${spaces.xs}px;
+  }
   ${breakpoint.tabletPortrait} {
     margin-bottom: ${({ theme }) => 1 * theme.gapSize}px;
-    flex-wrap: wrap;
   }
 `;
 

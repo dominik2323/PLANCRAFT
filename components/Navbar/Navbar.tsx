@@ -108,7 +108,11 @@ const Navbar = ({}: NavbarProps) => {
             <Divider fill={isOpen ? "white" : "primary400"} />
           </NavbarDividerWrapper>
           <TopbarContent>
-            <LogoWrapper href={"/"}>
+            <LogoWrapper
+              href={"/"}
+              onClick={() => {
+                setIsOpen(false);
+              }}>
               <Logo fill={isOpen ? "white" : "primary400"} />
             </LogoWrapper>
             <BurgerWrapper>
@@ -174,6 +178,9 @@ const Navbar = ({}: NavbarProps) => {
                           }}>
                           <NavLink
                             onMouseEnter={() => setHoverIndex(i)}
+                            onClick={() => {
+                              setIsOpen(false);
+                            }}
                             href={slug}>
                             <NavlinkDividerWrapper>
                               <Divider hidePlus fill='white' animate={isOpen} />

@@ -19,6 +19,7 @@ export const ProjectDetail = styled.div`
   grid-template-areas: "content info";
   column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   ${breakpoint.tabletLandscape} {
+    max-width: 900px;
     grid-template-columns: unset;
     grid-template-areas: "info" "content";
     row-gap: ${({ theme }) => 3 * theme.gapSize}px;

@@ -49,7 +49,6 @@ const page = async ({ params: { category } }: PageProps) => {
     variables: {
       limit: projectsPerPage,
       where: {
-        is_featured: true,
         project_category: { _slug_any: category || [] },
       },
       coverImageWidth: 1000,

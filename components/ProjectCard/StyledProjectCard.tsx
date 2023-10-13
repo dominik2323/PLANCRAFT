@@ -107,6 +107,9 @@ export const ProjectCardServices = styled.div`
   flex-direction: column;
   align-items: flex-end;
   gap: ${spaces.xxs}px;
+  ${breakpoint.tabletLandscape} {
+    align-items: flex-start;
+  }
   ${breakpoint.tabletPortrait} {
     column-gap: ${({ theme }) => 1 * theme.gapSize}px;
   }

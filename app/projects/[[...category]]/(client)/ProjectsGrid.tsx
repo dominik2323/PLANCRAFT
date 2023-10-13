@@ -15,7 +15,11 @@ import {
   Query,
   QueryProjectsArgs,
 } from "../../../../gql/types";
-import { ProjectCardW, StyledProjectsGrid } from "./StyledProjectsGrid";
+import {
+  LoadMoreW,
+  ProjectCardW,
+  StyledProjectsGrid,
+} from "./StyledProjectsGrid";
 
 interface ProjectsGridProps {
   projects: Projects;
@@ -77,23 +81,25 @@ const ProjectsGrid = ({
         )
       )}
       {totalCount > projects.length && (
-        <RevealAnimation noCrop>
-          <Button
-            onClick={() => {
-              getProjects({
-                variables: {
-                  locale: "cs-CZ",
-                  skip: skip,
-                  limit: projectsPerPage,
-                  where: {
-                    project_category: { _slug_any: query.category || [] },
-                  },
-                } as QueryProjectsArgs,
-              });
-            }}>
-            {loading ? "Načítám" : "Další projekty"}
-          </Button>
-        </RevealAnimation>
+        <LoadMoreW>
+          <RevealAnimation noCrop>
+            <Button
+              onClick={() => {
+                getProjects({
+                  variables: {
+                    locale: "cs-CZ",
+                    skip: skip,
+                    limit: projectsPerPage,
+                    where: {
+                      project_category: { _slug_any: query.category || [] },
+                    },
+                  } as QueryProjectsArgs,
+                });
+              }}>
+              {loading ? "Načítám" : "Další projekty"}
+            </Button>
+          </RevealAnimation>
+        </LoadMoreW>
       )}
     </StyledProjectsGrid>
   );

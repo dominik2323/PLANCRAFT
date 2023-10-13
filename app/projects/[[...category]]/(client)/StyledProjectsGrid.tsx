@@ -16,3 +16,7 @@ export const ProjectCardW = styled.div`
     padding: ${({ theme }) => 1 * theme.gapSize}px 0;
   }
 `;
+
+export const LoadMoreW = styled.div`
+  margin-top: ${({ theme }) => 2 * theme.gapSize}px;
+`;
