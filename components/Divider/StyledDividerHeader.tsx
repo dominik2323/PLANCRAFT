@@ -29,6 +29,9 @@ export const StyledDividerHeaderInner = styled.div`
       height: auto;
       padding-bottom: ${spaces.xs}px;
     }
+    ${breakpoint.tabletPortrait} {
+      min-height: auto;
+    }
   }
   ${breakpoint.tabletPortrait} {
     min-height: ${({ theme }) => 2 * theme.gapSize}px;

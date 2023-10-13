@@ -2,7 +2,7 @@
 
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { useTheme } from "styled-components";
 import { aboutData } from "../../app/about/(client)/aboutData";
 import { contactData } from "../../app/contact/(client)/contactData";
@@ -91,10 +91,13 @@ const Navbar = ({}: NavbarProps) => {
     };
   }, [pathname]);
 
-  useEffect(() => {
+  const handleClose = () => {
     setIsOpen(false);
     setHideableNavbar(false);
-  }, [pathname]);
+  };
+
+  // useEffect(() => {
+  // }, [pathname]);
 
   return (
     <>
@@ -111,7 +114,7 @@ const Navbar = ({}: NavbarProps) => {
             <LogoWrapper
               href={"/"}
               onClick={() => {
-                setIsOpen(false);
+                handleClose();
               }}>
               <Logo fill={isOpen ? "white" : "primary400"} />
             </LogoWrapper>
@@ -179,7 +182,7 @@ const Navbar = ({}: NavbarProps) => {
                           <NavLink
                             onMouseEnter={() => setHoverIndex(i)}
                             onClick={() => {
-                              setIsOpen(false);
+                              handleClose();
                             }}
                             href={slug}>
                             <NavlinkDividerWrapper>

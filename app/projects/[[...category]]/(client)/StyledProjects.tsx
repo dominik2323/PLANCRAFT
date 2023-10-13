@@ -70,10 +70,10 @@ export const ProjectFilters = styled.div`
   }
   ${breakpoint.tabletLandscape} {
     flex-wrap: wrap;
-    padding-bottom: ${spaces.xs}px;
+    /* padding-bottom: ${spaces.xs}px; */
   }
   ${breakpoint.tabletPortrait} {
-    margin-bottom: ${({ theme }) => 1 * theme.gapSize}px;
+    /* padding-bottom: ${spaces.s}px; */
   }
 `;
 

@@ -22,7 +22,7 @@ export const BackgroundGridProvider = ({ children }) => {
     const _columnCount = w <= device.phone ? 20 : 40;
     const _gapSize = w / _columnCount || 1;
     setDotSize(w > device.monitor ? 2 : 1);
-    setPlusSize(w <= device.phone ? 9 : w <= device.tabletLandscape ? 13 : 21);
+    setPlusSize(w <= device.phone ? 9 : w <= device.tabletLandscape ? 11 : 21);
     setColumnCount(_columnCount);
     setGapSize(_gapSize);
   }, [w]);
