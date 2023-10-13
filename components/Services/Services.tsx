@@ -51,9 +51,10 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
             </ServiceHeaderContent>
           </ServiceHeader>,
           <ServiceContent
-            as={slug ? undefined : "span"}
-            // @ts-ignore
-            href={slug ? slug : undefined}
+            {...(slug ? { href: slug } : { as: "span" })}
+            // as={slug ? undefined : "span"}
+            // // @ts-ignore
+            // href={slug ? slug : undefined}
             key={`${"content" + i}`}>
             <ServiceContentLeft>
               <ServiceContentLeftInner>
