@@ -1,9 +1,9 @@
 "use client";
 
 import {
-  LegacyRef,
   MutableRefObject,
   ReactNode,
+  Ref,
   createContext,
   useEffect,
   useRef,
@@ -27,7 +27,7 @@ export type ScrollYProgress = {
 };
 
 export const ScrollAnimationContext = createContext<{
-  animationElRef: LegacyRef<HTMLDivElement>;
+  animationElRef: Ref<HTMLDivElement>;
   scrollYProgress: ScrollYProgress;
   dryScrollYProgress: MutableRefObject<ScrollYProgress>;
 }>(null);
