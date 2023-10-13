@@ -27,6 +27,6 @@ export const StyledTableCol = styled.td`
     padding-left: ${({ theme }) => 1 * theme.gapSize}px;
   }
   ${breakpoint.smallNotebook} {
-    min-width: 100px;
+    min-width: 150px;
   }
 `;

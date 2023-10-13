@@ -12,26 +12,29 @@ export const contactData = {
 
   items: [
     {
-      header: "Telefon",
+      header: "Ing. Daniel Ryšavý",
       body: (
         <Link href={"tel:+420774987654"} className='underline' noArrow>
-          +420 774 987 654
+          +420 732 870 325
         </Link>
       ),
     },
     {
       header: "Email",
       body: (
-        <Link href={"mailto:info@plancraft.cz"} className='underline' noArrow>
-          info@plancraft.cz
+        <Link href={"mailto:info@plancraft.eu"} className='underline' noArrow>
+          info@plancraft.eu
         </Link>
       ),
     },
-    { header: "Firma", body: "Plancraft s.r.o." },
     { header: "IČO", body: "10856587" },
     {
-      header: "Adresa",
+      header: "Sídlo",
       body: "Bratislavská 206/21,\nZábrdovice, 602 00 Brno ",
+    },
+    {
+      header: "Provozovna",
+      body: "Lazaretní 1/7,\n615 00 Brno - Zábrdovice, Česko",
     },
   ],
 };
