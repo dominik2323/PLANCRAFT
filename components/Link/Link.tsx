@@ -1,9 +1,9 @@
 "use client";
 
-import React, { ReactNode } from "react";
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
-import { StyledLink } from "./Styles/StyledLink";
+import React, { ReactNode, useState } from "react";
 import Arrow from "../Svgs/Arrow";
+import { StyledLink } from "./Styles/StyledLink";
 
 interface LinkProps extends NextLinkProps {
   children: ReactNode;
@@ -21,19 +21,38 @@ const Link = ({
   noArrow,
   ...rest
 }: LinkProps) => {
+  const [hover, sethover] = useState<boolean>(false);
+
   if (as) {
     return (
-      <StyledLink as={as} className={className} target={target}>
+      <StyledLink
+        as={as}
+        className={className}
+        target={target}
+        onMouseEnter={() => {
+          sethover(true);
+        }}
+        onMouseLeave={() => {
+          sethover(false);
+        }}>
         {children}
-        {!noArrow && <Arrow />}
+        {!noArrow && <Arrow animate={hover} />}
       </StyledLink>
     );
   }
   return (
     <NextLink {...rest} passHref legacyBehavior>
-      <StyledLink className={className} target={target}>
+      <StyledLink
+        className={className}
+        target={target}
+        onMouseEnter={() => {
+          sethover(true);
+        }}
+        onMouseLeave={() => {
+          sethover(false);
+        }}>
         {children}
-        {!noArrow && <Arrow />}
+        {!noArrow && <Arrow animate={hover} />}
       </StyledLink>
     </NextLink>
   );

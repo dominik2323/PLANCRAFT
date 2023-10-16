@@ -42,6 +42,8 @@ const page = async ({}: PageProps) => {
       limit: 3,
       where: { is_featured: true },
       coverImageFormat: "webp",
+      $coverImageWidth: 1000,
+      $coverImageHeight: 1000,
     } as QueryProjectsArgs,
   });
 

@@ -2,7 +2,6 @@
 
 import styled from "styled-components";
 import { spaces } from "../../../consts/spaces";
-import { breakpoint } from "../../../consts/breakpoints";
 
 export const StyledLink = styled.a`
   &,
@@ -21,10 +20,6 @@ export const StyledLink = styled.a`
     text-transform: inherit;
     flex-shrink: 0;
     align-items: center;
-    svg {
-      display: block;
-      height: 23px;
-    }
     &.flip {
       flex-direction: row-reverse;
       svg {
@@ -39,11 +34,6 @@ export const StyledLink = styled.a`
     }
     &:visited {
       color: inherit;
-    }
-    ${breakpoint.phone} {
-      svg {
-        height: 15px;
-      }
     }
   }
 `;
