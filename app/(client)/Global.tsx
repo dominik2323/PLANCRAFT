@@ -2,11 +2,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export const Global = createGlobalStyle`
-  html {
-    // overrides styles of the DisableScroll component
-    // otherwise it's unreliable
-    overflow: auto;
-  }
   * {
     margin: 0;
     padding: 0;

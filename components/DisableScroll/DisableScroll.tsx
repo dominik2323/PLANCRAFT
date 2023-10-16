@@ -1,8 +1,8 @@
 "use client";
 import { createGlobalStyle } from "styled-components";
 
-export const DisableScroll = createGlobalStyle`
+export const DisableScroll = createGlobalStyle<{ scroll: boolean }>`
   html {
-    overflow: hidden;
+    overflow: ${({ scroll }) => (scroll ? "unset" : "hidden")};;
   }
 `;

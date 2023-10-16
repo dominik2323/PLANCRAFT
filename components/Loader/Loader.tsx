@@ -3,10 +3,10 @@
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useTheme } from "styled-components";
-import { DisableScroll } from "../DisableScroll/DisableScroll";
 import Divider from "../Divider/Divider";
 import Logo from "../Svgs/Logo";
 import { LoaderInner, StyledLoader } from "./StyledLoader";
+import { DisableScroll } from "../DisableScroll/DisableScroll";
 
 interface LoaderProps {}
 
@@ -14,15 +14,16 @@ const Loader = ({}: LoaderProps) => {
   const [isDividerAnimFinished, setisDividerAnimFinished] =
     useState<boolean>(false);
   const { setisLayoutVisible, isLayoutReady } = useTheme();
+  const showLoader = !isDividerAnimFinished || !isLayoutReady;
 
   return (
-    <AnimatePresence
-      onExitComplete={() => {
-        setisLayoutVisible(true);
-      }}>
-      {(!isDividerAnimFinished || !isLayoutReady) && (
-        <>
-          <DisableScroll />
+    <>
+      <DisableScroll scroll={!showLoader} />
+      <AnimatePresence
+        onExitComplete={() => {
+          setisLayoutVisible(true);
+        }}>
+        {showLoader && (
           <StyledLoader
             initial={"loading"}
             animate={"loading"}
@@ -46,9 +47,9 @@ const Loader = ({}: LoaderProps) => {
               />
             </LoaderInner>
           </StyledLoader>
-        </>
-      )}
-    </AnimatePresence>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

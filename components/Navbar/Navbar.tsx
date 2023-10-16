@@ -133,13 +133,13 @@ const Navbar = ({}: NavbarProps) => {
             </BurgerWrapper>
           </TopbarContent>
         </Topbar>
+        <DisableScroll scroll={!isOpen} />
         <AnimatePresence
           onExitComplete={() => {
             setisLayoutVisible(true);
           }}>
           {isOpen && (
             <>
-              <DisableScroll />
               <NavLinks
                 key={"navlinks"}
                 initial={"hidden"}
