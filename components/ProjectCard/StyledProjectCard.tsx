@@ -10,9 +10,13 @@ import { spaces } from "../../consts/spaces";
 export const StyledProjectCard = styled(Link)`
   all: unset;
   cursor: pointer;
+`;
+
+export const ProjectCardInner = styled.div`
   display: grid;
   grid-template-columns: ${({ theme }) => 9 * theme.gapSize}px 1fr;
   column-gap: ${({ theme }) => 3 * theme.gapSize}px;
+  padding: ${spaces.m}px 0;
   height: 100%;
   ${breakpoint.smallNotebook} {
     grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
@@ -37,52 +41,37 @@ export const ProjectCardZoomW = styled.div`
 `;
 
 export const ProjectCardImage = styled(Image)`
-  height: 100%;
-  width: auto;
+  width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  object-position: center center;
-
-  ${breakpoint.tabletPortrait} {
-    object-fit: cover;
-  }
-  ${breakpoint.phone} {
-    max-height: 40vh;
-    width: 100%;
-    height: auto;
-  }
+  object-position: 0 0;
 `;
 
 export const ProjectCardImageMask = styled.div`
-  width: 100%;
+  aspect-ratio: 1;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-items: flex-start;
-  align-items: flex-start;
-  position: relative;
+  max-width: 100%;
   overflow: hidden;
-  ${breakpoint.phone} {
-    padding: ${spaces.xs}px 0;
-  }
 `;
 
-export const ProjectCardImageInner = styled.div`
-  position: absolute;
-  padding: ${({ theme }) => 0.5 * theme.gapSize}px 0;
-  inset: 0;
-  ${breakpoint.phone} {
-    position: static;
-    width: 100%;
-  }
+export const ProjectCardImageAnimationW = styled.div`
+  aspect-ratio: 1;
+  height: fit-content;
+  max-width: 100%;
+  overflow: hidden;
+`;
+
+export const ProjectCardImageAnimation = styled(motion.div)`
+  transform-origin: 50% 50%;
+  max-height: 100%;
+  max-width: 100%;
 `;
 
 export const ProjectCardContent = styled.div`
-  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  padding: ${({ theme }) => 0.5 * theme.gapSize}px 0;
   ${breakpoint.phone} {
     padding: ${spaces.s}px 0;
   }

@@ -29,12 +29,12 @@ import {
 interface ServicesProps extends CabinetType {}
 
 const Services = ({ list, mainHeader }: ServicesProps) => {
-  const { w } = useWindowSize();
+  const { w, h } = useWindowSize(true);
 
   return (
     <StyledServices data-hide-navbar>
       <Cabinet
-        disable={w <= device.phone}
+        disable={w <= device.phone || h <= 650}
         header={
           <DividerHeader className='no-padding'>
             <Mini className='uppercase'>{mainHeader}</Mini>

@@ -5,6 +5,7 @@ export const StyledZoom = styled.div``;
 
 export const ZoomViewport = styled.div`
   height: 100%;
+  overflow: hidden;
 `;
 
 export const ElevatorViewport = styled.div`

@@ -18,11 +18,11 @@ interface HpProjectsProps {
 export const StyledHpProjects = styled.div``;
 
 const HpProjects = ({ projects }: HpProjectsProps) => {
-  const { w } = useWindowSize();
+  const { w, h } = useWindowSize(true);
   return (
     <StyledHpProjects data-hide-navbar>
       <Zoom
-        disable={w <= device.tabletPortrait}
+        disable={w <= device.tabletPortrait || h <= 650}
         header={
           <DividerHeader className='no-padding'>
             <Mini className='uppercase'>Projekty</Mini>
@@ -49,9 +49,12 @@ const HpProjects = ({ projects }: HpProjectsProps) => {
                     realization={project_realization}
                     slug={_slug}
                     image={{
-                      src: project_cover.url,
-                      width: project_cover.width,
-                      height: project_cover.height,
+                      src: "/img/_project-dummy.jpg",
+                      width: 1000,
+                      height: 1000,
+                      // src: project_cover.url,
+                      // width: project_cover.width,
+                      // height: project_cover.height,
                       alt: project_cover.description || project_name,
                     }}
                     key={i}
