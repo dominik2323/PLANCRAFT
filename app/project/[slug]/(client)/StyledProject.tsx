@@ -26,24 +26,6 @@ export const ProjectDetail = styled.div`
   }
 `;
 
-export const ProjectElevator = styled.div`
-  height: calc(100dvh - ${({ theme }) => 2 * theme.gapSize}px);
-  position: sticky;
-  top: ${({ theme }) => 2 * theme.gapSize}px;
-  grid-area: info;
-  ${breakpoint.tabletLandscape} {
-    height: auto;
-    position: static;
-  }
-`;
-
-export const ProjectElevatorInner = styled.div``;
-
-export const ProjectDescriptionWrapper = styled.div`
-  margin: ${({ theme }) => 0.5 * theme.gapSize}px 0
-    ${({ theme }) => 1.5 * theme.gapSize}px;
-`;
-
 export const ProjectCover = styled(Image)`
   width: 100%;
   height: auto;
