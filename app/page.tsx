@@ -42,8 +42,7 @@ const page = async ({}: PageProps) => {
     query: GetHomepageProjects,
     variables: {
       coverImageFormat: "webp",
-      $coverImageWidth: 1000,
-      $coverImageHeight: 1000,
+      coverImageCropPreset: "gridcover",
     } as QueryProjectsArgs,
   });
 

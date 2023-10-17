@@ -8,6 +8,7 @@ export const GetProjects = gql`
     $coverImageWidth: Int
     $coverImageHeight: Int
     $coverImageFormat: String
+    $coverImageCropPreset: String
     $detailImageWidth: Int
     $detailImageHeight: Int
     $detailImageFormat: String
@@ -27,6 +28,7 @@ export const GetProjects = gql`
             width: $coverImageWidth
             height: $coverImageHeight
             format: $coverImageFormat
+            preset: $coverImageCropPreset
           )
           description
           width

@@ -5,6 +5,7 @@ export const GetHomepageProjects = gql`
     $coverImageWidth: Int
     $coverImageHeight: Int
     $coverImageFormat: String
+    $coverImageCropPreset: String
   ) {
     HomepageProjects(locale: "cs-CZ") {
       homepageprojects {
@@ -15,6 +16,7 @@ export const GetHomepageProjects = gql`
             width: $coverImageWidth
             height: $coverImageHeight
             format: $coverImageFormat
+            preset: $coverImageCropPreset
           )
           description
           width

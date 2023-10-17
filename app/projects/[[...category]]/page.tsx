@@ -51,9 +51,8 @@ const page = async ({ params: { category } }: PageProps) => {
       where: {
         project_category: { _slug_any: category || [] },
       },
-      coverImageWidth: 1000,
-      coverImageHeight: 1000,
       coverImageFormat: "webp",
+      coverImageCropPreset: "gridcover",
     } as QueryProjectsArgs,
   });
 
@@ -88,9 +87,11 @@ const page = async ({ params: { category } }: PageProps) => {
               </ProjectFilter>
             </RevealAnimation>
             {Services.items.map(({ service_name, _slug }, i) => (
-              <RevealAnimation delay={i * 0.5 + 1} style={{ width: "auto" }}>
+              <RevealAnimation
+                delay={i * 0.5 + 1}
+                style={{ width: "auto" }}
+                key={_slug}>
                 <ProjectFilter
-                  key={_slug}
                   href={`/projekty/${_slug}`}
                   className={category?.includes(_slug) ? "" : "inactive"}>
                   <Mini>{service_name}</Mini>
