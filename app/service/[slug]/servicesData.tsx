@@ -63,7 +63,7 @@ export const servicesData: ServicesData = {
       perex:
         'Víme, že ďábel se skrývá v detailech. A proto zajistíme, že bude vyřešen každý milimetr stavby. Už žádné "red flags", jen kvalita a preciznost.',
       image: {
-        src: "/img/service-projektova-dokumentace-0.gif",
+        src: "/img/service-projektova-dokumentace-0.jpg",
         width: 1070,
         height: 615,
         alt: "Projektová dokumentace",
@@ -114,7 +114,7 @@ export const servicesData: ServicesData = {
           linkLabel: "Poptat",
           header: "Projektová dokumentace",
           image: {
-            src: "/img/service-projektova-dokumentace-0.gif",
+            src: "/img/service-projektova-dokumentace-0.jpg",
             alt: "Projektová dokumentace",
             width: 830,
             height: 480,
@@ -227,7 +227,7 @@ export const servicesData: ServicesData = {
       perex:
         "S hrdostí se staráme o 3D pasporty budov pro široké spektrum typologií a fází, ať už se jedná o památkově chráněné nemovitosti určené k obnově nebo novostavby, které potřebují dokumentaci skutečného stavu.",
       image: {
-        src: "/img/service-pasportizace-0.gif",
+        src: "/img/service-pasportizace-0.jpg",
         width: 1070,
         height: 615,
         alt: "Pasportizace",
@@ -278,7 +278,7 @@ export const servicesData: ServicesData = {
           linkLabel: "Poptat",
           header: "Detailní pasportizace",
           image: {
-            src: "/img/service-pasportizace-0.gif",
+            src: "/img/service-pasportizace-0.jpg",
             alt: "Detailní pasportizace",
             width: 830,
             height: 480,
@@ -389,7 +389,7 @@ export const servicesData: ServicesData = {
       perex:
         "Zajišťujeme komplexní služby v oblasti energetiky s cílem pro udržitelnou výstavbu s co nejmenším negativním dopadem na životní přostředí a s co nejefektivnějším využitím zdrojů.",
       image: {
-        src: "/img/service-energetika-0.gif",
+        src: "/img/service-energetika-0.jpg",
         width: 1000,
         height: 500,
         alt: "Energetická úspornost",
@@ -555,7 +555,7 @@ export const servicesData: ServicesData = {
           linkLabel: "Poptat",
           header: "Detailní pasportizace",
           image: {
-            src: "/img/service-pasportizace-0.gif",
+            src: "/img/service-pasportizace-0.jpg",
             alt: "Detailní pasportizace",
             width: 830,
             height: 480,
@@ -572,7 +572,7 @@ export const servicesData: ServicesData = {
           linkLabel: "Poptat",
           header: "Dokumentace v BIM, inženýring",
           image: {
-            src: "/img/service-design-5.gif",
+            src: "/img/service-design-5.jpg",
             alt: "Dokumentace v BIM, inženýring",
             width: 830,
             height: 480,
