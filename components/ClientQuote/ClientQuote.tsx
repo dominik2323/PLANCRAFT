@@ -10,10 +10,11 @@ interface ClientQuoteProps {
 }
 
 const ClientQuote = ({ quote, client }: ClientQuoteProps) => {
+  const isTextLong = quote.length > 200;
   return (
     <StyledClientQuote>
       <RevealAnimation>
-        <Quote>{quote}</Quote>
+        <Quote className={isTextLong ? "long-text" : ""}>{quote}</Quote>
       </RevealAnimation>
       <RevealAnimation delay={1}>
         <Mini>— {client}</Mini>

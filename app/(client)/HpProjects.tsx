@@ -8,11 +8,11 @@ import { ProjectCardZoomW } from "../../components/ProjectCard/StyledProjectCard
 import { Mini } from "../../components/Typography/Mini";
 import Zoom from "../../components/Zoom/Zoom";
 import { device } from "../../consts/breakpoints";
-import { Projects } from "../../gql/types";
+import { Project } from "../../gql/types";
 import { useWindowSize } from "../../hooks/useWindowSize";
 
 interface HpProjectsProps {
-  projects: Projects;
+  projects: Project[];
 }
 
 export const StyledHpProjects = styled.div``;
@@ -29,7 +29,7 @@ const HpProjects = ({ projects }: HpProjectsProps) => {
           </DividerHeader>
         }
         footer={<Divider />}
-        items={projects.items.map(
+        items={projects.map(
           (
               {
                 project_name,
@@ -49,18 +49,15 @@ const HpProjects = ({ projects }: HpProjectsProps) => {
                     realization={project_realization}
                     slug={_slug}
                     image={{
-                      src: "/img/_project-dummy.jpg",
-                      width: 1000,
-                      height: 1000,
-                      // src: project_cover.url,
-                      // width: project_cover.width,
-                      // height: project_cover.height,
+                      src: project_cover.url,
+                      width: project_cover.width,
+                      height: project_cover.height,
                       alt: project_cover.description || project_name,
                     }}
                     key={i}
                     progress={Number(p.toFixed(2))}
                   />
-                  {projects.items.length - 1 !== i && <Divider hidePlus />}
+                  {projects.length - 1 !== i && <Divider hidePlus />}
                 </ProjectCardZoomW>
               );
             }

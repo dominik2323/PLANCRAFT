@@ -16,7 +16,7 @@ export type Scalars = {
 };
 
 /** This union type holds all content models. */
-export type AllModels = Project | Service;
+export type AllModels = HomepageProjects | Project | Service;
 
 export type ApplePodcast = {
   __typename?: 'ApplePodcast';
@@ -171,6 +171,50 @@ export type FacebookPost = {
   _id: Scalars['String']['output'];
   _type?: Maybe<Scalars['String']['output']>;
   url?: Maybe<Scalars['String']['output']>;
+};
+
+/** Single HomepageProjects. */
+export type HomepageProjects = Model & {
+  __typename?: 'HomepageProjects';
+  /** Count of bookmark events. */
+  _bookmarks?: Maybe<Scalars['Int']['output']>;
+  /** The time the content item was changed. */
+  _changed_on: Scalars['String']['output'];
+  /** Count of clicktrough events. */
+  _clicktroughs?: Maybe<Scalars['Int']['output']>;
+  /** Count of comment events. */
+  _comments?: Maybe<Scalars['Int']['output']>;
+  _context?: Maybe<Context>;
+  /** The time the content item was created. */
+  _created_on: Scalars['String']['output'];
+  /** Id of your Prepr Environment. */
+  _environment_id: Scalars['String']['output'];
+  /** Unique identifier for each content item. */
+  _id: Scalars['String']['output'];
+  /** Count of like events. */
+  _likes?: Maybe<Scalars['Int']['output']>;
+  _locale: Scalars['String']['output'];
+  _locales: Array<Scalars['String']['output']>;
+  /** This field returns all localizations for this content item. */
+  _localizations: Array<HomepageProjects>;
+  /** The time for when the content item is or will be published. */
+  _publish_on?: Maybe<Scalars['String']['output']>;
+  /** Count of purchase events. */
+  _purchases?: Maybe<Scalars['Int']['output']>;
+  /** Calculated time to read in minutes. */
+  _read_time?: Maybe<Scalars['Int']['output']>;
+  /** Count of share events. */
+  _shares?: Maybe<Scalars['Int']['output']>;
+  /** Unique within Type, string identifier for each content item. */
+  _slug?: Maybe<Scalars['String']['output']>;
+  /** Count of subscribe events. */
+  _subscribes?: Maybe<Scalars['Int']['output']>;
+  /** Count of view events. */
+  _views?: Maybe<Scalars['Int']['output']>;
+  /** Count of vote events. */
+  _votes?: Maybe<Scalars['Int']['output']>;
+  homepageprojects: Array<Project>;
+  prepr_display_name?: Maybe<Scalars['String']['output']>;
 };
 
 /** ImagesRow component. */
@@ -392,6 +436,8 @@ export type Query = {
   __typename?: 'Query';
   /** Retrieve content items from all models. */
   ContentItems?: Maybe<ContentItems>;
+  /** Retrieve HomepageProjects. */
+  HomepageProjects?: Maybe<HomepageProjects>;
   /** Recommendation recipe suitable for recommending Projects which are similar to the giving item */
   PeopleAlsoViewed_Projects?: Maybe<Projects>;
   /** Recommendation recipe suitable for recommending Services which are similar to the giving item */
@@ -422,6 +468,12 @@ export type QueryContentItemsArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   sort?: InputMaybe<ContentItemsSortInput>;
   where?: InputMaybe<ContentItemsWhereInput>;
+};
+
+
+export type QueryHomepageProjectsArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  locales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 

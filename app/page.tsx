@@ -9,7 +9,7 @@ import RevealAnimation from "../components/TextAnimation/RevealAnimation";
 import { Medium } from "../components/Typography/Medium";
 import { Mini } from "../components/Typography/Mini";
 import { Small } from "../components/Typography/Small";
-import { GetProjects } from "../gql/GetProjects";
+import { GetHomepageProjects } from "../gql/GetHomepageProjects";
 import { Query, QueryProjectsArgs } from "../gql/types";
 import {
   HpAbout,
@@ -35,12 +35,12 @@ const page = async ({}: PageProps) => {
   const client = getClient();
 
   const {
-    data: { Projects },
+    data: {
+      HomepageProjects: { homepageprojects: Projects },
+    },
   } = await client.query<Query>({
-    query: GetProjects,
+    query: GetHomepageProjects,
     variables: {
-      limit: 3,
-      where: { is_featured: true },
       coverImageFormat: "webp",
       $coverImageWidth: 1000,
       $coverImageHeight: 1000,

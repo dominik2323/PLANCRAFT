@@ -30,17 +30,32 @@ export const Quote = styled.blockquote`
   line-height: 1.2em;
   letter-spacing: -0.02em;
   color: ${colors.primary400};
+  &.long-text {
+    font-size: 60px;
+  }
   ${breakpoint.monitor} {
     font-size: 100px;
+    &.long-text {
+      font-size: 80px;
+    }
   }
   ${breakpoint.smallNotebook} {
     font-size: 60px;
+    &.long-text {
+      font-size: 40px;
+    }
   }
   ${breakpoint.tabletLandscape} {
     font-size: 50px;
+    &.long-text {
+      font-size: 30px;
+    }
   }
   ${breakpoint.phone} {
     font-size: 30px;
+    &.long-text {
+      font-size: 21px;
+    }
   }
   ${breakpoint.smallPhone} {
     font-size: 21px;

@@ -48,6 +48,7 @@ interface PageProps {
 
 async function getProjectData(slug: string) {
   const client = getClient();
+
   return await client.query<Query>({
     query: GetProjects,
     variables: {
@@ -83,7 +84,7 @@ const page = async ({ params: { slug } }: PageProps) => {
               delayAnimation={1}
               items={[
                 {
-                  header: "Role v projektu",
+                  header: "Typ služby",
                   body: project.project_category
                     .map((x) => x.service_name)
                     .join(`, `),

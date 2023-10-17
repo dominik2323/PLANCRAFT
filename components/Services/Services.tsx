@@ -34,7 +34,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
   return (
     <StyledServices data-hide-navbar>
       <Cabinet
-        disable={w <= device.phone || h <= 650}
+        disable={w <= device.phone || h <= 800}
         header={
           <DividerHeader className='no-padding'>
             <Mini className='uppercase'>{mainHeader}</Mini>
