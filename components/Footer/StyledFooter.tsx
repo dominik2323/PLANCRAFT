@@ -3,11 +3,13 @@
 import styled from "styled-components";
 import { breakpoint } from "../../consts/breakpoints";
 import { colors } from "../../consts/colors";
+import { spaces } from "../../consts/spaces";
 
 export const StyledFooter = styled.footer`
   background-color: ${colors.primary400};
   padding: ${({ theme }) => 2 * theme.gapSize}px
     ${({ theme }) => 1 * theme.gapSize}px ${({ theme }) => 1 * theme.gapSize}px;
+  padding-bottom: 0;
 `;
 
 export const FooterContact = styled.div`
@@ -76,18 +78,22 @@ export const FooterCopywrite = styled.div`
 
 export const FooterPublicity = styled.div`
   display: flex;
+  background-color: ${colors.white};
   justify-content: space-between;
   gap: ${({ theme }) => 3 * theme.gapSize}px;
   margin-top: ${({ theme }) => 1 * theme.gapSize}px;
-  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  margin-left: ${-1 * spaces.l}px;
+  padding: ${({ theme }) => 1 * theme.gapSize}px
+    ${({ theme }) => 2 * theme.gapSize}px;
+  margin: 0 ${({ theme }) => -1 * theme.gapSize}px;
   ${breakpoint.tabletPortrait} {
     margin-top: ${({ theme }) => 2 * theme.gapSize}px;
     gap: ${({ theme }) => 2 * theme.gapSize}px;
     flex-direction: column;
-    padding: ${({ theme }) => 1 * theme.gapSize}px;
   }
   ${breakpoint.phone} {
-    padding: ${({ theme }) => 1 * theme.gapSize}px 0;
+    padding: ${({ theme }) => 1 * theme.gapSize}px
+      ${({ theme }) => 1 * theme.gapSize}px;
   }
 `;
 
@@ -99,7 +105,6 @@ export const PublicityLogos = styled.div`
     gap: ${({ theme }) => 3 * theme.gapSize}px;
   }
   ${breakpoint.phone} {
-    /* flex-direction: column; */
     align-items: start;
     gap: ${({ theme }) => 2 * theme.gapSize}px;
   }
