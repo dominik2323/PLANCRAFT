@@ -23,15 +23,17 @@ import {
 } from "./(client)/StyledProjects";
 import { projectsData } from "./(client)/projectsData";
 
-export const metadata: Metadata = {
-  title: projectsData.name,
-  description: projectsData.heroHeader,
-  openGraph: {
-    images: homepageData.about.figureBanner.image.src,
+export async function generateMetadata() {
+  return {
     title: projectsData.name,
-    description: projectsData.heroPerex,
-  },
-};
+    description: projectsData.heroHeader,
+    openGraph: {
+      images: homepageData.about.figureBanner.image.src,
+      title: projectsData.name,
+      description: projectsData.heroPerex,
+    },
+  };
+}
 
 export const revalidate = 10;
 
@@ -41,13 +43,14 @@ interface PageProps {
 
 const page = async ({ params: { category } }: PageProps) => {
   const client = getClient();
+  console.log({ projectsPerPage });
 
   const {
     data: { Projects },
   } = await client.query<Query>({
     query: GetProjects,
     variables: {
-      limit: projectsPerPage,
+      limit: 6,
       where: {
         project_category: { _slug_any: category || [] },
       },

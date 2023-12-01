@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     template: "Plancraft\u2002|\u2002%s",
   },
   description: homepageData.heroPerex,
-  themeColor: colors.white,
-  colorScheme: "light",
+  // themeColor: colors.white,
+  // colorScheme: "light",
   manifest: "/manifest.json",
   openGraph: {
     images: homepageData.about.figureBanner.image.src,

@@ -109,6 +109,7 @@ const page = async ({ params: { slug } }: PageProps) => {
           <ProjectsCardsSmallWrapper>
             {Projects.items.map(({ project_name, _slug, project_cover }, i) => (
               <ProjectCardSmall
+                key={i}
                 delay={i * 0.5}
                 projectName={project_name}
                 slug={_slug}

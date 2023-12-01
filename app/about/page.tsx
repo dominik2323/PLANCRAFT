@@ -45,18 +45,18 @@ const page = ({}: PageProps) => {
         introPerex={aboutData.introPerex}
         scrollFigureBanner={aboutData.scrollFigureBanner}
       />
-      <AboutValues>
+      {/* <AboutValues>
         <DividerHeader>
           <Mini className='uppercase'>Naše hodnoty</Mini>
         </DividerHeader>
         <NumberedList items={aboutData.numberedList} />
-      </AboutValues>
+      </AboutValues> */}
       <AboutTeam>
         <AboutTeamIntro>
           <DividerHeader>
             <Mini className='uppercase'>Náš tým</Mini>
           </DividerHeader>
-          <AboutTeamFigureBanner>
+          {/* <AboutTeamFigureBanner>
             <FigureBanner
               className='flip align-top'
               src={aboutData.ourTeam.figureBanner.image.src}
@@ -67,7 +67,7 @@ const page = ({}: PageProps) => {
                 <Mini>{aboutData.ourTeam.figureBanner.perex}</Mini>
               </RevealAnimation>
             </FigureBanner>
-          </AboutTeamFigureBanner>
+          </AboutTeamFigureBanner> */}
         </AboutTeamIntro>
         <AboutTeamClaim>
           <RevealAnimation>
