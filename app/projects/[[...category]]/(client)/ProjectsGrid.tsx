@@ -68,10 +68,10 @@ const ProjectsGrid = ({
                   realization={project_realization}
                   services={project_category}
                   image={{
-                    src: project_cover.url,
-                    width: project_cover.width,
-                    height: project_cover.height,
-                    alt: project_cover.description || project_name,
+                    src: project_cover?.url,
+                    width: project_cover?.width,
+                    height: project_cover?.height,
+                    alt: project_cover?.description || project_name,
                   }}
                 />
               </ProjectCardW>

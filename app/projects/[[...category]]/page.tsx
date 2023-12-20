@@ -43,7 +43,6 @@ interface PageProps {
 
 const page = async ({ params: { category } }: PageProps) => {
   const client = getClient();
-  console.log({ projectsPerPage });
 
   const {
     data: { Projects },
