@@ -9,7 +9,7 @@ import {
   ContactCover,
   ContactHero,
   StyledContact,
-} from "./(clinet)/StyledContact";
+} from "./(client)/StyledContact";
 
 export const metadata: Metadata = {
   title: contactData.name,
