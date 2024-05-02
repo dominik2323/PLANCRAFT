@@ -33,7 +33,8 @@ const Button = ({
         }}
         onMouseLeave={() => {
           sethover(false);
-        }}>
+        }}
+      >
         <StyledButton as={"span"} className={className} onClick={onClick}>
           <Cap>
             <Divider animate={hover} duration={0.5} />
@@ -57,7 +58,8 @@ const Button = ({
       }}
       onMouseLeave={() => {
         sethover(false);
-      }}>
+      }}
+    >
       <Cap>
         <Divider animate={hover} duration={0.5} />
       </Cap>

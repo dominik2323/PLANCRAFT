@@ -36,8 +36,8 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
       <Cabinet
         disable={w <= device.phone || h <= 800}
         header={
-          <DividerHeader className='no-padding'>
-            <Mini className='uppercase'>{mainHeader}</Mini>
+          <DividerHeader className="no-padding">
+            <Mini className="uppercase">{mainHeader}</Mini>
           </DividerHeader>
         }
         cards={list.map(({ header, content, image, slug, linkLabel }, i) => [
@@ -47,7 +47,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
               <Numbering>
                 <Small>{`0${i + 1}`}</Small>
               </Numbering>
-              <Small className='uppercase wide'>{header}</Small>
+              <Small className="uppercase wide">{header}</Small>
             </ServiceHeaderContent>
           </ServiceHeader>,
           <ServiceContent
@@ -88,7 +88,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
               {slug && (
                 <ServiceContentLeftCta>
                   <Link href={slug} as={"span"}>
-                    <Mini className='uppercase'>
+                    <Mini className="uppercase">
                       {linkLabel ? linkLabel : "Zjistit více"}
                     </Mini>
                   </Link>

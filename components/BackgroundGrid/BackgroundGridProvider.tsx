@@ -41,7 +41,8 @@ export const BackgroundGridProvider = ({ children }) => {
         setDotSize,
         isLayoutVisible,
         setisLayoutVisible,
-      }}>
+      }}
+    >
       {children}
     </ThemeProvider>
   );

@@ -23,7 +23,8 @@ const Plus = ({ stroke = "primary400", width = 21 }: PlusProps) => {
       height={plusSize}
       viewBox={`0 0 ${plusSize} ${plusSize}`}
       stroke={colors[stroke]}
-      strokeWidth={dotSize}>
+      strokeWidth={dotSize}
+    >
       <g>
         <line x1={0} x2={plusSize} y1={plusSize / 2} y2={plusSize / 2} />
         <line x1={plusSize / 2} x2={plusSize / 2} y1={0} y2={plusSize} />

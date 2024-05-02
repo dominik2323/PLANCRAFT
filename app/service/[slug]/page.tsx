@@ -82,21 +82,21 @@ const page = async ({ params: { slug } }: PageProps) => {
       )}
       {data.serviceContent.type === "list" && (
         <ServiceNumberedList>
-          <DividerHeader className='no-padding'>
-            <Mini className='uppercase'>{"Obsah služby"}</Mini>
+          <DividerHeader className="no-padding">
+            <Mini className="uppercase">{"Obsah služby"}</Mini>
           </DividerHeader>
           <NumberedList items={data.serviceContent.list} />
         </ServiceNumberedList>
       )}
       <RevealAnimation>
         <ServicePerex>
-          <Small className='break-lines wide'>{data.servicePerex}</Small>
+          <Small className="break-lines wide">{data.servicePerex}</Small>
         </ServicePerex>
       </RevealAnimation>
       {data.advantages && (
         <ServiceAdvantages>
           <DividerHeader>
-            <Mini className='uppercase'>Výhody</Mini>
+            <Mini className="uppercase">Výhody</Mini>
           </DividerHeader>
           <NumberedList items={data.advantages} />
         </ServiceAdvantages>
@@ -104,7 +104,7 @@ const page = async ({ params: { slug } }: PageProps) => {
       {Projects.items.length !== 0 && (
         <SimilarProjects>
           <DividerHeader>
-            <Mini className='uppercase'>Související projekty</Mini>
+            <Mini className="uppercase">Související projekty</Mini>
           </DividerHeader>
           <ProjectsCardsSmallWrapper>
             {Projects.items.map(({ project_name, _slug, project_cover }, i) => (

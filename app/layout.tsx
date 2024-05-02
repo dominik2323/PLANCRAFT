@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang='cs'>
+    <html lang="cs">
       <StyledComponentsRegistry>
         <BackgroundGridProvider>
           <Global />

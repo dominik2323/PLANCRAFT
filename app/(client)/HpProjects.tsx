@@ -24,22 +24,22 @@ const HpProjects = ({ projects }: HpProjectsProps) => {
       <Zoom
         disable={w <= device.tabletPortrait || h <= 650}
         header={
-          <DividerHeader className='no-padding'>
-            <Mini className='uppercase'>Projekty</Mini>
+          <DividerHeader className="no-padding">
+            <Mini className="uppercase">Projekty</Mini>
           </DividerHeader>
         }
         footer={<Divider />}
         items={projects.map(
           (
-              {
-                project_name,
-                _slug,
-                project_category,
-                project_realization,
-                project_cover,
-              },
-              i
-            ) =>
+            {
+              project_name,
+              _slug,
+              project_category,
+              project_realization,
+              project_cover,
+            },
+            i,
+          ) =>
             (p) => {
               return (
                 <ProjectCardZoomW key={_slug}>
@@ -60,7 +60,7 @@ const HpProjects = ({ projects }: HpProjectsProps) => {
                   {projects.length - 1 !== i && <Divider hidePlus />}
                 </ProjectCardZoomW>
               );
-            }
+            },
         )}
       />
     </StyledHpProjects>

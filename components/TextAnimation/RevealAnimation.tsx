@@ -42,7 +42,8 @@ const RevealAnimation = ({
   ) : (
     <StyledRevealAnimation
       style={{ overflow: noCrop ? "unset" : "hidden", ...style }}
-      as={as}>
+      as={as}
+    >
       <RevealAnimationInner
         initial={{
           y: y ? y[0] : "70%",
@@ -60,7 +61,8 @@ const RevealAnimation = ({
         viewport={{
           once: true,
           margin: margin ? margin : "0% 0%",
-        }}>
+        }}
+      >
         {children}
       </RevealAnimationInner>
     </StyledRevealAnimation>

@@ -80,7 +80,7 @@ const Navbar = ({}: NavbarProps) => {
         entries.forEach((entry) => {
           setHideableNavbar(entry.isIntersecting);
         }),
-      { rootMargin: "-10% 0% -90% 0%" }
+      { rootMargin: "-10% 0% -90% 0%" },
     );
 
     hideNavbarElements.forEach((el) => {
@@ -105,7 +105,8 @@ const Navbar = ({}: NavbarProps) => {
       <StyledNavbar
         animate={{
           y: isOpen ? "0%" : hideableNavbar || directionDown ? `-100%` : `0%`,
-        }}>
+        }}
+      >
         <Topbar>
           <NavbarDividerWrapper className={scrollPos < 100 ? "show" : "hide"}>
             <Divider fill={isOpen ? "white" : "primary400"} />
@@ -115,7 +116,8 @@ const Navbar = ({}: NavbarProps) => {
               href={"/"}
               onClick={() => {
                 handleClose();
-              }}>
+              }}
+            >
               <Logo fill={isOpen ? "white" : "primary400"} />
             </LogoWrapper>
             <BurgerWrapper>
@@ -137,7 +139,8 @@ const Navbar = ({}: NavbarProps) => {
         <AnimatePresence
           onExitComplete={() => {
             setisLayoutVisible(true);
-          }}>
+          }}
+        >
           {isOpen && (
             <>
               <NavLinks
@@ -164,7 +167,8 @@ const Navbar = ({}: NavbarProps) => {
                       duration: 1,
                     },
                   },
-                }}>
+                }}
+              >
                 <NavigationDashboard>
                   <Navigation>
                     {navConfig.map(({ name, slug }, i) => {
@@ -178,15 +182,17 @@ const Navbar = ({}: NavbarProps) => {
                           variants={{
                             hidden: { opacity: 0 },
                             visible: { opacity: 1 },
-                          }}>
+                          }}
+                        >
                           <NavLink
                             onMouseEnter={() => setHoverIndex(i)}
                             onClick={() => {
                               handleClose();
                             }}
-                            href={slug}>
+                            href={slug}
+                          >
                             <NavlinkDividerWrapper>
-                              <Divider hidePlus fill='white' animate={isOpen} />
+                              <Divider hidePlus fill="white" animate={isOpen} />
                             </NavlinkDividerWrapper>
                             <NavlinkInner
                               animate={{
@@ -194,16 +200,18 @@ const Navbar = ({}: NavbarProps) => {
                                   w <= device.tabletPortrait
                                     ? 0
                                     : isHover
-                                    ? 50
-                                    : 0,
+                                      ? 50
+                                      : 0,
                               }}
-                              transition={{ ease: easing }}>
+                              transition={{ ease: easing }}
+                            >
                               <NavlinkInnerArrowW
                                 animate={{
                                   x: isHover ? 0 : -50,
                                   opacity: isHover ? 1 : 0,
                                 }}
-                                transition={{ ease: easing }}>
+                                transition={{ ease: easing }}
+                              >
                                 <Arrow
                                   stroke={!isActive ? "primary300" : "white"}
                                   strokeWidth={2}
@@ -212,7 +220,8 @@ const Navbar = ({}: NavbarProps) => {
                               <Small
                                 className={`navlink ${
                                   !isActive ? "primary300" : "white"
-                                }`}>
+                                }`}
+                              >
                                 {name}
                               </Small>
                             </NavlinkInner>
@@ -226,11 +235,12 @@ const Navbar = ({}: NavbarProps) => {
                     variants={{
                       hidden: { opacity: 0 },
                       visible: { opacity: 1 },
-                    }}>
+                    }}
+                  >
                     {navConfig[hoverIndex].perex}
                   </LinkDescription>
                 </NavigationDashboard>
-                <Divider fill='white' />
+                <Divider fill="white" />
               </NavLinks>
             </>
           )}

@@ -34,11 +34,12 @@ const Burger = ({
   return (
     <StyledBurger
       onClick={onClick}
-      xmlns='http://www.w3.org/2000/svg'
+      xmlns="http://www.w3.org/2000/svg"
       width={svgWidth}
       height={svgHeight}
-      fill='none'
-      viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
+      fill="none"
+      viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+    >
       <motion.path
         transition={{ ease: easing }}
         animate={{

@@ -25,7 +25,7 @@ const ProjectElevator = ({ project }: ProjectElevatorProps) => {
   useLayoutEffect(() => {
     const handleResize = () => {
       sethasOverflow(
-        containerRef.current.scrollHeight > containerRef.current.clientHeight
+        containerRef.current.scrollHeight > containerRef.current.clientHeight,
       );
     };
 
@@ -39,10 +39,11 @@ const ProjectElevator = ({ project }: ProjectElevatorProps) => {
   return (
     <SProjectElevator
       ref={containerRef}
-      className={hasOverflow ? "has-overflow" : ""}>
+      className={hasOverflow ? "has-overflow" : ""}
+    >
       <ProjectElevatorInner>
         <RevealAnimation>
-          <Small className='uppercase'>{project.project_name}</Small>
+          <Small className="uppercase">{project.project_name}</Small>
         </RevealAnimation>
         <RevealAnimation delay={0.5}>
           <ProjectDescriptionWrapper>

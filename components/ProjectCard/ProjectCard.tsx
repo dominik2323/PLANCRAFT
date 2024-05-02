@@ -48,13 +48,15 @@ const ProjectCard = ({
       }}
       onMouseLeave={() => {
         sethover(false);
-      }}>
+      }}
+    >
       <ProjectCardInner>
         <ProjectCardImageMask>
           <ProjectCardImageAnimationW>
             <ProjectCardImageAnimation
               animate={{ scale: hover ? 1.1 : 1 }}
-              transition={{ ease: easeInOut }}>
+              transition={{ ease: easeInOut }}
+            >
               <ProjectCardImage
                 src={image.src}
                 height={image.height}
@@ -66,7 +68,7 @@ const ProjectCard = ({
         </ProjectCardImageMask>
         <ProjectCardContent>
           <ProjectCardContentHeader>
-            <Small className='uppercase'>{projectName}</Small>
+            <Small className="uppercase">{projectName}</Small>
             <ProjectCardServices>
               {services.map(({ service_name }, i) => (
                 <Mini key={i}>{service_name}</Mini>
@@ -77,7 +79,7 @@ const ProjectCard = ({
           <ProjectCardContentFooter animate={{ opacity: revealAnimation }}>
             <Mini>Realizace {realization}</Mini>
             <Link as={"span"} href={""}>
-              <Mini className='uppercase'>Zobrazit projekt</Mini>
+              <Mini className="uppercase">Zobrazit projekt</Mini>
             </Link>
           </ProjectCardContentFooter>
         </ProjectCardContent>

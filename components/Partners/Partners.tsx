@@ -26,7 +26,7 @@ const Partners = ({}: PartnersProps) => {
   return (
     <StyledPartners>
       <DividerHeader>
-        <Mini className='uppercase'>Partneři</Mini>
+        <Mini className="uppercase">Partneři</Mini>
       </DividerHeader>
       <PartnersList>
         {list.map(({ name, filename }, i) => (

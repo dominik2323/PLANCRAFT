@@ -12,7 +12,7 @@ export function useRaf(containerRef, _raf) {
         isIntersecting.current = entry.isIntersecting;
       });
     },
-    { threshold: [0, 1] }
+    { threshold: [0, 1] },
   );
 
   useEffect(() => {

@@ -59,13 +59,14 @@ const Cabinet = ({ cards, header, footer, disable }: CabinetProps) => {
                     return (
                       <Fragment key={`${i}-cabinet`}>
                         <CabinetItemHeader>{c[0]}</CabinetItemHeader>
-                        <AnimatePresence mode='wait'>
+                        <AnimatePresence mode="wait">
                           {isActive && (
                             <CabinetItemContent
                               initial={{ opacity: 0, height: "0%" }}
                               animate={{ opacity: 1, height: "100%" }}
                               exit={{ opacity: 0, height: "0%" }}
-                              transition={{ ease: easing, duration: 1.3 }}>
+                              transition={{ ease: easing, duration: 1.3 }}
+                            >
                               <CabinetItemContentInner>
                                 {c[1]}
                               </CabinetItemContentInner>

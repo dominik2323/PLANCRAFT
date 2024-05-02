@@ -34,7 +34,8 @@ const Link = ({
         }}
         onMouseLeave={() => {
           sethover(false);
-        }}>
+        }}
+      >
         {children}
         {!noArrow && <Arrow animate={hover} />}
       </StyledLink>
@@ -50,7 +51,8 @@ const Link = ({
         }}
         onMouseLeave={() => {
           sethover(false);
-        }}>
+        }}
+      >
         {children}
         {!noArrow && <Arrow animate={hover} />}
       </StyledLink>

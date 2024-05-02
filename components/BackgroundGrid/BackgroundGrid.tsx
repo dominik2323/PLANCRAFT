@@ -20,11 +20,12 @@ const BackgroundGrid = ({}: BackgroundGridProps) => {
       ref={ref}
       viewBox={`0 0 ${w} ${h}`}
       width={w}
-      height={h}>
+      height={h}
+    >
       <defs>
-        <linearGradient id='grad' x1='0' x2='0' y1='0' y2='1'>
-          <stop offset='0%' stopColor='white' stopOpacity='0' />
-          <stop offset='100%' stopColor='white' />
+        <linearGradient id="grad" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stopColor="white" stopOpacity="0" />
+          <stop offset="100%" stopColor="white" />
         </linearGradient>
       </defs>
       {createArray(rowsCount - 1).map((l) => (

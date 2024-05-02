@@ -27,7 +27,7 @@ const FigureBanner = ({
 }: FigureBannerProps) => {
   return (
     <StyledFigureBanner className={className}>
-      <RevealAnimation style={{ gridArea: "cover" }} margin='40% 0%'>
+      <RevealAnimation style={{ gridArea: "cover" }} margin="40% 0%">
         <FigureBannerCover src={src} alt={alt} width={width} height={height} />
       </RevealAnimation>
       <FigureBannerContent>{children}</FigureBannerContent>
