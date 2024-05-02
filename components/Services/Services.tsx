@@ -32,7 +32,7 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
   const { w, h } = useWindowSize(true);
 
   return (
-    <StyledServices data-hide-navbar>
+    <StyledServices data-hide-navbar id={"services"}>
       <Cabinet
         disable={w <= device.phone || h <= 800}
         header={
@@ -52,7 +52,8 @@ const Services = ({ list, mainHeader }: ServicesProps) => {
           </ServiceHeader>,
           <ServiceContent
             key={`${"content" + i}`}
-            {...(slug ? { href: slug } : { as: "span" })}>
+            {...(slug ? { href: slug } : { as: "span" })}
+          >
             <ServiceContentLeft>
               <ServiceContentLeftInner>
                 {content.map((item, i) => {
