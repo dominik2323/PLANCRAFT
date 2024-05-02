@@ -41,23 +41,23 @@ interface NavbarProps {}
 
 const navConfig = [
   ...Object.keys(servicesData).map((slug) => ({
-    slug: `/sluzba/${slug}`,
+    slug: `/service/${slug}`,
     perex: servicesData[slug].servicePerex,
     name: servicesData[slug].name,
   })),
   {
     name: "Projekty",
-    slug: "/projekty",
+    slug: "/projects",
     perex: projectsData.heroPerex,
   },
   {
     name: "O nás",
-    slug: "/o-nas",
+    slug: "/about",
     perex: aboutData.introPerex,
   },
   {
     name: "Kontakt",
-    slug: "/kontakt",
+    slug: "/contact",
     perex: contactData.header,
   },
 ];
@@ -80,7 +80,7 @@ const Navbar = ({}: NavbarProps) => {
         entries.forEach((entry) => {
           setHideableNavbar(entry.isIntersecting);
         }),
-      { rootMargin: "-10% 0% -90% 0%" },
+      { rootMargin: "-10% 0% -90% 0%" }
     );
 
     hideNavbarElements.forEach((el) => {
@@ -174,7 +174,7 @@ const Navbar = ({}: NavbarProps) => {
                     {navConfig.map(({ name, slug }, i) => {
                       const isActive =
                         slug === pathname ||
-                        (pathname.includes("projekt/") && slug === "/projekty");
+                        (pathname.includes("projekt/") && slug === "/projects");
                       const isHover = hoverIndex === i;
                       return (
                         <NavlinkWrapper
@@ -192,7 +192,7 @@ const Navbar = ({}: NavbarProps) => {
                             href={slug}
                           >
                             <NavlinkDividerWrapper>
-                              <Divider hidePlus fill="white" animate={isOpen} />
+                              <Divider hidePlus fill='white' animate={isOpen} />
                             </NavlinkDividerWrapper>
                             <NavlinkInner
                               animate={{
@@ -200,8 +200,8 @@ const Navbar = ({}: NavbarProps) => {
                                   w <= device.tabletPortrait
                                     ? 0
                                     : isHover
-                                      ? 50
-                                      : 0,
+                                    ? 50
+                                    : 0,
                               }}
                               transition={{ ease: easing }}
                             >
@@ -240,7 +240,7 @@ const Navbar = ({}: NavbarProps) => {
                     {navConfig[hoverIndex].perex}
                   </LinkDescription>
                 </NavigationDashboard>
-                <Divider fill="white" />
+                <Divider fill='white' />
               </NavLinks>
             </>
           )}

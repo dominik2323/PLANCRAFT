@@ -24,15 +24,15 @@ interface FooterProps {}
 
 const Footer = ({}: FooterProps) => {
   const pathname = usePathname();
-  const pageWithSimpleFooter = ["/kontakt", "/contact"];
+  const pageWithSimpleFooter = ["/contact", "/contact"];
   if (pageWithSimpleFooter.includes(pathname)) return null;
 
   return (
     <StyledFooter data-hide-navbar key={pathname}>
-      <Divider fill="white" />
+      <Divider fill='white' />
       <FooterContact>
         <FooterContactText>
-          <Mini className="white">
+          <Mini className='white'>
             Hledáte pomoc s vaším projektem? Nabízíme konzultace, rady a návrhy
             pro optimální řešení. Kontaktujte nás a společně postavíme váš
             projekt na pevné základy.
@@ -40,30 +40,30 @@ const Footer = ({}: FooterProps) => {
         </FooterContactText>
         <FooterContactLinks>
           <Link href={"tel: +420732870325"}>
-            <Medium className="white">+420 732 870 325</Medium>
+            <Medium className='white'>+420 732 870 325</Medium>
           </Link>
           <Link href={"mailto:info@plancraft.eu"}>
-            <Medium className="white">info@plancraft.eu</Medium>
+            <Medium className='white'>info@plancraft.eu</Medium>
           </Link>
         </FooterContactLinks>
         <FooterContactAddress>
-          <Mini className="break-lines white">
+          <Mini className='break-lines white'>
             {`Plancraft s.r.o.\nIČO: 10856587\nBratislavská 206/21,\nZábrdovice, 602 00 Brno`}
           </Mini>
         </FooterContactAddress>
       </FooterContact>
-      <Divider fill="white" hidePlus />
+      <Divider fill='white' hidePlus />
       <FooterLogo>
-        <Logo fill="white" />
+        <Logo fill='white' />
       </FooterLogo>
-      <Divider fill="white" hidePlus />
+      <Divider fill='white' hidePlus />
       <FooterCopywrite>
-        <Mini className="white">{new Date().getFullYear()} PLANCRAFT</Mini>
-        <Mini className="white tar">
+        <Mini className='white'>{new Date().getFullYear()} PLANCRAFT</Mini>
+        <Mini className='white tar'>
           Made with Style & Ease by{" "}
           <Link
             noArrow
-            className="underline inline"
+            className='underline inline'
             href={"https://steezy.studio"}
             target={"_blank"}
           >
@@ -73,7 +73,7 @@ const Footer = ({}: FooterProps) => {
       </FooterCopywrite>
       {/* <Divider fill='white' /> */}
       <FooterPublicity>
-        <Micro className="primary400">
+        <Micro className='primary400'>
           V roce 2023 dochází k čerpání dotace z Výzvy č. 0383 - Kreativní
           vouchery v rámci Národního plánu obnovy - iniciativa Kreativní
           vouchery komponenty 4.5 Rozvoj kulturního a kreativního sektoru s

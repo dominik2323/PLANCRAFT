@@ -1,4 +1,7 @@
 node_modules
 .env
+.deploy.env
 .next
 tsconfig.tsbuildinfo
+out
+public/img/nextImageExportOptimizer

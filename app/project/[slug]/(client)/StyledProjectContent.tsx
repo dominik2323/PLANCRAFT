@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "../../../../components/Image/Image";
 import styled from "styled-components";
 import { breakpoint } from "../../../../consts/breakpoints";
 import { colors } from "../../../../consts/colors";

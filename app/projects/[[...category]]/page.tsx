@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import { homepageData } from "../../(client)/homepageData";
 import getClient from "../../../apollo/client";
 import ClientQuote from "../../../components/ClientQuote/ClientQuote";
@@ -13,7 +12,7 @@ import {
   QueryProjectsArgs,
   QueryServicesArgs,
 } from "../../../gql/types";
-import ProjectsGrid, { projectsPerPage } from "./(client)/ProjectsGrid";
+import ProjectsGrid from "./(client)/ProjectsGrid";
 import {
   ProjectDividerHeaderInner,
   ProjectFilter,
@@ -37,12 +36,34 @@ export async function generateMetadata() {
 
 export const revalidate = 10;
 
+export async function generateStaticParams() {
+  const client = getClient();
+
+  const {
+    data: { Services },
+  } = await client.query<Query>({
+    query: GetServices,
+    variables: { limit: null, locale: "cs-CZ" } as QueryServicesArgs,
+  });
+
+  const paths = [
+    { category: null },
+    ...Services.items.map(({ _slug }) => ({
+      category: [_slug],
+    })),
+  ];
+
+  return paths;
+}
+
 interface PageProps {
   params: { category: string };
 }
 
 const page = async ({ params: { category } }: PageProps) => {
   const client = getClient();
+
+  console.log(category);
 
   const {
     data: { Projects },
@@ -51,7 +72,7 @@ const page = async ({ params: { category } }: PageProps) => {
     variables: {
       limit: 6,
       where: {
-        project_category: { _slug_any: category || [] },
+        project_category: { _slug_any: category === "" ? [] : category },
       },
       coverImageFormat: "webp",
       coverImageCropPreset: "gridcover",
@@ -75,15 +96,15 @@ const page = async ({ params: { category } }: PageProps) => {
           <Mini>{projectsData.heroPerex}</Mini>
         </RevealAnimation>
       </ProjectsHero>
-      <DividerHeader className="no-padding">
+      <DividerHeader className='no-padding'>
         <ProjectDividerHeaderInner>
           <RevealAnimation delay={0.5}>
-            <Mini className="uppercase">Filtry</Mini>
+            <Mini className='uppercase'>Filtry</Mini>
           </RevealAnimation>
           <ProjectFilters>
             <RevealAnimation delay={1} style={{ width: "auto" }}>
               <ProjectFilter
-                href={"/projekty"}
+                href={"/projects"}
                 className={category ? "inactive" : ""}
               >
                 <Mini>Vše</Mini>
@@ -96,7 +117,7 @@ const page = async ({ params: { category } }: PageProps) => {
                 key={_slug}
               >
                 <ProjectFilter
-                  href={`/projekty/${_slug}`}
+                  href={`/projects/${_slug}`}
                   className={category?.includes(_slug) ? "" : "inactive"}
                 >
                   <Mini>{service_name}</Mini>

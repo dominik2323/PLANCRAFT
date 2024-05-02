@@ -44,7 +44,7 @@ const PageIntro = ({
           <Large>{heroHeader}</Large>
         </RevealAnimation>
         <FigureBanner
-          className="flip align-top"
+          className='flip align-top'
           src={figureBanner.image.src}
           width={figureBanner.image.width}
           height={figureBanner.image.height}
@@ -56,7 +56,7 @@ const PageIntro = ({
           {withCta && (
             <RevealAnimation delay={w <= device.phone ? 0 : 3} noCrop>
               <PageIntroCta>
-                <Button href={"/kontakt"}>Poptat službu</Button>
+                <Button href={"/contact"}>Poptat službu</Button>
               </PageIntroCta>
             </RevealAnimation>
           )}

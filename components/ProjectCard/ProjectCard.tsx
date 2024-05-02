@@ -42,7 +42,7 @@ const ProjectCard = ({
 
   return (
     <StyledProjectCard
-      href={`/projekt/${slug}`}
+      href={`/project/${slug}`}
       onMouseEnter={() => {
         sethover(true);
       }}
@@ -68,7 +68,7 @@ const ProjectCard = ({
         </ProjectCardImageMask>
         <ProjectCardContent>
           <ProjectCardContentHeader>
-            <Small className="uppercase">{projectName}</Small>
+            <Small className='uppercase'>{projectName}</Small>
             <ProjectCardServices>
               {services.map(({ service_name }, i) => (
                 <Mini key={i}>{service_name}</Mini>
@@ -79,7 +79,7 @@ const ProjectCard = ({
           <ProjectCardContentFooter animate={{ opacity: revealAnimation }}>
             <Mini>Realizace {realization}</Mini>
             <Link as={"span"} href={""}>
-              <Mini className="uppercase">Zobrazit projekt</Mini>
+              <Mini className='uppercase'>Zobrazit projekt</Mini>
             </Link>
           </ProjectCardContentFooter>
         </ProjectCardContent>

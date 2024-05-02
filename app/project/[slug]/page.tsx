@@ -41,6 +41,24 @@ interface PageProps {
   params: { slug: string };
 }
 
+export async function generateStaticParams() {
+  const client = getClient();
+  const {
+    data: { Projects },
+  } = await client.query<Query>({
+    query: GetProjects,
+    variables: {
+      limit: null,
+      locale: "cs-CZ",
+    } as QueryProjectsArgs,
+  });
+
+  const paths = Projects.items.map(({ _slug }) => ({
+    slug: _slug,
+  }));
+  return paths;
+}
+
 async function getProjectData(slug: string) {
   const client = getClient();
 
@@ -68,10 +86,10 @@ const page = async ({ params: { slug } }: PageProps) => {
         <ProjectElevator project={project} />
       </ProjectDetail>
       <ProjectNavigation>
-        <DividerHeader className="flip">
+        <DividerHeader className='flip'>
           <ProjectNavigationInner>
             <Mini>
-              <Link className="flip" href={"/projects"}>
+              <Link className='flip' href={"/projects"}>
                 {"Zpět na projekty"}
               </Link>
             </Mini>

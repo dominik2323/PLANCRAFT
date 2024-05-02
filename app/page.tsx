@@ -84,10 +84,10 @@ const page = async ({}: PageProps) => {
       />
       <HpQuoteServices>
         <RevealAnimation>
-          <Medium className="wide">{homepageData.servicesQuote}</Medium>
+          <Medium className='wide'>{homepageData.servicesQuote}</Medium>
         </RevealAnimation>
         <RevealAnimation delay={0.5} noCrop>
-          <Button className="skinny" href={"/o-nas"}>
+          <Button className='skinny' href={"/about"}>
             O nás
           </Button>
         </RevealAnimation>
@@ -95,14 +95,14 @@ const page = async ({}: PageProps) => {
       <HpProjects projects={Projects} />
       <HpProjectsCta>
         <RevealAnimation>
-          <Small className="wide">
+          <Small className='wide'>
             Dělá nám radost se podílet na rozmanitých a inovativních projektech,
             které nerezonují jen v lokálním prostředí, ale jsou uznávanou
             inspirací na celém světě.
           </Small>
         </RevealAnimation>
         <RevealAnimation delay={0.5} noCrop>
-          <Button href={"/projekty"}>Více projektů</Button>
+          <Button href={"/projects"}>Více projektů</Button>
         </RevealAnimation>
       </HpProjectsCta>
       <HpQuoteW>

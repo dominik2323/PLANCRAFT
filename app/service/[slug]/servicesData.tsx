@@ -110,7 +110,7 @@ export const servicesData: ServicesData = {
       type: "cabinet",
       list: [
         {
-          slug: "/kontakt",
+          slug: "/contact",
           linkLabel: "Poptat",
           header: "Projektová dokumentace",
           image: {
@@ -157,7 +157,7 @@ export const servicesData: ServicesData = {
           ],
         },
         {
-          slug: "/kontakt",
+          slug: "/contact",
           linkLabel: "Poptat",
           header: "Inženýring a zisk povolení",
           image: {
@@ -274,7 +274,7 @@ export const servicesData: ServicesData = {
       mainHeader: "Obsah služby",
       list: [
         {
-          slug: "/kontakt",
+          slug: "/contact",
           linkLabel: "Poptat",
           header: "Detailní pasportizace",
           image: {
@@ -314,7 +314,7 @@ export const servicesData: ServicesData = {
           ],
         },
         {
-          slug: "/kontakt",
+          slug: "/contact",
           linkLabel: "Poptat",
           header: "Zjednodušená dokumentace",
           image: {
@@ -534,7 +534,7 @@ export const servicesData: ServicesData = {
       mainHeader: "Obsah služby",
       list: [
         {
-          slug: "/kontakt",
+          slug: "/contact",
           linkLabel: "Poptat",
           header: "Technické prověření proveditelnosti",
           image: {
@@ -551,7 +551,7 @@ export const servicesData: ServicesData = {
           ],
         },
         {
-          slug: "/kontakt",
+          slug: "/contact",
           linkLabel: "Poptat",
           header: "Detailní pasportizace",
           image: {
@@ -568,7 +568,7 @@ export const servicesData: ServicesData = {
           ],
         },
         {
-          slug: "/kontakt",
+          slug: "/contact",
           linkLabel: "Poptat",
           header: "Dokumentace v BIM, inženýring",
           image: {

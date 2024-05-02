@@ -22,12 +22,12 @@ const ProjectCardSmall = ({
   delay = 0,
 }: ProjectCardSmallProps) => {
   return (
-    <StyledProjectCardSmall href={`/projekt/${slug}`}>
+    <StyledProjectCardSmall href={`/project/${slug}`}>
       <RevealAnimation delay={delay}>
         <ProjectCardSmallCover {...image} />
       </RevealAnimation>
       <RevealAnimation delay={delay + 0.5}>
-        <Small className="uppercase">{projectName}</Small>
+        <Small className='uppercase'>{projectName}</Small>
       </RevealAnimation>
     </StyledProjectCardSmall>
   );

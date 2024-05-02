@@ -1,0 +1,22 @@
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault A600
+  ExpiresByType text/javascript A604800
+  ExpiresByType application/javascript A0
+  ExpiresByType text/css A604800
+  ExpiresByType image/gif A604800
+  ExpiresByType image/png A604800
+  ExpiresByType image/jpeg A0
+  ExpiresByType image/x-icon A604800
+  ExpiresByType text/html A60
+</IfModule>
+
+RewriteEngine On
+RewriteRule ^([^/]+)/$ $1.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/$ $1.html
+RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+RewriteRule (.*)$ /$1/ [R=301,L]

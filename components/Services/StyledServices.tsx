@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "../Image/Image";
 import Link from "next/link";
 import styled from "styled-components";
 import { StyledHomepage } from "../../app/(client)/HomepageStyles";

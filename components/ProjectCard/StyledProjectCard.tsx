@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Image from "../../components/Image/Image";
 import Link from "next/link";
 import styled from "styled-components";
 import { breakpoint } from "../../consts/breakpoints";
