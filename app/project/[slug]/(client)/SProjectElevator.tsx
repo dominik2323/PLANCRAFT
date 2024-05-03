@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { breakpoint } from "../../../../consts/breakpoints";
 
 export const SProjectElevator = styled.div`
-  height: calc(100dvh - ${({ theme }) => 2 * theme.gapSize}px);
+  height: calc(100dvh - calc(2 * var(--gap-size)));
   position: sticky;
-  top: ${({ theme }) => 2 * theme.gapSize}px;
+  top: calc(2 * var(--gap-size));
   grid-area: info;
   &.has-overflow {
     position: static;
@@ -19,6 +19,5 @@ export const SProjectElevator = styled.div`
 export const ProjectElevatorInner = styled.div``;
 
 export const ProjectDescriptionWrapper = styled.div`
-  margin: ${({ theme }) => 0.5 * theme.gapSize}px 0
-    ${({ theme }) => 1.5 * theme.gapSize}px;
+  margin: calc(0.5 * var(--gap-size)) 0 calc(1.5 * var(--gap-size));
 `;

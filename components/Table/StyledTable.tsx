@@ -12,9 +12,9 @@ export const StyledTable = styled.table`
 
 export const TableRow = styled.tr`
   &:first-child {
-    border-top: ${({ theme }) => theme.dotSize}px solid ${colors.primary400};
+    border-top: var(--dot-size) solid ${colors.primary400};
   }
-  border-bottom: ${({ theme }) => theme.dotSize}px solid ${colors.primary400};
+  border-bottom: var(--dot-size) solid ${colors.primary400};
 `;
 
 export const StyledTableCol = styled.td`
@@ -24,7 +24,7 @@ export const StyledTableCol = styled.td`
     vertical-align: top;
   }
   &:nth-child(even) {
-    padding-left: ${({ theme }) => 1 * theme.gapSize}px;
+    padding-left: calc(1 * var(--gap-size));
   }
   ${breakpoint.smallNotebook} {
     min-width: 150px;

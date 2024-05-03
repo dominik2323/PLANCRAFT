@@ -3,23 +3,23 @@ import styled from "styled-components";
 import { breakpoint } from "../../consts/breakpoints";
 
 export const StyledPageIntro = styled.div`
-  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  padding: 0 calc(1 * var(--gap-size));
 `;
 
 export const PageIntroHero = styled.section`
   display: grid;
-  row-gap: ${({ theme }) => 3 * theme.gapSize}px;
+  row-gap: calc(3 * var(--gap-size));
   ${breakpoint.monitor} {
-    row-gap: ${({ theme }) => 3 * theme.gapSize}px;
+    row-gap: calc(3 * var(--gap-size));
   }
   ${breakpoint.tabletPortrait} {
-    row-gap: ${({ theme }) => 6 * theme.gapSize}px;
+    row-gap: calc(6 * var(--gap-size));
   }
   ${breakpoint.phone} {
-    row-gap: ${({ theme }) => 4 * theme.gapSize}px;
+    row-gap: calc(4 * var(--gap-size));
   }
 `;
 
 export const PageIntroCta = styled.div`
-  margin-top: ${({ theme }) => 2 * theme.gapSize}px;
+  margin-top: calc(2 * var(--gap-size));
 `;

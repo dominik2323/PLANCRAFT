@@ -5,23 +5,23 @@ import { colors } from "../../consts/colors";
 
 export const StyledClientQuote = styled.div`
   display: grid;
-  row-gap: ${({ theme }) => 2 * theme.gapSize}px;
-  margin: ${({ theme }) => 4 * theme.gapSize}px 0;
-  margin-left: ${({ theme }) => 0.2 * theme.columnCount * theme.gapSize}px;
+  row-gap: calc(2 * var(--gap-size));
+  margin: calc(4 * var(--gap-size)) 0;
+  margin-left: calc(0.2 * var(--gap-size) * var(--column-count));
   ${breakpoint.monitor} {
-    margin: ${({ theme }) => 5 * theme.gapSize}px 0;
-    margin-left: ${({ theme }) => 0.25 * theme.columnCount * theme.gapSize}px;
+    margin: calc(5 * var(--gap-size)) 0;
+    margin-left: calc(0.25 * var(--gap-size) * var(--column-count));
   }
   ${breakpoint.smallNotebook} {
-    margin: ${({ theme }) => 5 * theme.gapSize}px 0;
-    margin-left: ${({ theme }) => 0.2 * theme.columnCount * theme.gapSize}px;
+    margin: calc(5 * var(--gap-size)) 0;
+    margin-left: calc(0.2 * var(--gap-size) * var(--column-count));
   }
   ${breakpoint.tabletPortrait} {
     margin-left: 0;
-    margin: ${({ theme }) => 7 * theme.gapSize}px 0;
+    margin: calc(7 * var(--gap-size)) 0;
   }
   ${breakpoint.phone} {
-    margin: ${({ theme }) => 4 * theme.gapSize}px 0;
+    margin: calc(4 * var(--gap-size)) 0;
   }
 `;
 

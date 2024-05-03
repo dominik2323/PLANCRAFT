@@ -5,15 +5,15 @@ import { breakpoint } from "../../consts/breakpoints";
 export const StyledNumberedList = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: ${({ theme }) => 2 * theme.gapSize}px;
-  row-gap: ${({ theme }) => 2 * theme.gapSize}px;
-  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  column-gap: calc(2 * var(--gap-size));
+  row-gap: calc(2 * var(--gap-size));
+  padding: 0 calc(1 * var(--gap-size));
   ${breakpoint.smallNotebook} {
-    column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    column-gap: calc(1 * var(--gap-size));
   }
   ${breakpoint.tabletPortrait} {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+    column-gap: calc(2 * var(--gap-size));
     padding: 0;
   }
   ${breakpoint.phone} {

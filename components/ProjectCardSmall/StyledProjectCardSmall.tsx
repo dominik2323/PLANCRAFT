@@ -9,7 +9,7 @@ export const StyledProjectCardSmall = styled(Link)`
   cursor: pointer;
   width: 100%;
   display: grid;
-  row-gap: ${({ theme }) => 0.5 * theme.gapSize}px;
+  row-gap: calc(0.5 * var(--gap-size));
 `;
 
 export const ProjectCardSmallCover = styled(Image)`
@@ -22,7 +22,7 @@ export const ProjectCardSmallCover = styled(Image)`
 export const ProjectsCardsSmallWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  column-gap: calc(1 * var(--gap-size));
   justify-items: start;
   align-items: start;
   &:nth-child(n + 5) {

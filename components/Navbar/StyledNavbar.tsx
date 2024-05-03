@@ -15,25 +15,25 @@ export const StyledNavbar = styled(motion.nav)`
 `;
 
 export const NavbarPlaceholder = styled.div`
-  height: ${({ theme }) => 4 * theme.gapSize}px;
+  height: calc(4 * var(--gap-size));
+
   ${breakpoint.monitor} {
-    height: ${({ theme }) => 5 * theme.gapSize}px;
+    height: calc(5 * var(--gap-size));
   }
   ${breakpoint.smallNotebook} {
-    height: ${({ theme }) => 5 * theme.gapSize}px;
+    height: calc(5 * var(--gap-size));
   }
   ${breakpoint.tabletLandscape} {
-    height: ${({ theme }) => 7 * theme.gapSize}px;
+    height: calc(7 * var(--gap-size));
   }
 `;
 
 export const TopbarContent = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: ${({ theme }) => 1 * theme.gapSize}px
-    ${({ theme }) => 2 * theme.gapSize}px;
+  padding: calc(1 * var(--gap-size)) calc(2 * var(--gap-size));
   ${breakpoint.phone} {
-    padding: ${({ theme }) => 1 * theme.gapSize}px;
+    padding: calc(1 * var(--gap-size));
   }
 `;
 
@@ -45,11 +45,11 @@ export const Topbar = styled(motion.div)`
 
 export const BurgerWrapper = styled.div`
   display: block;
-  height: ${({ theme }) => 1 * theme.gapSize}px;
+  height: calc(1 * var(--gap-size));
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: ${({ theme }) => 1 * theme.gapSize}px;
+  max-width: calc(1 * var(--gap-size));
 `;
 
 export const LogoWrapper = styled(Link)`
@@ -58,26 +58,26 @@ export const LogoWrapper = styled(Link)`
   height: 100%;
   aspect-ratio: 321/43;
   ${breakpoint.tabletLandscape} {
-    height: ${({ theme }) => 1.5 * theme.gapSize}px;
+    height: calc(1.5 * var(--gap-size));
   }
   ${breakpoint.tabletPortrait} {
-    height: ${({ theme }) => 1.75 * theme.gapSize}px;
+    height: calc(1.75 * var(--gap-size));
   }
   ${breakpoint.phone} {
-    height: ${({ theme }) => 1 * theme.gapSize}px;
+    height: calc(1 * var(--gap-size));
   }
 `;
 
 export const NavbarDividerWrapper = styled.div`
   width: 100%;
-  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  padding: 0 calc(1 * var(--gap-size));
   &.show {
     display: block;
-    padding-top: ${({ theme }) => 1 * theme.gapSize}px;
+    padding-top: calc(1 * var(--gap-size));
   }
   &.hide {
     display: none;
-    padding-top: ${({ theme }) => 0 * theme.gapSize}px;
+    padding-top: calc(0 * var(--gap-size));
   }
 `;
 
@@ -87,20 +87,20 @@ export const NavLinks = styled(motion.div)`
   inset: 0;
   height: 100dvh;
   background-color: ${colors.primary400};
-  padding: ${({ theme }) => 1 * theme.gapSize}px;
-  padding-top: ${({ theme }) => 5 * theme.gapSize}px;
+  padding: calc(1 * var(--gap-size));
+  padding-top: calc(5 * var(--gap-size));
   ${breakpoint.smallNotebook} {
-    padding-top: ${({ theme }) => 6 * theme.gapSize}px;
+    padding-top: calc(6 * var(--gap-size));
   }
   ${breakpoint.tabletPortrait} {
-    padding-top: ${({ theme }) => 10 * theme.gapSize}px;
+    padding-top: calc(10 * var(--gap-size));
   }
 `;
 
 export const NavigationDashboard = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  column-gap: calc(2 * var(--gap-size));
   height: 100%;
   ${breakpoint.tabletPortrait} {
     grid-template-columns: unset;
@@ -153,7 +153,7 @@ export const LinkDescription = styled(motion.span)`
 export const NavlinkInner = styled(motion.div)`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => 1 * theme.gapSize}px;
+  gap: calc(1 * var(--gap-size));
 `;
 
 export const NavlinkInnerArrowW = styled(motion.span)`

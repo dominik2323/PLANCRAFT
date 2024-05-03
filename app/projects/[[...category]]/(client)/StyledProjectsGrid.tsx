@@ -10,5 +10,5 @@ export const ProjectCardW = styled.div`
 `;
 
 export const LoadMoreW = styled.div`
-  margin-top: ${({ theme }) => 2 * theme.gapSize}px;
+  margin-top: calc(2 * var(--gap-size));
 `;

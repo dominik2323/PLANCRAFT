@@ -9,22 +9,22 @@ import { spaces } from "../../consts/spaces";
 export const StyledServices = styled.div``;
 
 export const ServicesCabinetHeaderWrapper = styled.div`
-  height: ${({ theme }) => 1 * theme.gapSize}px;
+  height: calc(1 * var(--gap-size));
   display: flex;
   align-items: center;
 `;
 
 export const ServicesCabinetFooterWrapper = styled.div`
-  height: ${({ theme }) => 1 * theme.gapSize}px;
+  height: calc(1 * var(--gap-size));
 `;
 
 export const ServiceHeader = styled.div`
-  height: ${({ theme }) => 2 * theme.gapSize}px;
+  height: calc(2 * var(--gap-size));
   ${breakpoint.phone} {
     height: auto;
   }
   ${breakpoint.smallPhone} {
-    margin: ${({ theme }) => 1 * theme.gapSize}px 0 0;
+    margin: calc(1 * var(--gap-size)) 0 0;
   }
 `;
 
@@ -32,7 +32,7 @@ export const ServiceHeaderContent = styled.div`
   display: flex;
   height: 100%;
   align-items: center;
-  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  padding: 0 calc(1 * var(--gap-size));
   ${breakpoint.phone} {
     padding: ${spaces.s}px 0;
     flex-direction: column;
@@ -47,7 +47,7 @@ export const ServiceHeaderContent = styled.div`
 `;
 
 export const Numbering = styled.div`
-  width: ${({ theme }) => 2 * theme.gapSize}px;
+  width: calc(2 * var(--gap-size));
 `;
 
 export const ServiceContent = styled(Link)`
@@ -56,10 +56,9 @@ export const ServiceContent = styled(Link)`
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100%;
-  padding: 0 ${({ theme }) => 1 * theme.gapSize}px 0
-    ${({ theme }) => 3 * theme.gapSize}px;
+  padding: 0 calc(1 * var(--gap-size)) 0 calc(3 * var(--gap-size));
   grid-template-areas: "left right";
-  column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  column-gap: calc(2 * var(--gap-size));
   ${breakpoint.smallNotebook} {
     grid-template-columns: 2fr 1fr;
   }
@@ -76,8 +75,8 @@ export const ServiceContentLeft = styled.div`
   height: 100%;
   grid-area: left;
   display: grid;
-  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
-  padding-bottom: ${({ theme }) => 1 * theme.gapSize}px;
+  row-gap: calc(1 * var(--gap-size));
+  padding-bottom: calc(1 * var(--gap-size));
 `;
 
 export const ServiceContentLeftInner = styled.div`
@@ -98,10 +97,10 @@ export const ServiceContentRight = styled.div`
   width: 100%;
   grid-area: right;
   position: relative;
-  padding-bottom: ${({ theme }) => 1 * theme.gapSize}px;
+  padding-bottom: calc(1 * var(--gap-size));
   overflow: hidden;
   ${breakpoint.tabletPortrait} {
-    margin-top: ${({ theme }) => 1 * theme.gapSize}px;
+    margin-top: calc(1 * var(--gap-size));
   }
 `;
 

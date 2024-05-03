@@ -4,10 +4,10 @@ import { breakpoint } from "../../consts/breakpoints";
 
 export const StyledNumberedItem = styled.div`
   display: grid;
-  grid-template-columns: ${({ theme }) => 1 * theme.gapSize}px auto;
+  grid-template-columns: calc(1 * var(--gap-size)) auto;
   grid-template-areas: "index header" ". perex";
-  row-gap: ${({ theme }) => 0.5 * theme.gapSize}px;
-  column-gap: ${({ theme }) => 0.5 * theme.gapSize}px;
+  row-gap: calc(0.5 * var(--gap-size));
+  column-gap: calc(0.5 * var(--gap-size));
   align-content: start;
   ${breakpoint.tabletPortrait} {
     grid-template-areas: "index" "header" "perex";

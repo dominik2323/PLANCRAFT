@@ -18,20 +18,20 @@ export const ProjectBodyImageRow = styled.div`
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
-  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
-  margin: ${({ theme }) => 1 * theme.gapSize}px 0;
+  column-gap: calc(1 * var(--gap-size));
+  margin: calc(1 * var(--gap-size)) 0;
   &:first-child {
     margin-top: 0;
   }
   ${breakpoint.phone} {
     grid-auto-flow: unset;
-    row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    row-gap: calc(1 * var(--gap-size));
   }
 `;
 
 export const StyledProjectDetailText = styled.div`
   color: ${colors.primary400};
-  margin: ${({ theme }) => 2 * theme.gapSize}px 0;
+  margin: calc(2 * var(--gap-size)) 0;
   p {
     max-width: 600px;
     font-size: 18px;

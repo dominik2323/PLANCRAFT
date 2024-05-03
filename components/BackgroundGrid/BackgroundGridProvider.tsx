@@ -13,18 +13,18 @@ export const BackgroundGridProvider = ({ children }) => {
   const [columnCount, setColumnCount] = useState<number>(0);
   const [plusSize, setPlusSize] = useState<number>(0);
   const [dotSize, setDotSize] = useState<number>(1);
-  const [isLayoutVisible, setisLayoutVisible] = useState<boolean>(false);
+  const [isLayoutVisible, setisLayoutVisible] = useState<boolean>(true);
   const { w } = useWindowSize();
 
   const isLayoutReady = gapSize > 1 && columnCount > 0 && plusSize > 0;
 
   useEffect(() => {
-    const _columnCount = w <= device.phone ? 20 : 40;
-    const _gapSize = w / _columnCount || 1;
-    setDotSize(w > device.monitor ? 2 : 1);
-    setPlusSize(w <= device.phone ? 9 : w <= device.tabletLandscape ? 11 : 21);
-    setColumnCount(_columnCount);
-    setGapSize(_gapSize);
+    // const _columnCount = w <= device.phone ? 20 : 40;
+    // const _gapSize = w / _columnCount || 1;
+    // setDotSize(w > device.monitor ? 2 : 1);
+    // setPlusSize(w <= device.phone ? 9 : w <= device.tabletLandscape ? 11 : 21);
+    // setColumnCount(_columnCount);
+    // setGapSize(_gapSize);
   }, [w]);
 
   return (

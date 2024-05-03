@@ -3,7 +3,6 @@
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useLayoutEffect, useState } from "react";
-import { useTheme } from "styled-components";
 import { aboutData } from "../../app/about/(client)/aboutData";
 import { contactData } from "../../app/contact/(client)/contactData";
 import { projectsData } from "../../app/projects/[[...category]]/(client)/projectsData";
@@ -65,7 +64,6 @@ const navConfig = [
 const Navbar = ({}: NavbarProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { directionDown, scrollPos } = useScrollDirection();
-  const { gapSize, plusSize, setisLayoutVisible } = useTheme();
   const { w } = useWindowSize();
   const [hoverIndex, setHoverIndex] = useState<number>(0);
   const [hideableNavbar, setHideableNavbar] = useState(false);
@@ -80,7 +78,7 @@ const Navbar = ({}: NavbarProps) => {
         entries.forEach((entry) => {
           setHideableNavbar(entry.isIntersecting);
         }),
-      { rootMargin: "-10% 0% -90% 0%" },
+      { rootMargin: "-10% 0% -90% 0%" }
     );
 
     hideNavbarElements.forEach((el) => {
@@ -125,10 +123,10 @@ const Navbar = ({}: NavbarProps) => {
                 isOpen={isOpen}
                 onClick={() => {
                   setIsOpen((p) => !p);
-                  setisLayoutVisible(false);
+                  // setisLayoutVisible(false);
                 }}
-                width={w <= device.phone ? gapSize * 2 : gapSize}
-                height={w <= device.phone ? (gapSize / 3) * 2 : gapSize / 3}
+                // width={w <= device.phone ? gapSize * 2 : gapSize}
+                // height={w <= device.phone ? (gapSize / 3) * 2 : gapSize / 3}
                 strokeWidth={3}
                 stroke={isOpen ? "white" : "primary400"}
               />
@@ -138,7 +136,7 @@ const Navbar = ({}: NavbarProps) => {
         <DisableScroll scroll={!isOpen} />
         <AnimatePresence
           onExitComplete={() => {
-            setisLayoutVisible(true);
+            // setisLayoutVisible(true);
           }}
         >
           {isOpen && (
@@ -192,7 +190,7 @@ const Navbar = ({}: NavbarProps) => {
                             href={slug}
                           >
                             <NavlinkDividerWrapper>
-                              <Divider hidePlus fill="white" animate={isOpen} />
+                              <Divider hidePlus fill='white' animate={isOpen} />
                             </NavlinkDividerWrapper>
                             <NavlinkInner
                               animate={{
@@ -200,8 +198,8 @@ const Navbar = ({}: NavbarProps) => {
                                   w <= device.tabletPortrait
                                     ? 0
                                     : isHover
-                                      ? 50
-                                      : 0,
+                                    ? 50
+                                    : 0,
                               }}
                               transition={{ ease: easing }}
                             >
@@ -240,7 +238,7 @@ const Navbar = ({}: NavbarProps) => {
                     {navConfig[hoverIndex].perex}
                   </LinkDescription>
                 </NavigationDashboard>
-                <Divider fill="white" />
+                <Divider fill='white' />
               </NavLinks>
             </>
           )}
