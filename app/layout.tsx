@@ -45,7 +45,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
         <body>
           <Navbar />
           {children}
-          {/* <BackgroundGrid /> */}
+          <BackgroundGrid />
           <Footer />
         </body>
       </StyledComponentsRegistry>
