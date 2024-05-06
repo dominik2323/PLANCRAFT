@@ -3,10 +3,6 @@
 import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useLayoutEffect, useState } from "react";
-import { aboutData } from "../../app/about/(client)/aboutData";
-import { contactData } from "../../app/contact/(client)/contactData";
-import { projectsData } from "../../app/projects/[[...category]]/(client)/projectsData";
-import { servicesData } from "../../app/service/[slug]/servicesData";
 import { easing } from "../../consts/animationConfig";
 import { device } from "../../consts/breakpoints";
 import { useScrollDirection } from "../../hooks/useScrollDirection";
@@ -35,31 +31,9 @@ import {
   Topbar,
   TopbarContent,
 } from "./StyledNavbar";
+import { navConfig } from "./navConfig";
 
 interface NavbarProps {}
-
-const navConfig = [
-  ...Object.keys(servicesData).map((slug) => ({
-    slug: `/sluzba/${slug}`,
-    perex: servicesData[slug].servicePerex,
-    name: servicesData[slug].name,
-  })),
-  {
-    name: "Projekty",
-    slug: "/projekty",
-    perex: projectsData.heroPerex,
-  },
-  {
-    name: "O nás",
-    slug: "/o-nas",
-    perex: aboutData.introPerex,
-  },
-  {
-    name: "Kontakt",
-    slug: "/kontakt",
-    perex: contactData.header,
-  },
-];
 
 const Navbar = ({}: NavbarProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
