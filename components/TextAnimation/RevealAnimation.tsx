@@ -46,7 +46,7 @@ const RevealAnimation = ({
         initial={{
           y: y ? y[0] : "70%",
           skew: noSkew ? 0 : 20,
-          opacity: 0,
+          opacity: 0.01,
         }}
         whileInView={{
           y: y ? y[1] : "0%",

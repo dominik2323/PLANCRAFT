@@ -5,24 +5,24 @@ export const useScrollDirection = () => {
     directionDown: false,
     scrollPos: 0,
   };
-  const [direction, setDirection] = useState(initialState);
+  const [scroll, setScroll] = useState(initialState);
 
   let prevScrollPos = 0;
   const handleScroll = (e) => {
     if (window.scrollY < prevScrollPos || prevScrollPos < 0) {
-      setDirection({ directionDown: false, scrollPos: prevScrollPos });
+      setScroll({ directionDown: false, scrollPos: prevScrollPos });
       prevScrollPos = window.scrollY;
       return;
     }
 
     // if URL has changed and page landed on the top then show navbar
     if (window.scrollY === 0) {
-      setDirection(initialState);
+      setScroll(initialState);
       prevScrollPos = window.scrollY;
       return;
     }
 
-    setDirection({ directionDown: true, scrollPos: prevScrollPos });
+    setScroll({ directionDown: true, scrollPos: prevScrollPos });
 
     prevScrollPos = window.scrollY;
   };
@@ -34,5 +34,5 @@ export const useScrollDirection = () => {
     };
   }, []);
 
-  return direction;
+  return scroll;
 };

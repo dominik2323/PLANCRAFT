@@ -4,6 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { breakpoint } from "../../consts/breakpoints";
 import { colors } from "../../consts/colors";
+import { spaces } from "../../consts/spaces";
 
 export const StyledNavbar = styled(motion.nav)`
   position: fixed;
@@ -16,7 +17,6 @@ export const StyledNavbar = styled(motion.nav)`
 
 export const NavbarPlaceholder = styled.div`
   height: calc(4 * var(--gap-size));
-
   ${breakpoint.monitor} {
     height: calc(5 * var(--gap-size));
   }
@@ -28,12 +28,29 @@ export const NavbarPlaceholder = styled.div`
   }
 `;
 
-export const TopbarContent = styled.div`
+export const TopbarContent = styled(motion.div)`
   display: flex;
   justify-content: space-between;
-  padding: calc(1 * var(--gap-size)) calc(2 * var(--gap-size));
+  align-items: center;
+  padding: 0 calc(2 * var(--gap-size));
+  height: calc(3 * var(--gap-size));
+  &.compact {
+    padding: ${spaces.s}px calc(2 * var(--gap-size));
+    background-color: ${colors.white};
+    border-bottom: 1px solid ${colors.primary400};
+    height: calc(2 * var(--gap-size));
+    &.open {
+      background-color: ${colors.primary400};
+    }
+  }
+  ${breakpoint.tabletPortrait} {
+    &.compact {
+      height: calc(3 * var(--gap-size));
+    }
+    padding: ${spaces.m}px calc(2 * var(--gap-size));
+  }
   ${breakpoint.phone} {
-    padding: calc(1 * var(--gap-size));
+    padding: 0 calc(1 * var(--gap-size));
   }
 `;
 
@@ -50,14 +67,19 @@ export const BurgerWrapper = styled.div`
   align-items: center;
   justify-content: center;
   max-width: calc(1 * var(--gap-size));
+  ${breakpoint.smallNotebook} {
+    max-width: calc(2 * var(--gap-size));
+  }
 `;
 
 export const LogoWrapper = styled(Link)`
   all: unset;
   cursor: pointer;
+  display: flex;
+  align-items: center;
   height: 100%;
-  aspect-ratio: 321/43;
-  ${breakpoint.tabletLandscape} {
+  /* aspect-ratio: 321/43; */
+  /* ${breakpoint.tabletLandscape} {
     height: calc(1.5 * var(--gap-size));
   }
   ${breakpoint.tabletPortrait} {
@@ -65,19 +87,21 @@ export const LogoWrapper = styled(Link)`
   }
   ${breakpoint.phone} {
     height: calc(1 * var(--gap-size));
-  }
+  } */
 `;
 
-export const NavbarDividerWrapper = styled.div`
+export const NavbarDividerWrapper = styled(motion.div)`
   width: 100%;
   padding: 0 calc(1 * var(--gap-size));
+  display: flex;
+  align-items: center;
   &.show {
-    display: block;
-    padding-top: calc(1 * var(--gap-size));
+    opacity: 1;
+    margin-top: calc(var(--gap-size));
   }
   &.hide {
-    display: none;
-    padding-top: calc(0 * var(--gap-size));
+    opacity: 0;
+    margin-top: 0;
   }
 `;
 

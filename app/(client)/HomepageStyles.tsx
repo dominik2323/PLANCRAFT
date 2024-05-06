@@ -32,7 +32,7 @@ export const HpHeader = styled.h1`
 `;
 
 export const HpHeroInner = styled.div`
-  margin-left: calc(1 * var(--gap-size));
+  margin-left: calc(19 * var(--gap-size));
   margin-top: calc(2 * var(--gap-size));
   display: grid;
   row-gap: calc(1 * var(--gap-size));

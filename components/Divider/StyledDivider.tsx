@@ -7,8 +7,7 @@ import { motion } from "framer-motion";
 export const StyledDivider = styled(motion.div)`
   display: flex;
   align-items: center;
-  width: calc(100% + var(--plus-size));
-  transform: translateX(calc(-0.5 * var(--plus-size)));
+  width: 100%;
   position: relative;
   &.hide-plus {
     width: 100%;
@@ -19,10 +18,10 @@ export const StyledDivider = styled(motion.div)`
 export const PlusWrapper = styled.div`
   position: absolute;
   &.left {
-    left: 0;
+    left: calc(-0.5 * var(--plus-size));
   }
   &.right {
-    right: 0;
+    right: calc(-0.5 * var(--plus-size));
   }
 `;
 

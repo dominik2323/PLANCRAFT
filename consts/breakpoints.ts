@@ -18,4 +18,5 @@ export const breakpoint = {
   mediumNotebook: `@media (max-width: ${device.mediumNotebook}px)`,
   largeNotebook: `@media (max-width: ${device.largeNotebook}px)`,
   monitor: `@media (min-width: ${device.monitor}px) `,
+  custom: (maxWidth) => `@media (max-width: ${maxWidth}px)`,
 } as const;
