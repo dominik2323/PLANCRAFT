@@ -1,7 +1,6 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
-import { useTheme } from "styled-components";
 import Table from "../../../../components/Table/Table";
 import RevealAnimation from "../../../../components/TextAnimation/RevealAnimation";
 import { Mini } from "../../../../components/Typography/Mini";
@@ -20,7 +19,6 @@ interface ProjectElevatorProps {
 const ProjectElevator = ({ project }: ProjectElevatorProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasOverflow, sethasOverflow] = useState<boolean>(false);
-  const { isLayoutReady } = useTheme();
 
   useLayoutEffect(() => {
     const handleResize = () => {
@@ -34,12 +32,13 @@ const ProjectElevator = ({ project }: ProjectElevatorProps) => {
     return () => {
       removeEventListener("resize", handleResize);
     };
-  }, [isLayoutReady]);
+  }, []);
 
   return (
     <SProjectElevator
       ref={containerRef}
-      className={hasOverflow ? "has-overflow" : ""}>
+      className={hasOverflow ? "has-overflow" : ""}
+    >
       <ProjectElevatorInner>
         <RevealAnimation>
           <Small className='uppercase'>{project.project_name}</Small>

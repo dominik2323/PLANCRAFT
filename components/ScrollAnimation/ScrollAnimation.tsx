@@ -63,7 +63,7 @@ const ScrollAnimation = ({
     },
     {
       rootMargin: `${-1 * offset[0] * 100}% 0% ${-1 * offset[1] * 100}% 0%`,
-    }
+    },
   );
 
   useEffect(() => {
@@ -117,7 +117,8 @@ const ScrollAnimation = ({
 
   return (
     <ScrollAnimationContext.Provider
-      value={{ animationElRef, scrollYProgress, dryScrollYProgress }}>
+      value={{ animationElRef, scrollYProgress, dryScrollYProgress }}
+    >
       <StyledScrollAnimation ref={containerRef} className={className}>
         {children}
       </StyledScrollAnimation>

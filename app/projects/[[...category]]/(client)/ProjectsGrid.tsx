@@ -57,7 +57,7 @@ const ProjectsGrid = ({
             project_category,
             project_cover,
           },
-          i
+          i,
         ) => (
           <Fragment key={_slug}>
             <RevealAnimation>
@@ -78,7 +78,7 @@ const ProjectsGrid = ({
             </RevealAnimation>
             {!(i === projects.length) && <Divider hidePlus />}
           </Fragment>
-        )
+        ),
       )}
       {totalCount > projects.length && (
         <LoadMoreW>
@@ -95,7 +95,8 @@ const ProjectsGrid = ({
                     },
                   } as QueryProjectsArgs,
                 });
-              }}>
+              }}
+            >
               {loading ? "Načítám" : "Další projekty"}
             </Button>
           </RevealAnimation>

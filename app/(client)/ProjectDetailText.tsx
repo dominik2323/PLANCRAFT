@@ -11,7 +11,7 @@ const ProjectDetailText = ({ html }: ProjectDetailTextProps) => {
     <StyledProjectDetailText
       as={"div"}
       dangerouslySetInnerHTML={{ __html: html }}
-      className='wide'
+      className="wide"
     />
   );
 };

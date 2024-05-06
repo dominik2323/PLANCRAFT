@@ -16,29 +16,29 @@ export const StyledButton = styled.button`
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: ${({ theme }) => 0.25 * theme.gapSize}px;
+  row-gap: calc(0.25 * var(--gap-size));
   font-size: 20px;
   color: ${colors.primary400};
   column-gap: ${spaces.s}px;
-  height: ${({ theme }) => 1 * theme.gapSize + theme.plusSize}px;
-  width: ${({ theme }) => 5 * theme.gapSize}px;
+  height: calc(var(--plus-size) * var(--gap-size));
+  width: calc(5 * var(--gap-size));
   text-transform: uppercase;
   &.skinny {
-    width: ${({ theme }) => 3 * theme.gapSize}px;
+    width: calc(3 * var(--gap-size));
   }
   ${breakpoint.monitor} {
-    width: ${({ theme }) => 4 * theme.gapSize}px;
+    width: calc(4 * var(--gap-size));
   }
   ${breakpoint.smallNotebook} {
-    width: ${({ theme }) => 6 * theme.gapSize}px;
+    width: calc(6 * var(--gap-size));
     &.skinny {
-      width: ${({ theme }) => 4 * theme.gapSize}px;
+      width: calc(4 * var(--gap-size));
     }
   }
   ${breakpoint.tabletPortrait} {
-    width: ${({ theme }) => 10 * theme.gapSize}px;
+    width: calc(10 * var(--gap-size));
     &.skinny {
-      width: ${({ theme }) => 6 * theme.gapSize}px;
+      width: calc(6 * var(--gap-size));
     }
   }
 `;

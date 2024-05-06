@@ -22,7 +22,8 @@ const Loader = ({}: LoaderProps) => {
       <AnimatePresence
         onExitComplete={() => {
           setisLayoutVisible(true);
-        }}>
+        }}
+      >
         {showLoader && (
           <StyledLoader
             initial={"loading"}
@@ -31,13 +32,14 @@ const Loader = ({}: LoaderProps) => {
             variants={{
               loading: { opacity: 1 },
               finished: { opacity: 0 },
-            }}>
+            }}
+          >
             <LoaderInner>
-              <Divider animate={"inView"} fill='white' duration={2} />
-              <Logo fill='white' />
+              <Divider animate={"inView"} fill="white" duration={2} />
+              <Logo fill="white" />
               <Divider
                 animate={"inView"}
-                fill='white'
+                fill="white"
                 duration={2}
                 onAnimationEnded={(val) => {
                   if (val.scaleX === 1) {

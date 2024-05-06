@@ -8,25 +8,24 @@ export const StyledScrollFigureBanner = styled.div`
   display: grid;
   grid-template-columns: ${({ theme }) =>
       0.55 * theme.columnCount * theme.gapSize}px auto;
-  column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  column-gap: calc(2 * var(--gap-size));
   align-items: center;
   height: 100%;
   overflow-y: hidden;
   ${breakpoint.tabletPortrait} {
     height: auto;
-    margin: ${({ theme }) => 6 * theme.gapSize}px 0;
+    margin: calc(6 * var(--gap-size)) 0;
     grid-template-columns: unset;
-    row-gap: ${({ theme }) => 3 * theme.gapSize}px;
+    row-gap: calc(3 * var(--gap-size));
   }
   ${breakpoint.phone} {
-    margin: ${({ theme }) => 5 * theme.gapSize}px 0
-      ${({ theme }) => 2 * theme.gapSize}px;
+    margin: calc(5 * var(--gap-size)) 0 calc(2 * var(--gap-size));
   }
 `;
 
 export const ScrollFigureBannerContent = styled.div`
   display: grid;
-  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  row-gap: calc(1 * var(--gap-size));
 `;
 
 export const ScrollFigureBannerCoverW = styled.div`

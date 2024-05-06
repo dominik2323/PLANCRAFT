@@ -13,16 +13,17 @@ interface SimpleFooterProps {}
 const SimpleFooter = ({}: SimpleFooterProps) => {
   return (
     <StyledSimpleFooter>
-      <DividerHeader className='flip big'>
+      <DividerHeader className="flip big">
         <SimpleFooterDividerHeaderInner>
           <Mini>{`${new Date().getFullYear()} PLANCRAFT`}</Mini>
-          <Mini className='tar'>
+          <Mini className="tar">
             Made with Style & Ease by{" "}
             <Link
               noArrow
               href={"https://steezy.studio"}
-              target='_blank'
-              className='underline inline'>
+              target="_blank"
+              className="underline inline"
+            >
               steezy.studio
             </Link>
           </Mini>

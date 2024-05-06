@@ -75,16 +75,17 @@ const page = async ({ params: { category } }: PageProps) => {
           <Mini>{projectsData.heroPerex}</Mini>
         </RevealAnimation>
       </ProjectsHero>
-      <DividerHeader className='no-padding'>
+      <DividerHeader className="no-padding">
         <ProjectDividerHeaderInner>
           <RevealAnimation delay={0.5}>
-            <Mini className='uppercase'>Filtry</Mini>
+            <Mini className="uppercase">Filtry</Mini>
           </RevealAnimation>
           <ProjectFilters>
             <RevealAnimation delay={1} style={{ width: "auto" }}>
               <ProjectFilter
                 href={"/projekty"}
-                className={category ? "inactive" : ""}>
+                className={category ? "inactive" : ""}
+              >
                 <Mini>Vše</Mini>
               </ProjectFilter>
             </RevealAnimation>
@@ -92,10 +93,12 @@ const page = async ({ params: { category } }: PageProps) => {
               <RevealAnimation
                 delay={i * 0.5 + 1}
                 style={{ width: "auto" }}
-                key={_slug}>
+                key={_slug}
+              >
                 <ProjectFilter
                   href={`/projekty/${_slug}`}
-                  className={category?.includes(_slug) ? "" : "inactive"}>
+                  className={category?.includes(_slug) ? "" : "inactive"}
+                >
                   <Mini>{service_name}</Mini>
                 </ProjectFilter>
               </RevealAnimation>

@@ -37,7 +37,7 @@ const Zoom = ({ items, header, footer, disable }: ZoomProps) => {
     </>
   ) : (
     <StyledZoom>
-      <Elevator scrollHeight='300vh'>
+      <Elevator scrollHeight="300vh">
         {({ progress }) => (
           <ElevatorViewport>
             {header}
@@ -46,21 +46,24 @@ const Zoom = ({ items, header, footer, disable }: ZoomProps) => {
                 style={{
                   height: `${calcHeight(engines[0](progress))}%`,
                   maxHeight: `${maxHeight * 100}%`,
-                }}>
+                }}
+              >
                 {items[0](engines[0](progress))}
               </ZoomItem>
               <ZoomItem
                 style={{
                   height: `${calcHeight(engines[1](progress))}%`,
                   maxHeight: `${maxHeight * 100}%`,
-                }}>
+                }}
+              >
                 {items[1](engines[1](progress))}
               </ZoomItem>
               <ZoomItem
                 style={{
                   height: `${calcHeight(engines[2](progress))}%`,
                   maxHeight: `${maxHeight * 100}%`,
-                }}>
+                }}
+              >
                 {items[2](engines[2](progress))}
               </ZoomItem>
             </ZoomViewport>

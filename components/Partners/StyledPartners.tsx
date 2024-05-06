@@ -6,24 +6,22 @@ import { breakpoint } from "../../consts/breakpoints";
 export const StyledPartners = styled.div``;
 
 export const PartnersList = styled.div`
-  margin: ${({ theme }) => 3 * theme.gapSize}px
-    ${({ theme }) => 1 * theme.gapSize}px ${({ theme }) => 4 * theme.gapSize}px;
+  margin: calc(3 * var(--gap-size)) calc(1 * var(--gap-size))
+    calc(4 * var(--gap-size));
   display: flex;
   align-items: center;
-  column-gap: ${({ theme }) => 4 * theme.gapSize}px;
+  column-gap: calc(4 * var(--gap-size));
   ${breakpoint.monitor} {
-    margin: ${({ theme }) => 2 * theme.gapSize}px
-      ${({ theme }) => 1 * theme.gapSize}px
-      ${({ theme }) => 3 * theme.gapSize}px;
+    margin: calc(2 * var(--gap-size)) calc(1 * var(--gap-size))
+      calc(3 * var(--gap-size));
   }
   ${breakpoint.phone} {
-    column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    column-gap: calc(1 * var(--gap-size));
     justify-content: space-between;
   }
   ${breakpoint.smallPhone} {
-    margin: ${({ theme }) => 2 * theme.gapSize}px
-      ${({ theme }) => 1 * theme.gapSize}px
-      ${({ theme }) => 3 * theme.gapSize}px;
+    margin: calc(2 * var(--gap-size)) calc(1 * var(--gap-size))
+      calc(3 * var(--gap-size));
   }
 `;
 

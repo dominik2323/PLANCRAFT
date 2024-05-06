@@ -44,11 +44,12 @@ const PageIntro = ({
           <Large>{heroHeader}</Large>
         </RevealAnimation>
         <FigureBanner
-          className='flip align-top'
+          className="flip align-top"
           src={figureBanner.image.src}
           width={figureBanner.image.width}
           height={figureBanner.image.height}
-          alt={figureBanner.image.alt}>
+          alt={figureBanner.image.alt}
+        >
           <RevealAnimation delay={w <= device.phone ? 0 : 2}>
             <Mini>{figureBanner.perex}</Mini>
           </RevealAnimation>

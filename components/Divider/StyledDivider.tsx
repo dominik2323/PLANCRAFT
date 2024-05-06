@@ -7,8 +7,7 @@ import { motion } from "framer-motion";
 export const StyledDivider = styled(motion.div)`
   display: flex;
   align-items: center;
-  width: calc(100% + ${({ theme }) => theme.plusSize}px);
-  transform: translateX(${({ theme }) => -0.5 * theme.plusSize}px);
+  width: 100%;
   position: relative;
   &.hide-plus {
     width: 100%;
@@ -19,16 +18,16 @@ export const StyledDivider = styled(motion.div)`
 export const PlusWrapper = styled.div`
   position: absolute;
   &.left {
-    left: 0;
+    left: calc(-0.5 * var(--plus-size));
   }
   &.right {
-    right: 0;
+    right: calc(-0.5 * var(--plus-size));
   }
 `;
 
 export const DividerLine = styled(motion.div)<{ color: ColorKeys }>`
   width: 100%;
-  height: ${({ theme }) => theme.dotSize}px;
+  height: var(--dot-size);
   background-color: ${({ color }) => colors[color]};
   transform-origin: 0 0;
   &.reverse {

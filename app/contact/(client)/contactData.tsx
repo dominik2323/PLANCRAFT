@@ -14,7 +14,7 @@ export const contactData = {
     {
       header: "Ing. Daniel Ryšavý",
       body: (
-        <Link href={"tel:+420774987654"} className='underline' noArrow>
+        <Link href={"tel:+420774987654"} className="underline" noArrow>
           +420 732 870 325
         </Link>
       ),
@@ -22,7 +22,7 @@ export const contactData = {
     {
       header: "Email",
       body: (
-        <Link href={"mailto:info@plancraft.eu"} className='underline' noArrow>
+        <Link href={"mailto:info@plancraft.eu"} className="underline" noArrow>
           info@plancraft.eu
         </Link>
       ),

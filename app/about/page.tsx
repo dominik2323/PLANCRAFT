@@ -54,7 +54,7 @@ const page = ({}: PageProps) => {
       <AboutTeam>
         <AboutTeamIntro>
           <DividerHeader>
-            <Mini className='uppercase'>Náš tým</Mini>
+            <Mini className="uppercase">Náš tým</Mini>
           </DividerHeader>
           {/* <AboutTeamFigureBanner>
             <FigureBanner
@@ -72,7 +72,7 @@ const page = ({}: PageProps) => {
         <AboutTeamClaim>
           <RevealAnimation>
             <AboutTeamClaimHeader>
-              <Medium className='wide'>{aboutData.ourTeam.teamClaim}</Medium>
+              <Medium className="wide">{aboutData.ourTeam.teamClaim}</Medium>
             </AboutTeamClaimHeader>
           </RevealAnimation>
           <AboutTeamClaimInner>

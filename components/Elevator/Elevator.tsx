@@ -27,7 +27,7 @@ const ElevatorCabin = styled.div`
 
 const ElevatorBody = ({ children, scrollHeight }: ProductElevatorHoleProps) => {
   const { animationElRef, scrollYProgress } = useContext(
-    ScrollAnimationContext
+    ScrollAnimationContext,
   );
 
   return (

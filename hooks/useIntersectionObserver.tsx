@@ -4,7 +4,7 @@ export function useIntersectionObserver(
   ref: Element | React.MutableRefObject<Element>,
   callback: IntersectionObserverCallback,
   options?: IntersectionObserverInit,
-  deps: any[] = []
+  deps: any[] = [],
 ) {
   React.useEffect(() => {
     if (!ref) return;

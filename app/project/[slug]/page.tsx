@@ -68,10 +68,10 @@ const page = async ({ params: { slug } }: PageProps) => {
         <ProjectElevator project={project} />
       </ProjectDetail>
       <ProjectNavigation>
-        <DividerHeader className='flip'>
+        <DividerHeader className="flip">
           <ProjectNavigationInner>
             <Mini>
-              <Link className='flip' href={"/projects"}>
+              <Link className="flip" href={"/projects"}>
                 {"Zpět na projekty"}
               </Link>
             </Mini>

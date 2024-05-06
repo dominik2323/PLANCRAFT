@@ -41,16 +41,13 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang='cs'>
       <StyledComponentsRegistry>
-        <BackgroundGridProvider>
-          <Global />
-          <body>
-            <Navbar />
-            <Loader />
-            {children}
-            <BackgroundGrid />
-            <Footer />
-          </body>
-        </BackgroundGridProvider>
+        <Global />
+        <body>
+          <Navbar />
+          {children}
+          <BackgroundGrid />
+          <Footer />
+        </body>
       </StyledComponentsRegistry>
     </html>
   );

@@ -38,7 +38,8 @@ const Burger = ({
       width={svgWidth}
       height={svgHeight}
       fill='none'
-      viewBox={`0 0 ${svgWidth} ${svgHeight}`}>
+      viewBox={`0 0 ${svgWidth} ${svgHeight}`}
+    >
       <motion.path
         transition={{ ease: easing }}
         animate={{
@@ -50,6 +51,7 @@ const Burger = ({
         }}
         stroke={colors[stroke]}
         strokeWidth={strokeWidth}
+        vectorEffect={"non-scaling-stroke"}
       />
       <motion.path
         transition={{ ease: easing }}
@@ -60,6 +62,7 @@ const Burger = ({
         }}
         stroke={colors[stroke]}
         strokeWidth={strokeWidth}
+        vectorEffect={"non-scaling-stroke"}
       />
       <motion.path
         transition={{ ease: easing }}
@@ -74,6 +77,7 @@ const Burger = ({
         }}
         stroke={colors[stroke]}
         strokeWidth={strokeWidth}
+        vectorEffect={"non-scaling-stroke"}
       />
     </StyledBurger>
   );

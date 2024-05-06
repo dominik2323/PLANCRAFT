@@ -6,31 +6,31 @@ import { breakpoint } from "../../../../consts/breakpoints";
 import { spaces } from "../../../../consts/spaces";
 
 export const StyledProjects = styled.main`
-  padding: ${({ theme }) => 1 * theme.gapSize}px;
+  padding: calc(1 * var(--gap-size));
   padding-bottom: 0;
 `;
 
 export const ProjectsHero = styled.div`
   display: grid;
-  grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
-  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  grid-template-columns: calc(10 * var(--gap-size)) 1fr;
+  column-gap: calc(1 * var(--gap-size));
   align-items: center;
-  margin-bottom: ${({ theme }) => 3 * theme.gapSize}px;
-  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  margin-bottom: calc(3 * var(--gap-size));
+  padding: 0 calc(1 * var(--gap-size));
   ${breakpoint.monitor} {
-    grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
-    column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    grid-template-columns: calc(10 * var(--gap-size)) 1fr;
+    column-gap: calc(1 * var(--gap-size));
   }
   ${breakpoint.smallNotebook} {
-    grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
+    grid-template-columns: calc(10 * var(--gap-size)) 1fr;
   }
   ${breakpoint.tabletLandscape} {
-    margin-bottom: ${({ theme }) => 5 * theme.gapSize}px;
+    margin-bottom: calc(5 * var(--gap-size));
   }
   ${breakpoint.tabletPortrait} {
     grid-template-columns: unset;
-    row-gap: ${({ theme }) => 2 * theme.gapSize}px;
-    margin-bottom: ${({ theme }) => 6 * theme.gapSize}px;
+    row-gap: calc(2 * var(--gap-size));
+    margin-bottom: calc(6 * var(--gap-size));
   }
   ${breakpoint.phone} {
     padding: 0;
@@ -40,40 +40,38 @@ export const ProjectsHero = styled.div`
 export const ProjectDividerHeaderInner = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
-  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  grid-template-columns: calc(10 * var(--gap-size)) 1fr;
+  column-gap: calc(1 * var(--gap-size));
   ${breakpoint.monitor} {
-    grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
-    column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    grid-template-columns: calc(10 * var(--gap-size)) 1fr;
+    column-gap: calc(1 * var(--gap-size));
   }
   ${breakpoint.smallNotebook} {
-    grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
+    grid-template-columns: calc(10 * var(--gap-size)) 1fr;
   }
   ${breakpoint.tabletPortrait} {
-    grid-template-columns: ${({ theme }) => 12 * theme.gapSize}px 1fr;
+    grid-template-columns: calc(12 * var(--gap-size)) 1fr;
   }
   ${breakpoint.phone} {
     grid-template-columns: unset;
-    row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    row-gap: calc(1 * var(--gap-size));
   }
 `;
 
 export const ProjectFilters = styled.div`
   display: flex;
   row-gap: ${spaces.xxs}px;
-  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  column-gap: calc(1 * var(--gap-size));
   ${breakpoint.monitor} {
-    column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    column-gap: calc(1 * var(--gap-size));
   }
   ${breakpoint.smallNotebook} {
-    column-gap: ${({ theme }) => 0.5 * theme.gapSize}px;
+    column-gap: calc(0.5 * var(--gap-size));
   }
   ${breakpoint.tabletLandscape} {
     flex-wrap: wrap;
-    /* padding-bottom: ${spaces.xs}px; */
   }
   ${breakpoint.tabletPortrait} {
-    /* padding-bottom: ${spaces.s}px; */
   }
 `;
 

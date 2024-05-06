@@ -5,24 +5,23 @@ import styled from "styled-components";
 import { breakpoint } from "../../../../consts/breakpoints";
 
 export const StyledProject = styled.main`
-  margin-top: ${({ theme }) => 2 * theme.gapSize}px;
-  padding: 0 ${({ theme }) => 2 * theme.gapSize}px;
+  margin-top: calc(2 * var(--gap-size));
+  padding: 0 calc(2 * var(--gap-size));
   ${breakpoint.phone} {
-    padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+    padding: 0 calc(1 * var(--gap-size));
   }
 `;
 
 export const ProjectDetail = styled.div`
   display: grid;
-  grid-template-columns: ${({ theme }) =>
-      0.5 * theme.columnCount * theme.gapSize}px auto;
+  grid-template-columns: calc(0.5 * var(--gap-size) * var(--column-count)) auto;
   grid-template-areas: "content info";
-  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  column-gap: calc(1 * var(--gap-size));
   ${breakpoint.tabletLandscape} {
     max-width: 900px;
     grid-template-columns: unset;
     grid-template-areas: "info" "content";
-    row-gap: ${({ theme }) => 3 * theme.gapSize}px;
+    row-gap: calc(3 * var(--gap-size));
   }
 `;
 
@@ -33,7 +32,7 @@ export const ProjectCover = styled(Image)`
 `;
 
 export const ProjectNavigation = styled.div`
-  margin: 0 ${({ theme }) => -1 * theme.gapSize}px;
+  margin: 0 calc(-1 * var(--gap-size));
 `;
 
 export const ProjectNavigationInner = styled.div`

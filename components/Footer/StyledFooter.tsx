@@ -7,18 +7,17 @@ import { spaces } from "../../consts/spaces";
 
 export const StyledFooter = styled.footer`
   background-color: ${colors.primary400};
-  padding: ${({ theme }) => 2 * theme.gapSize}px
-    ${({ theme }) => 1 * theme.gapSize}px ${({ theme }) => 1 * theme.gapSize}px;
+  padding: calc(2 * var(--gap-size)) calc(1 * var(--gap-size))
+    calc(1 * var(--gap-size));
   padding-bottom: 0;
 `;
 
 export const FooterContact = styled.div`
   display: grid;
-  gap: ${({ theme }) => 2 * theme.gapSize}px;
+  gap: calc(2 * var(--gap-size));
   grid-template-columns: 1fr minmax(600px, 1fr) 1fr;
   grid-template-areas: "text links address";
-  padding: ${({ theme }) => 2 * theme.gapSize}px
-    ${({ theme }) => 1 * theme.gapSize}px;
+  padding: calc(2 * var(--gap-size)) calc(1 * var(--gap-size));
   ${breakpoint.smallNotebook} {
     grid-template-columns: 1fr minmax(400px, 1fr) minmax(250px, 1fr);
   }
@@ -28,13 +27,12 @@ export const FooterContact = styled.div`
   ${breakpoint.tabletPortrait} {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "text links";
-    padding: ${({ theme }) => 3 * theme.gapSize}px
-      ${({ theme }) => 1 * theme.gapSize}px;
+    padding: calc(3 * var(--gap-size)) calc(1 * var(--gap-size));
   }
   ${breakpoint.phone} {
     grid-template-columns: unset;
     grid-template-areas: "text" "links";
-    padding: ${({ theme }) => 3 * theme.gapSize}px 0px;
+    padding: calc(3 * var(--gap-size)) 0px;
   }
 `;
 
@@ -54,25 +52,22 @@ export const FooterContactAddress = styled.div`
 `;
 
 export const FooterLogo = styled.div`
-  padding: ${({ theme }) => 2 * theme.gapSize}px
-    ${({ theme }) => 1 * theme.gapSize}px;
+  padding: calc(2 * var(--gap-size)) calc(1 * var(--gap-size));
   ${breakpoint.tabletPortrait} {
-    padding: ${({ theme }) => 4 * theme.gapSize}px
-      ${({ theme }) => 1 * theme.gapSize}px;
+    padding: calc(4 * var(--gap-size)) calc(1 * var(--gap-size));
   }
   ${breakpoint.phone} {
-    padding: ${({ theme }) => 4 * theme.gapSize}px 0px;
+    padding: calc(4 * var(--gap-size)) 0px;
   }
 `;
 
 export const FooterCopywrite = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: ${({ theme }) => 1 * theme.gapSize}px
-    ${({ theme }) => 1 * theme.gapSize}px;
+  padding: calc(1 * var(--gap-size)) calc(1 * var(--gap-size));
   ${breakpoint.phone} {
-    padding: ${({ theme }) => 1 * theme.gapSize}px 0px;
-    gap: ${({ theme }) => 1 * theme.gapSize}px;
+    padding: calc(1 * var(--gap-size)) 0px;
+    gap: calc(1 * var(--gap-size));
   }
 `;
 
@@ -80,33 +75,31 @@ export const FooterPublicity = styled.div`
   display: flex;
   background-color: ${colors.white};
   justify-content: space-between;
-  gap: ${({ theme }) => 3 * theme.gapSize}px;
-  margin-top: ${({ theme }) => 1 * theme.gapSize}px;
+  gap: calc(3 * var(--gap-size));
+  margin-top: calc(1 * var(--gap-size));
   margin-left: ${-1 * spaces.l}px;
-  padding: ${({ theme }) => 1 * theme.gapSize}px
-    ${({ theme }) => 2 * theme.gapSize}px;
-  margin: 0 ${({ theme }) => -1 * theme.gapSize}px;
+  padding: calc(1 * var(--gap-size)) calc(2 * var(--gap-size));
+  margin: 0 calc(-1 * var(--gap-size));
   ${breakpoint.tabletPortrait} {
-    margin-top: ${({ theme }) => 2 * theme.gapSize}px;
-    gap: ${({ theme }) => 2 * theme.gapSize}px;
+    margin-top: calc(2 * var(--gap-size));
+    gap: calc(2 * var(--gap-size));
     flex-direction: column;
   }
   ${breakpoint.phone} {
-    padding: ${({ theme }) => 1 * theme.gapSize}px
-      ${({ theme }) => 1 * theme.gapSize}px;
+    padding: calc(1 * var(--gap-size)) calc(1 * var(--gap-size));
   }
 `;
 
 export const PublicityLogos = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => 2 * theme.gapSize}px;
+  gap: calc(2 * var(--gap-size));
   ${breakpoint.smallNotebook} {
-    gap: ${({ theme }) => 3 * theme.gapSize}px;
+    gap: calc(3 * var(--gap-size));
   }
   ${breakpoint.phone} {
     align-items: start;
-    gap: ${({ theme }) => 2 * theme.gapSize}px;
+    gap: calc(2 * var(--gap-size));
   }
   ${breakpoint.smallPhone} {
     flex-direction: column;

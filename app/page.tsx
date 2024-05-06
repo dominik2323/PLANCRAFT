@@ -57,7 +57,7 @@ const page = async ({}: PageProps) => {
             <Mini>{homepageData.heroPerex}</Mini>
           </RevealAnimation>
           <RevealAnimation delay={1} noCrop>
-            <Button>Naše služby</Button>
+            <Button href={"/#services"}>Naše služby</Button>
           </RevealAnimation>
         </HpHeroInner>
       </HpHero>
@@ -66,7 +66,8 @@ const page = async ({}: PageProps) => {
           src={homepageData.about.figureBanner.image.src}
           alt={homepageData.about.figureBanner.image.alt}
           width={homepageData.about.figureBanner.image.width}
-          height={homepageData.about.figureBanner.image.height}>
+          height={homepageData.about.figureBanner.image.height}
+        >
           <RevealAnimation delay={0.5}>
             <Mini>{homepageData.about.figureBanner.perex}</Mini>
           </RevealAnimation>

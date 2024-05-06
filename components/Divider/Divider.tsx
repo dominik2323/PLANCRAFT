@@ -28,7 +28,7 @@ const Divider = ({
   return (
     <StyledDivider className={hidePlus ? "hide-plus" : ""}>
       {!hidePlus && (
-        <PlusWrapper className='left'>
+        <PlusWrapper className="left">
           <Plus stroke={fill} />
         </PlusWrapper>
       )}
@@ -46,7 +46,7 @@ const Divider = ({
         }}
       />
       {!hidePlus && (
-        <PlusWrapper className='right'>
+        <PlusWrapper className="right">
           <Plus stroke={fill} />
         </PlusWrapper>
       )}

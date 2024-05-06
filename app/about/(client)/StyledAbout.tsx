@@ -4,17 +4,17 @@ import styled from "styled-components";
 import { breakpoint } from "../../../consts/breakpoints";
 
 export const StyledAbout = styled.main`
-  padding: ${({ theme }) => 1 * theme.gapSize}px;
+  padding: calc(1 * var(--gap-size));
   padding-bottom: 0;
   ${breakpoint.phone} {
-    padding: ${({ theme }) => 1 * theme.gapSize}px;
+    padding: calc(1 * var(--gap-size));
   }
 `;
 
 export const AboutValues = styled.div`
   display: grid;
-  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
-  margin-bottom: ${({ theme }) => 2 * theme.gapSize}px;
+  row-gap: calc(1 * var(--gap-size));
+  margin-bottom: calc(2 * var(--gap-size));
 `;
 
 export const AboutTeam = styled.section``;
@@ -24,26 +24,25 @@ export const AboutTeamIntro = styled.div`
 `;
 
 export const AboutTeamFigureBanner = styled.div`
-  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  padding: 0 calc(1 * var(--gap-size));
 `;
 
 export const AboutTeamClaim = styled.div`
   display: grid;
-  row-gap: ${({ theme }) => 3 * theme.gapSize}px;
-  margin: ${({ theme }) => 5 * theme.gapSize}px 0;
+  row-gap: calc(3 * var(--gap-size));
+  margin: calc(5 * var(--gap-size)) 0;
   ${breakpoint.monitor} {
-    margin: ${({ theme }) => 4 * theme.gapSize}px 0
-      ${({ theme }) => 5 * theme.gapSize}px;
+    margin: calc(4 * var(--gap-size)) 0 calc(5 * var(--gap-size));
   }
   ${breakpoint.tabletLandscape} {
-    row-gap: ${({ theme }) => 5 * theme.gapSize}px;
+    row-gap: calc(5 * var(--gap-size));
   }
 `;
 
 export const AboutTeamClaimHeader = styled.div`
-  margin-left: ${({ theme }) => 6 * theme.gapSize}px;
+  margin-left: calc(6 * var(--gap-size));
   ${breakpoint.monitor} {
-    margin-left: ${({ theme }) => 10 * theme.gapSize}px;
+    margin-left: calc(10 * var(--gap-size));
   }
   ${breakpoint.phone} {
     margin-left: 0px;
@@ -55,10 +54,10 @@ export const AboutTeamClaimInner = styled.div`
   grid-template-columns: repeat(2, 1fr);
   align-items: start;
   justify-items: start;
-  column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  column-gap: calc(2 * var(--gap-size));
   ${breakpoint.phone} {
     grid-template-columns: unset;
-    row-gap: ${({ theme }) => 2 * theme.gapSize}px;
+    row-gap: calc(2 * var(--gap-size));
   }
 `;
 

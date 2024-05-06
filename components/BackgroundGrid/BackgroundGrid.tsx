@@ -1,54 +1,56 @@
 "use client";
 
-import { useRef } from "react";
-import { useTheme } from "styled-components";
-import { createArray } from "../../helpers/createArray";
-import { useWindowSize } from "../../hooks/useWindowSize";
-import { Dot, StyledBackgroundGrid } from "./StyledBackgroundGrid";
+import { useEffect, useRef } from "react";
+import { rgbaColors } from "../../consts/colors";
+import { getCssVar } from "../../helpers/getCssVar";
+import { StyledBackgroundGrid } from "./StyledBackgroundGrid";
 
 interface BackgroundGridProps {}
 
+function drawDot(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  size: number,
+  o: number
+) {
+  ctx.beginPath();
+  ctx.fillStyle = rgbaColors(o).primary400;
+  ctx.fillRect(x, y, size, size);
+  ctx.fill();
+}
+
 const BackgroundGrid = ({}: BackgroundGridProps) => {
-  const ref = useRef<SVGSVGElement>(null);
-  const { h, w } = useWindowSize(true);
-  const { gapSize, dotSize, columnCount } = useTheme();
+  const canvas = useRef<HTMLCanvasElement>(null);
 
-  const rowsCount = Math.ceil(h / gapSize);
+  useEffect(() => {
+    const drawGrid = () => {
+      canvas.current.width = window.innerWidth;
+      canvas.current.height = window.innerHeight;
+      const ctx = canvas.current.getContext("2d");
 
-  return (
-    <StyledBackgroundGrid
-      ref={ref}
-      viewBox={`0 0 ${w} ${h}`}
-      width={w}
-      height={h}>
-      <defs>
-        <linearGradient id='grad' x1='0' x2='0' y1='0' y2='1'>
-          <stop offset='0%' stopColor='white' stopOpacity='0' />
-          <stop offset='100%' stopColor='white' />
-        </linearGradient>
-      </defs>
-      {createArray(rowsCount - 1).map((l) => (
-        <g key={l}>
-          {createArray(columnCount - 1).map((i) => (
-            <Dot
-              key={i}
-              width={dotSize}
-              height={dotSize}
-              x={gapSize + i * gapSize}
-              y={gapSize + l * gapSize}
-            />
-          ))}
-        </g>
-      ))}
-      <rect
-        width={w}
-        height={5 * gapSize}
-        y={h - 5 * gapSize}
-        x={0}
-        fill={"url(#grad)"}
-      />
-    </StyledBackgroundGrid>
-  );
+      const dotSize = getCssVar("--dot-size");
+      const columnCount = getCssVar("--column-count");
+      const columnSize = window.innerWidth / columnCount;
+      const rowCount = Math.floor(window.innerHeight / columnSize);
+
+      for (let i = 1; i < columnCount; i++) {
+        for (let j = 1; j <= rowCount; j++) {
+          const x = columnSize * i;
+          const y = columnSize * j;
+          const o = Math.pow(1 - j / rowCount, 1 / 2);
+          drawDot(ctx, x, y, dotSize, o);
+        }
+      }
+    };
+    drawGrid();
+    addEventListener("resize", drawGrid);
+    return () => {
+      removeEventListener("resize", drawGrid);
+    };
+  }, []);
+
+  return <StyledBackgroundGrid ref={canvas} />;
 };
 
 export default BackgroundGrid;

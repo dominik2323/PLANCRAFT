@@ -14,13 +14,13 @@ export const StyledProjectCard = styled(Link)`
 
 export const ProjectCardInner = styled.div`
   display: grid;
-  grid-template-columns: ${({ theme }) => 9 * theme.gapSize}px 1fr;
-  column-gap: ${({ theme }) => 3 * theme.gapSize}px;
+  grid-template-columns: calc(9 * var(--gap-size)) 1fr;
+  column-gap: calc(3 * var(--gap-size));
   padding: ${spaces.m}px 0;
   height: 100%;
   ${breakpoint.smallNotebook} {
-    grid-template-columns: ${({ theme }) => 10 * theme.gapSize}px 1fr;
-    column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+    grid-template-columns: calc(10 * var(--gap-size)) 1fr;
+    column-gap: calc(2 * var(--gap-size));
   }
   ${breakpoint.tabletPortrait} {
     grid-template-columns: 1fr 2fr;
@@ -80,14 +80,14 @@ export const ProjectCardContent = styled.div`
 export const ProjectCardContentHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  column-gap: calc(1 * var(--gap-size));
   ${breakpoint.tabletLandscape} {
-    row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    row-gap: calc(1 * var(--gap-size));
     flex-direction: column;
     align-items: flex-start;
   }
   ${breakpoint.phone} {
-    margin-bottom: ${({ theme }) => 1 * theme.gapSize}px;
+    margin-bottom: calc(1 * var(--gap-size));
   }
 `;
 
@@ -100,7 +100,7 @@ export const ProjectCardServices = styled.div`
     align-items: flex-start;
   }
   ${breakpoint.tabletPortrait} {
-    column-gap: ${({ theme }) => 1 * theme.gapSize}px;
+    column-gap: calc(1 * var(--gap-size));
   }
   ${breakpoint.phone} {
     display: none;
@@ -111,10 +111,10 @@ export const ProjectCardContentFooter = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   ${breakpoint.tabletPortrait} {
-    column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+    column-gap: calc(2 * var(--gap-size));
   }
   ${breakpoint.phone} {
     flex-direction: column;
-    row-gap: ${({ theme }) => 2 * theme.gapSize}px;
+    row-gap: calc(2 * var(--gap-size));
   }
 `;

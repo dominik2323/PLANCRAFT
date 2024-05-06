@@ -4,6 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { breakpoint } from "../../consts/breakpoints";
 import { colors } from "../../consts/colors";
+import { spaces } from "../../consts/spaces";
 
 export const StyledNavbar = styled(motion.nav)`
   position: fixed;
@@ -15,25 +16,41 @@ export const StyledNavbar = styled(motion.nav)`
 `;
 
 export const NavbarPlaceholder = styled.div`
-  height: ${({ theme }) => 4 * theme.gapSize}px;
+  height: calc(4 * var(--gap-size));
   ${breakpoint.monitor} {
-    height: ${({ theme }) => 5 * theme.gapSize}px;
+    height: calc(5 * var(--gap-size));
   }
   ${breakpoint.smallNotebook} {
-    height: ${({ theme }) => 5 * theme.gapSize}px;
+    height: calc(5 * var(--gap-size));
   }
   ${breakpoint.tabletLandscape} {
-    height: ${({ theme }) => 7 * theme.gapSize}px;
+    height: calc(7 * var(--gap-size));
   }
 `;
 
-export const TopbarContent = styled.div`
+export const TopbarContent = styled(motion.div)`
   display: flex;
   justify-content: space-between;
-  padding: ${({ theme }) => 1 * theme.gapSize}px
-    ${({ theme }) => 2 * theme.gapSize}px;
+  align-items: center;
+  padding: 0 calc(2 * var(--gap-size));
+  height: calc(3 * var(--gap-size));
+  &.compact {
+    padding: ${spaces.s}px calc(2 * var(--gap-size));
+    background-color: ${colors.white};
+    border-bottom: 1px solid ${colors.primary400};
+    height: calc(2 * var(--gap-size));
+    &.open {
+      background-color: ${colors.primary400};
+    }
+  }
+  ${breakpoint.tabletPortrait} {
+    &.compact {
+      height: calc(3 * var(--gap-size));
+    }
+    padding: ${spaces.m}px calc(2 * var(--gap-size));
+  }
   ${breakpoint.phone} {
-    padding: ${({ theme }) => 1 * theme.gapSize}px;
+    padding: 0 calc(1 * var(--gap-size));
   }
 `;
 
@@ -45,39 +62,46 @@ export const Topbar = styled(motion.div)`
 
 export const BurgerWrapper = styled.div`
   display: block;
-  height: ${({ theme }) => 1 * theme.gapSize}px;
+  height: calc(1 * var(--gap-size));
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: ${({ theme }) => 1 * theme.gapSize}px;
+  max-width: calc(1 * var(--gap-size));
+  ${breakpoint.smallNotebook} {
+    max-width: calc(2 * var(--gap-size));
+  }
 `;
 
 export const LogoWrapper = styled(Link)`
   all: unset;
   cursor: pointer;
+  display: flex;
+  align-items: center;
   height: 100%;
-  aspect-ratio: 321/43;
-  ${breakpoint.tabletLandscape} {
-    height: ${({ theme }) => 1.5 * theme.gapSize}px;
+  /* aspect-ratio: 321/43; */
+  /* ${breakpoint.tabletLandscape} {
+    height: calc(1.5 * var(--gap-size));
   }
   ${breakpoint.tabletPortrait} {
-    height: ${({ theme }) => 1.75 * theme.gapSize}px;
+    height: calc(1.75 * var(--gap-size));
   }
   ${breakpoint.phone} {
-    height: ${({ theme }) => 1 * theme.gapSize}px;
-  }
+    height: calc(1 * var(--gap-size));
+  } */
 `;
 
-export const NavbarDividerWrapper = styled.div`
+export const NavbarDividerWrapper = styled(motion.div)`
   width: 100%;
-  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  padding: 0 calc(1 * var(--gap-size));
+  display: flex;
+  align-items: center;
   &.show {
-    display: block;
-    padding-top: ${({ theme }) => 1 * theme.gapSize}px;
+    opacity: 1;
+    margin-top: calc(var(--gap-size));
   }
   &.hide {
-    display: none;
-    padding-top: ${({ theme }) => 0 * theme.gapSize}px;
+    opacity: 0;
+    margin-top: 0;
   }
 `;
 
@@ -87,20 +111,20 @@ export const NavLinks = styled(motion.div)`
   inset: 0;
   height: 100dvh;
   background-color: ${colors.primary400};
-  padding: ${({ theme }) => 1 * theme.gapSize}px;
-  padding-top: ${({ theme }) => 5 * theme.gapSize}px;
+  padding: calc(1 * var(--gap-size));
+  padding-top: calc(5 * var(--gap-size));
   ${breakpoint.smallNotebook} {
-    padding-top: ${({ theme }) => 6 * theme.gapSize}px;
+    padding-top: calc(6 * var(--gap-size));
   }
   ${breakpoint.tabletPortrait} {
-    padding-top: ${({ theme }) => 10 * theme.gapSize}px;
+    padding-top: calc(10 * var(--gap-size));
   }
 `;
 
 export const NavigationDashboard = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: ${({ theme }) => 2 * theme.gapSize}px;
+  column-gap: calc(2 * var(--gap-size));
   height: 100%;
   ${breakpoint.tabletPortrait} {
     grid-template-columns: unset;
@@ -153,7 +177,7 @@ export const LinkDescription = styled(motion.span)`
 export const NavlinkInner = styled(motion.div)`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => 1 * theme.gapSize}px;
+  gap: calc(1 * var(--gap-size));
 `;
 
 export const NavlinkInnerArrowW = styled(motion.span)`

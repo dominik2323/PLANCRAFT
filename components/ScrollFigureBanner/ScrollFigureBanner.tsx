@@ -31,7 +31,7 @@ const ScrollFigureBanner = ({ items }: ScrollFigureBannerProps) => {
   };
 
   return (
-    <Elevator scrollHeight='200vh' disable={disableScrollAnimation}>
+    <Elevator scrollHeight="200vh" disable={disableScrollAnimation}>
       {(args) => {
         const progress = args?.progress || 0;
         return (
@@ -42,7 +42,8 @@ const ScrollFigureBanner = ({ items }: ScrollFigureBannerProps) => {
                   <ScrollFigureBannerCoverWI
                     key={i}
                     style={{ opacity: _progress(i, progress, 0) }}
-                    transition={{ ease: easingInOutCubic, duration: 2 }}>
+                    transition={{ ease: easingInOutCubic, duration: 2 }}
+                  >
                     <ScrollFigureBannerCover
                       src={image.src}
                       alt={image.alt}
@@ -59,7 +60,8 @@ const ScrollFigureBanner = ({ items }: ScrollFigureBannerProps) => {
                   key={i}
                   style={{
                     opacity: _progress(i, progress, 0.4),
-                  }}>
+                  }}
+                >
                   {item.perex}
                 </Mini>
               ))}

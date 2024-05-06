@@ -5,7 +5,7 @@ import { breakpoint } from "../../consts/breakpoints";
 import { colors } from "../../consts/colors";
 
 export const StyledHomepage = styled.main`
-  padding: ${({ theme }) => 1 * theme.gapSize}px;
+  padding: calc(1 * var(--gap-size));
   padding-bottom: 0;
   position: relative;
 `;
@@ -32,19 +32,19 @@ export const HpHeader = styled.h1`
 `;
 
 export const HpHeroInner = styled.div`
-  margin-left: ${({ theme }) => 19 * theme.gapSize}px;
-  margin-top: ${({ theme }) => 2 * theme.gapSize}px;
+  margin-left: calc(19 * var(--gap-size));
+  margin-top: calc(2 * var(--gap-size));
   display: grid;
-  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  row-gap: calc(1 * var(--gap-size));
   ${breakpoint.monitor} {
-    margin-left: ${({ theme }) => 21 * theme.gapSize}px;
+    margin-left: calc(21 * var(--gap-size));
   }
   ${breakpoint.tabletPortrait} {
-    margin-left: ${({ theme }) => (theme.columnCount / 3) * theme.gapSize}px;
-    row-gap: ${({ theme }) => 2 * theme.gapSize}px;
+    margin-left: calc((var(--column-count) / 3) * var(--gap-size));
+    row-gap: calc(2 * var(--gap-size));
   }
   ${breakpoint.phone} {
-    margin-left: ${({ theme }) => 3 * theme.gapSize}px;
+    margin-left: calc(3 * var(--gap-size));
   }
   ${breakpoint.phone} {
     margin-left: 0;
@@ -52,17 +52,17 @@ export const HpHeroInner = styled.div`
 `;
 
 export const HpHero = styled.section`
-  margin-left: ${({ theme }) => 1 * theme.gapSize}px;
+  margin-left: calc(1 * var(--gap-size));
   ${breakpoint.phone} {
     margin-left: 0;
   }
 `;
 
 export const HpAbout = styled.section`
-  margin-top: ${({ theme }) => 2 * theme.gapSize}px;
-  padding: 0 ${({ theme }) => 1 * theme.gapSize}px;
+  margin-top: calc(2 * var(--gap-size));
+  padding: 0 calc(1 * var(--gap-size));
   ${breakpoint.tabletPortrait} {
-    margin-top: ${({ theme }) => 4 * theme.gapSize}px;
+    margin-top: calc(4 * var(--gap-size));
   }
   ${breakpoint.phone} {
     padding: 0;
@@ -70,46 +70,44 @@ export const HpAbout = styled.section`
 `;
 
 export const HpQuoteAbout = styled.div`
-  margin: ${({ theme }) => 4 * theme.gapSize}px 0;
+  margin: calc(4 * var(--gap-size)) 0;
   ${breakpoint.tabletPortrait} {
-    margin: ${({ theme }) => 6 * theme.gapSize}px 0;
+    margin: calc(6 * var(--gap-size)) 0;
   }
 `;
 
 export const HpQuoteServices = styled.div`
-  margin: ${({ theme }) => 4 * theme.gapSize}px 0;
-  margin-left: ${({ theme }) => 0.2 * theme.gapSize * theme.columnCount}px;
+  margin: calc(4 * var(--gap-size)) 0;
+  margin-left: calc(0.2 * var(--gap-size) * var(--column-count));
   display: grid;
-  row-gap: ${({ theme }) => 1 * theme.gapSize}px;
+  row-gap: calc(1 * var(--gap-size));
   ${breakpoint.monitor} {
-    margin-left: ${({ theme }) => 0.3 * theme.gapSize * theme.columnCount}px;
+    margin-left: calc(0.3 * var(--gap-size) * var(--column-count));
   }
   ${breakpoint.tabletPortrait} {
     margin-left: 0;
-    row-gap: ${({ theme }) => 3 * theme.gapSize}px;
-    margin: ${({ theme }) => 5 * theme.gapSize}px 0;
+    row-gap: calc(3 * var(--gap-size));
+    margin: calc(5 * var(--gap-size)) 0;
   }
   ${breakpoint.phone} {
-    /* margin: ${({ theme }) => 2 * theme.gapSize}px 0; */
+    /* margin: calc(2 * var(--gap-size)) 0; */
   }
 `;
 
 export const HpProjectsCta = styled.div`
   display: grid;
   justify-items: start;
-  row-gap: ${({ theme }) => 1.5 * theme.gapSize}px;
-  margin-top: ${({ theme }) => 1 * theme.gapSize}px;
-  max-width: ${({ theme }) => theme.columnCount * 0.4 * theme.gapSize}px;
+  row-gap: calc(1.5 * var(--gap-size));
+  margin-top: calc(1 * var(--gap-size));
+  max-width: calc(0.4 * var(--gap-size) * var(--column-count));
   ${breakpoint.tabletPortrait} {
-    row-gap: ${({ theme }) => 2 * theme.gapSize}px;
-    max-width: ${({ theme }) => theme.columnCount * 0.6 * theme.gapSize}px;
-    margin: ${({ theme }) => 7 * theme.gapSize}px 0
-      ${({ theme }) => 5 * theme.gapSize}px;
+    row-gap: calc(2 * var(--gap-size));
+    max-width: calc(0.6 * var(--gap-size) * var(--column-count));
+    margin: calc(7 * var(--gap-size)) 0 calc(5 * var(--gap-size));
   }
   ${breakpoint.phone} {
     max-width: 100%;
-    margin: ${({ theme }) => 5 * theme.gapSize}px 0
-      ${({ theme }) => 3 * theme.gapSize}px;
+    margin: calc(5 * var(--gap-size)) 0 calc(3 * var(--gap-size));
   }
 `;
 
