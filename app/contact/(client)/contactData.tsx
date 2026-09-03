@@ -29,6 +29,11 @@ export const contactData = {
     },
     { header: "IČO", body: "10856587" },
     {
+      header: "Spisová značka",
+      body: "C 123229 vedená u Krajského soudu v Brně",
+    },
+
+    {
       header: "Sídlo",
       body: "Bratislavská 206/21,\nZábrdovice, 602 00 Brno ",
     },
